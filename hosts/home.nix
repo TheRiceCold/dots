@@ -1,6 +1,8 @@
-{ config, lib, pkgs, user, impermanence, ... }:
+{ user, config, lib, pkgs, ... }:
 
 {
+  imports = [ (import ../modules/desktop/hyprland) ];
+
   home = {
     username = "${user}";
     stateVersion = "22.11";
@@ -9,5 +11,9 @@
 
   programs = {
     home-manager.enable = true;
+    git = {
+      userName = "Dale Walter G. Hicban";
+      userEmail = "dalewaltergh@gmail.com";
+    };
   };
 }

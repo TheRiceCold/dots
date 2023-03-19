@@ -6,108 +6,52 @@
       ./hardware-configuration.nix
     ];
 
-  nixpkgs.system = "x86_64-linux";
-
-  nixpkgs.config.allowUnfree = true;
-
-  boot = {
-    initrd.kernelModules = [ "amdgpu" ];
-    loader = {
-      systemd-boot = {
-        enable = true;
-        consoleMode = "auto";
-      };
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot";
-      };
-      timeout = 1;
-    };
-    consoleLogLevel = 0;
-    initrd.verbose = false;
-  };
-
-  networking = {
-    hostName = "NixOS"; # Define your hostname.
-    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-    # Configure network proxy if necessary
-    # proxy.default = "http://user:password@proxy:port/";
-    # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-    # Open ports in the firewall.
-    # firewall.allowedTCPPorts = [ ... ];
-    # firewall.allowedUDPPorts = [ ... ];
-    # Or disable the firewall altogether.
-    # firewall.enable = false;
+  nixpkgs = {
+    system = "x86_64-linux";
+    config.allowUnfree = true;
   };
 
   time.timeZone = "Asia/Manila"; # set time zone
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
-  #   useXkbConfig = true; # use xkbOptions in tty.
+
+  networking = {
+    hostName = "NixOS"; # Define your hostname.
+    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   };
 
-  sound.enable = true; # Enable Sound
-
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
     wolly = {
       isNormalUser = true;
       initialPassword = "password";
-      extraGroups = [ "wheel" "docker" "video" "audio" "camera" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "wheel" "networkmanager" "docker" "video" "audio" "camera" ]; # Enable ‘sudo’ for the user.
       packages = with pkgs; [
-        google-chrome
-        lxappearance
         pavucontrol
-        alacritty
         neofetch
         firefox
-        nodejs
-        yarn
-	      btop
     	  xclip
+	      btop
       ];
     };
   };
 
-  # List packages installed in system profile. To search, run $ nix search wget
   environment.systemPackages = with pkgs; [
-    git
     gcc
+    git
     wget
     tmux
     clang
     unzip
     docker
     neovim
+    zoxide
     ripgrep
     lazygit
-    linux-firmware
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  programs = {
-    # dconf.enable = true;
-    light.enable = true;
+  sound.enable = true; # Enable Sound
 
-    # mtr.enable = true;
-    # gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
-  };
-
-  # List services that you want to enable:
   services = {
     pipewire = {
       enable = true;
@@ -118,23 +62,14 @@
       jack.enable = true;
       pulse.enable = true;
     };
-    blueman.enable = true;
 
-    # Enable the OpenSSH daemon.
-    # openssh.enable = true;
-
-    # Enable CUPS to print documents.
-    # printing.enable = true;
+    openssh.enable = true;
+    dbus.enable = true;
   };
 
   security = {
-    sudo.enable = false;
-    doas = {
-      enable = true;
-      extraConfig = ''
-        permit nopass :wheel
-      '';
-    };
+    rtkit.enable = true;
+    polkit.enable = true;
   };
 
   nix = {
@@ -152,22 +87,11 @@
     '';
   };
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system = {
     autoUpgrade = {
       enable = false;
       channel = "https://nixos.org/channels/nixos-unstable";
     };
     stateVersion = "22.11"; # Did you read the comment?
-
-    # Copy the NixOS configuration file and link it from the resulting system
-    # (/run/current-system/configuration.nix). This is useful in case you
-    # accidentally delete configuration.nix.
-    # copySystemConfiguration = true;
   };
 }
