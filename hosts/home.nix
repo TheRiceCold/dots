@@ -1,7 +1,9 @@
 { user, config, lib, pkgs, ... }:
 
 {
-  imports = [ (import ../modules/desktop/hyprland) ];
+  imports = 
+    # (import ../modules/desktop/hyprland)
+    (import ../modules/programs);
 
   home = {
     username = "${user}";

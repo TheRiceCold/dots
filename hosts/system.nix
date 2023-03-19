@@ -36,6 +36,20 @@
     };
   };
 
+  fonts = {
+    fontconfig.enable = true;
+    fontDir.enable = true;
+    fonts = with pkgs; [
+      fira-code
+      fira-code-symbols
+      (nerdfonts.override {
+        fonts = [
+          "JetBrainsMono"
+        ];
+      })
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     gcc
     git
