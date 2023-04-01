@@ -1,7 +1,9 @@
 { user, config, lib, pkgs, ... }:
 
 {
-  imports = [ (import ../modules/desktop/hyprland) ];
+  imports = 
+    [ (import ../../modules/desktop/hyprland/home.nix) ] ++
+    (import ../../modules/programs);
 
   home = {
     username = "${user}";
@@ -11,9 +13,5 @@
 
   programs = {
     home-manager.enable = true;
-    git = {
-      userName = "Dale Walter G. Hicban";
-      userEmail = "dalewaltergh@gmail.com";
-    };
   };
 }

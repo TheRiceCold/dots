@@ -26,7 +26,7 @@ in
             extraSpecialArgs = { inherit user; };
             users.${user} = {
               imports =
-                [ (import ./home.nix) ] ++
+                [ (import ./wayland/home.nix) ] ++
                 [ inputs.hyprland.homeManagerModules.default ];
             };
           };

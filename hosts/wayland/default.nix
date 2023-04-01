@@ -1,7 +1,9 @@
 { config, inputs, pkgs, ... }:
 
 {
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+ 
+ imports = [ ../../modules/desktop/hyprland ];
+
   users.users = {
     root.initialPassword = "password";
     wolly = {
@@ -45,6 +47,7 @@
   # List packages installed in system profile. To search, run $ nix search wget
   environment = {
     systemPackages = with pkgs; [
+      swaybg
       pamixer
       wayland
       xwayland
