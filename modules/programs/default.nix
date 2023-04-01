@@ -1,4 +1,3 @@
-
 [
   ./alacritty.nix
 ]

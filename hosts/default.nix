@@ -18,7 +18,7 @@ in
       [ ./wayland ] ++
       [ ./system.nix ] ++
       [ inputs.nur.nixosModules.nur ] ++
-      [ inputs.hyprland.nixosModules.default ] ++
+      # [ inputs.hyprland.nixosModules.default ] ++
       [ inputs.home-manager.nixosModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;
