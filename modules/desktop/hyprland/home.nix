@@ -62,9 +62,14 @@
         }
       }
 
-      gestures { 
-        workspace_swipe=true 
-        workspace_swipe_min_speed_to_force=5
+      gestures {
+        workspace_swipe = true
+        workspace_swipe_fingers = 4
+        workspace_swipe_distance = 250
+        workspace_swipe_invert = true
+        workspace_swipe_min_speed_to_force = 15
+        workspace_swipe_cancel_ratio = 0.5
+        workspace_swipe_create_new = false
       }
 
       general {
@@ -103,7 +108,7 @@
       blurls=waybar
       blurls=lockscreen
 
-      animations {
+     animations {
         enabled=1
         bezier = overshot, 0.13, 0.99, 0.29, 1.1
         animation = windows, 1, 4, overshot, slide
@@ -114,34 +119,33 @@
       }
 
       dwindle {
-        # bezier=overshot,0.05,0.9,0.1,1.1
-        bezier=overshot,0.13,0.99,0.29,1.1
-        animation=windows,1,4,overshot,popin
-        animation=fade,1,10,default
-        animation=workspaces,1,6,overshot,slide
-        animation=border,1,10,default
+        no_gaps_when_only = false
+        force_split = 0 
+        special_scale_factor = 0.8
+        split_width_multiplier = 1.0 
+        use_active_for_splits = true
+        pseudotile = yes 
+        preserve_split = yes 
       }
 
       master {
-        new_on_top=true
-        no_gaps_when_only = true
+        new_is_master = true
+        special_scale_factor = 0.8
+        new_is_master = true
+        no_gaps_when_only = false
       }
 
       misc {
-        disable_hyprland_logo=true
-        disable_splash_rendering=true
-        mouse_move_enables_dpms=true
+        disable_autoreload = true
+        disable_hyprland_logo = true
+        always_follow_on_dnd = true
+        layers_hog_keyboard_focus = true
+        animate_manual_resizes = false
+        enable_swallow = true
+        swallow_regex =
+        focus_on_activate = true
       }
 
-      ########################################################################################
-
-            \ \        / (_)         | |                   |  __ \     | |
-             \ \  /\  / / _ _ __   __| | _____      _____  | |__) |   _| | ___  ___
-              \ \/  \/ / | | '_ \ / _` |/ _ \ \ /\ / / __| |  _  / | | | |/ _ \/ __|
-               \  /\  /  | | | | | (_| | (_) \ V  V /\__ \ | | \ \ |_| | |  __/\__ \
-                \/  \/   |_|_| |_|\__,_|\___/ \_/\_/ |___/ |_|  \_\__,_|_|\___||___/
-
-      ########################################################################################
 
       # Float Necessary Windows
       windowrule=float,Rofi
@@ -168,18 +172,6 @@
       windowrule=opacity 1,neovim
       bindm=SUPER,mouse:272,movewindow
       bindm=SUPER,mouse:273,resizewindow
-
-      ###########################################
-         ____  _           _
-        |  _ \(_)         | (_)
-        | |_) |_ _ __   __| |_ _ __   __ _ ___
-        |  _ <| | '_ \ / _` | | '_ \ / _` / __|
-        | |_) | | | | | (_| | | | | | (_| \__ \
-        |____/|_|_| |_|\__,_|_|_| |_|\__, |___/
-                                      __/ |
-                                     |___/ 
-
-      ###########################################
 
       # example binds
       bind=SUPER,Q,killactive
