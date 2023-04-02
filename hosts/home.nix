@@ -2,8 +2,9 @@
 
 {
   imports = 
-    # (import ../modules/desktop/hyprland)
-    (import ../modules/programs);
+    [ (import ../../modules/desktop/hyprland/home.nix) ] ++
+    (import ../../modules/shell) ++
+    (import ../../modules/programs);
 
   home = {
     username = "${user}";

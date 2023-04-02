@@ -10,15 +10,18 @@
       extraGroups = [ "wheel" "networkmanager" "docker" "video" "audio" "camera" ]; # Enable ‘sudo’ for the user.
       packages = with pkgs; [
         google-chrome   # Browser
+        librewolf
+
         lxappearance
         pavucontrol     # Volume Control
         alacritty
         neofetch
-        firefox         # Browser
-        nodejs
-        yarn
 	      btop
     	  xclip
+
+        nodejs
+        jdk11
+        yarn
       ];
     };
   };
@@ -52,10 +55,10 @@
       waybar
       wlogout
       wayland
-      wayfire
       wlsunset          # Day/night gamma adjustments for Wayland
       xwayland
       wlr-randr
+      rofi-wayland
       wayland-utils
       linux-firmware
       wayland-protocols

@@ -9,7 +9,8 @@
       settings = {
         font = rec {
           normal.family = "JetBrainsMono Nerd Font";
-          bold = { style = "Bold"; };
+          bold = { style = "Regular"; };
+          size = 12;
         };
         offset = {
           y = 0;

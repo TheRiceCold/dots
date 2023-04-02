@@ -58,6 +58,7 @@
     clang
     unzip
     docker
+    helix
     neovim
     zoxide
     ripgrep
