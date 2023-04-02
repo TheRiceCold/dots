@@ -14,9 +14,5 @@
 
   programs = {
     home-manager.enable = true;
-    git = {
-      userName = "Dale Walter G. Hicban";
-      userEmail = "dalewaltergh@gmail.com";
-    };
   };
 }

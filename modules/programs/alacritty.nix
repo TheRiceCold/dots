@@ -1,5 +1,3 @@
-# Terminal Emualtor
-
 { pkgs, ... }:
 
 {
@@ -7,14 +5,14 @@
     alacritty = {
       enable = true;
       settings = {
-        font = rec {
+        font = rec {                          # Font - Laptop has size manually changed at home.nix
           normal.family = "JetBrainsMono Nerd Font";
           bold = { style = "Regular"; };
           size = 12;
         };
-        offset = {
-          y = 0;
+        offset = {                            # Positioning
           x = -1;
+          y = 0;
         };
       };
     };

@@ -89,7 +89,7 @@
         # Your blur "amount" is blur_size * blur_passes, but high blur_size (over around 5-ish) will produce artifacts.
         # if you want heavy blur, you need to up the blur_passes.
         # the more passes, the more you can up the blur_size without noticing artifacts.
-       
+        
         active_opacity = 0.95
         inactive_opacity = 0.75
 
@@ -114,13 +114,12 @@
       }
 
       dwindle {
-        no_gaps_when_only = false
-        force_split = 0 
-        special_scale_factor = 0.8
-        split_width_multiplier = 1.0 
-        use_active_for_splits = true
-        pseudotile = yes 
-        preserve_split = yes 
+        # bezier=overshot,0.05,0.9,0.1,1.1
+        bezier=overshot,0.13,0.99,0.29,1.1
+        animation=windows,1,4,overshot,popin
+        animation=fade,1,10,default
+        animation=workspaces,1,6,overshot,slide
+        animation=border,1,10,default
       }
 
       master {
@@ -166,7 +165,7 @@
       ^.*nvim.*$
       windowrule=tile,librewolf
       windowrule=tile,spotify
-      windowrule=opacity 0.9,neovim
+      windowrule=opacity 1,neovim
       bindm=SUPER,mouse:272,movewindow
       bindm=SUPER,mouse:273,resizewindow
 
@@ -192,8 +191,6 @@
       bind=SUPERSHIFT,Q,exit,
       bind=SUPER,E,exec,pcmanfm
       bind=SUPER,SPACE,exec, rofi -show drun
-      bind=SUPER,P,pseudo,
-      bind=SUPER,ESCAPE,exec,sudo systemctl suspend
 
       bind=,XF86AudioMute,exec,~/.config/hypr/scripts/volume mute
       bind=,XF86AudioLowerVolume,exec,~/.config/hypr/scripts/volume down
