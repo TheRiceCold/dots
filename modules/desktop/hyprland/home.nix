@@ -86,7 +86,7 @@
       }
 
       decoration {
-        rounding=8
+        rounding=4
         blur=1
         blur_size=4 # minimum 1
         blur_passes=1 # minimum 1, more passes = more resource intensive.
@@ -178,7 +178,7 @@
       bind=SUPER,B,exec,librewolf
       bind=SUPER,F,fullscreen,1
       bind=SUPERSHIFT,F,fullscreen,0
-      bind=SUPER,RETURN,exec,alacritty
+      bind=SUPER,RETURN,exec,kitty
       bind=SUPER,C,killactive,
       bind=SUPERSHIFT,Q,exit,
       bind=SUPER,E,exec,pcmanfm

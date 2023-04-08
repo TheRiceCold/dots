@@ -10,16 +10,9 @@
       initialPassword = "password";
       extraGroups = [ "wheel" "networkmanager" "docker" "video" "audio" "camera" ]; # Enable ‘sudo’ for the user.
       packages = with pkgs; [
-        google-chrome   # Browser
-        librewolf
-        glava
-
-        lxappearance
-        pavucontrol     # Volume Control
-        alacritty
-        neofetch
-	      btop
     	  xclip
+        pipes
+        glava
 
         # Dev Tools
         
@@ -28,6 +21,7 @@
         nodejs
         rustc
         cargo
+        python3
         vscodium
         android-tools
       ];

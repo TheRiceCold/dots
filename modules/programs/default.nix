@@ -1,4 +1,6 @@
 [
   ./rofi
-  ./alacritty.nix
+  ./kitty
+  ./neofetch
+  # ./alacritty.nix
 ]

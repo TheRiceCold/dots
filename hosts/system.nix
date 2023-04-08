@@ -27,11 +27,16 @@
       initialPassword = "password";
       extraGroups = [ "wheel" "networkmanager" "docker" "video" "audio" "camera" ]; # Enable ‘sudo’ for the user.
       packages = with pkgs; [
+        lxappearance
         pavucontrol
         neofetch
-        firefox
+        kitty
     	  xclip
 	      btop
+        gimp
+
+        librewolf
+        google-chrome   # Browser
       ];
     };
   };
