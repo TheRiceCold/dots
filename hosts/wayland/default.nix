@@ -1,7 +1,6 @@
 { config, inputs, pkgs, ... }:
 
 {
- 
  imports = [ ../../modules/desktop/hyprland ];
 
   users.users = {
@@ -13,6 +12,7 @@
       packages = with pkgs; [
         google-chrome   # Browser
         librewolf
+        glava
 
         lxappearance
         pavucontrol     # Volume Control
@@ -21,9 +21,15 @@
 	      btop
     	  xclip
 
-        nodejs
+        # Dev Tools
+        
         jdk11
         yarn
+        nodejs
+        rustc
+        cargo
+        vscodium
+        android-tools
       ];
     };
   };
@@ -82,36 +88,11 @@
         cd = "zoxide";
       };
     };
-
-    # mtr.enable = true;
-    # gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
-  };
-
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-      extraPackages = with pkgs; [ amdvlk rocm-opencl-icd rocm-opencl-runtime ];
-      extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
-    };
   };
 
   services = {
     gvfs.enable = true;
     dbus.packages = [ pkgs.gcr ];
-    # getty.autologinUser = "$user";
-    xserver= {
-      enable = true;
-      layout = "us";
-      videoDrivers = [ "amdgpu" ];
-      displayManager = {
-        startx.enable = true;
-      };
-    };
   };
 
   console.useXkbConfig = true;
