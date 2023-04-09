@@ -7,8 +7,8 @@
     (import ../../modules/programs);
 
   home = {
-    username = "${user}";
-    stateVersion = "22.11";
+    username      = "${user}";
+    stateVersion  = "22.11";
     homeDirectory = "/home/${user}";
   };
 

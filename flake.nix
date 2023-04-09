@@ -1,24 +1,18 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";  # Nix Packages
-    nur.url = "github:nix-community/NUR";                 # NUR Packages
+    nixpkgs.url       = "github:nixos/nixpkgs/nixos-unstable";  # Nix Packages
+    nur.url           = "github:nix-community/NUR";             # NUR Packages
 
-    # nix-colors.url = "github:misterio77/nix-colors";    # Nix Colors
-    hyprpicker.url = "github:hyprwm/hyprpicker";          # Hyprpicker
-    hyprland.url = "github:hyprwm/Hyprland";              # Hyprland
+    hyprpicker.url    = "github:hyprwm/hyprpicker";             # Hyprpicker
+    hyprland.url      = "github:hyprwm/Hyprland";               # Hyprland
 
-    home-manager = {                                      # Home Manager
+    home-manager = {                                            # Home Manager
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { 
-    self, 
-    nixpkgs, 
-    ... 
-  } @ inputs:
-  {
+  outputs = { self, nixpkgs, ... } @ inputs: {
     nixosConfigurations = (
       import ./hosts {
         inherit nixpkgs self inputs;

@@ -4,12 +4,14 @@
     bash = {
       enable = true;
       shellAliases = {
-        cd  = "z";
-        v   = "nvim";
-        do  = "doas";
-        c   = "clear";
-        rmr = "rm -r";
-        py = "python3";
+        cd    = "z";
+        v     = "nvim";
+        do    = "doas";
+        c     = "clear";
+        rmr   = "rm -r";
+        l     = "joshuto";
+        py    = "python3";
+        pipes = "pipes.sh";
       };
       initExtra = ''
         export PATH="$PATH:$HOME/.local/bin"

@@ -6,9 +6,15 @@
   users.users = {
     root.initialPassword = "password";
     wolly = {
-      isNormalUser = true;
+      isNormalUser    = true;
       initialPassword = "password";
-      extraGroups = [ "wheel" "networkmanager" "docker" "video" "audio" "camera" ]; # Enable ‘sudo’ for the user.
+
+      extraGroups = [             # Enable ‘sudo’ for the user.
+        "wheel" "networkmanager" 
+        "docker" "video" 
+        "audio" "camera" 
+      ]; 
+
       packages = with pkgs; [
     	  xclip
         pipes
@@ -23,6 +29,7 @@
         cargo
         python3
         vscodium
+        scrcpy
         android-tools
       ];
     };
@@ -32,27 +39,30 @@
   boot = {
     cleanTmpDir = true;
     initrd.kernelModules = [ "amdgpu" ];
+
     loader = {
       systemd-boot = {
-        enable = true;
+        enable      = true;
         consoleMode = "auto";
       };
+
       efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot";
+        canTouchEfiVariables  = true;
+        efiSysMountPoint      = "/boot";
       };
+
       timeout = 1;
     };
     consoleLogLevel = 0;
-    initrd.verbose = false;
+    initrd.verbose  = false;
   };
 
   # List packages installed in system profile. To search, run $ nix search wget
   environment = {
     systemPackages = with pkgs; [
-      swaybg
       grim
       mako
+      swaybg
       pamixer
 
       waybar
@@ -61,11 +71,12 @@
       wlsunset          # Day/night gamma adjustments for Wayland
       xwayland
       wlr-randr
+      eww-wayland
       rofi-wayland
       wayland-utils
       linux-firmware
       wayland-protocols
-      # inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
+      inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     ];
   };
 
@@ -74,14 +85,6 @@
   programs = {
     dconf.enable = true;
     light.enable = true;
-    bash = {
-      enableCompletion = true;
-      shellAliases = {
-        v = "nvim";
-        do = "doas";
-        cd = "zoxide";
-      };
-    };
   };
 
   services = {

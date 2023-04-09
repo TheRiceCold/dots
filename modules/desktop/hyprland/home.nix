@@ -23,35 +23,28 @@
     nvidiaPatches = false;
     systemdIntegration = true;
     extraConfig = ''
-      # You have to change this based on your monitor 
-      monitor=eDP-1,1920x1080@60,0x0,1
-      # Status bar :) 
-      exec-once=waybar
-      #Notification 
-      exec-once=dunst
+      monitor   = eDP-1,1920x1080@60,0x0,1  # Monitor
+      exec-once = fcitx5 -D                 # Keyboard 
+      exec-once = blueman-applet            # Bluetooth
+
+      exec-once = waybar                    # Status Bar
+      exec-once = dunst                     # Notification 
+
       # Wallpaper
       exec-once=swaybg -o \* -i ~/.config/hypr/wallpapers/landscape.jpg -m fill
-      # For screen sharing 
-      exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-      # For keyboard 
-      exec-once=fcitx5 -D
       # For lockscreen
       exec-once=swayidle -w timeout 200 'swaylock-fancy'
-      # Start Page
-      exec-once=~/.config/hypr/scripts/startpage.sh
 
-      # Bluetooth
-      exec-once=blueman-applet # Make sure you have installed blueman
+      exec-once = ~/.config/hypr/scripts/startpage.sh # Start Page
 
       # Screen Sharing 
       exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
       exec-once=~/.config/hypr/scripts/screensharing.sh
 
       input {
-        # Remap Capslock -> Esc for Vim users  
-        kb_options=caps:escape 
-        repeat_rate=50
-        repeat_delay=240
+        repeat_rate   = 50
+        repeat_delay  = 240
+        kb_options    = caps:escape 
 
         touchpad {
           disable_while_typing=1
@@ -95,7 +88,7 @@
         # if you want heavy blur, you need to up the blur_passes.
         # the more passes, the more you can up the blur_size without noticing artifacts.
         
-        active_opacity = 0.95
+        active_opacity = 0.90
         inactive_opacity = 0.75
 
         # col.shadow=0xffa7caff
@@ -146,40 +139,35 @@
         focus_on_activate = true
       }
 
-
       # Float Necessary Windows
-      windowrule=float,Rofi
-      windowrule=float,pavucontrol
-      windowrulev2 = float,class:^()$,title:^(Picture in picture)$
-      windowrulev2 = float,class:^(brave)$,title:^(Save File)$
-      windowrulev2 = float,class:^(brave)$,title:^(Open File)$
-      windowrulev2 = float,class:^(LibreWolf)$,title:^(Picture-in-Picture)$
-      windowrulev2 = float,class:^(blueman-manager)$
-      windowrulev2 = float,class:^(org.twosheds.iwgtk)$
-      windowrulev2 = float,class:^(blueberry.py)$
-      windowrulev2 = float,class:^(xdg-desktop-portal-gtk)$
-      windowrulev2 = float,class:^(geeqie)$
+      windowrule    = float,Rofi
+      windowrule    = float,pavucontrol
+      windowrulev2  = float,class:^()$,title:^(Picture in picture)$
+      windowrulev2  = float,class:^(brave)$,title:^(Save File)$
+      windowrulev2  = float,class:^(brave)$,title:^(Open File)$
+      windowrulev2  = float,class:^(LibreWolf)$,title:^(Picture-in-Picture)$
+      windowrulev2  = float,class:^(blueman-manager)$
+      windowrulev2  = float,class:^(org.twosheds.iwgtk)$
+      windowrulev2  = float,class:^(blueberry.py)$
+      windowrulev2  = float,class:^(xdg-desktop-portal-gtk)$
+      windowrulev2  = float,class:^(geeqie)$
 
       # Increase the opacity 
-      windowrule=opacity 0.92,Thunar
-      windowrule=opacity 0.96,discord
+      windowrule=opacity 0.8,kitty
       windowrule=opacity 0.9,VSCodium
-      windowrule=opacity 0.88,obsidian
 
       ^.*nvim.*$
-      windowrule=tile,librewolf
       windowrule=tile,spotify
-      windowrule=opacity 1,neovim
+      windowrule=tile,librewolf
       bindm=SUPER,mouse:272,movewindow
       bindm=SUPER,mouse:273,resizewindow
 
       # example binds
       bind=SUPER,Q,killactive
-      bind=SUPER,B,exec,librewolf
       bind=SUPER,F,fullscreen,1
-      bind=SUPERSHIFT,F,fullscreen,0
       bind=SUPER,RETURN,exec,kitty
-      bind=SUPER,C,killactive,
+      bind=SUPERSHIFT,F,fullscreen,0
+      bind=SUPER,B,exec,google-chrome
       bind=SUPERSHIFT,Q,exit,
       bind=SUPER,E,exec,pcmanfm
       bind=SUPER,SPACE,exec, rofi -show drun

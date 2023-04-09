@@ -21,9 +21,9 @@ in
       # [ inputs.hyprland.nixosModules.default ] ++
       [ inputs.home-manager.nixosModules.home-manager {
           home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = { inherit user; };
+            useGlobalPkgs     = true;
+            useUserPackages   = true;
+            extraSpecialArgs  = { inherit user; };
             users.${user} = {
               imports =
                 [ (import ./wayland/home.nix) ] ++
