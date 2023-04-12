@@ -60,6 +60,7 @@
     gcc
     git
     fzf
+    lsof
     wget
     tmux
     clang

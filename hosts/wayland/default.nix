@@ -73,6 +73,7 @@
       wlr-randr
       eww-wayland
       rofi-wayland
+      wl-clipboard
       wayland-utils
       linux-firmware
       wayland-protocols

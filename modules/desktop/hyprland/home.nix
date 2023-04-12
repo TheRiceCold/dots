@@ -27,6 +27,7 @@
       exec-once = fcitx5 -D                 # Keyboard 
       exec-once = blueman-applet            # Bluetooth
 
+      exec-once = eww daemon
       exec-once = waybar                    # Status Bar
       exec-once = dunst                     # Notification 
 
@@ -69,27 +70,28 @@
         layout=dwindle
         sensitivity=1.0 # for mouse cursor
 
-        gaps_in=5
-        gaps_out=20
-        border_size=2
-        col.active_border=0xff5e81ac
-        col.inactive_border=0x66333333
+        gaps_in = 4
+        gaps_out = 16
+        border_size = 2
+        col.active_border = 0xff5e81ac
+        col.inactive_border = 0x66333333
 
         apply_sens_to_raw=0 # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
       }
 
       decoration {
-        rounding=4
-        blur=1
-        blur_size=4 # minimum 1
-        blur_passes=1 # minimum 1, more passes = more resource intensive.
+        rounding = 4
+
+        # BLUR
+        blur       = yes
+        blur_size = 5 # minimum 1
+        blur_passes = 3 # minimum 1, more passes = more resource intensive.
         blur_new_optimizations = true   
-        # Your blur "amount" is blur_size * blur_passes, but high blur_size (over around 5-ish) will produce artifacts.
-        # if you want heavy blur, you need to up the blur_passes.
-        # the more passes, the more you can up the blur_size without noticing artifacts.
         
+        # OPACITY
         active_opacity = 0.90
         inactive_opacity = 0.75
+        fullscreen_opacity = 1.0
 
         # col.shadow=0xffa7caff
         # col.shadow_inactive=0x50000000
@@ -101,7 +103,7 @@
       blurls=waybar
       blurls=lockscreen
 
-     animations {
+      animations {
         enabled=1
         bezier = overshot, 0.13, 0.99, 0.29, 1.1
         animation = windows, 1, 4, overshot, slide
@@ -153,8 +155,8 @@
       windowrulev2  = float,class:^(geeqie)$
 
       # Increase the opacity 
-      windowrule=opacity 0.8,kitty
-      windowrule=opacity 0.9,VSCodium
+      windowrule=opacity 0.85,kitty
+      windowrule=opacity 0.8,VSCodium
 
       ^.*nvim.*$
       windowrule=tile,spotify
@@ -179,10 +181,10 @@
 
       bindle=,XF86MonBrightnessUp,exec,~/.config/hypr/scripts/brightness up  # increase screen brightness
       bindle=,XF86MonBrightnessDown,exec,~/.config/hypr/scripts/brightness down # decrease screen brightnes
-      bind=SUPERSHIFT,C,exec,bash ~/.config/hypr/scripts/hyprPicker.sh
-      bind=SUPERSHIFT,E,exec,wlogout
+      bind = SUPERSHIFT,C,exec,bash ~/.config/hypr/scripts/hyprPicker.sh
+      bind = SUPERSHIFT,E,exec,wlogout
       bind = SUPER, T, togglefloating,
-      bind=SUPERSHIFT,P,exec,pomotroid --in-process-gpu
+      bind = SUPERSHIFT,P,exec,pomotroid --in-process-gpu
 
       # Screen shot 
       bind=SUPERSHIFT,S,exec,grim -g "$(slurp)" - | swappy -f -
