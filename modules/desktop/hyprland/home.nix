@@ -18,7 +18,7 @@
     enable = true;
     xwayland = {
       enable = true;
-      hidpi = true;
+      hidpi  = true;
     };
     nvidiaPatches = false;
     systemdIntegration = true;
@@ -83,33 +83,27 @@
         rounding = 4
 
         # BLUR
-        blur       = yes
-        blur_size = 5 # minimum 1
-        blur_passes = 3 # minimum 1, more passes = more resource intensive.
+        blur        = yes
+        blur_size   = 8 # minimum 1
+        blur_passes = 5 # minimum 1, more passes = more resource intensive.
         blur_new_optimizations = true   
         
         # OPACITY
-        active_opacity = 0.90
+        active_opacity = 0.85
         inactive_opacity = 0.75
         fullscreen_opacity = 1.0
-
-        # col.shadow=0xffa7caff
-        # col.shadow_inactive=0x50000000
-        # drop_shadow=true
-        # shadow_range=8
       }
 
-      # Blur for waybar 
-      blurls=waybar
       blurls=lockscreen
 
       animations {
         enabled=1
         bezier = overshot, 0.13, 0.99, 0.29, 1.1
+
+        animation = fade, 1, 8, default
+        animation = border, 1, 5, default
         animation = windows, 1, 4, overshot, slide
         animation = windowsOut, 1, 5, default, popin 80%
-        animation = border, 1, 5, default
-        animation = fade, 1, 8, default
         animation = workspaces, 1, 6, overshot, slidevert
       }
 
@@ -125,9 +119,8 @@
 
       master {
         new_is_master = true
-        special_scale_factor = 0.8
-        new_is_master = true
         no_gaps_when_only = false
+        special_scale_factor = 0.8
       }
 
       misc {
@@ -142,59 +135,46 @@
       }
 
       # Float Necessary Windows
-      windowrule    = float,Rofi
-      windowrule    = float,pavucontrol
-      windowrulev2  = float,class:^()$,title:^(Picture in picture)$
-      windowrulev2  = float,class:^(brave)$,title:^(Save File)$
-      windowrulev2  = float,class:^(brave)$,title:^(Open File)$
-      windowrulev2  = float,class:^(LibreWolf)$,title:^(Picture-in-Picture)$
-      windowrulev2  = float,class:^(blueman-manager)$
-      windowrulev2  = float,class:^(org.twosheds.iwgtk)$
-      windowrulev2  = float,class:^(blueberry.py)$
-      windowrulev2  = float,class:^(xdg-desktop-portal-gtk)$
-      windowrulev2  = float,class:^(geeqie)$
+      windowrule = float,Rofi
+      windowrule = float,glava
+      windowrule = float,pavucontrol
 
       # Increase the opacity 
-      windowrule=opacity 0.85,kitty
-      windowrule=opacity 0.8,VSCodium
+      windowrule = opacity 0.5,glava
+      windowrule = opacity 0.8,kitty
+      windowrule = opacity 0.8,VSCodium
 
       ^.*nvim.*$
-      windowrule=tile,spotify
-      windowrule=tile,librewolf
+      windowrule  = tile,spotify
+      windowrule  = tile,librewolf
       bindm=SUPER,mouse:272,movewindow
       bindm=SUPER,mouse:273,resizewindow
 
       # example binds
-      bind=SUPER,Q,killactive
-      bind=SUPER,F,fullscreen,1
-      bind=SUPER,RETURN,exec,kitty
-      bind=SUPERSHIFT,F,fullscreen,0
-      bind=SUPER,B,exec,google-chrome
-      bind=SUPERSHIFT,Q,exit,
-      bind=SUPER,E,exec,pcmanfm
-      bind=SUPER,SPACE,exec, rofi -show drun
+      bind = SUPER,Q,killactive
+      bind = SUPER,F,fullscreen,1
+      bind = SUPER,RETURN,exec,kitty
+      bind = SUPERSHIFT,F,fullscreen,0
+      bind = SUPER,B,exec,google-chrome-stable
+      bind = SUPERSHIFT,Q,exit,
+      bind = SUPER,SPACE,exec, rofi -show drun
 
-      bind=,XF86AudioMute,exec,~/.config/hypr/scripts/volume mute
-      bind=,XF86AudioLowerVolume,exec,~/.config/hypr/scripts/volume down
-      bind=,XF86AudioRaiseVolume,exec,~/.config/hypr/scripts/volume up
-      bind=,XF86AudioMicMute,exec,pactl set-source-mute @DEFAULT_SOURCE@ toggle
+      bind =,XF86AudioMute,exec,~/.config/hypr/scripts/volume mute
+      bind =,XF86AudioRaiseVolume,exec,~/.config/hypr/scripts/volume up
+      bind =,XF86AudioLowerVolume,exec,~/.config/hypr/scripts/volume down
+      bind =,XF86AudioMicMute,exec,pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
       bindle=,XF86MonBrightnessUp,exec,~/.config/hypr/scripts/brightness up  # increase screen brightness
-      bindle=,XF86MonBrightnessDown,exec,~/.config/hypr/scripts/brightness down # decrease screen brightnes
+      bindle=,XF86MonBrightnessDown,exec,~/.config/hypr/scripts/brightness down # decrease screen brightness
       bind = SUPERSHIFT,C,exec,bash ~/.config/hypr/scripts/hyprPicker.sh
       bind = SUPERSHIFT,E,exec,wlogout
       bind = SUPER, T, togglefloating,
       bind = SUPERSHIFT,P,exec,pomotroid --in-process-gpu
 
-      # Screen shot 
-      bind=SUPERSHIFT,S,exec,grim -g "$(slurp)" - | swappy -f -
-      # Screen recorder
-      bind=SUPER,R,exec,wf-recorder -g "$(slurp)"
+      bind=SUPERSHIFT,S,exec,grim -g "$(slurp)" - | swappy -f -   # Screenshot 
+      bind=SUPER,R,exec,wf-recorder -g "$(slurp)"                 # Screen Recorder
 
       bind=SUPERSHIFT,RETURN,layoutmsg,swapwithmaster
-
-      # bind=SUPER,j,layoutmsg,cyclenext
-      # bind=SUPER,k,layoutmsg,cycleprev
 
       bind=SUPER,j,movefocus,d
       bind=SUPER,k,movefocus,u
@@ -224,16 +204,16 @@
       bind=SUPER,9,workspace,9
       bind=SUPER,0,workspace,10
 
-      bind=SUPERSHIFT,1,movetoworkspacesilent,1
-      bind=SUPERSHIFT,2,movetoworkspacesilent,2
-      bind=SUPERSHIFT,3,movetoworkspacesilent,3
-      bind=SUPERSHIFT,4,movetoworkspacesilent,4
-      bind=SUPERSHIFT,5,movetoworkspacesilent,5
-      bind=SUPERSHIFT,6,movetoworkspacesilent,6
-      bind=SUPERSHIFT,7,movetoworkspacesilent,7
-      bind=SUPERSHIFT,8,movetoworkspacesilent,8
-      bind=SUPERSHIFT,9,movetoworkspacesilent,9
-      bind=SUPERSHIFT,0,movetoworkspacesilent,10
+      bind = SUPERSHIFT,1,movetoworkspacesilent,1
+      bind = SUPERSHIFT,2,movetoworkspacesilent,2
+      bind = SUPERSHIFT,3,movetoworkspacesilent,3
+      bind = SUPERSHIFT,4,movetoworkspacesilent,4
+      bind = SUPERSHIFT,5,movetoworkspacesilent,5
+      bind = SUPERSHIFT,6,movetoworkspacesilent,6
+      bind = SUPERSHIFT,7,movetoworkspacesilent,7
+      bind = SUPERSHIFT,8,movetoworkspacesilent,8
+      bind = SUPERSHIFT,9,movetoworkspacesilent,9
+      bind = SUPERSHIFT,0,movetoworkspacesilent,10
     '';
   };
 }

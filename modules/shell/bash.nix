@@ -18,6 +18,7 @@
       initExtra = ''
         export PATH="$PATH:$HOME/.local/bin"
 
+        # Android Tools
         export ANDROID_HOME="~/Android"
         export PATH="$PATH:$ANDROID_HOME/emulator"
         export PATH="$PATH:$ANDROID_HOME/platform-tools"

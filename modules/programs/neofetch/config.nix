@@ -1,17 +1,15 @@
 ''
   print_info()
   {
-      prin "$(color 1)Wolly@NixOS"
+      info "" title
       info underline
-      info "$(color 1) " users
-      info "$(color 2) " distro
-      info "$(color 3)󰍹 " de
+      info "$(color 6)❃ " distro
+      info "$(color 3) " kernel
       info "$(color 4) " shell
 	    info "$(color 5) " packages
-      info "$(color 6)神" uptime
+      info "$(color 1)神" uptime
       info "$(color 7) " memory
       info "$(color 10) " cpu
-      info "$(color 9) " gpu
 
       prin ""
       prin "$(color 1)⬤ $(color 2) ⬤  $(color 3) ⬤  $(color 4) ⬤  $(color 5) ⬤  $(color 6) ⬤  $(color 7) ⬤  $(color 8) ⬤  $(color 9)"

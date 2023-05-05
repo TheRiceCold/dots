@@ -18,19 +18,6 @@
       packages = with pkgs; [
     	  xclip
         pipes
-        glava
-
-        # Dev Tools
-        
-        jdk11
-        yarn
-        nodejs
-        rustc
-        cargo
-        python3
-        vscodium
-        scrcpy
-        android-tools
       ];
     };
   };

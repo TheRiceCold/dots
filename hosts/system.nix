@@ -40,8 +40,23 @@
 	      btop
         gimp
 
-        librewolf
+        hplip
+        librewolf       # Browser
         google-chrome   # Browser
+        # android-studio  # Android Dev
+
+        cargo
+        rustc     # Rust
+        python3   # Python
+        docker-compose
+
+        vscodium  # Code Editor
+
+        # Android Tools 
+        scrcpy
+        android-tools
+
+        qemu_kvm
       ];
     };
   };
@@ -60,6 +75,7 @@
     gcc
     git
     fzf
+    dash
     lsof
     wget
     tmux
