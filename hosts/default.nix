@@ -2,12 +2,8 @@
 
 let
   user = "wolly";
-  system = "x86_64-linux";
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true; # Allow proprietary software
-  };
   lib = nixpkgs.lib;
+  system = "x86_64-linux";
 in
 
 {
@@ -18,7 +14,6 @@ in
       [ ./wayland ] ++
       [ ./system.nix ] ++
       [ inputs.nur.nixosModules.nur ] ++
-      # [ inputs.hyprland.nixosModules.default ] ++
       [ inputs.home-manager.nixosModules.home-manager {
           home-manager = {
             useGlobalPkgs     = true;
@@ -33,7 +28,6 @@ in
           nixpkgs = {
             overlays = [];
           };
-        }
-      ];
+      }];
   };
 }

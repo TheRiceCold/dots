@@ -1,7 +1,9 @@
 { config, inputs, pkgs, ... }:
 
 {
- imports = [ ../../modules/desktop/hyprland ];
+ imports = 
+  (import ../../modules/virtualisation) 
+  ++ [ ../../modules/desktop/hyprland ];
 
   users.users = {
     root.initialPassword = "password";
@@ -71,6 +73,7 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs = {
+    adb.enable = true;
     dconf.enable = true;
     light.enable = true;
   };
@@ -78,17 +81,9 @@
   services = {
     gvfs.enable = true;
     dbus.packages = [ pkgs.gcr ];
+    udev.packages = [ pkgs.android-udev-rules ];
   };
 
   console.useXkbConfig = true;
-
-  security = {
-    sudo.enable = false;
-    doas = {
-      enable = true;
-      extraConfig = ''
-        permit nopass :wheel
-      '';
-    };
-  };
+  security.sudo.enable = true;
 }

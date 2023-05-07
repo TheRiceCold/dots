@@ -6,6 +6,7 @@
       shellAliases = {
         cd      = "z";
         v       = "nvim";
+        x       = "exit";
         do      = "doas";
         c       = "clear";
         rmr     = "rm -r";
@@ -19,10 +20,11 @@
         export PATH="$PATH:$HOME/.local/bin"
 
         # Android Tools
-        export ANDROID_HOME="~/Android"
+        export ANDROID_HOME="~/Android/Sdk"
+        export PATH="$PATH:$ANDROID_HOME/tools"
         export PATH="$PATH:$ANDROID_HOME/emulator"
+        export PATH="$PATH:$ANDROID_HOME/tools/bin"
         export PATH="$PATH:$ANDROID_HOME/platform-tools"
-        export PATH="$PATH:$ANDROID_HOME/cmdline-tools/tools/bin"
 
         killport() {
           kill $(lsof -t -i:$1) 

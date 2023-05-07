@@ -3,17 +3,17 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
-  nixpkgs = {
-    system = "x86_64-linux";
-    config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    android_sdk.accept_license = true;
   };
 
-  time.timeZone       = "Asia/Manila";    # TIME ZONE
+  time.timeZone       = "Asia/Manila";  # TIME ZONE
   i18n.defaultLocale  = "en_US.UTF-8";
 
   networking = {
-    hostName = "NixOS";                   # HOSTNAME.
-    networkmanager.enable = true;         # NETWORK MANAGER
+    hostName = "NixOS";                 # HOSTNAME.
+    networkmanager.enable = true;       # NETWORK MANAGER
   };
 
   users.users = {
@@ -31,30 +31,29 @@
       ]; # Enable ‘sudo’ for the user.
 
       packages = with pkgs; [
-        lxappearance
         pavucontrol
         neofetch
         joshuto
         kitty
     	  xclip
 	      btop
-        gimp
 
-        hplip
-        librewolf       # Browser
-        google-chrome   # Browser
-        # android-studio  # Android Dev
+        google-chrome  
 
+        yarn
         cargo
-        rustc     # Rust
-        python3   # Python
-        docker-compose
+        rustc               # Rust
+        python39            # Python
+        elmPackages.nodejs  # NodeJS 14.21.3
+        jdk11               # JDK 17 [Java Development Kit]
 
-        vscodium  # Code Editor
+        vscodium            # Code Editor
 
-        # Android Tools 
         scrcpy
-        android-tools
+        # android-tools       # Android Tools 
+
+        # Android Studio
+        # androidStudioPackages.dev
 
         qemu_kvm
       ];
@@ -72,21 +71,22 @@
   };
 
   environment.systemPackages = with pkgs; [
+    fzf
     gcc
     git
-    fzf
     dash
     lsof
-    wget
     tmux
+    wget
     clang
     unzip
-    docker
     helix
+    docker
     neovim
     zoxide
-    ripgrep
+    gnumake
     lazygit
+    ripgrep
   ];
 
   sound.enable = true; # Enable Sound
