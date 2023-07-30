@@ -13,35 +13,28 @@ in {
 
       settings = {
         mainBar = {
-          height          = 35;
-          spacing         = 10;
-          layer           = "top";
-          position        = "top";
-          modules-left = [ "image/nixos" ];
-          modules-right = [ "pulseaudio" "network" "battery" "custom/date" "clock" "custom/power" ];
+          layer = "top";
+          position = "top";
+          height = 30;
+	  exclusive = true;
+	  passthrough = false;
+	  gtk-layer-shell = true;
 
-          "image/nixos" = {
-            path = "~/Flakes/modules/programs/waybar/assets/nixos.png";
-            size = 24;
-          };
+          modules-left = [ "custom/launcher" ];
+	  modules-center = [ "tray" ];
+          modules-right = [ 
+	    "pulseaudio" 
+	    "network" 
+	    "battery" 
+	    "custom/date" 
+	    "clock" 
+	  ];
 
-          "wlr/workspaces" = {
-            format = "{icon}";
-            on-click = "activate";
-            all-outputs = true;
-            format-icons = {
-              "1" = "";
-              "2" = "";
-              "3" = "";
-              "4" = "";
-              "5" = "";
-              "6" = "";
-              "7" = "";
-              "8" = "";
-              "9" = "";
-              # "10": "",
-            };
-          };
+	  "custom/launcher" = {
+	    format = "󰈸";
+    	    on-click = "bash $HOME/.config/rofi/launcher.sh";
+    	    on-click-right = "bash $HOME/.config/rofi/run.sh";
+	  };
 
           pulseaudio = {
             format = "{icon} {volume}%";
@@ -86,10 +79,6 @@ in {
             format = "󰅐 {:%H:%M}";
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
             format-alt = "{:%Y-%m-%d}";
-          };
-          "custom/power" = {
-            format = "󰐥";
-            on-click = "/home/loki/bin/waybar-power.sh";
           };
         };
       };

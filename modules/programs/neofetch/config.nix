@@ -67,7 +67,7 @@
   battery_display="off"
   disk_display="off"
   image_backend="kitty"
-  image_source="${./icebear.png}"
+  image_source="${./blonde_anime.jpg}"
   ascii_distro="auto"
   ascii_colors=(distro)
   ascii_bold="on"

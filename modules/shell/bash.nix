@@ -7,15 +7,16 @@
         cd      = "z";
         v       = "nvim";
         x       = "exit";
-        do      = "doas";
         c       = "clear";
         rmr     = "rm -r";
+	      code    = "codium";
         l       = "joshuto";
         py      = "python3";
         pipes   = "pipes.sh";
         wifi    = "doas nmtui";
         flakes  = "nvim ~/Flakes/flake.nix";
       };
+
       initExtra = ''
         export PATH="$PATH:$HOME/.local/bin"
 

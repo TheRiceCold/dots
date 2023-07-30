@@ -1,3 +1,3 @@
 [
-  ./neovim
+  ./helix
 ]

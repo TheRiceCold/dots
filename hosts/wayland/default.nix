@@ -12,9 +12,12 @@
       initialPassword = "password";
 
       extraGroups = [             # Enable ‘sudo’ for the user.
-        "wheel" "networkmanager" 
-        "docker" "video" 
-        "audio" "camera" 
+        "wheel" 
+        "networkmanager" 
+        "docker" 
+        "video" 
+        "audio" 
+        "camera" 
       ]; 
 
       packages = with pkgs; [
@@ -51,7 +54,7 @@
     systemPackages = with pkgs; [
       grim
       mako
-      swaybg
+      swww
       pamixer
 
       waybar
@@ -61,6 +64,7 @@
       xwayland
       wlr-randr
       eww-wayland
+      polkit_gnome
       rofi-wayland
       wl-clipboard
       wayland-utils
@@ -85,5 +89,31 @@
   };
 
   console.useXkbConfig = true;
-  security.sudo.enable = true;
+
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+  };
+
+  security = {
+    polkit.enable = true;
+    sudo.enable = false;
+    doas = {
+      enable = true;
+      extraConfig = "
+        permit nopass :wheel
+      ";
+    };
+  };
 }

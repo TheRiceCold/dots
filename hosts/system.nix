@@ -8,8 +8,8 @@
     android_sdk.accept_license = true;
   };
 
-  time.timeZone       = "Asia/Manila";  # TIME ZONE
-  i18n.defaultLocale  = "en_US.UTF-8";
+  time.timeZone = "Asia/Manila";  # TIME ZONE
+  i18n.defaultLocale = "en_US.UTF-8";
 
   networking = {
     hostName = "NixOS";                 # HOSTNAME.
@@ -33,7 +33,6 @@
       packages = with pkgs; [
         pavucontrol
         neofetch
-        joshuto
         kitty
     	  xclip
 	      btop
@@ -44,17 +43,13 @@
         cargo
         rustc               # Rust
         python39            # Python
-        elmPackages.nodejs  # NodeJS 14.21.3
-        jdk11               # JDK 17 [Java Development Kit]
+        elmPackages.nodejs  # NodeJS 14.21.3 
+	      jdk11               # JDK 11 [Java Development Kit]
 
         vscodium            # Code Editor
+	      obsidian	          # Obsidian
 
         scrcpy
-        # android-tools       # Android Tools 
-
-        # Android Studio
-        # androidStudioPackages.dev
-
         qemu_kvm
       ];
     };
@@ -81,8 +76,8 @@
     clang
     unzip
     helix
-    docker
     neovim
+    docker
     zoxide
     gnumake
     lazygit
@@ -121,7 +116,6 @@
 
   security = {
     rtkit.enable  = true;
-    polkit.enable = true;
   };
 
   nix = {
@@ -146,6 +140,6 @@
       enable  = false;
       channel = "https://nixos.org/channels/nixos-unstable";
     };
-    stateVersion = "22.11";
+    stateVersion = "23.05";
   };
 }

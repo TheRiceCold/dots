@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  imports = [ ./colors/tokyonight.nix ];
+  imports = [ ./colors/ayu.nix ];
 
   programs.kitty = {
     enable = true;

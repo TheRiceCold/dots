@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [ (import ./environments.nix) ];
@@ -13,7 +13,6 @@
     };
   };
 
-  systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland = {
@@ -24,23 +23,12 @@
     systemdIntegration = true;
     extraConfig = ''
       monitor   = eDP-1,1920x1080@60,0x0,1  # Monitor
-      exec-once = fcitx5 -D                 # Keyboard 
+      exec-once = fcitx5 -D                 # Keyboard
       exec-once = blueman-applet            # Bluetooth
 
-      exec-once = eww daemon
       exec-once = waybar                    # Status Bar
-      exec-once = dunst                     # Notification 
-
-      # Wallpaper
-      exec-once=swaybg -o \* -i ~/.config/hypr/wallpapers/landscape.jpg -m fill
-      # For lockscreen
-      exec-once=swayidle -w timeout 200 'swaylock-fancy'
 
       exec-once = ~/.config/hypr/scripts/startpage.sh # Start Page
-
-      # Screen Sharing 
-      exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-      exec-once=~/.config/hypr/scripts/screensharing.sh
 
       input {
         repeat_rate   = 50
@@ -67,44 +55,63 @@
       }
 
       general {
-        layout=dwindle
-        sensitivity=1.0 # for mouse cursor
+        layout = dwindle
+        sensitivity = 1.0 # for mouse cursor
 
         gaps_in = 4
-        gaps_out = 16
+        gaps_out = 4
         border_size = 2
-        col.active_border = 0xff5e81ac
-        col.inactive_border = 0x66333333
+	      no_cursor_warps = true
+	      no_border_on_floating = false
+        col.inactive_border = 0xff382D2E
+        col.active_border = rgba(a28b35ff) 45deg
 
         apply_sens_to_raw=0 # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
       }
 
+      # DECORATION
       decoration {
         rounding = 4
 
         # BLUR
-        blur        = yes
-        blur_size   = 8 # minimum 1
-        blur_passes = 5 # minimum 1, more passes = more resource intensive.
+        blur = yes
+        blur_size = 5
+        blur_passes = 3
+	      blur_xray = true
+	      blur_ignore_opacity = true
         blur_new_optimizations = true   
+
+	      # SHADOW
+	      shadow_range = 10
+	      shadow_offset = 1 2
+	      drop_shadow = false
+	      col.shadow = 0x66404040
+	      shadow_render_power = 5
+	      shadow_ignore_window = true
         
         # OPACITY
         active_opacity = 0.85
         inactive_opacity = 0.75
         fullscreen_opacity = 1.0
+
+	      blurls = waybar
+	      blurls = lockscreen
       }
 
-      blurls=lockscreen
-
       animations {
-        enabled=1
-        bezier = overshot, 0.13, 0.99, 0.29, 1.1
-
-        animation = fade, 1, 8, default
-        animation = border, 1, 5, default
-        animation = windows, 1, 4, overshot, slide
-        animation = windowsOut, 1, 5, default, popin 80%
-        animation = workspaces, 1, 6, overshot, slidevert
+        enabled = yes
+        bezier = wind, 0.05, 0.9, 0.1, 1.05
+        bezier = winIn, 0.1, 1.1, 0.1, 1.1
+        bezier = winOut, 0.3, -0.3, 0, 1
+        bezier = liner, 1, 1, 1, 1
+        animation = windows, 1, 6, wind, slide
+        animation = windowsIn, 1, 6, winIn, slide
+        animation = windowsOut, 1, 5, winOut, slide
+        animation = windowsMove, 1, 5, wind, slide
+        animation = border, 1, 1, liner
+        animation = borderangle, 1, 30, liner, loop
+        animation = fade, 1, 10, default
+        animation = workspaces, 1, 5, wind
       }
 
       dwindle {
@@ -124,11 +131,13 @@
       }
 
       misc {
-        disable_autoreload = true
         disable_hyprland_logo = true
-        always_follow_on_dnd = true
-        layers_hog_keyboard_focus = true
-        animate_manual_resizes = false
+	      disable_splash_rendering = true
+	      mouse_move_enables_dpms = true
+
+        animate_manual_resizes = true
+	      mouse_move_focuses_monitor = true
+
         enable_swallow = true
         swallow_regex =
         focus_on_activate = true
@@ -142,7 +151,7 @@
       # Increase the opacity 
       windowrule = opacity 0.5,glava
       windowrule = opacity 0.8,kitty
-      windowrule = opacity 0.8,VSCodium
+      windowrule = opacity 0.95,codium
 
       ^.*nvim.*$
       windowrule  = tile,spotify
@@ -169,7 +178,6 @@
       bind = SUPERSHIFT,C,exec,bash ~/.config/hypr/scripts/hyprPicker.sh
       bind = SUPERSHIFT,E,exec,wlogout
       bind = SUPER, T, togglefloating,
-      bind = SUPERSHIFT,P,exec,pomotroid --in-process-gpu
 
       bind=SUPERSHIFT,S,exec,grim -g "$(slurp)" - | swappy -f -   # Screenshot 
       bind=SUPER,R,exec,wf-recorder -g "$(slurp)"                 # Screen Recorder
