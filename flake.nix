@@ -54,6 +54,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    joshuto.url = "github:kamiyaa/joshuto";
+
     flake-parts.url = "github:hercules-ci/flake-parts";         # Flake Parts
   };
 }
