@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  imports = [ ./colors/ayu.nix ];
+  imports = [ ./colors/gruvbox_dark.nix ];
 
   programs.kitty = {
     enable = true;

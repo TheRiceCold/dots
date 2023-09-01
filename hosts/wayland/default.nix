@@ -2,7 +2,7 @@
 
 {
  imports = 
-  (import ../../modules/virtualisation) 
+  (import ../../modules/virtualisation)
   ++ [ ../../modules/desktop/hyprland ];
 
   users.users = {

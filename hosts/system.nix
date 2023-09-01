@@ -31,26 +31,34 @@
       ]; # Enable ‘sudo’ for the user.
 
       packages = with pkgs; [
-        pavucontrol
-        neofetch
-        kitty
-    	  xclip
 	      btop
-
-        google-chrome  
+        kitty               # Terminal Emulator
+      	xclip
+        neofetch
+        pavucontrol         # Audio/Volume Control
+        google-chrome       # Browser
+        libsForQt5.dolphin  # File Manager
 
         yarn
         cargo
         rustc               # Rust
+        nodejs
         python39            # Python
-        elmPackages.nodejs  # NodeJS 14.21.3 
-	      jdk11               # JDK 11 [Java Development Kit]
 
+        emacs
+	      postman
         vscodium            # Code Editor
-	      obsidian	          # Obsidian
+        obsidian	          # Obsidian
 
         scrcpy
         qemu_kvm
+
+        # Game Development Packages
+        godot_4
+        unityhub
+
+        pulseeffects-legacy # Equalizer
+        obs-studio
       ];
     };
   };
@@ -74,14 +82,13 @@
     tmux
     wget
     clang
-    unzip
-    helix
     neovim
     docker
     zoxide
     gnumake
     lazygit
     ripgrep
+    transmission  # BitTorrent client
   ];
 
   sound.enable = true; # Enable Sound
@@ -101,7 +108,6 @@
     blueman.enable    = true;
     openssh.enable    = true;
   };
-
 
   hardware = {
     opengl = {
@@ -140,6 +146,6 @@
       enable  = false;
       channel = "https://nixos.org/channels/nixos-unstable";
     };
-    stateVersion = "23.05";
+    stateVersion = "22.11";
   };
 }

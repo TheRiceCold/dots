@@ -27,7 +27,6 @@
       exec-once = blueman-applet            # Bluetooth
 
       exec-once = waybar                    # Status Bar
-
       exec-once = ~/.config/hypr/scripts/startpage.sh # Start Page
 
       input {
@@ -152,10 +151,9 @@
       windowrule = opacity 0.5,glava
       windowrule = opacity 0.8,kitty
       windowrule = opacity 0.95,codium
+      windowrule = opacity 0.95,neovide
 
       ^.*nvim.*$
-      windowrule  = tile,spotify
-      windowrule  = tile,librewolf
       bindm=SUPER,mouse:272,movewindow
       bindm=SUPER,mouse:273,resizewindow
 
