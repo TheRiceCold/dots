@@ -27,7 +27,7 @@
       exec-once = blueman-applet            # Bluetooth
 
       exec-once = waybar                    # Status Bar
-      exec-once = ~/.config/hypr/scripts/startpage.sh # Start Page
+      # exec-once = ~/.config/hypr/scripts/startpage.sh # Start Page
 
       input {
         repeat_rate   = 50

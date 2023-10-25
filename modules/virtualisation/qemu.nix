@@ -1,16 +1,23 @@
 #Qemu/KVM with virt-manager
 { pkgs, user, ... }:
 {
-  environment = {
-    systemPackages = with pkgs; [ virt-manager ];
+  boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
+  virtualisation.libvirtd.enable = true;
+  environment.systemPackages = with pkgs; [ 
+    virt-manager 
+    spice-vdagent 
+  ];
+
+  services.spice-vdagentd.enable = true;
+  systemd.user.services.spice-agent = { 
+    enable = true;
+    wantedBy = ["graphical-session.target"]; 
+    serviceConfig = { ExecStart = "${pkgs.spice-vdagent}/bin/spice-vdagent -x"; }; 
+    unitConfig = { ConditionVirtualization = "vm"; 
+        Description = "Spice guest session agent"; 
+        After = ["graphical-session-pre.target"];
+        PartOf = ["graphical-session.target"];
+    }; 
   };
-  virtualisation = {
-    libvirtd = {
-      enable = true;
-      # onBoot = "ignore";
-    };
-  };
-  networking.firewall.trustedInterfaces = [ "virbr0" ];
-  programs.dconf.enable = true;
-  users.groups.libvirtd.members = [ "${user}" ];
+
 }

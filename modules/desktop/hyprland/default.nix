@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ../../programs/waybar ];
+  imports = [ ../../programs/wayland/waybar ];
 
   environment.systemPackages = with pkgs; [ ];
 }

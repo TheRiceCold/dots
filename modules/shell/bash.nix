@@ -4,17 +4,18 @@
     bash = {
       enable = true;
       shellAliases = {
-        cd      = "z";
-        v       = "nvim";
-        x       = "exit";
-        c       = "clear";
-        rmr     = "rm -r";
-	      code    = "codium";
-        l       = "joshuto";
-        pipes   = "pipes.sh";
-        wifi    = "doas nmtui";
-        trc     = "transmission-cli";
-        dot     = "codium ~/dotfiles";
+        cd = "z";
+        v = "lvim";
+        x = "exit";
+        c = "clear";
+        rmr = "rm -r";
+        l = "joshuto";
+	      code = "codium";
+        pipes = "pipes.sh";
+        wifi = "doas nmtui";
+        flakes = "lvim ~/Flakes";
+        trc = "transmission-cli";
+        docker-compose = "podman-compose";
       };
 
       initExtra = ''

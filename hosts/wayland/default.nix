@@ -5,28 +5,6 @@
   (import ../../modules/virtualisation)
   ++ [ ../../modules/desktop/hyprland ];
 
-  users.users = {
-    root.initialPassword = "password";
-    wolly = {
-      isNormalUser    = true;
-      initialPassword = "password";
-
-      extraGroups = [             # Enable ‘sudo’ for the user.
-        "wheel" 
-        "networkmanager" 
-        "docker" 
-        "video" 
-        "audio" 
-        "camera" 
-      ]; 
-
-      packages = with pkgs; [
-    	  xclip
-        pipes
-      ];
-    };
-  };
-
   # Bootloader
   boot = {
     cleanTmpDir = true;

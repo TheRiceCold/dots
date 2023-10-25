@@ -16,25 +16,25 @@ in {
           layer = "top";
           position = "top";
           height = 30;
-	  exclusive = true;
-	  passthrough = false;
-	  gtk-layer-shell = true;
+          exclusive = true;
+          passthrough = false;
+          gtk-layer-shell = true;
 
           modules-left = [ "custom/launcher" ];
-	  modules-center = [ "tray" ];
+          modules-center = [ "tray" ];
           modules-right = [ 
-	    "pulseaudio" 
-	    "network" 
-	    "battery" 
-	    "custom/date" 
-	    "clock" 
-	  ];
+            "pulseaudio" 
+            "network" 
+            "battery" 
+            "custom/date" 
+            "clock" 
+          ];
 
-	  "custom/launcher" = {
-	    format = "󰈸";
-    	    on-click = "bash $HOME/.config/rofi/launcher.sh";
-    	    on-click-right = "bash $HOME/.config/rofi/run.sh";
-	  };
+          "custom/launcher" = {
+            format = "⌘";
+            on-click = "bash $HOME/.config/rofi/launcher.sh";
+            on-click-right = "bash $HOME/.config/rofi/run.sh";
+          };
 
           pulseaudio = {
             format = "{icon} {volume}%";

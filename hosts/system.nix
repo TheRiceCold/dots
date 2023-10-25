@@ -11,8 +11,10 @@
   time.timeZone = "Asia/Manila";  # TIME ZONE
   i18n.defaultLocale = "en_US.UTF-8";
 
+  # NETWORKING
   networking = {
     hostName = "NixOS";                 # HOSTNAME.
+    firewall.enable = false;            # FIREWALL
     networkmanager.enable = true;       # NETWORK MANAGER
   };
 
@@ -23,32 +25,39 @@
 
       extraGroups = [ 
         "wheel" 
-        "docker" 
         "video" 
         "audio" 
         "camera" 
         "networkmanager" 
+
+        # "docker" 
+        "podman"
+        "libvirtd" 
+        "qemu-libvirtd" 
       ]; # Enable ‘sudo’ for the user.
 
       packages = with pkgs; [
-	      btop
+        btop
         kitty               # Terminal Emulator
-      	xclip
         neofetch
         pavucontrol         # Audio/Volume Control
+        qutebrowser         # Keyboard-focused minimal browser
         google-chrome       # Browser
-        libsForQt5.dolphin  # File Manager
 
-        yarn
+        mpv                 # Media Player
+
         cargo
         rustc               # Rust
-        nodejs
         python39            # Python
 
-        emacs
-	      postman
-        vscodium            # Code Editor
+
+        postman
+
+        # Editor
+        # emacs
+        # vscodium
         obsidian	          # Obsidian
+        zathura             # PDF Viewer
 
         scrcpy
         qemu_kvm
@@ -57,8 +66,13 @@
         godot_4
         unityhub
 
-        pulseeffects-legacy # Equalizer
         obs-studio
+        pulseeffects-legacy # Equalizer
+
+        # NodeJS and Node Packages
+        nodejs
+        nodePackages_latest.pnpm
+        nodePackages.live-server
       ];
     };
   };
@@ -80,14 +94,22 @@
     dash
     lsof
     tmux
+    tree
     wget
     clang
-    neovim
-    docker
+    unzip
+    # neovim
+
+    # Virtualization
+    # docker
+    podman
+
     zoxide
     gnumake
     lazygit
     ripgrep
+
+    axel          # CLI download accelerator
     transmission  # BitTorrent client
   ];
 

@@ -2,7 +2,7 @@
 
 {
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "lvim";
     __GL_VRR_ALLOWED = "0";
     __GL_GSYNC_ALLOWED = "0";
     _JAVA_AWT_WM_NONPARENTING = "1";
