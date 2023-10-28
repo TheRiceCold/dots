@@ -1,4 +1,7 @@
-let 
-  common = import ./common;
-in
-[ ] ++ common
+[
+  ./rofi
+  # ./tmux
+  # ./kitty
+  # ./neofetch
+  # ./dunst.nix
+]
