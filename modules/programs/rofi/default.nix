@@ -1,4 +1,4 @@
-{ config, user, lib, pkgs, ... }:
+{ config, user, pkgs, lib, ... }:
 
 {
   config = lib.mkIf (config.wlwm.enable) {

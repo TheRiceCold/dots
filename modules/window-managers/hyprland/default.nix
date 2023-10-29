@@ -33,24 +33,23 @@ with lib;
 
       systemPackages = with pkgs; [
         grim            # Grab Images
-        # slurp           # Region Selector
+        swww            # Wallpaper daemon
         swappy          # Snapshot Editor
         swaylock        # Lock Screen
         wlr-randr       # Monitor Settings
         hyprpicker      # Color Picker
         wl-clipboard    # Clipboard
 
-    #     mako
-    #     swww
-    #     pamixer
-    #     wlogout
-    #     wayland
-    #     wlsunset          # Day/night gamma adjustments for Wayland
-    #     xwayland
-    #     eww-wayland
-    #     polkit_gnome
-    #     wayland-utils
-    #     wayland-protocols
+        # slurp           # Region Selector
+        # mako
+        # pamixer
+        # wlogout
+        # wayland
+        # wlsunset        # Day/night gamma adjustments for Wayland
+        # xwayland
+        # polkit_gnome
+        # wayland-utils
+        # wayland-protocols
       ];
     };
 
@@ -76,6 +75,7 @@ with lib;
     
     home-manager.users.${user} = {
       xdg.configFile."hypr/hyprland.conf".text = import ./config.nix;
+      xdg.configFile."hypr/hyprland/wallpapers".source = import ./wallpapers
     };
   };
 }

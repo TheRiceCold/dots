@@ -3,23 +3,26 @@
   programs.bash = {
     shellAliases = {
       x = "exit";
+      v = "lvim";
       c = "clear";
-      v = "~/.local/bin/lvim";
 
       wifi = "doas nmtui";
       trc = "transmission-cli";
       docker-compose = "podman-compose";
+      
+      flakes = "lvim ~/Flakes";
+      emacsd = "lvim ~/.emacs.d";
     };
 
-    shellInit = ''
-      export PATH = "$PATH:$HOME/.local/bin"
+    interactiveShellInit = ''
+      export PATH="$PATH:$HOME/.local/bin"
 
       killport() {
         kill $(lsof -t -i:$1) 
       }
 
       reflake() {
-        doas nixos-rebuild switch --flake .#1
+        doas nixos-rebuild switch --flake .#$1
       }
 
       reflake_collect() {

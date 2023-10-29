@@ -11,7 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    home-manager = {                                              # User Environment Manager
+    home-manager = {                                               # User Environment Manager
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };

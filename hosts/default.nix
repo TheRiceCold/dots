@@ -33,14 +33,32 @@ in
     ];
   };
 
-  vm = lib.nixosSystem {
-    inherit system;
-    specialArgs = { inherit inputs unstable; };
-    modules = [
-      hm.nixosModules.home-manager {
-        home-manager.useGlobaPkgs = true;
-        home-manager.useUserPackages = true;
-      }
-    ];
-  };
+  # minimal = lib.nixosSystem {
+  #   inherit system;
+  #   specialArgs = { inherit inputs user unstable; };
+  #   modules = [ 
+  #     ./minimal
+  #     ./system.nix 
+  #     inputs.nur.nixosModules.nur 
+  #     hm.nixosModules.home-manager {
+  #       home-manager = {
+  #         useGlobalPkgs = true;
+  #         useUserPackages = true;
+  #       };
+  #     }
+  #   ];
+  # };
+
+  # vm = lib.nixosSystem {
+  #   inherit system;
+  #   specialArgs = { inherit inputs unstable; };
+  #   modules = [
+  #     ./vm
+  #     ./system.nix 
+  #     hm.nixosModules.home-manager {
+  #       home-manager.useGlobaPkgs = true;
+  #       home-manager.useUserPackages = true;
+  #     }
+  #   ];
+  # };
 }

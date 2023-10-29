@@ -1,7 +1,8 @@
 [
+  ./eww
   ./rofi
   # ./tmux
-  # ./kitty
-  # ./neofetch
+  ./kitty
+  ./neofetch
   # ./dunst.nix
 ]

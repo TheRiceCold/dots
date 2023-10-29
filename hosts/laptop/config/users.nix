@@ -25,9 +25,9 @@
       podman              # Docker Alternative
       zathura             # PDF Viewer
       qemu_kvm            # 
-      neofetch            #
       pavucontrol         # Audio Control
       transmission        # BitTorrent client
+      cool-retro-term     #
     ] ++ (with unstable; [
       emacs
       google-chrome       # Browser

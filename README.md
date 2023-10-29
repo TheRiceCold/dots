@@ -5,6 +5,8 @@
 </h1>
 <p align="center">:snowflake: Wolly's NixOS configuration Flake :snowflake:</p>
 
+# Screenshots
+
 # Installation Guide
 You will need to download [NixOS minimal installation](https://nixos.org/download#:~:text=without%20a%20desktop.-,Minimal%20ISO%20image,-The%20minimal%20installation) ISO and create a bootable disk/usb.
 <details>
@@ -17,22 +19,12 @@ You will need to download [NixOS minimal installation](https://nixos.org/downloa
     </li>
     <li>
       <a href="#"> 
-        2. Mouting 
+        2. Mounting 
       </a>
     </li>
     <li>
       <a href="#"> 
-        3. Generate Basic Config
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        4. Clone Repository
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        5. Finish Install
+        3. Installation
       </a>
     </li>
   </ul>
@@ -45,9 +37,9 @@ You can use `cfdisk` for create 3 partition if your on UEFI boot:
 | ----- | -------------- | ----- |
 | Boot  | /dev/nvme0n1p1 | 100MB |
 | Swap  | /dev/nvme0n1p2 |  8GB  |
-| Home  | /dev/nvme0n1p3 | Rest  |
+| Root  | /dev/nvme0n1p3 | Rest  |
 
-- Format created partitions
+- **Format created partitions**
     - Boot
     ```
     mkfs.fat -F 32 -n boot /dev/nvme0n1p1
@@ -56,7 +48,7 @@ You can use `cfdisk` for create 3 partition if your on UEFI boot:
     ```
     mkswap -L /dev/nvme0n1p2
     ```
-    - Home
+    - Root
     ```
     mkfs.ext4 -L nixos /dev/nvme0n1p3
     ```
@@ -72,36 +64,16 @@ mount /dev/disk/by-label/nixos /mnt
 mkdir -p /mnt/boot && mount /dev/disk/by-label/boot /mnt/boot
 ```
 
-### 3. Generate Basic Configuration
+### 3. Installation
+- Choose a script file to install in scripts dir: `install-laptop.sh`, `install-minimal.sh`, `install-vm.sh`
 ```
-nixos-generate-config --root /mnt
-```
-
-### 4. Clone Repository
-- Install git (virtually)
-```
-nix-shell -p git
-```
-- Clone this repo. 
-```
-git clone https://github.com/kaizen-dw/Flakes
-```
-- Copy/Overwrite `hardware-configuration.nix`
-```
-cp /mnt/etc/nixos/hardware-configuration.nix ~/Flakes/hosts/hardware-configuration.nix
-```
-
-### 5. Finish Installation
-- Go to Flakes directory and install
-```
-cd Flakes && nixos-install --flake .#wolly
+chmod +x ~/Flakes/scripts/<script-file> && ~/Flakes/scripts/<script-file>
 ```
 - Reboot your computer
 ```
 reboot
 ```
-- Login username and password. Change them at `~/Flakes/hosts/system.nix` line 22 to 24
+- (Optional) Run `setup.sh` for additional apps
 ```
-username: wolly
-password: password
+chmod +x ~/Flakes/scripts/setup.sh && ~/Flakes/scripts/setup.sh
 ```

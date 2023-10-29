@@ -4,6 +4,7 @@
   exec-once = fcitx5 -D                 # Keyboard
   exec-once = blueman-applet            # Bluetooth
   exec-once = waybar                    # Status Bar
+  exec-once = swww init                 #
 
   input {
     repeat_rate   = 50
@@ -119,40 +120,30 @@
   }
 
   # Float Necessary Windows
-  windowrule = float,Rofi
-  windowrule = float,glava
-  windowrule = float,pavucontrol
+  windowrule = float, Rofi
+  windowrule = float, pavucontrol
 
   # Increase the opacity 
-  windowrule = opacity 0.8,emacs
-  windowrule = opacity 0.8,kitty
+  windowrule = opacity 0.9, emacs
+  windowrule = opacity 0.9, kitty
 
   ^.*nvim.*$
-  bindm=SUPER,mouse:272,movewindow
-  bindm=SUPER,mouse:273,resizewindow
+  bindm = SUPER, mouse:272, movewindow
+  bindm = SUPER, mouse:273, resizewindow
 
-  # example binds
-  bind = SUPER,Q,killactive
-  bind = SUPER,F,fullscreen,1
-  bind = SUPER,RETURN,exec,kitty
-  bind = SUPERSHIFT,F,fullscreen,0
-  bind = SUPER,B,exec,google-chrome-stable
-  bind = SUPERSHIFT,Q,exit,
-  bind = SUPER,SPACE,exec, rofi -show drun
-
-  bind =,XF86AudioMute,exec,~/.config/hypr/scripts/volume mute
-  bind =,XF86AudioRaiseVolume,exec,~/.config/hypr/scripts/volume up
-  bind =,XF86AudioLowerVolume,exec,~/.config/hypr/scripts/volume down
-  bind =,XF86AudioMicMute,exec,pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
-  bindle=,XF86MonBrightnessUp,exec,~/.config/hypr/scripts/brightness up  # increase screen brightness
-  bindle=,XF86MonBrightnessDown,exec,~/.config/hypr/scripts/brightness down # decrease screen brightness
-  bind = SUPERSHIFT,C,exec,bash ~/.config/hypr/scripts/hyprPicker.sh
-  bind = SUPERSHIFT,E,exec,wlogout
+  bind = SUPER, Q, killactive
+  bind = SUPER, F, fullscreen,1
+  bind = SUPER, RETURN, exec, kitty
+  bind = SUPERSHIFT, F, fullscreen,0
+  bind = SUPER, B, exec, google-chrome-stable
+  bind = SUPERSHIFT, Q, exit,
+  bind = SUPER, SPACE, exec, rofi -show drun
+  bind = SUPERSHIFT, C, exec, hyprpicker -a
+  bind = SUPERSHIFT, E, exec, wlogout
   bind = SUPER, T, togglefloating,
 
-  bind=SUPERSHIFT,S,exec,grim -g "$(slurp)" - | swappy -f -   # Screenshot 
-  bind=SUPER,R,exec,wf-recorder -g "$(slurp)"                 # Screen Recorder
+  bind = SUPERSHIFT, S, exec, grim -g "$(slurp)" - | swappy -f -   # Screenshot 
+  bind = SUPER,R,exec,wf-recorder -g "$(slurp)"                 # Screen Recorder
 
   bind=SUPERSHIFT,RETURN,layoutmsg,swapwithmaster
 
