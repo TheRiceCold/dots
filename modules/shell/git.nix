@@ -1,8 +1,1 @@
-{
-  programs = {
-    git = {
-      userName = "dwghdev";
-      userEmail = "dalewaltergh@gmail.com";
-    };
-  };
-}
+{ programs.git.enable = true; }

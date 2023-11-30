@@ -1,45 +1,39 @@
 { pkgs, ... }:
 {
-  programs = {
-    bash = {
-      enable = true;
-      shellAliases = {
-        cd = "z";
-        v = "lvim";
-        x = "exit";
-        c = "clear";
-        rmr = "rm -r";
-        l = "joshuto";
-	      code = "codium";
-        pipes = "pipes.sh";
-        wifi = "doas nmtui";
-        flakes = "lvim ~/Flakes";
-        trc = "transmission-cli";
-        docker-compose = "podman-compose";
-      };
+  programs.bash = {
+    shellAliases = {
+      x = "exit";
+      v = "lvim";
+      c = "clear";
 
-      initExtra = ''
-        export PATH="$PATH:$HOME/.local/bin"
+      wifi = "doas nmtui";
+      trc = "transmission-cli";
+      docker-compose = "podman-compose";
+      
+      flakes = "lvim ~/Flakes";
+      emacsd = "lvim ~/.emacs.d";
+      docker-docs = "podman run -ti -p 4000:4000 docs/docker.github.io:latest";
 
-        killport() {
-          kill $(lsof -t -i:$1) 
-        }
-
-        reflake() {
-          doas nix-collect-garbage -d && doas nixos-rebuild switch --flake .#$1
-        }
-
-        reflake_bash() {
-          reflake $1 && source ~/.bashrc
-        }
-
-        reflake_reboot() {
-          reflake $1 && reboot
-        }
-
-        eval "$(zoxide init bash)"
-        neofetch
-      '';
+      rollback = "doas nixos-rebuild switch --rollback";
     };
+
+    interactiveShellInit = ''
+      export PATH="$PATH:$HOME/.local/bin"
+
+      killport() {
+        kill $(lsof -t -i:$1) 
+      }
+
+      reflake() {
+        doas nixos-rebuild switch --flake .#$1
+      }
+
+      reflake_collect() {
+        doas nix-collect-garbage -d && reflake $1
+      }
+
+      eval "$(zoxide init bash)"
+      neofetch
+    '';
   };
 }

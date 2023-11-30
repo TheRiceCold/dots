@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, unstable, ... }:
 
 {
   virtualisation = {
@@ -17,5 +17,9 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ podman-tui ];
+  environment.systemPackages = with pkgs; [ 
+    podman-tui 
+  ] ++ (with unstable; [ 
+    podman-compose 
+  ]);
 }

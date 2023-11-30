@@ -1,33 +1,64 @@
-{ self, nixpkgs, inputs, ... }:
+{ self, inputs, ... }:
 
 let
   user = "wolly";
-  lib = nixpkgs.lib;
   system = "x86_64-linux";
-in
+  lib = inputs.nixpkgs.lib;
+  hm = inputs.home-manager;
 
-{
-  wolly = lib.nixosSystem {
+  pkgs = import inputs.nixpkgs {
     inherit system;
-    specialArgs = { inherit inputs user; };
-    modules =
-      [ ./wayland ] ++
-      [ ./system.nix ] ++
-      [ inputs.nur.nixosModules.nur ] ++
-      [ inputs.home-manager.nixosModules.home-manager {
-          home-manager = {
-            useGlobalPkgs     = true;
-            useUserPackages   = true;
-            extraSpecialArgs  = { inherit user; };
-            users.${user} = {
-              imports =
-                [ (import ./wayland/home.nix) ] ++
-                [ inputs.hyprland.homeManagerModules.default ];
-            };
-          };
-          nixpkgs = {
-            overlays = [];
-          };
-      }];
+    config.allowUnfree = true;  # Allow Proprietary Software
   };
+
+  unstable = import inputs.nixpkgs-unstable {
+    inherit system;
+    config.allowUnfree = true;
+  };
+in 
+{
+  laptop = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit inputs user unstable; };
+    modules = [ 
+      ./laptop
+      ./system.nix 
+      inputs.nur.nixosModules.nur 
+      hm.nixosModules.home-manager {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+        };
+      }
+    ];
+  };
+
+  # minimal = lib.nixosSystem {
+  #   inherit system;
+  #   specialArgs = { inherit inputs user unstable; };
+  #   modules = [ 
+  #     ./minimal
+  #     ./system.nix 
+  #     inputs.nur.nixosModules.nur 
+  #     hm.nixosModules.home-manager {
+  #       home-manager = {
+  #         useGlobalPkgs = true;
+  #         useUserPackages = true;
+  #       };
+  #     }
+  #   ];
+  # };
+
+  # vm = lib.nixosSystem {
+  #   inherit system;
+  #   specialArgs = { inherit inputs unstable; };
+  #   modules = [
+  #     ./vm
+  #     ./system.nix 
+  #     hm.nixosModules.home-manager {
+  #       home-manager.useGlobaPkgs = true;
+  #       home-manager.useUserPackages = true;
+  #     }
+  #   ];
+  # };
 }

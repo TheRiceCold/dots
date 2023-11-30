@@ -1,7 +1,10 @@
-#Qemu/KVM with virt-manager
-{ pkgs, user, ... }:
+# Qemu/KVM with virt-manager
+{ user, pkgs, ... }:
 {
-  boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
+  boot.kernelModules = [ 
+    "kvm-amd" # "kvm-intel" 
+  ];
+
   virtualisation.libvirtd.enable = true;
   environment.systemPackages = with pkgs; [ 
     virt-manager 
@@ -19,5 +22,4 @@
         PartOf = ["graphical-session.target"];
     }; 
   };
-
 }
