@@ -1,5 +1,5 @@
-#Qemu/KVM with virt-manager
-{ pkgs, user, ... }:
+# Qemu/KVM with virt-manager
+{ user, pkgs, ... }:
 {
   boot.kernelModules = [ 
     "kvm-amd" # "kvm-intel" 

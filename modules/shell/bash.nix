@@ -12,6 +12,9 @@
       
       flakes = "lvim ~/Flakes";
       emacsd = "lvim ~/.emacs.d";
+      docker-docs = "podman run -ti -p 4000:4000 docs/docker.github.io:latest";
+
+      rollback = "doas nixos-rebuild switch --rollback";
     };
 
     interactiveShellInit = ''

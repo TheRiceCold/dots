@@ -1,18 +1,18 @@
 { pkgs, ... }:
 {
   programs.tmux = {
-    enable        = true;
-    clock24       = true;
-    terminal      = "xterm-256color";
-    keyMode       = "vi";
-    escapeTime    = 0;
-    baseIndex     = 1;
-    secureSocket  = false;
-    historyLimit  = 10000;
+    enable = true;
+    baseIndex = 1;
+    clock24 = true;
+    keyMode = "vi";
+    escapeTime = 0;
+    historyLimit = 10000;
+    secureSocket = false;
+    terminal = "xterm-256color";
     extraConfig = '' 
       icon=""
       color_fg="#1C1C1C"
-      color_bg="#42A4F4"
+      color_bg="#739E6E"
 
       # Reloads Configuration
       unbind r

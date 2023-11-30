@@ -19,6 +19,7 @@ with lib;
       };
 
       sessionVariables = {
+        EDITOR = "nvim";
         WLR_BACKEND = "vulkan";
         WLR_RENDERER = "vulkan";
         WLR_NO_HARDWARE_CURSORS = "1";
@@ -27,8 +28,20 @@ with lib;
         MOZ_ENABLE_WAYLAND = "1";
         _JAVA_AWT_WM_NONPARENTING = "1";
 
+        QT_SCALE_FACTOR = "1";
         QT_QPA_PLATFORM = "wayland";
+        QT_QPA_PLATFORMTHEME = "gtk3";
+        QT_AUTO_SCREEN_SCALE_FACTOR = "1";
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+
+        NIXOS_OZONE_WL = "1";
+        __GL_VRR_ALLOWED = "0";
+        __GL_GSYNC_ALLOWED = "0";
+        SDL_VIDEODRIVER = "wayland";
+
+        DISABLE_QT5_COMPAT = "0";
+        CLUTTER_BACKEND = "wayland";
+        SSH_AUTO_SOCK = "/run/user/1000/keyring/ssh";
       };
 
       systemPackages = with pkgs; [
@@ -75,7 +88,6 @@ with lib;
     
     home-manager.users.${user} = {
       xdg.configFile."hypr/hyprland.conf".text = import ./config.nix;
-      xdg.configFile."hypr/hyprland/wallpapers".source = import ./wallpapers
     };
   };
 }

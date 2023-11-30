@@ -5,30 +5,47 @@
 </h1>
 <p align="center">:snowflake: Wolly's NixOS configuration Flake :snowflake:</p>
 
-# Screenshots
-
-# Installation Guide
-You will need to download [NixOS minimal installation](https://nixos.org/download#:~:text=without%20a%20desktop.-,Minimal%20ISO%20image,-The%20minimal%20installation) ISO and create a bootable disk/usb.
 <details>
-  <summary>Contents</summary>
+  <summary>View Contents</summary>
   <ul>
     <li>
-      <a href="#"> 
-        1. Partition 
+      <a href="#Screenshots"> 
+        Screenshots
       </a>
     </li>
     <li>
-      <a href="#"> 
-        2. Mounting 
+      <a href="#System%20%Components"> 
+        System Components
       </a>
     </li>
     <li>
-      <a href="#"> 
-        3. Installation
+      <a href="#Installation"> 
+        Installation
+      </a>
+    </li>
+    <li>
+      <a href="#Acknowledgements"> 
+        Acknowledgements
       </a>
     </li>
   </ul>
 </details>
+
+# 👀 Screenshots
+
+# System Components
+
+|              |   Wayland    |  Xorg   | 
+| ------------ | ------------ | ------- |
+| WM           | Hyprland     | DWM     |
+| Compositor   | Wayland      | Picom   |
+| Terminal     | Kitty        | ST      |
+| Used by host | Laptop       | Minimal |
+| Editor       | Neovim/Emacs | Neovim  |
+
+
+# 🔧 Installation Guide
+You will need to download [NixOS minimal installation](https://nixos.org/download#:~:text=without%20a%20desktop.-,Minimal%20ISO%20image,-The%20minimal%20installation) ISO and create a bootable disk/usb.
 
 ## 1. Partition
 You can use `cfdisk` for create 3 partition if your on UEFI boot:
@@ -52,6 +69,7 @@ You can use `cfdisk` for create 3 partition if your on UEFI boot:
     ```
     mkfs.ext4 -L nixos /dev/nvme0n1p3
     ```
+<p align="right"><a href="#top">back to top</a></p>
 
 ## 2. Mounting
 
@@ -63,17 +81,35 @@ mount /dev/disk/by-label/nixos /mnt
 ```
 mkdir -p /mnt/boot && mount /dev/disk/by-label/boot /mnt/boot
 ```
+<p align="right"><a href="#top">back to top</a></p>
 
 ### 3. Installation
-- Choose a script file to install in scripts dir: `install-laptop.sh`, `install-minimal.sh`, `install-vm.sh`
-```
-chmod +x ~/Flakes/scripts/<script-file> && ~/Flakes/scripts/<script-file>
-```
+- **Choose what host to install:**
+  - Laptop 
+    ```
+    chmod +x ~/Flakes/scripts/laptop.sh && ~/Flakes/scripts/laptop.sh
+    ```
+  - Minimal
+    ```
+    chmod +x ~/Flakes/scripts/minimal.sh && ~/Flakes/scripts/minimal.sh
+    ```
+  - Virtual Machine(VM)
+    ```
+    chmod +x ~/Flakes/scripts/vm.sh && ~/Flakes/scripts/vm.sh
+    ```
+
 - Reboot your computer
 ```
 reboot
 ```
-- (Optional) Run `setup.sh` for additional apps
-```
-chmod +x ~/Flakes/scripts/setup.sh && ~/Flakes/scripts/setup.sh
-```
+<p align="right"><a href="#top">back to top</a></p>
+
+# 🙏 Acknowledgements
+- [Ruixi]: NixOS configuration
+- [Matthias Benaets]: NixOS configuration
+- [Tai Aoki]: Yukopi Wallpaper Art
+
+<!-- Acknowledgements -->
+[Tai Aoki]: https://www.behance.net/Busker
+[Ruixi]: https://github.com/Ruixi-rebirth/melted-flakes
+[Matthias Benaets]: https://github.com/MatthiasBenaets/nixos-config

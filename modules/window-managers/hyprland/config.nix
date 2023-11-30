@@ -66,7 +66,7 @@
     shadow_ignore_window = true
     
     # OPACITY
-    active_opacity = 0.85
+    active_opacity = 0.9
     inactive_opacity = 0.75
     fullscreen_opacity = 1.0
 
@@ -124,8 +124,9 @@
   windowrule = float, pavucontrol
 
   # Increase the opacity 
-  windowrule = opacity 0.9, emacs
-  windowrule = opacity 0.9, kitty
+  # windowrule = opacity 0.9, emacs
+  # windowrule = opacity 0.9, kitty
+  # windowrule = opacity 0.9, google-chrome
 
   ^.*nvim.*$
   bindm = SUPER, mouse:272, movewindow
