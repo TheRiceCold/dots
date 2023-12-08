@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   services = {
@@ -25,5 +25,7 @@
         PASSPHRASE = "1234qwer";
       };
     };
+
+    # udev.packages = with pkgs; [ android-udev-rules ];
   };
 }

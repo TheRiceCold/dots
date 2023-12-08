@@ -15,6 +15,7 @@ in {
       "podman"
       "libvirtd" 
       "qemu-libvirtd" 
+      "adbusers"
     ];
 
     packages = with pkgs; [
@@ -41,10 +42,13 @@ in {
       # cool-retro-term
     ] ++ (with unstable; [
       # emacs
-      # scrcpy          #
       # blender         # 3D Creation/Animation System
-      tor-browser     # Privacy-focused browser routing traffic through the Tor network
-      google-chrome   # Browser
+      # helix
+      # scrcpy          # Display and control Android devices over USB or TCP/IP
+      audacity
+      starship
+      obs-studio
+      # libsForQt5.kdenlive
     ]);
   };
 }

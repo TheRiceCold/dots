@@ -68,7 +68,7 @@
     # OPACITY
     active_opacity = 0.9
     inactive_opacity = 0.75
-    fullscreen_opacity = 1.0
+    # fullscreen_opacity = 1.0
 
     blurls = waybar
     blurls = lockscreen
@@ -126,7 +126,7 @@
   # Increase the opacity 
   # windowrule = opacity 0.9, emacs
   # windowrule = opacity 0.9, kitty
-  # windowrule = opacity 0.9, google-chrome
+  # windowrule = opacity 0.9, thorium
 
   ^.*nvim.*$
   bindm = SUPER, mouse:272, movewindow
@@ -134,9 +134,9 @@
 
   bind = SUPER, Q, killactive
   bind = SUPER, F, fullscreen,1
+  bind = SUPER, B, exec, thorium
   bind = SUPER, RETURN, exec, kitty
   bind = SUPERSHIFT, F, fullscreen,0
-  bind = SUPER, B, exec, google-chrome-stable
   bind = SUPERSHIFT, Q, exit,
   bind = SUPER, SPACE, exec, rofi -show drun
   bind = SUPERSHIFT, C, exec, hyprpicker -a
