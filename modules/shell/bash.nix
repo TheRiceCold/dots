@@ -3,17 +3,14 @@
   programs.bash = {
     shellAliases = {
       x = "exit";
-      v = "lvim";
+      v = "nvim";
       c = "clear";
 
       wifi = "doas nmtui";
       trc = "transmission-cli";
       docker-compose = "podman-compose";
       
-      emacsd = "lvim ~/.emacs.d";
-      flakes = "lvim ~/nixos-flakes";
-      docker-docs = "podman run -ti -p 4000:4000 docs/docker.github.io:latest";
-
+      flakes = "nvim ~/nixos-flakes";
       rollback = "doas nixos-rebuild switch --rollback";
     };
 

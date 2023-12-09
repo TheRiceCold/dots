@@ -48,6 +48,7 @@ in {
       audacity
       starship
       obs-studio
+      firefox-wayland
       # libsForQt5.kdenlive
     ]);
   };
