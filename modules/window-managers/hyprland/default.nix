@@ -45,30 +45,27 @@ with lib;
       };
 
       systemPackages = with pkgs; [
-        grim            # Grab Images
         swww            # Wallpaper daemon
         swappy          # Snapshot Editor
         swaylock        # Lock Screen
         wlr-randr       # Monitor Settings
         hyprpicker      # Color Picker
-        wl-clipboard    # Clipboard
 
-        # slurp           # Region Selector
+        grim            # Grab Images
+        slurp           # Region Selector
+
+        # wl-clipboard    # Clipboard
+
         # mako
         # pamixer
         # wlogout
-        # wayland
         # wlsunset        # Day/night gamma adjustments for Wayland
-        # xwayland
-        # polkit_gnome
-        # wayland-utils
-        # wayland-protocols
       ];
     };
 
     security.pam.services.swaylock = {
       text = ''
-       auth include login
+        auth include login
       '';
     };
 

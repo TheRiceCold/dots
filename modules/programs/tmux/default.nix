@@ -3,12 +3,9 @@
   programs.tmux = {
     enable = true;
     baseIndex = 1;
-    clock24 = true;
     keyMode = "vi";
-    escapeTime = 0;
-    historyLimit = 10000;
-    secureSocket = false;
     terminal = "xterm-256color";
+
     extraConfig = '' 
       icon=""
       color_fg="#1C1C1C"
@@ -16,7 +13,6 @@
 
       # Reloads Configuration
       unbind r
-      bind r source-file ~/.tmux.conf
 
       # unbind s
       # bind s split-window -v
@@ -35,13 +31,14 @@
       set -g status-justify centre
       set -g status-right ""
 
-      # Plugins
-      set -g @plugin 'tmux-plugins/tpm'
-      set -g @plugin 'tmux-plugins/tmux-resurrect'
-      set -g @plugin 'tmux-plugins/tmux-continuum'
+      resurrect_dir="~/.local/share/tmux/resurrect"
 
-      # Initialize TPM plugin manager
-      run '~/.tmux/plugins/tpm/tpm'
+      set -g @plugin 'tmux-plugins/tmux-resurrect'
+      set -g @resurrect-strategy-vim 'session'
+      set -g @resurrect-strategy-nvim 'session'
+      set -g @resurrect-processes 'vim nvim hx cat less more tail watch'
+      set -g @resurrect-dir $resurrect_dir
+      set -g @resurrect-hook-post-save-all '~/.tmux/post_save.sh $resurrect_dir/last'
     '';
   };
 }

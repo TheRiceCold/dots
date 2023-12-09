@@ -9,8 +9,9 @@
 
   networking = {
     hostName = "NixOS";
-    networkmanager.enable = true;
     useDHCP = false;
+    enableIPv6 = false;
+    networkmanager.enable = true;
   };
 
   hardware = {
@@ -21,5 +22,8 @@
     };
   };
 
-  programs.light.enable = true;
+  programs = {
+    adb.enable = true;
+    light.enable = true;
+  };
 }

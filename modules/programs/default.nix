@@ -4,5 +4,6 @@
   ./tmux
   ./kitty
   ./neofetch
+  ./starship
   # ./dunst.nix
 ]

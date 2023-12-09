@@ -41,7 +41,7 @@
 | Compositor   | Wayland      | Picom   |
 | Terminal     | Kitty        | ST      |
 | Used by host | Laptop       | Minimal |
-| Editor       | Neovim/Emacs | Neovim  |
+| Editor       | Neovim       | Neovim  |
 
 
 # 🔧 Installation Guide

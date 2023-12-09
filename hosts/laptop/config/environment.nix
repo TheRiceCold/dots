@@ -11,7 +11,6 @@ in {
 
     systemPackages = with pkgs; [
       fzf
-      gcc
       git         # Version Control
       btop        # Resource Manager
       lsof
@@ -23,11 +22,12 @@ in {
       ripgrep
       nix-tree    # Browse Nix Store
 
+      unzip
       # tree
       # p7zip
       # usbutils    # Tools for working with USB devices
     ] ++ (with unstable; [
-      neovim
+      gcc
       linux-wifi-hotspot
     ]);
   };
