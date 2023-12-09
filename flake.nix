@@ -6,6 +6,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";             # Stable Nix Packages
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Unstable Nix Packages
 
+    agenix = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:ryantm/agenix";
+    };
+
     hyprland = {                                                   # Official Hyprland Flake
       url = "github:hyprwm/Hyprland";                              # Requires "hyprland.nixosModules.default" to be added the host modules
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -19,7 +24,7 @@
   
   outputs = inputs @ { self, ... }: {
     nixosConfigurations = (
-      import ./hosts { inherit self inputs; }
+      import ./nixos { inherit self inputs; }
     );  
   };
 }
