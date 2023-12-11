@@ -20,7 +20,8 @@
     packages = with pkgs; [
       mpv             # Media Player
       axel            # CLI download accelerator
-      kitty           # Terminal Emulator
+      # kitty           # Terminal Emulator
+      foot            # Lightweight Terminal Emulator 
 
       zathura         # PDF Viewer
       qemu_kvm        # 
@@ -38,15 +39,13 @@
 
       # ventoy          # Multi Boot USB Solution
       # transmission    # BitTorrent client
-      # cool-retro-term
     ] ++ (with unstable; [
       # blender         # 3D Creation/Animation System
       # scrcpy          # Display and control Android devices over USB or TCP/IP
-      # neovide
       # libsForQt5.kdenlive
-      audacity
+      # audacity
       starship
-      obs-studio
+      # obs-studio
       firefox-wayland
 
       # Scripting Languages

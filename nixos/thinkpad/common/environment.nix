@@ -3,9 +3,9 @@
 {
   environment = {
     variables = {
-      TERMINAL = "kitty";
-      EDITOR = "nvim";
-      VISUAL = "emacs";
+      EDITOR = "lvim";
+      VISUAL = "lvim";
+      TERMINAL = "foot";
     };
 
     systemPackages = with pkgs; [
@@ -13,22 +13,23 @@
       btop        # Resource Manager
       lsof
       tmux
+      unzip
       wget        # Retriever
       gcc
       clang
       gnumake
       ripgrep
       lazygit
-      libcxx
+      speedtest-cli
 
-      unzip
       # tree
       # p7zip
       # nix-tree    # Browse Nix Store
       # usbutils    # Tools for working with USB devices
     ] ++ (with unstable; [
-      git         # Version Control
+      git
       neovim
+      joshuto
       linux-wifi-hotspot
     ]);
   };

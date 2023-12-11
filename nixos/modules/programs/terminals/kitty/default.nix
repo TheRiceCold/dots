@@ -5,11 +5,10 @@
     imports = [ ./colors/gruvbox_dark.nix ];
 
     programs.kitty = {
-      enable = true;
-      font = {
-        name = "JetBrainsMono Nerd Font";
-        size = 12;
-      };
+      enable = false;
+      font.size = 12;
+      font.name = "JetBrainsMono Nerd Font";
+
       settings = {
         cursor_shape = "underline";
         scrollback_lines = 5000;

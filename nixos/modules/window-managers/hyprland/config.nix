@@ -7,14 +7,13 @@
   exec-once = swww init                 #
 
   input {
-    kb_layout = us
     repeat_rate   = 50
     repeat_delay  = 240
     kb_options    = caps:escape 
 
     touchpad {
       disable_while_typing=1
-      natural_scroll = true
+      natural_scroll= true
       clickfinger_behavior=1
       middle_button_emulation=0
       tap-to-click=1
@@ -36,10 +35,14 @@
     sensitivity = 1.0 # for mouse cursor
 
     gaps_in = 4
-    gaps_out = 0
+    gaps_out = 4
     border_size = 2
+    no_cursor_warps = true
+    no_border_on_floating = false
     col.inactive_border = 0xff382D2E
     col.active_border = rgba(a28b35ff) 45deg
+
+    apply_sens_to_raw=0 # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
   }
 
   # DECORATION
@@ -48,39 +51,54 @@
 
     # BLUR
     blur = yes
-    blur_size = 7
-    blur_passes = 4
-    blur_new_optimizations = on
+    blur_size = 5
+    blur_passes = 3
+    blur_xray = true
+    blur_ignore_opacity = true
+    blur_new_optimizations = true   
 
     # SHADOW
-    shadow_range = 4
-    drop_shadow = yes
+    shadow_range = 10
+    shadow_offset = 1 2
+    drop_shadow = false
     col.shadow = 0x66404040
-    shadow_render_power = 3
+    shadow_render_power = 5
+    shadow_ignore_window = true
+    
+    # OPACITY
+    active_opacity = 0.9
+    inactive_opacity = 0.75
+    # fullscreen_opacity = 1.0
+
+    blurls = waybar
+    blurls = lockscreen
   }
 
   animations {
-    enabled = yes
-
+    enabled = true
     bezier = myBezier, 0.05, 0.9, 0.1, 1.05
-
-    animation = windows, 1, 5, myBezier
-    animation = windowsOut, 1, 5, default, popin 80%
+    animation = windows, 1, 7, myBezier
+    animation = windowsOut, 1, 7, default, popin 80%
     animation = border, 1, 10, default
     animation = borderangle, 1, 8, default
     animation = fade, 1, 7, default
-    animation = workspaces, 1, 5, default
-    animation = specialWorkspace, 1, 5, myBezier, slidevert
+    animation = workspaces, 1, 6, default
   }
 
-
   dwindle {
-    pseudotile = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-    preserve_split = yes # you probably want this
+    no_gaps_when_only = false
+    force_split = 0 
+    special_scale_factor = 0.8
+    split_width_multiplier = 1.0 
+    use_active_for_splits = true
+    pseudotile = yes 
+    preserve_split = yes 
   }
 
   master {
     new_is_master = true
+    no_gaps_when_only = false
+    special_scale_factor = 0.8
   }
 
   misc {
@@ -97,33 +115,35 @@
   }
 
   # Float Necessary Windows
-  windowrule = float, Rofi
+  windowrule = float, rofi
   windowrule = float, pavucontrol
 
   # Increase the opacity 
   # windowrule = opacity 0.9, emacs
-  # windowrule = opacity 0.9, kitty
-  # windowrule = opacity 0.9, thorium
+  # windowrule = opacity 0.9, foot
+  # windowrule = opacity 0.9, firefox
 
   ^.*nvim.*$
   bindm = SUPER, mouse:272, movewindow
   bindm = SUPER, mouse:273, resizewindow
 
   bind = SUPER, Q, killactive
-  bind = SUPER, F, fullscreen,1
-  bind = SUPER, B, exec, thorium
-  bind = SUPER, RETURN, exec, kitty
-  bind = SUPERSHIFT, F, fullscreen,0
+  bind = SUPER, F, fullscreen, 1
+  bind = SUPER, B, exec, firefox
+  bind = SUPER, T, togglefloating
+  bind = SUPER, SPACE, exec, rofi
+  bind = SUPER, RETURN, exec, foot
+  bind = SUPER, R, exec, wf-recorder -g "$(slurp)"  # Screen Recorder
   bind = SUPERSHIFT, Q, exit,
-  bind = SUPER, SPACE, exec, rofi -show drun
-  bind = SUPERSHIFT, C, exec, hyprpicker -a
   bind = SUPERSHIFT, E, exec, wlogout
-  bind = SUPER, T, togglefloating,
-
+  bind = SUPERSHIFT, F, fullscreen, 0
+  bind = SUPERSHIFT, C, exec, hyprpicker -a
+  bind = SUPERSHIFT, RETURN, layoutmsg, swapwithmaster
   bind = SUPERSHIFT, S, exec, grim -g "$(slurp)" - | swappy -f -   # Screenshot 
-  bind = SUPER,R,exec,wf-recorder -g "$(slurp)"                 # Screen Recorder
+  bind = SUPERSHIFT, M, exec, swaylock -f -i ~/nixos-flakes/wallpapers/Yukopi.png
 
-  bind=SUPERSHIFT,RETURN,layoutmsg,swapwithmaster
+  bindle=,XF86MonBrightnessUp,exec,light -A 5
+  bindle=,XF86MonBrightnessDown,exec,light -U 5
 
   bind=SUPER,j,movefocus,d
   bind=SUPER,k,movefocus,u

@@ -17,9 +17,9 @@ let
   };
 in 
 {
-  laptop = lib.nixosSystem {
+  thinkpad = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit inputs user unstable; };
+    specialArgs = { inherit inputs user pkgs unstable; };
     modules = [ 
       ./thinkpad
       ./system.nix 

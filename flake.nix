@@ -23,8 +23,6 @@
   };
   
   outputs = inputs @ { self, ... }: {
-    nixosConfigurations = (
-      import ./nixos { inherit self inputs; }
-    );  
+    nixosConfigurations = (import ./nixos { inherit self inputs; });  
   };
 }

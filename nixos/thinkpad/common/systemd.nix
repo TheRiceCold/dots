@@ -2,13 +2,6 @@
 
 {
   systemd = {
-    # Somehow this fixes network manager issue connecting to wifi
-    services.NetworkManager-wait-online = {
-      serviceConfig = {
-        ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q"];
-      };
-    };
-
     user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
       wantedBy = [ "graphical-session.target" ];
@@ -22,5 +15,8 @@
         TimeoutStopSec = 10;
       };
     };
+
+    # Somehow this fixes network manager issue connecting to wifi
+    services.NetworkManager-wait-online.serviceConfig.ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q"];
   };
 }

@@ -1,7 +1,6 @@
 [
-  ./eww
-  ./rofi
-  ./kitty
+  # ./terminals/kitty
+  ./terminals/foot.nix
   ./neofetch
   ./starship
 
