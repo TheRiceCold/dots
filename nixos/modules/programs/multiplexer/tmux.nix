@@ -1,5 +1,11 @@
 { ... }:
-{
+let
+  theme = {
+    icon = "";
+    foreground ="1C1C1C";
+    background ="739E6E";
+  };
+in {
   programs.tmux = {
     enable = true;
     baseIndex = 1;
@@ -7,27 +13,19 @@
     terminal = "xterm-256color";
 
     extraConfig = '' 
-      icon=""
-      color_fg="#1C1C1C"
-      color_bg="#739E6E"
+      unbind r  # Reloads Configuration
 
-      # Reloads Configuration
-      unbind r
-
-      # unbind s
-      # bind s split-window -v
       bind v split-window -h
 
       # Enable color support
       set -ga terminal-overrides ",*256col*:Tc"
 
-      # Start windows and panes index at 1, not 0
       set -g base-index 1
       setw -g pane-base-index 1
 
-      set -g mouse on       # Allow use of mouse
-      set -g status-style fg=$color_fg,bg=$color_bg
-      set -g status-left " $icon  "
+      set -g mouse on
+      set -g status-style fg=#${theme.foreground}, bg=#${theme.background}
+      set -g status-left " ${theme.icon} "
       set -g status-justify centre
       set -g status-right ""
 

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.bash = {
     shellAliases = {
@@ -9,9 +9,11 @@
       wifi = "doas nmtui";
       trc = "transmission-cli";
       docker-compose = "podman-compose";
-      
-      flakes = "nvim ~/nixos-flakes";
       rollback = "doas nixos-rebuild switch --rollback";
+
+      # Config Shortcuts
+      flakes = "lvim ~/Flakes";
+      hyprland = "lvim ~/Flakes/nixos/modules/window-managers/hyprland";
     };
 
     interactiveShellInit = ''
@@ -33,12 +35,6 @@
       eval "$(starship init bash)"
 
       eval "$(direnv hook bash)"
-
-      neofetch
-
-      # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-      #   exec tmux
-      # fi
     '';
   };
 }

@@ -1,10 +1,8 @@
 ''
   monitor   = eDP-1,1920x1080@60,0x0,1  # Monitor
 
-  exec-once = fcitx5 -D                 # Keyboard
-  exec-once = blueman-applet            # Bluetooth
-  exec-once = waybar                    # Status Bar
-  exec-once = swww init                 #
+  exec-once = waybar &
+  exec-once = swww init
 
   input {
     repeat_rate   = 50
@@ -133,10 +131,12 @@
   bindm = SUPER, mouse:273, resizewindow
 
   bind = SUPER, Q, killactive
-  bind = SUPER, F, fullscreen,1
-  bind = SUPER, B, exec, thorium
-  bind = SUPER, RETURN, exec, kitty
-  bind = SUPERSHIFT, F, fullscreen,0
+  bind = SUPER, F, fullscreen, 1
+  bind = SUPER, B, exec, firefox
+  bind = SUPER, T, togglefloating
+  bind = SUPER, SPACE, exec, rofi -show drun
+  bind = SUPER, RETURN, exec, foot
+  bind = SUPER, R, exec, wf-recorder -g "$(slurp)"  # Screen Recorder
   bind = SUPERSHIFT, Q, exit,
   bind = SUPER, SPACE, exec, rofi -show drun
   bind = SUPERSHIFT, C, exec, hyprpicker -a

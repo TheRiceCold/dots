@@ -15,6 +15,7 @@ in {
       btop        # Resource Manager
       lsof
       tmux
+      unzip
       wget        # Retriever
       clang
       gnumake
@@ -22,12 +23,16 @@ in {
       ripgrep
       nix-tree    # Browse Nix Store
 
-      unzip
       # tree
       # p7zip
       # usbutils    # Tools for working with USB devices
     ] ++ (with unstable; [
       gcc
+      git
+      helix
+      neovim
+      zellij  # A terminal workspace 
+      nushell # A modern shell
       linux-wifi-hotspot
     ]);
   };

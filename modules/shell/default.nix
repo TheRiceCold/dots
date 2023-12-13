@@ -1,4 +1,0 @@
-[
-  ./bash.nix
-  ./git.nix
-]
