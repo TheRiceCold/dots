@@ -1,5 +1,0 @@
-[
-  # ./swww
-] ++ (
-  import ../common
-)

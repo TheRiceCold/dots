@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env sh
 
 # Disk label directories
 DISK_LABEL_DIR=/dev/disk/by-label
@@ -9,10 +9,10 @@ NIXOS_DIR=$DISK_LABEL_DIR/nixos
 mount $NIXOS_DIR /mnt && mount $BOOT_DIR /mnt/boot
 
 # Clone Stable Repo
-git clone https://github.com/kaizen-dw/Flakes ~/Flakes
+git clone https://github.com/kaizen-dw/Flakes /home/wolly/Flakes
 
 # Regenerate Configuration
 rm -rf /etc/nixos/configuration.nix && nixos-generate-config --root /mnt
 
 # Install
-nixos-install --flake ~/Flakes#laptop
+nixos-install --flake /home/wolly/Flakes#laptop

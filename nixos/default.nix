@@ -1,36 +1,26 @@
-{ self, inputs, ... }:
+{ ... }:
 
 let
-  user = "wolly";
-  system = "x86_64-linux";
-  lib = inputs.nixpkgs.lib;
-  hm = inputs.home-manager;
 
-  pkgs = import inputs.nixpkgs {
-    inherit system;
-    config.allowUnfree = true;  # Allow Proprietary Software
-  };
+in {
+  imports = [ 
+    ./hosts    
+    # ./home
+  ]; # { # inherit user; };
 
-  unstable = import inputs.nixpkgs-unstable {
-    inherit system;
-    config.allowUnfree = true;
-  };
-in 
-{
-  thinkpad = lib.nixosSystem {
-    inherit system;
-    specialArgs = { inherit inputs user pkgs unstable; };
-    modules = [ 
-      ./thinkpad
-      ./system.nix 
-      inputs.nur.nixosModules.nur 
-      hm.nixosModules.home-manager {
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          # users.wolly = import ../home/users/wolly/thinkpad;
-        };
-      }
-    ];
-  };
+  # flake = {
+  #   nixosConfigurations = (
+  #     # Personal Laptop
+  #     mkHost {
+  #       name = "thinkpad";
+  #       system = "x86_64-linux";
+  #       modules = [ ];
+  #     }
+  #   );
+
+  #   homeConfigurations = (
+  #     mkHome { name = "dale@thinkpad"; }
+  #     mkHome { name = "wolly@thinkpad"; }
+  #   );
+  # };
 }

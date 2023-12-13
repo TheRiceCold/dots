@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env sh
 
 # Disk label directories
 DISK_LABEL_DIR=/dev/disk/by-label
@@ -22,7 +22,7 @@ nixos-generate-config --root /mnt
 cp $HARDWARE_CONFIG_FROM $HARDWARE_CONFIG_TO
 
 # Install flake
-cd flakes && nixos-install --flake .#laptop
+cd Flakes && nixos-install --flake .#laptop
 
 # Reboot
 reboot
