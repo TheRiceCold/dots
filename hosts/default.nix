@@ -1,7 +1,7 @@
 { self, inputs, ... }:
 
 let
-  user = "wolly";
+  user = "kaizen";
   system = "x86_64-linux";
   lib = inputs.nixpkgs.lib;
   hm = inputs.home-manager;
@@ -17,11 +17,11 @@ let
   };
 in 
 {
-  laptop = lib.nixosSystem {
+  thinkpad = lib.nixosSystem {
     inherit system;
     specialArgs = { inherit inputs user unstable; };
     modules = [ 
-      ./laptop
+      ./thinkpad
       ./system.nix 
       inputs.nur.nixosModules.nur 
       hm.nixosModules.home-manager {
@@ -32,33 +32,4 @@ in
       }
     ];
   };
-
-  # minimal = lib.nixosSystem {
-  #   inherit system;
-  #   specialArgs = { inherit inputs user unstable; };
-  #   modules = [ 
-  #     ./minimal
-  #     ./system.nix 
-  #     inputs.nur.nixosModules.nur 
-  #     hm.nixosModules.home-manager {
-  #       home-manager = {
-  #         useGlobalPkgs = true;
-  #         useUserPackages = true;
-  #       };
-  #     }
-  #   ];
-  # };
-
-  # vm = lib.nixosSystem {
-  #   inherit system;
-  #   specialArgs = { inherit inputs unstable; };
-  #   modules = [
-  #     ./vm
-  #     ./system.nix 
-  #     hm.nixosModules.home-manager {
-  #       home-manager.useGlobaPkgs = true;
-  #       home-manager.useUserPackages = true;
-  #     }
-  #   ];
-  # };
 }

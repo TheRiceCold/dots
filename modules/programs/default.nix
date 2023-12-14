@@ -1,9 +1,11 @@
 [
-  ./eww
   ./rofi
   ./tmux
-  ./kitty
+  # ./terminal/kitty
+  ./terminal/foot.nix
   ./neofetch
   ./starship
-  # ./dunst.nix
+  ./shell/bash.nix
+  ./shell/git.nix
+  ./wayland/waybar
 ]

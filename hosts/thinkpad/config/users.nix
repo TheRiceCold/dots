@@ -21,9 +21,7 @@ in {
     packages = with pkgs; [
       mpv             # Media Player
       axel            # CLI download accelerator
-      kitty           # Terminal Emulator
-
-      zathura         # PDF Viewer
+            zathura         # PDF Viewer
       qemu_kvm        # 
 
       pavucontrol     # Audio Control
@@ -43,7 +41,8 @@ in {
     ] ++ (with unstable; [
       # emacs
       # blender         # 3D Creation/Animation System
-      # helix
+      helix
+      foot
       # scrcpy          # Display and control Android devices over USB or TCP/IP
       audacity
       starship

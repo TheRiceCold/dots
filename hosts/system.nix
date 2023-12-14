@@ -4,9 +4,7 @@
   imports = [ ./options.nix ] ++ (
     import ../modules/theme/gruvbox/hyprland ++
     import ../modules/window-managers ++
-    import ../modules/programs ++
-    # import ../modules/scripts ++
-    import ../modules/shell
+    import ../modules/programs 
   );
 
   hyprland.enable = true; # Enables Hyprland

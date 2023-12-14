@@ -8,7 +8,7 @@
   );
 
   networking = {
-    hostName = "NixOS";
+    hostName = "thinkpad";
     useDHCP = false;
     enableIPv6 = false;
     networkmanager.enable = true;
@@ -22,8 +22,6 @@
     };
   };
 
-  programs = {
-    adb.enable = true;
-    light.enable = true;
-  };
+  programs.adb.enable = true;
+  programs.light.enable = true;
 }

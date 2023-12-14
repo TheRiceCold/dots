@@ -1,14 +1,7 @@
 { pkgs, unstable, ... }:
 
-let
-in {
+{
   environment = {
-    variables = {
-      TERMINAL = "kitty";
-      EDITOR = "nvim";
-      VISUAL = "emacs";
-    };
-
     systemPackages = with pkgs; [
       fzf
       git         # Version Control
