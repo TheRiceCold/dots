@@ -15,15 +15,13 @@
     gcc
     clang
     gnumake
-    ripgrep
-
-    helix
-    direnv
-    lazygit
+    home-manager
   ];
 
   programs.adb.enable = true;
 
-  services.dbus.enable = true;
-  services.openssh.enable = true;
+  services = {
+    dbus.enable = true;
+    openssh.enable = true;
+  };
 }

@@ -18,7 +18,6 @@
         direnv
         zoxide
         starship        
-        hyprland
       ];
     };
   };
