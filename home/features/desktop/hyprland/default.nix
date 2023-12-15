@@ -67,16 +67,16 @@
       #   bezier = [   ];
       # };
 
-      # bind = let
-      #   swaylock = "${pkgs.swaylock}/bin/swaylock";
-      #   terminal = "${pkgs.foot}/bin/foot";
-      #   browser = "${pkgs.firefox-wayland}/bin/firefox";
-      #   launcher = "${pkgs.rofi-wayland}/bin/rofi-wayland";
-      # in [
-      #   "SUPER, RETURN, exec, ${terminal}"
-      #   "SUPER, b, exec, ${browser}"
-      #   "SUPER, SPACE, exec ${launcher}"
-      # ];
+      bind = let
+        swaylock = "${pkgs.swaylock}/bin/swaylock";
+        terminal = "${pkgs.foot}/bin/foot";
+        browser = "${pkgs.firefox-wayland}/bin/firefox";
+        launcher = "${pkgs.rofi-wayland}/bin/rofi";
+      in [
+        "SUPER, RETURN, exec, ${terminal}"
+        "SUPER, SPACE, exec ${launcher}"
+        "SUPER, b, exec, ${browser}"
+      ];
     };
   };
 }

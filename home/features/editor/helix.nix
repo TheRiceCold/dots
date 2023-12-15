@@ -1,5 +1,7 @@
+{ pkgs, ... }:
 {
   home.sessionVariables.COLORTERM = "truecolor";
+  home.packages = [ pkgs.helix ];
   programs.helix = {
     enable = true;
     settings = {
