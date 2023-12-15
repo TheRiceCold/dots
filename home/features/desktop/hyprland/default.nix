@@ -1,38 +1,28 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
-let
-  theme = {
-
-   };
-in {
-  imports = [
-    
-  ];
+{
+  imports = [  ];
 
   home.packages = with pkgs; [
     waybar
-    rofi-wayland  # Launcher
+    rofi-wayland    # App Launcher
 
-    hyprpicker    # Color Picker
-    swww          # Wallpaper Daemon
-    swayimg       # Image Viewer
-    grimblast     # Grab Images
-    slurp         # Region Selector
-    swaylock      # Lock Screen
-    swappy        # Snapshot Editor
-    wl-clipboard  # Clipboard
-    cliphist      # Clipboard Manager
+    hyprpicker      # Color Picker
+    swww            # Wallpaper Daemon
+    swayimg         # Image Viewer
+    grimblast       # Grab Images
+    slurp           # Region Selector
+    swaylock        # Lock Screen
+    swappy          # Snapshot Editor
+    wl-clipboard    # Clipboard
+    cliphist        # Clipboard Manager
 
-    firefox-wayland
+    firefox-wayland # Browser
   ];
 
   wayland.windowManager.hyprland = {
     enable = true; 
-    package = pkgs.hyprland;
-    systemd = {
-      enable = true;
-    };
-
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     settings = {
       exec = [
         "${pkgs.swww}/bin/swww init"
@@ -42,7 +32,7 @@ in {
       input = {
 
         touchpad = {
-          natural_scrolling = true;
+          natural_scroll = true;
           disable_while_typing = true;
         };
       };
@@ -74,9 +64,7 @@ in {
 
       # animations = {
       #   enabled = true;      
-      #   bezier = [
-   
-      #   ];
+      #   bezier = [   ];
       # };
 
       # bind = let
