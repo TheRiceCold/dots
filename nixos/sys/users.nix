@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   users = {
@@ -12,6 +12,13 @@
         "podman"
         "libvirtd"
         "networkmanager" 
+      ];
+
+      packages = with pkgs; [
+        direnv
+        zoxide
+        starship        
+        hyprland
       ];
     };
   };

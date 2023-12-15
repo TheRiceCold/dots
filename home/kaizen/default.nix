@@ -1,9 +1,7 @@
 { inputs, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    hyprland    
-  ];
+  imports = [ ];
 
   home.username = "kaizen";
   home.stateVersion = "23.11";
