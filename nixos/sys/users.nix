@@ -1,11 +1,11 @@
 { ... }:
+
 {
   users = {
     groups = { };
 
-    users.wolly = {
+    users.kaizen = {
       isNormalUser = true;
-      home = "/home/wolly";
       initialPassword = "password";
       extraGroups = [ 
         "wheel" 

@@ -1,26 +1,22 @@
-{ ... }:
+{ inputs, ... }:
 
-let
+let 
+  inherit (inputs) nixpkgs home-manager;
 
+  mkHost = { name, system, modules }: {
+    ${name} = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = { inherit inputs name; };
+      modules = [ ./hosts/${name} ];
+    };
+  };
 in {
-  imports = [ 
-    ./hosts    
-    # ./home
-  ]; # { # inherit user; };
-
-  # flake = {
-  #   nixosConfigurations = (
-  #     # Personal Laptop
-  #     mkHost {
-  #       name = "thinkpad";
-  #       system = "x86_64-linux";
-  #       modules = [ ];
-  #     }
-  #   );
-
-  #   homeConfigurations = (
-  #     mkHome { name = "dale@thinkpad"; }
-  #     mkHome { name = "wolly@thinkpad"; }
-  #   );
-  # };
+  flake.nixosConfigurations = (
+    # Personal Laptop
+     mkHost {
+       name = "thinkpad";
+       system = "x86_64-linux";
+       modules = [ ];
+    }
+  );
 }
