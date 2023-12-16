@@ -12,7 +12,7 @@
   home.packages = with pkgs; [
     zoxide
     direnv
-    ripgrep
+    # ripgrep
     lazygit
     zellij
   ];
