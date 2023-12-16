@@ -15,5 +15,6 @@
     efi.efiSysMountPoint = "/boot";
     efi.canTouchEfiVariables = true;
   };
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 }

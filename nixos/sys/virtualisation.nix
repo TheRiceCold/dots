@@ -1,10 +1,15 @@
-{ pkgs, ... }:
-{
+{ pkgs, config, ... }:
+let
+  dockerEnabled = config.virtualisation.docker.enable;
+in {
   environment.systemPackages = with pkgs; [ podman-tui podman-compose ];
   virtualisation = {
+    # docker.enabled = true;
+
     podman = {
       enable = true;
-      dockerCompat = true;
+      dockerCompat = !dockerEnabled;
+      dockerSocket.enable = !dockerEnabled;
       defaultNetwork.settings.dns_enable = true;
     };
 

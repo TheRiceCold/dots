@@ -1,9 +1,15 @@
 { pkgs, ... }:
 
 {
+  programs.adb.enable = true;
   programs.dconf.enable = true;
 
-  hardware.bluetooth.enable = true;
+  hardware = {
+    opengl.enable = true;
+    bluetooth.enable = true;
+    opentabletdriver.enable = true;
+  };
+
   services.blueman.enable = true;
 
   programs.light.enable = true; 

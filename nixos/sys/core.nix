@@ -15,10 +15,7 @@
     gcc
     clang
     gnumake
-    home-manager
   ];
-
-  programs.adb.enable = true;
 
   services = {
     dbus.enable = true;
