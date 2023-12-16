@@ -1,25 +1,33 @@
 {
-  description = "Wolly's NixOS Configuration Flakes";
+  description = "My Configuration Flake";
 
   inputs = {
-    nur.url = "github:nix-community/NUR";                         # NUR Packages
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";             # Stable Nix Packages
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Unstable Nix Packages
-
-    hyprland = {                                                   # Official Hyprland Flake
-      url = "github:hyprwm/Hyprland";                              # Requires "hyprland.nixosModules.default" to be added the host modules
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    home-manager = {                                               # User Environment Manager
-      url = "github:nix-community/home-manager/release-23.05";
+    # nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
+
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    hyprpaper.url = "github:hyprwm/hyprpaper";
+ };
   
-  outputs = inputs @ { self, ... }: {
-    nixosConfigurations = (
-      import ./hosts { inherit self inputs; }
-    );  
+  outputs = inputs @ { ... }: {
+    nixosConfigurations = import ./nixos { inherit inputs; };
+    homeConfigurations = import ./home { inherit inputs; };
   };
+
+  # nixConfig.trusted-users = [ "root" "@wheel" ];
 }
