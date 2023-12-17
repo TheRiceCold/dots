@@ -9,5 +9,14 @@
       "col.inactive_border" = "rgba(ffffffff)";
       layout = "dwindle";
     };
+
+    windowrule = [ 
+      "float, rofi" 
+      "float, foot" 
+      "float, title:^(Picture-in-Picture)" 
+    ];
+
+    # layerrule = [ "blur, waybar" ];
+    blurls = [ "waybar" "lockscreen" ];
   };
 }

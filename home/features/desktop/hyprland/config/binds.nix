@@ -15,16 +15,20 @@
         
       ];
     in [
-      "SUPERSHIFT, q, killactive"
-      "SUPERSHIFT, e, exit"
+      "SUPER, q, killactive"
+      "SUPERSHIFT, q, exit"
 
+      "SUPER, t, togglefloating"
       "SUPER, f, fullscreen, 1"
       "SUPERSHIFT, f, fullscreen, 0"
-      "SUPERSHIFT, t, togglefloating"
+      "SUPER, y, pin"
 
+      "SUPER, k, togglegroup"
+      "SUPER, Tab, changegroupactive, f"
+
+      "SUPER, b, exec, ${browser}"
       "SUPER, RETURN, exec, ${terminal}"
       "SUPER, SPACE, exec, ${launcher} -show drun"
-      "SUPER, b, exec, ${browser}"
 
       "SUPER, j, movefocus, d"
       "SUPER, k, movefocus, u"
@@ -58,6 +62,8 @@
       "SUPERSHIFT, 8, movetoworkspacesilent, 8"
       "SUPERSHIFT, 9, movetoworkspacesilent, 9"
       "SUPERSHIFT, 0, movetoworkspacesilent, 10"      
+
+      "SUPER, 0, exec, killall -SIGUSR1 .waybar-wrapped"
 
       # Brightness control
       ",XF86MonBrightnessUp, exec, light -A 10"

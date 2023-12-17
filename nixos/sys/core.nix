@@ -15,6 +15,7 @@
     gcc
     clang
     gnumake
+    killall
   ];
 
   services = {

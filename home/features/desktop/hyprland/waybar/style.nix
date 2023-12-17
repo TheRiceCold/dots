@@ -1,6 +1,5 @@
 ''
   * {
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: JetBrainsMono Nerd Font;
     font-size: 13px;
     border-radius: 17px;
@@ -53,9 +52,9 @@
   }
 
   #workspaces button.active label {
-    /*color: rgba(30, 30, 46, 0.6);*/
-    color: rgba(16, 16, 16, 0.6);
     font-weight: bolder;
+    color: rgba(16, 16, 16, 0.6);
+    /* color: rgba(30, 30, 46, 0.6); */
   }
 
   #workspaces button:hover {
@@ -72,15 +71,15 @@
   }
 
   #workspaces button {
-    box-shadow: rgba(17, 17, 27, 0.2) 0px 0px 3px 2px;
-    /*background-color: rgba(30, 30, 46, 0.6);*/
+    box-shadow: rgba(17, 17, 27, 0.2) 0 0 3px 2px;
+    /* background-color: rgba(30, 30, 46, 0.6); */
     background-color: rgba(16, 16, 16, 0.6);
     border-radius: 12px;
     margin-left: 10px;
     transition: all 0.3s ease;
   }
 
-    #workspaces button.active {
+  #workspaces button.active {
     min-width: 50px;
     box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
     background-color: rgb(245, 194, 231);
@@ -96,14 +95,6 @@
       #ee5396,
       #ff7eb6
     );
-    /*#936FDC,
-      #e95678,
-      #ec6a88,
-      #efb993,
-      #efb993,
-      #3FDAA4,
-      #78a9ff
-    */
     background-size: 300% 300%;
     animation: colored-gradient 20s ease infinite;
   }
@@ -118,42 +109,6 @@
     100% {
       background-position: 71% 0%;
     }
-  }
-
-  #custom-power-menu {
-    margin-right: 10px;
-    padding-left: 12px;
-    padding-right: 15px;
-    padding-top: 3px;
-  }
-
-  #custom-spotify {
-    margin-left: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 3px;
-    color: rgba(180, 190, 254, 0.329);
-    background-color: rgba(16, 16, 16, 0.6);
-    /*background-color: rgba(30, 30, 46, 0.6);*/
-    box-shadow: rgba(17, 17, 27, 0.2) 0px 0px 3px 2px;
-    transition: all 0.3s ease;
-  }
-
-  #custom-spotify.playing {
-    color: rgb(180, 190, 254);
-    background: rgba(30, 30, 46, 0.6);
-    background: linear-gradient(
-      90deg,
-      rgb(49, 50, 68),
-      rgba(30, 30, 46, 0.6),
-      rgba(30, 30, 46, 0.6),
-      rgba(30, 30, 46, 0.6),
-      rgba(30, 30, 46, 0.6),
-      rgb(49, 50, 68)
-    );
-    background-size: 400% 100%;
-    animation: grey-gradient 3s linear infinite;
-    transition: all 0.3s ease;
   }
 
   @keyframes grey-gradient {
@@ -224,15 +179,6 @@
       #ee5396,
       #ff7eb6
     );
-      /*
-      #cba6f7,
-      #f38ba8,
-      #eba0ac,
-      #fab387,
-      #f9e2af,
-      #a6e3a1,
-      #94e2d5
-      */
     background-size: 300% 300%;
     animation: colored-gradient 3s ease infinite;
   }
