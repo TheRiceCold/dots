@@ -63,8 +63,6 @@
       "SUPERSHIFT, 9, movetoworkspacesilent, 9"
       "SUPERSHIFT, 0, movetoworkspacesilent, 10"      
 
-      "SUPER, 0, exec, killall -SIGUSR1 .waybar-wrapped"
-
       # Brightness control
       ",XF86MonBrightnessUp, exec, light -A 10"
       ",XF86MonBrightnessDown, exec, light -U 10"

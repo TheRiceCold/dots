@@ -1,15 +1,10 @@
 { pkgs, ... }:
 
 {
-  imports = [ 
-    ./config 
-    ./waybar
-  ];
+  imports = [ ./config ./waybar ];
 
   home = {
     packages = with pkgs; [
-      rofi-wayland    # App Launcher
-
       hyprpicker      # Color Picker
       swww            # Wallpaper Daemon
       swayimg         # Image Viewer
@@ -35,7 +30,6 @@
       XDG_CURRENT_DESKTOP = "Hyprland";
 
       GDK_BACKEND = "wayland";
-      MOZ_ENABLE_WAYLAND = "1";
 
       _JAVA_AWT_WM_NONREPARENTING = "1";
 

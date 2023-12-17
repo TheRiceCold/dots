@@ -45,7 +45,7 @@ in
         fixed-center = false;
         modules-left = [ 
           "hyprland/workspaces" 
-          "custom/wall"
+          # "custom/wall"
         ];
 
         modules-center = [
@@ -104,26 +104,29 @@ in
           ];
         };
 
-        "wlr/workspaces" = {
-          active-only = false;
+        "hyprland/workspaces" = {
           on-click = "activate";
-          on-scroll-up = "hyprctl dispatch workspace m+1";
-          on-scroll-down = "hyprctl dispatch workspace m-1";
-          format = "{name}";
+          format = "{icon}";
           format-icons = {
-            "1" = "一";
-            "2" = "二";
-            "3" = "三";
-            "4" = "四";
-            "5" = "五";
-            "6" = "六";
-            "7" = "七";
-            "8" = "八";
-            "9" = "九";
-            "10" = "十";
-            # "urgent" = "";
-            # "active" = "";
-            # "default" = "";
+            default = "";
+            "1" = "1";
+            "2" = "2";
+            "3" = "3";
+            "4" = "4";
+            "5" = "5";
+            "6" = "6";
+            "7" = "7";
+            "8" = "8";
+            "9" = "9";
+            "active" = "󱓻";
+            "urgent" = "󱓻";
+          };
+          "persistent_workspaces" = {
+            "1" = [];
+            "2" = [];
+            "3" = [];
+            "4" = [];
+            "5" = [];
           };
         };
 

@@ -1,10 +1,12 @@
-{ ... }:  {
+{
   imports = [
-    ./desktop/hyprland
     ./cli
-    ./terminal/foot.nix
-    # ./editor/helix.nix
-    ./editor/lunarvim.nix
+    ./shell
     ./media
+    ./editor
+    ./desktop/hyprland
+
+    ./terminal/foot.nix
+    ./browser/firefox.nix
   ];
 }

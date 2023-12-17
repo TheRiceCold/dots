@@ -33,8 +33,8 @@
       keys = {  };
     };
 
-    languages = with pkgs; {
-      language-server = { };
-    };
+    # languages = with pkgs; {
+    #   language-server = { };
+    # };
   };
 }

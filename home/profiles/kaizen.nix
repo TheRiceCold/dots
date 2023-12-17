@@ -1,14 +1,10 @@
-{ inputs, pkgs, ... }:
-
 {
-  imports = [ 
-    ../features
-  ];
+  imports = [ ../features ];
 
   home = {
     username = "kaizen";
-    homeDirectory = "/home/kaizen";
     stateVersion = "23.11";
+    homeDirectory = "/home/kaizen";
   };
 
   programs.home-manager.enable = true;  

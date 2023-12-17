@@ -1,9 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+
+{
   imports = [ 
-    ./starship.nix
-    ./joshuto.nix
-    ./tmux.nix
-    ./neofetch
+    ./git.nix
+    ./bash.nix
+    ./nushell.nix
   ];
 
   home.packages = with pkgs; [

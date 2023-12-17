@@ -5,7 +5,6 @@
       v = "lvim";
       x = "exit";
       c = "clear";
-      hm = "home-manager";
       rollback = "doas nixos-rebuild switch --rollback";
     };
   };

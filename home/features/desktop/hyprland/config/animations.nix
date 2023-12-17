@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   wayland.windowManager.hyprland.settings = {
     animations = {
