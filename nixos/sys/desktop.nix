@@ -5,7 +5,10 @@
   programs.dconf.enable = true;
 
   hardware = {
-    opengl.enable = true;
+    opengl = {
+      enable = true;
+      driSupport32Bit = true;
+    };
     bluetooth.enable = true;
     opentabletdriver.enable = true;
   };

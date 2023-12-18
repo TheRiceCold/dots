@@ -1,7 +1,14 @@
 { pkgs, ... }:
 {
   home.packages = [ pkgs.lunarvim ];
-  # home.file.".config/lvim/config.lua" = ''
+  programs.neovim = {
+    enable = true;
+    extraConfig = ''
+
+    '';
+  };
+
+  # home.file.".config/lvim/config.lua".text = ''
   #   lvim.colorscheme = "gruvbox"
 
   #   lvim.transparent_window = true
@@ -20,17 +27,13 @@
   #       config = function()
   #         require("neorg").setup {
   #           load = {
-  #             ["core.defaults"] = {
-
-  #             },
+  #             ["core.defaults"] = { },
   #             ["core.concealer"] = {
   #               config = { }
   #             },
   #             ["core.dirman"] = {
   #               config = {
-  #                 workspaces = {
-  #                   norg = "~/Documents/norg",
-  #                 },
+  #                 workspaces = { norg = "~/Documents/norg", },
   #                 default_workspace = "norg",
   #               },
   #             },

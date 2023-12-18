@@ -1,19 +1,16 @@
-{ pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   imports = [ 
-    ./bash.nix
     ./starship.nix
-    ./tmux.nix
-    ./nushell.nix
+    ./joshuto.nix
     ./neofetch
+
+    ./tmux.nix
+    # ./zellij.nix
   ];
 
   home.packages = with pkgs; [
     zoxide
     direnv
-    # ripgrep
     lazygit
-    zellij
   ];
 }

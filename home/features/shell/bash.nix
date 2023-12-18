@@ -4,7 +4,7 @@
     shellAliases = {
       x = "exit";
       c = "clear";
-      hm = "home-manager";
+      v = "lvim .";
       rollback = "doas nixos-rebuild switch --rollback";
     };
   };

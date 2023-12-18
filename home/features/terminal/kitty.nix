@@ -8,9 +8,9 @@
       name = "JetBrainsMono Nerd Font";
     };
     settings = {
-      cursor_shape = "underline";
-      tab_bar_style = "fade";
       tab_fade = 1;
+      tab_bar_style = "fade";
+      cursor_shape = "underline";
     };
   };
 }

@@ -1,5 +1,5 @@
 {
   imports = [
-    ./adb.nix
+    ./lunarvim.nix
   ];
 }

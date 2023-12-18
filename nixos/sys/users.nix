@@ -8,6 +8,7 @@ in{
 
     users.kaizen = {
       isNormalUser = true;
+      shell = pkgs.nushell;
       initialPassword = "password";
       extraGroups = [ 
         "wheel" 
@@ -16,6 +17,7 @@ in{
       ] ++ ifExist [
         "docker"
         "podman"
+        "adbusers"
         "libvirtd"
         "networkmanager" 
       ];

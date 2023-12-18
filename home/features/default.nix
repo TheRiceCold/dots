@@ -1,9 +1,13 @@
-{ ... }:  {
+{
   imports = [
-    ./desktop/hyprland
     ./cli
+    ./shell
+    ./media
+    ./editor
+    ./browser
+    ./graphics
+    ./desktop/hyprland
+
     ./terminal/foot.nix
-    # ./editor/helix.nix
-    ./editor/lunarvim.nix
   ];
 }
