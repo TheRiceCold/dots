@@ -4,9 +4,10 @@
     ./shell
     ./media
     ./editor
+    ./browser
+    ./graphics
     ./desktop/hyprland
 
     ./terminal/foot.nix
-    ./browser/firefox.nix
   ];
 }

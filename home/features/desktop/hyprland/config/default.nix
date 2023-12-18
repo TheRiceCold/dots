@@ -5,9 +5,20 @@ let
 in {
   imports = [
     ./binds.nix
+    ./windows.nix
     ./animations.nix
     ./decoration.nix
   ];
+
+  home.sessionVariables = {
+    GDK_BACKEND = "wayland;x11";
+    QT_QPA_PLATFORM = "wayland,xcb";
+    SDL_VIDEODRIVER = "wayland";
+    CLUTTER_BACKEND = "wayland";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+  };
 
   wayland.windowManager.hyprland = {
     enable = true; 

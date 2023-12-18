@@ -1,12 +1,6 @@
 { pkgs, ... }: 
 {
-  # eww package
-  home.packages = with pkgs; [
-    eww-wayland
-    pamixer
-    brightnessctl
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
-  ];
+  home.packages = [ pkgs.eww-wayland ];
 
   # configuration
   home.file.".config/eww/eww.scss".source = ./eww.scss;

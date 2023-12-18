@@ -1,7 +1,6 @@
 { pkgs, ... }:
 let
   terminal = "${pkgs.foot}/bin/foot";
-  launcher = "${pkgs.rofi-wayland}/bin/rofi -show drun";
 
   # wallpapers = {
   #   nord = {
@@ -64,9 +63,9 @@ in
         ];
 
         "custom/launcher"= {
-          format= " ";
-          tooltip= "false";
-          on-click= launcher;
+          format = " ";
+          tooltip = false;
+          on-click = "sh pkill rofi || rofi -show drun";
           # on-click-right= "bash $HOME/.config/rofi/run.sh"; 
         };
 
@@ -154,16 +153,16 @@ in
 
         memory = {
           interval = 30;
+          tooltip = false;
           on-click = "${terminal} btop";
           format = " {used:0.1f}G / {total:0.1f}G";
-          tooltip = false;
         };
 
         disk = {
+          path = "/";
+          interval = 5;
           format = "󰋊 {percentage_used}%";
           format-alt = "󰋊 {used}/{total} GiB";
-          interval = 5;
-          path = "/";
         };
 
         network = {

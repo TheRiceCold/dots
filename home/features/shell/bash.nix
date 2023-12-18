@@ -2,9 +2,9 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      v = "lvim";
       x = "exit";
       c = "clear";
+      v = "lvim .";
       rollback = "doas nixos-rebuild switch --rollback";
     };
   };

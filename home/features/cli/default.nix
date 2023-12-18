@@ -2,14 +2,15 @@
   imports = [ 
     ./starship.nix
     ./joshuto.nix
-    ./tmux.nix
     ./neofetch
+
+    ./tmux.nix
+    # ./zellij.nix
   ];
 
   home.packages = with pkgs; [
     zoxide
     direnv
     lazygit
-    zellij
   ];
 }

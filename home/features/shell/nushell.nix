@@ -4,9 +4,10 @@
   programs.nushell = {
     enable = true;
     shellAliases = {
-      v = "lvim";
+      v = "lvim .";
       x = "exit";
       c = "clear";
+      rollback = "doas nixos-rebuild switch --rollback";
     };
   };
 }

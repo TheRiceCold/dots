@@ -17,6 +17,7 @@ in{
       ] ++ ifExist [
         "docker"
         "podman"
+        "adbusers"
         "libvirtd"
         "networkmanager" 
       ];

@@ -12,10 +12,10 @@
       };
       shadow_range = 30;
       drop_shadow = true;
-      active_opacity = 1.0;
+      active_opacity = 1;
       inactive_opacity = 0.8;
+      fullscreen_opacity = 1;
       shadow_render_power = 3;
-      fullscreen_opacity = 1.0;
       "col.shadow" = "0x66000000";
     };
   };

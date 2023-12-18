@@ -10,8 +10,14 @@
     };
 
     windowrule = [ 
+      "tile, firefox"
+
       "float, rofi" 
-      "float, foot" 
+      "float, swayimg"
+      # "float, foot" 
+      "float, btop"
+      "float, joshuto"
+      "float, g4music"
       "float, pavucontrol"
       "float, title:^(Picture-in-Picture)" 
     ];
@@ -20,8 +26,6 @@
     blurls = [ 
       "waybar" 
       "lockscreen" 
-      "g4music"
-      "amberol"
     ];
   };
 }
