@@ -1,15 +1,35 @@
-import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+'strict mode';
+import { App, Utils } from './imports.js';
+import Bar from './widgets/bar/main.js';
 
-const myLabel = Widget.Label({
-  label: 'Some example content'
-})
+const CLOSE_ANIM_TIME = 210;
 
-const myBar = Widget.Window({
-  name: 'bar',
-  anchor: ['top', 'left', 'right'],
-  child: myLabel,
-});
+Utils.exec(`sassc ${App.configDir}/scss/main.scss ${App.configDir}/style.css`);
+App.resetCss();
+App.applyCss(`${App.configDir}/style.css`);
 
 export default {
-  windows: [ myBar ]
-}
+  css: `${App.configDir}/style.css`,
+  stackTraceOnError: true,
+  closeWindowDelay: { // For animations
+    'sideright': CLOSE_ANIM_TIME,
+    'sideleft': CLOSE_ANIM_TIME,
+    'osk': CLOSE_ANIM_TIME,
+  },
+    windows: [
+      Bar()
+      // CornerTopleft(),
+      // CornerTopright(),
+      // CornerBottomleft(),
+      // CornerBottomright(),
+      // DesktopBackground(),
+      // Dock(), // Buggy
+      // Overview(),
+      // Indicator(),
+      // Cheatsheet(),
+      // SideLeft(),
+      // SideRight(),
+      // Osk(), // On-screen keyboard
+      // Session(), // Power menu, if that's what you like to call it
+    ],
+};

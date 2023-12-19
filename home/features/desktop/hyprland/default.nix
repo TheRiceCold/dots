@@ -14,6 +14,7 @@
       swaylock        # Lock Screen
       wl-clipboard    # Clipboard
       cliphist        # Clipboard Manager
+      brightnessctl   # Brightness Control
     ];
 
     sessionVariables = {
