@@ -9,5 +9,8 @@
       c = "clear";
       rollback = "doas nixos-rebuild switch --rollback";
     };
+    extraConfig = ''
+      source ~/.zoxide.nu
+    '';
   };
 }

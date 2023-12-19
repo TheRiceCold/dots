@@ -33,6 +33,7 @@
       "SUPER, RETURN, exec, foot"
       "SUPER, e, exec, foot joshuto"
       "SUPER, SPACE, exec, pkill rofi || rofi -show drun"
+      "SUPER, o, exec, killall -SIGUSR1 .waybar-wrapped"
 
       "SUPER, left, resizeactive, -40 0"
       "SUPER, right, resizeactive, 40 0"
@@ -43,6 +44,13 @@
       # Brightness control
       ",XF86MonBrightnessUp, exec, light -A 10"
       ",XF86MonBrightnessDown, exec, light -U 10"
+
+      # Volume control
+      ",XF86AudioRaiseVolume,exec, pamixer -i 5"
+      ",XF86AudioLowerVolume,exec, pamixer -d 5"
+      ",XF86AudioMute,exec, pamixer -t"
+      ",XF86AudioMicMute,exec, pamixer --default-source -t"
+
     ] ++
     # Change workspace
     (map (n: "SUPER, ${n}, workspace, name:${n}") workspaces) ++

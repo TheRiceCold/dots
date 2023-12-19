@@ -27,7 +27,11 @@ in {
       monitor = ",preferred,auto,1";
       # monitor = "eDP-1,1920x1080@60,0x0,1";
 
-      exec = [ wallpaper topbar ];
+      exec = [ 
+        topbar 
+        wallpaper 
+        "wl-paste --watch cliphist store"
+      ];
 
       input = {
         kb_layout = "us";

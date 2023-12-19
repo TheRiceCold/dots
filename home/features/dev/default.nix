@@ -1,5 +1,6 @@
 {
   imports = [
-    ./adb.nix
+    # ./adb.nix
+    # ./clojure.nix
   ];
 }
