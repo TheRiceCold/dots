@@ -1,7 +1,9 @@
 'strict mode';
 import { App, Utils } from './imports.js';
 import Bar from './widgets/bar/main.js';
+import Session from './widgets/session/main.js';
 import SideLeft from './widgets/sideleft/main.js';
+import SideRight from './widgets/sideright/main.js';
 
 const CLOSE_ANIM_TIME = 210;
 
@@ -29,8 +31,8 @@ export default {
       // Indicator(),
       // Cheatsheet(),
       SideLeft(),
-      // SideRight(),
+      SideRight(),
       // Osk(), // On-screen keyboard
-      // Session(), // Power menu, if that's what you like to call it
+      Session(), // Power menu, if that's what you like to call it
     ],
 };
