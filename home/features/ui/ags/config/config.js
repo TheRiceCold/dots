@@ -1,6 +1,7 @@
 'strict mode';
 import { App, Utils } from './imports.js';
 import Bar from './widgets/bar/main.js';
+import SideLeft from './widgets/sideleft/main.js';
 
 const CLOSE_ANIM_TIME = 210;
 
@@ -17,7 +18,7 @@ export default {
     'osk': CLOSE_ANIM_TIME,
   },
     windows: [
-      Bar()
+      Bar(),
       // CornerTopleft(),
       // CornerTopright(),
       // CornerBottomleft(),
@@ -27,7 +28,7 @@ export default {
       // Overview(),
       // Indicator(),
       // Cheatsheet(),
-      // SideLeft(),
+      SideLeft(),
       // SideRight(),
       // Osk(), // On-screen keyboard
       // Session(), // Power menu, if that's what you like to call it

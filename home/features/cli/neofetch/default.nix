@@ -3,29 +3,27 @@
   home.packages = [ pkgs.neofetch ];
   xdg.configFile."neofetch/config.conf".text = ''
     print_info() {
-      info "" title
+      prin " \n \n ╭───────┤ $(color 5) NixOS $(color 15)├───────╮"
       info underline
-      info "$(color 6)❃ " distro
-      info "$(color 3) " kernel
-      info "$(color 4) " shell
-      info "$(color 1)神" uptime
-      info "$(color 7) " memory
-      info "$(color 10) " cpu
-
-      prin ""
-      prin "$(color 1)⬤ $(color 2) ⬤  $(color 3) ⬤  $(color 4) ⬤  $(color 5) ⬤  $(color 6) ⬤  $(color 7) ⬤  $(color 8) ⬤  $(color 9)"
+      info " " kernel
+      info " " shell
+      info " " term
+      info "󰍛 " memory
+      info "󰔛 " uptime
+      prin " \n \n ╰─────────────────────────╯"
+      prin " \n \n \n \n $(color 1) \n $(color 2) \n $(color 3) \n $(color 4) \n $(color 5) \n $(color 6) \n $(color 7) \n $(color 0)"
     }
 
-    title_fqdn="off"
     kernel_shorthand="on"
+    uptime_shorthand="on"
+    memory_percent="on"
+    memory_unit="gib"
+    package_managers="on"
+    shell_path="off"
+    shell_version="off"
     distro_shorthand="on"
     os_arch="off"
-    uptime_shorthand="tiny"
-    memory_percent="on"
-    memory_unit="mib"
-    package_managers="off"
-    shell_path="off"
-    shell_version="on"
+    title_fqdn="off"
     speed_type="bios_limit"
     speed_shorthand="on"
     cpu_brand="on"

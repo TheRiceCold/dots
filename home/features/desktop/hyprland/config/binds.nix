@@ -6,17 +6,29 @@
       "SUPER, mouse:273, resizewindow"
     ];
 
+    bindle = [
+      # Brightness control
+      ",XF86MonBrightnessUp, exec, light -A 10"
+      ",XF86MonBrightnessDown, exec, light -U 10"
+      # Volume control
+      ",XF86AudioRaiseVolume, exec, pamixer -i 5"
+      ",XF86AudioLowerVolume, exec, pamixer -d 5"
+    ];
+
+    bindl = [
+      ",XF86AudioMute,exec, pamixer -t"
+      ",XF86AudioMicMute,exec, pamixer --default-source -t"
+    ];
+
     bind = let 
-      swaylock = "${pkgs.swaylock}/bin/swaylock";
-      workspaces = [ 
-        "0" "1" "2" "3" "4" "5" "6" "7" "8" "9"
-        "F1" "F2" "F3" "F4" "F5" "F6" "F7" "F8" "F9" "F10" "F11" "F12"
-      ];
-      # Map keys (arrows and hjkl) to hyprland directions (l, r, u, d)
-      directions = rec {
-        up = "u"; down = "d"; left = "l"; right = "r";
-        k = up; j = down; h = left; l = right;
-      };
+      binding = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
+      arr = [1 2 3 4 5 6 7 8 9];
+      ws = binding "SUPER" "workspace";
+      mvfocus = binding "SUPER" "movefocus";
+      mvactive = binding "SUPER ALT" "moveactive";
+      swapwindow = binding "SUPERSHIFT" "swapwindow";
+      resizeactive = binding "SUPER CTRL" "resizeactive";
+      mvtows = binding "SUPERSHIFT" "movetoworkspacesilent";
     in [
       "SUPERSHIFT, q, exit"
       "SUPER, q, killactive"
@@ -35,30 +47,28 @@
       "SUPER, SPACE, exec, pkill rofi || rofi -show drun"
       "SUPER, o, exec, killall -SIGUSR1 .waybar-wrapped"
 
-      "SUPER, left, resizeactive, -40 0"
-      "SUPER, right, resizeactive, 40 0"
+      (mvfocus "k" "u")
+      (mvfocus "j" "d")
+      (mvfocus "l" "r")
+      (mvfocus "h" "l")
 
-      "SUPER, up, resizeactive, 0 -40"
-      "SUPER, down, resizeactive, 0 40"
+      (swapwindow "k" "u")
+      (swapwindow "j" "d")
+      (swapwindow "l" "r")
+      (swapwindow "h" "l")
 
-      # Brightness control
-      ",XF86MonBrightnessUp, exec, light -A 10"
-      ",XF86MonBrightnessDown, exec, light -U 10"
+      (resizeactive "k" "0 -20")
+      (resizeactive "j" "0 20")
+      (resizeactive "l" "20 0")
+      (resizeactive "h" "-20 0")
 
-      # Volume control
-      ",XF86AudioRaiseVolume,exec, pamixer -i 5"
-      ",XF86AudioLowerVolume,exec, pamixer -d 5"
-      ",XF86AudioMute,exec, pamixer -t"
-      ",XF86AudioMicMute,exec, pamixer --default-source -t"
-
+      (mvactive "k" "0 -20")
+      (mvactive "j" "0 20")
+      (mvactive "l" "20 0")
+      (mvactive "h" "-20 0")
     ] ++
     # Change workspace
-    (map (n: "SUPER, ${n}, workspace, name:${n}") workspaces) ++
-    # Move window to workspace
-    (map (n: "SUPERSHIFT, ${n}, movetoworkspacesilent, name:${n}") workspaces) ++
-    # Move focus
-    (lib.mapAttrsToList (key: direction: "SUPER, ${key}, movefocus, ${direction}") directions) ++
-    # Move windows
-    (lib.mapAttrsToList (key: direction: "SUPERSHIFT, ${key}, swapwindow, ${direction}") directions);
+    (map (i: ws (toString i) (toString i)) arr) ++
+    (map (i: mvtows (toString i) (toString i)) arr);
   };
 }

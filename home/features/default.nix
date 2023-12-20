@@ -8,6 +8,7 @@
     ./browser
     ./graphics
 
+    ./theme
     ./ui/ags
     ./ui/rofi
     ./ui/waybar

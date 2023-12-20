@@ -87,6 +87,22 @@
         "type": "github"
       }
     },
+    "more-waita": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1700249054,
+        "narHash": "sha256-A/XigUb903ebJo7TmhdqOm4uy5HWcCSHFaxhb5plPQE=",
+        "owner": "somepaulo",
+        "repo": "MoreWaita",
+        "rev": "05c406b47326cdb0f481486156a6c9c9b28ef304",
+        "type": "github"
+      },
+      "original": {
+        "owner": "somepaulo",
+        "repo": "MoreWaita",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1693471703,
@@ -123,6 +139,7 @@
         "ags": "ags",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "more-waita": "more-waita",
         "nixpkgs": "nixpkgs_2"
       }
     },

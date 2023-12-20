@@ -4,6 +4,7 @@
 
   home.packages = with pkgs; [
     sassc
+    brightnessctl   # Brightness Control
     (python311.withPackages (p: [ p.python-pam ]))
   ];
 

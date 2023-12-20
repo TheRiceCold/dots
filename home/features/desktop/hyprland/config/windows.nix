@@ -9,16 +9,18 @@
       layout = "dwindle";
     };
 
-    windowrule = [ 
+    windowrule = let
+      f = regex: "float, ^(${regex})$";
+    in [ 
       "tile, firefox"
 
-      "float, rofi" 
-      "float, swayimg"
-      # "float, foot" 
-      "float, btop"
-      "float, joshuto"
-      "float, g4music"
-      "float, pavucontrol"
+      # (f "foot")
+      (f "rofi")
+      (f "swayimg")
+      (f "btop")
+      (f "joshuto")
+      (f "g4music")
+      (f "pavucontrol")
       "float, title:^(Picture-in-Picture)" 
     ];
 
