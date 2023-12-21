@@ -34,8 +34,8 @@
         disabled = false;
       };
       cmd_duration = {
-        min_time = 1000;
-        format = "[$duration ](fg:yellow)";
+        min_time = 0;
+        format = "'[](bold fg:yellow)[$duration](bold bg:yellow fg:black)[](bold fg:yellow)'";
       };
       character = {
         success_symbol = "[❯](bold purple)";
@@ -67,9 +67,15 @@
         "Vault" = "󱉽 ";
       };
       git_branch = {
-        style = "";
-        symbol = "";
-        format = "[ $symbol $branch](fg:purple)(:$remote_branch)";
+        symbol = "󰘬";
+        style = "bg: green";
+        truncation_length = 4;
+        truncation_symbol = "";
+        format = "• [](bold fg:green)[$symbol $branch(:$remote_branch)](fg:black bg:green)[](bold fg:green)";
+      };
+      git_commit = {
+        tag_symbol = " ";
+        commit_hash_length = 4;
       };
       os = {
         disabled = false;

@@ -1,14 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ 
-    ./config 
-
-    ./eww 
-    ./rofi
-    ./waybar 
-    # ./swappy.nix
-  ];
+  imports = [ ./config ];
 
   home = {
     packages = with pkgs; [

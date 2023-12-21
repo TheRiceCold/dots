@@ -33,15 +33,15 @@ in
     style = import ./style.nix;
     settings = {
       mainBar = {
-        layer = "top";
         height = 35;
         spacing = 8;
+        layer = "top";
+        position = "top";
         margin-top = 0;
         margin-left = 0;
         margin-right = 0;
         margin-bottom = 0;
 
-        fixed-center = false;
         modules-left = [ 
           "hyprland/workspaces" 
           # "custom/wall"
@@ -193,16 +193,6 @@ in
             default = ["" "" ""];
           };
           on-click = "pavucontrol";
-        };
-
-        "custom/notification" = {
-          # exec = "~/.config/waybar/scripts/notification.sh";
-          exec = "~/flake/home/desktop/services/wayland/waybar/scripts/notification.sh";
-          on-click = "dunstctl set-paused toggle";
-          on-click-right = "notify-send -t 1 'swww' '1' & ~/flake/home/desktop/graphical/wms/hyprland/scripts/wall";
-          return-type = "json";
-          max-length = 50;
-          format = "{}";
         };
       };
     };

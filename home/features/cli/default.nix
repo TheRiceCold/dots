@@ -1,15 +1,13 @@
 { pkgs, ... }: {
   imports = [ 
-    ./starship.nix
     ./joshuto.nix
-    ./neofetch
-
     ./tmux.nix
+    ./neofetch
     # ./zellij.nix
   ];
 
   home.packages = with pkgs; [
-    zoxide
+    # zoxide
     direnv
     lazygit
   ];

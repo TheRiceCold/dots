@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 let
-  topbar = "${pkgs.waybar}/bin/waybar";
+  hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
   wallpaper = "${pkgs.swww}/bin/swww init";
 in {
   imports = [
@@ -22,16 +22,25 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true; 
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = hyprland;
     settings = {
       monitor = ",preferred,auto,1";
       # monitor = "eDP-1,1920x1080@60,0x0,1";
 
-      exec = [ wallpaper topbar ];
+      exec = [ 
+        "ags"
+        wallpaper 
+        "hyprctl setcursor Qogir 24"
+        "wl-paste --watch cliphist store"
+      ];
 
       input = {
         kb_layout = "us";
-        touchpad.natural_scroll = true;
+        follow_mouse = 1;
+        touchpad = {
+          natural_scroll = true;
+          disable_while_typing = true;
+        };
       };
 
       dwindle = {
@@ -51,7 +60,10 @@ in {
       misc = {
         disable_hyprland_logo = true;
         animate_manual_resizes = true;
-        new_window_takes_over_fullscreen = 2;
+
+        layers_hog_keyboard_focus = false;
+        disable_splash_rendering = true;
+        force_default_wallpaper = 0;
       };
     };
   };
