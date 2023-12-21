@@ -1,7 +1,9 @@
 import Bar from './widgets/bar/main.js';
+import AppLauncher from './widgets/app-launcher/main.js';
 
 const windows = () => [
   Bar(),
+  AppLauncher(),
 ];
 
 export default {
@@ -10,4 +12,3 @@ export default {
   maxStreamVolume: 1.05,
   cacheNotificationActions: false,
 };
-

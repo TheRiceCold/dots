@@ -8,10 +8,8 @@
     ./browser
     ./graphics
 
+    ./ui
     ./theme
-    ./ui/ags
-    ./ui/rofi
-    ./ui/waybar
     ./desktop/hyprland
 
     ./terminal/foot.nix

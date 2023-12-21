@@ -33,19 +33,17 @@
       "SUPERSHIFT, q, exit"
       "SUPER, q, killactive"
 
-      "SUPER, y, pin"
-      "SUPER, s, togglesplit"
       "SUPER, t, togglefloating"
       "SUPER, f, fullscreen, 1"
       "SUPERSHIFT, f, fullscreen, 0"
+      "SUPERALT, f, fakefullscreen"
 
       "SUPER, g, togglegroup"
 
       "SUPER, b, exec, firefox"
       "SUPER, RETURN, exec, foot"
       "SUPER, e, exec, foot joshuto"
-      "SUPER, SPACE, exec, pkill rofi || rofi -show drun"
-      "SUPER, o, exec, killall -SIGUSR1 .waybar-wrapped"
+      "SUPER, SPACE, exec, ags -t applauncher"
 
       (mvfocus "k" "u")
       (mvfocus "j" "d")

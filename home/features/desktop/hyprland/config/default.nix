@@ -1,11 +1,10 @@
 { inputs, pkgs, ... }:
 let
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  wallpaper = "${pkgs.swww}/bin/swww init";
 in {
   imports = [
-    ./binds.nix
     ./windows.nix
+    ./bindings.nix
     ./animations.nix
     ./decoration.nix
   ];
@@ -29,7 +28,7 @@ in {
 
       exec = [ 
         "ags"
-        wallpaper 
+        "swww init"
         "hyprctl setcursor Qogir 24"
         "wl-paste --watch cliphist store"
       ];
