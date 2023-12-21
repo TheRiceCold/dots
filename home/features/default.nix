@@ -8,8 +8,8 @@
     ./browser
     ./graphics
 
-    ./ui
     ./theme
+    ./widgets
     ./desktop/hyprland
 
     ./terminal/foot.nix

@@ -1,5 +1,10 @@
+{ pkgs, ... }:
 {
-  imports = [
-    ./lunarvim.nix
+  imports = [ ./helix.nix ];
+
+  home.packages = pkgs; [ 
+    lunarvim 
+    # emacs
+    # vscodium
   ];
 }
