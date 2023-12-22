@@ -9,9 +9,7 @@
     ./graphics
 
     ./theme
-    ./ui/ags
-    ./ui/rofi
-    ./ui/waybar
+    ./widgets
     ./desktop/hyprland
 
     ./terminal/foot.nix

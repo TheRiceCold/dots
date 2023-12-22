@@ -14,7 +14,7 @@
     in [ 
       "tile, firefox"
 
-      # (f "foot")
+      (f "foot")
       (f "rofi")
       (f "swayimg")
       (f "btop")
