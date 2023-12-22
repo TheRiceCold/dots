@@ -1,21 +1,53 @@
+// import{ Gtk } = imports.gi;
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
-import OverviewButton from './buttons/OverviewButton.js';
 
-const Start = () => Widget.Box({
-  class_name: 'start',
+// import { ModuleMusic } from "./music.js";
+import { ModuleSystem } from "./system.js";
+import { ModuleLeftSpace } from './leftspace.js';
+import { ModuleRightSpace } from "./rightspace.js";
+import { ModuleWorkspaces } from "./workspaces.js";
+import { RoundedCorner } from "../../lib/roundedcorner.js";
+
+// const left = Widget.Box({
+//   className: 'bar-sidemodule',
+//   children: [ModuleMusic()]
+// });
+
+const center = Widget.Box({
   children: [
-    OverviewButton(),
+    RoundedCorner('topright', { className: 'corner-bar-group' }),
+    ModuleWorkspaces(),
+    RoundedCorner('topleft', { className: 'corner-bar-group' }),
   ]
-})
+});
+
+const right = Widget.Box({
+  className: 'bar-sidemodule',
+  children: [ModuleSystem()],
+});
+
 
 export default () => Widget.Window({
   name: 'bar',
-  exclusivity: 'exclusive',
   anchor: ['top', 'left', 'right'],
+  exclusivity: 'exclusive',
+  visible: true,
   child: Widget.CenterBox({
-    class_name: 'bar-bg',
-    start_widget: Start(),
-    center_widget: Widget.Label({ label: 'CenterWidget' }),
-    end_widget: Widget.Label({ label: 'EndWidget' }),
+    className: 'bar-bg',
+    startWidget: ModuleLeftSpace(),
+    centerWidget: Widget.Box({
+      className: 'spacing-h--20' ,
+      children: [
+        // left,
+        center,
+        right
+      ]
+    }),
+    endWidget: ModuleRightSpace(),
+    // setup: self => {
+      // const styleContext = self.get_style_context();
+      // const minHeight = styleContext.get_property('min-height', Gtk.StateFlags.NORMAL);
+      // execAsync(['bash', '-c', `hyprctl keyword monitor ,addreserved,${minHeight},0,0,0`]).catch(print);
+    // }
   })
-})
+});

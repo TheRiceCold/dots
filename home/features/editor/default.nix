@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  imports = [ ./helix.nix ];
+  # imports = [ ./helix.nix ];
 
-  home.packages = pkgs; [ 
+  home.packages = with pkgs; [ 
     lunarvim 
     # emacs
     # vscodium
