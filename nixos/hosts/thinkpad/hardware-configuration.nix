@@ -1,29 +1,11 @@
 { config, lib, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-<<<<<<<< HEAD:hosts/thinkpad/hardware-configuration.nix
-  boot.initrd.availableKernelModules = [ "nvme" "ehci_pci" "xhci_pci" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.initrd.kernelModules = [ ];
-========
   boot.initrd.availableKernelModules = [ "nvme" "ehci_pci" "xhci_pci" "usb_storage" "usbhid" "sd_mod" "rtsx_pci_sdmmc" ];
->>>>>>>> unstable:nixos/hosts/thinkpad/hardware-configuration.nix
   boot.kernelModules = [ "kvm-amd" ];
 
-<<<<<<<< HEAD:hosts/thinkpad/hardware-configuration.nix
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e4ea17a8-eac1-4861-8250-53dd91745b39";
-      fsType = "ext4";
-    };
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/7FB9-1BF1";
-      fsType = "vfat";
-    };
-========
   fileSystems."/" = { 
     device = "/dev/disk/by-label/nixos";
     fsType = "ext4";
@@ -33,9 +15,8 @@
     device = "/dev/disk/by-label/boot";
     fsType = "vfat";
   };
->>>>>>>> unstable:nixos/hosts/thinkpad/hardware-configuration.nix
 
-  swapDevices = [{
+ swapDevices = [{
     device = "/swapfile";
     size = 8192;
   }];
