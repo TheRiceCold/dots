@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 {
   imports = [ 
-    ./rofi 
+    # ./rofi 
     ./waybar 
     inputs.ags.homeManagerModules.default
   ];
@@ -14,7 +14,7 @@
 
   programs.ags = {
     enable = true;
-    configDir = ./ags;
+    # configDir = ./ags;
     extraPackages = [ pkgs.libsoup_3 ];
   };
 }

@@ -56,9 +56,6 @@
   }
 
   #tray, 
-  #network, 
-  #battery,
-  #pulseaudio, 
   #custom-playerctl.backward, 
   #custom-playerctl.play, 
   #custom-playerctl.foward {
@@ -71,14 +68,13 @@
   #network, 
   #battery {
     color: #f5f5f5;
-    border-radius: 10px 24px 10px 24px;
-    padding: 0 20px;
-    margin-left: 7px;
+    padding: 0 10px;
+    margin-left: 4px;
   }
   #clock {
     color: #f5f5f5;
     background: #25253a;
-    border-radius: 0 0 0 40px;
+    border-radius: 0 0 0 30px;
     padding: 10px 10px 15px 25px;
     margin-left: 7px;
     font-weight: bold;
@@ -87,9 +83,9 @@
   #custom-launcher {
     color: #89b4fa;
     background: #25253a;
-    border-radius: 0 0 40px 0;
+    border-radius: 0 0 30px 0;
     margin: 0;
-    padding: 0 35px 0 15px;
+    padding: 0 20px 0 12px;
     font-size: 24px;
   }
 

@@ -15,7 +15,12 @@
 
     package = pkgs.nixVersions.unstable;
     registry.nixpkgs.flake = inputs.nixpkgs;
-    nixPath = [ "nixpkgs=${channelPath}" ];
+    # nixPath = [ "nixpkgs=${channelPath}" ];
+    extraOptions = ''
+      experimental-features = nix-command flakes
+      keep-outputs          = true
+      keep-derivations      = true
+    '';
   };
 
   nixpkgs.config = {
