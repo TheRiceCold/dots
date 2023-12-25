@@ -1,0 +1,48 @@
+.bar
+  min-height: 2rem
+
+  .workspaces
+    font-size: 14px
+    padding: 8px 24px
+    background: #25253a
+    border-bottom-left-radius: 28px
+    border-bottom-right-radius: 28px
+
+    .workspace-button
+      color: gray
+      transition: all 0.3s ease-in-out
+
+      &:hover
+        border-radius: 16px
+        background-color: #f5f5f5
+
+      &.occupied
+        color: white
+        background: rgba(17,17,27,1)
+
+        &:hover
+          border-radius: 16px
+          background-color: #f5f5f5
+
+        &.occupied-left
+          border-top-left-radius: 1rem
+          border-bottom-left-radius: 1rem
+          border-right: 0 solid transparent
+
+        &.occupied-right
+          border-top-right-radius: 1rem
+          border-bottom-right-radius: 1rem
+          border-left: 0 solid transparent
+        
+      &:not(.occupied)
+        border-radius: 1.5rem
+        
+      &.active
+        .button-label
+          color: #25253a
+          border-radius: 1rem
+          background-color: #89b4fa
+          transition: all 0.3s ease-in-out
+
+      .button-label
+        min-width: 2rem

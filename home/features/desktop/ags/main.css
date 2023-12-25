@@ -1,0 +1,41 @@
+* {
+  all: unset;
+  font-family: 'JetBrainsMono Nerd Font'; }
+
+.bar {
+  min-height: 2rem; }
+  .bar .workspaces {
+    font-size: 14px;
+    padding: 8px 24px;
+    background: #25253a;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px; }
+    .bar .workspaces .workspace-button {
+      color: gray;
+      transition: all 0.3s ease-in-out; }
+      .bar .workspaces .workspace-button:hover {
+        border-radius: 16px;
+        background-color: #f5f5f5; }
+      .bar .workspaces .workspace-button.occupied {
+        color: white;
+        background: #11111b; }
+        .bar .workspaces .workspace-button.occupied:hover {
+          border-radius: 16px;
+          background-color: #f5f5f5; }
+        .bar .workspaces .workspace-button.occupied.occupied-left {
+          border-top-left-radius: 1rem;
+          border-bottom-left-radius: 1rem;
+          border-right: 0 solid transparent; }
+        .bar .workspaces .workspace-button.occupied.occupied-right {
+          border-top-right-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+          border-left: 0 solid transparent; }
+      .bar .workspaces .workspace-button:not(.occupied) {
+        border-radius: 1.5rem; }
+      .bar .workspaces .workspace-button.active .button-label {
+        color: #25253a;
+        border-radius: 1rem;
+        background-color: #89b4fa;
+        transition: all 0.3s ease-in-out; }
+      .bar .workspaces .workspace-button .button-label {
+        min-width: 2rem; }

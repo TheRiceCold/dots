@@ -18,6 +18,9 @@
 
 # Screenshots
 
+# Features
+- 
+
 # Structure
 - `flake.nix`: Entrypoint for NixOS configurations.
 - `nixos`: NixOS configurations for hosts and home-manager.
@@ -64,8 +67,10 @@ You can use `cfdisk` for create 3 partition if your on UEFI boot:
   ```
 <p align="right"><a href="#top">back to top</a></p>
 
+# Todo
+
 <!-- Acknowledgements -->
-[Scrumplex]: https://codeberg.org/Scrumplex/flake
 [misterio77]: https://github.com/misterio77/nix-config
 [Ruixi]: https://github.com/Ruixi-rebirth/melted-flakes
+[justinlime]: https://github.com/justinlime/dotfiles
 [Tai Aoki]: https://www.behance.net/Busker

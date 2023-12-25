@@ -6,10 +6,8 @@
     ./media
     ./editor
     ./browser
+    ./desktop
     ./graphics
-
-    ./widgets
-    ./desktop/hyprland
     ./terminal/foot.nix
   ];
 }
