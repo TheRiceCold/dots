@@ -1,6 +1,6 @@
-import { Widget } from '../imports.js';
+import { Widget } from '../../imports.js'
 
-import Workspaces from './workspaces.js';
+import Workspaces from './workspaces.js'
 
 export default () => Widget.Window({
   name: 'bar',
@@ -13,4 +13,4 @@ export default () => Widget.Window({
     centerWidget: Workspaces(),
     // endWidget: ModuleRightSpace(),
   }),
-});
+})

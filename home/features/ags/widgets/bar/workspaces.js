@@ -3,7 +3,7 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js'
 
 const NUM_OF_WORKSPACES = 10
 
-const WorkspaceButton = (i) => Widget.EventBox({
+const WorkspaceButton = i => Widget.EventBox({
   className: 'workspace-button',
   on_primary_click_release: () => Hyprland.sendMessage(`dispatch workspace ${i}`),
   child: Widget.Label({
@@ -27,9 +27,10 @@ export default () => Widget.EventBox({
       const ws = Hyprland.getWorkspace(i + 1)
       const ws_before = Hyprland.getWorkspace(i)
       const ws_after = Hyprland.getWorkspace(i + 2)
+
       item.toggleClassName('occupied', ws?.windows > 0)
-      item.toggleClassName('occupied-left', !ws_before || ws_before?.windows <= 0)
       item.toggleClassName('occupied-right', !ws_after || ws_after?.windows <= 0)
+      item.toggleClassName('occupied-left', !ws_before || ws_before?.windows <= 0)
     })
   }, 'notify::workspaces')
 })

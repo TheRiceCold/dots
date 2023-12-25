@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ ... }:
 {
   wayland.windowManager.hyprland.settings = {
     bindm = [
@@ -43,7 +43,7 @@
       "SUPER, b, exec, firefox"
       "SUPER, RETURN, exec, foot"
       "SUPER, e, exec, foot joshuto"
-      "SUPER, SPACE, exec, ags -t applauncher"
+      "SUPER, Slash, exec, ags -t cheatsheet"
 
       (mvfocus "k" "u")
       (mvfocus "j" "d")
