@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1702954192,
-        "narHash": "sha256-DdGE0WN6Y9pq3i6CCvNBhowk1D8GIAIGkMxabKua/r4=",
+        "lastModified": 1703460629,
+        "narHash": "sha256-Bw/eDvta660Ip+oEitppUf1t3CASjPbCie42fWkxbPw=",
         "owner": "Aylur",
         "repo": "ags",
-        "rev": "6a7654651b9f57709a35a9a5a6cb31310b6dc845",
+        "rev": "3ecc2e2e08e4524f5f6a9e40e9ea35fa346c79a4",
         "type": "github"
       },
       "original": {
@@ -87,22 +87,6 @@
         "type": "github"
       }
     },
-    "more-waita": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1700249054,
-        "narHash": "sha256-A/XigUb903ebJo7TmhdqOm4uy5HWcCSHFaxhb5plPQE=",
-        "owner": "somepaulo",
-        "repo": "MoreWaita",
-        "rev": "05c406b47326cdb0f481486156a6c9c9b28ef304",
-        "type": "github"
-      },
-      "original": {
-        "owner": "somepaulo",
-        "repo": "MoreWaita",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1693471703,
@@ -139,7 +123,6 @@
         "ags": "ags",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
-        "more-waita": "more-waita",
         "nixpkgs": "nixpkgs_2"
       }
     },

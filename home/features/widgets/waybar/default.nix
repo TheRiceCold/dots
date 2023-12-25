@@ -1,30 +1,6 @@
 { pkgs, ... }:
 let
   terminal = "${pkgs.foot}/bin/foot";
-
-  # wallpapers = {
-  #   nord = {
-  #     url = "https://raw.githubusercontent.com/Ruixi-rebirth/wallpaper/main/22.png";
-  #     sha256 = "sha256-ZkuTlFDRPALR//8sbRAqiiAGApyqpKMA2zElRa2ABhY=";
-  #   };
-  # };
-  # default_wall = wallpapers.nord or (throw "Unknown theme");
-  wallpaper_random = pkgs.writeShellScriptBin "wallpaper_random" ''
-    killall dynamic_wallpaper
-    ${pkgs.swww}/bin/swww img $(find ~/flakes/assets/. -name "*.png" | shuf -n1) --transition-type random
-  '';
-  dynamic_wallpaper = pkgs.writeShellScriptBin "dynamic_wallpaper" ''
-    ${pkgs.swww}/bin/swww img $(find ~/flakes/assets/. -name "*.png" | shuf -n1) --transition-type random
-    OLD_PID=$!
-    while true; do
-      sleep 120
-    ${pkgs.swww}/bin/swww img $(find ~/flakes/assets/. -name "*.png" | shuf -n1) --transition-type random
-      NEXT_PID=$!
-      sleep 5
-      kill $OLD_PID
-      OLD_PID=$NEXT_PID
-    done
-  '';
 in
 {
   programs.waybar = {
@@ -43,14 +19,12 @@ in
         margin-bottom = 0;
 
         modules-left = [ 
-          "hyprland/workspaces" 
-          # "custom/wall"
+          "custom/launcher"
         ];
 
         modules-center = [
-          # "hyprland/window"
           "cava"
-          "custom/launcher"
+          "hyprland/workspaces" 
           "cava"
         ];
 
@@ -62,18 +36,21 @@ in
           "clock"
         ];
 
-        "custom/launcher"= {
-          format = " ";
-          tooltip = false;
-          on-click = "sh pkill rofi || rofi -show drun";
-          # on-click-right= "bash $HOME/.config/rofi/run.sh"; 
+        battery = {
+          format = "{icon}  {capacity}%";
+          format-alt = "{icon} {time}";
+          format-charging = "  {capacity}%";
+          format-icons = [ "" "" "" "" "" ];
+          format-plugged = " {capacity}% ";
+          states = {
+            good = 95;
+            warning = 30;
+            critical = 15;
+          };
         };
 
-        "custom/wall" = {
-          on-click = "${wallpaper_random}/bin/wallpaper_random";
-          # on-click-middle = "${default_wall}/bin/default_wall";
-          on-click-right = "killall dynamic_wallpaper || ${dynamic_wallpaper}/bin/dynamic_wallpaper &";
-          format = " 󰠖 ";
+        "custom/launcher" = {
+          format = " ";
           tooltip = false;
         };
 
@@ -106,20 +83,6 @@ in
         "hyprland/workspaces" = {
           on-click = "activate";
           format = "{icon}";
-          format-icons = {
-            default = "";
-            "1" = "1";
-            "2" = "2";
-            "3" = "3";
-            "4" = "4";
-            "5" = "5";
-            "6" = "6";
-            "7" = "7";
-            "8" = "8";
-            "9" = "9";
-            "active" = "󱓻";
-            "urgent" = "󱓻";
-          };
           "persistent_workspaces" = {
             "1" = [];
             "2" = [];
@@ -139,37 +102,16 @@ in
         };
 
         clock = {
+          format = " {:%a, %d %b, %I:%M %p}";
+          format-alt = " {:%d/%m}";
+          tooltip = "true";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format-alt = " {:%a %b %d}";
-          format = " {:%I:%M %p}";
-          today-format = "<span color = '#ff6699'><b><u>{}</u></b></span>";
-          format-calendar = "<span color='#ecc6d9'><b>{}</b></span>";
-          format-calendar-weeks = "<span color='#99ffdd'><b>W{:%U}</b></span>";
-          format-calendar-weekdays = "<span color='#ffcc66'><b>{}</b></span>";
-          on-scroll = {
-            calendar = 1;
-          };
-        };
-
-        memory = {
-          interval = 30;
-          tooltip = false;
-          on-click = "${terminal} btop";
-          format = " {used:0.1f}G / {total:0.1f}G";
-        };
-
-        disk = {
-          path = "/";
-          interval = 5;
-          format = "󰋊 {percentage_used}%";
-          format-alt = "󰋊 {used}/{total} GiB";
         };
 
         network = {
-          # interface = "wlp2*"; # Optional
           format-wifi = "󰖩 {signalStrength}%";
           format-ethernet = "󰈀 {cidr}";
-          tooltip-format = "{ifname} via {gwaddr}";
+          tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
           format-linked = "{ifname} (No IP)";
           format-disconnect = "󰖪";
           on-click = "${terminal} nmtui";

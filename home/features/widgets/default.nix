@@ -1,7 +1,10 @@
 { inputs, pkgs, ... }:
 {
-  # imports = [ ./rofi ./waybar ];
-  imports = [ inputs.ags.homeManagerModules.default ];
+  imports = [ 
+    ./rofi 
+    ./waybar 
+    inputs.ags.homeManagerModules.default
+  ];
 
   home.packages = with pkgs; [
     sassc

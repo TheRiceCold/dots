@@ -8,10 +8,8 @@
     ./browser
     ./graphics
 
-    ./theme
     ./widgets
     ./desktop/hyprland
-
     ./terminal/foot.nix
   ];
 }
