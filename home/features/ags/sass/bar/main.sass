@@ -1,0 +1,18 @@
+@import 'workspaces'
+
+.bar
+  min-height: 2rem
+  @include workspaces 
+
+  .corner-black
+    background-color: black
+    border-radius:  1.705rem
+    -gtk-outline-radius:  1.705rem
+
+  .bar-startspace
+    background: #25253a
+    border-radius: 0 0 32px 0
+
+  .bar-endspace
+    background: #25253a
+    border-radius: 0 0 0 32px

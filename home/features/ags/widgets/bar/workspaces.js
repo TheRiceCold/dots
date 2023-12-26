@@ -1,5 +1,4 @@
-import Hyprland from 'resource:///com/github/Aylur/ags/service/hyprland.js'
-import Widget from 'resource:///com/github/Aylur/ags/widget.js'
+import { Widget, Hyprland } from '../../imports.js'
 
 const NUM_OF_WORKSPACES = 10
 

@@ -1,5 +1,5 @@
 import { Widget } from '../../imports.js'
-import { keybindList } from './data.js'
+import data from './data.js'
 
 const Header = category => Widget.Box({
   vertical: false,
@@ -62,7 +62,7 @@ const Columns = group => Widget.Box({
 
 export default () => Widget.Box({
   vertical: false,
-  className: 'spacing-h-15',
   homogeneous: true,
-  children: keybindList.map(group => Columns(group))
+  className: 'spacing-h-15',
+  children: data.map(group => Columns(group))
 })

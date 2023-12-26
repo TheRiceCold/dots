@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     sassc
+    libnotify
     brightnessctl   # Brightness Control
     (python311.withPackages (p: [ p.python-pam ]))
   ];

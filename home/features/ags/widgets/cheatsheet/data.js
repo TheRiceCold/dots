@@ -1,4 +1,5 @@
-export const keybindList = [[
+// COLUMN1
+const column1 = [
   {
     icon: '',
     name: 'Workspaces: navigation',
@@ -41,7 +42,10 @@ export const keybindList = [[
     ],
     appeartick: 1
   }
-], [
+]
+
+// COLUMN2
+const column2 = [
   {
     icon: "󰜬",
     name: "Widgets (AGS)",
@@ -75,8 +79,10 @@ export const keybindList = [[
     ],
     appeartick: 2
   },
-],
-[
+]
+
+// COLUMN3
+const column3 = [
   {
     icon: '󱓞',
     name: 'Apps',
@@ -112,4 +118,6 @@ export const keybindList = [[
     ],
     appeartick: 3
   }
-]]
+]
+
+export default [ column1, column2, column3, ]
