@@ -1,5 +1,5 @@
 import { Widget } from '../../imports.js'
-import Clock from '../../misc/clock.js'
+import { Clock } from '../../misc/main.js'
 
 const TimeDate = () => Widget.Box({
   hpack: 'end',
@@ -14,7 +14,7 @@ const TimeDate = () => Widget.Box({
     }),
     Clock({ 
       interval: 5000,
-      format: '%A, %d/%m/%Y',
+      format: '%A, %m/%d/%Y',
       className: 'bg-time-date',
     })
   ],

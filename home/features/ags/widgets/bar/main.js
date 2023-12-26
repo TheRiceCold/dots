@@ -1,19 +1,8 @@
 import { Widget } from '../../imports.js'
-import { RoundedCorner } from '../../misc/main.js'
 
-import Workspaces from './workspaces.js'
-import Tray from './tray.js'
-
-const StartSpace = () => Widget.EventBox({
-  hpack: 'start',
-  className: 'bar-startspace',
-  // className: 'bar-endspace',
-  child: Widget.Box({
-    children: [
-      RoundedCorner('topleft', { className: 'corner-black' })
-    ]
-  })
-})
+import LauncherButton from './LauncherButton.js'
+import Workspaces from './Workspaces.js'
+import Tray from './Tray.js'
 
 export default () => Widget.Window({
   name: 'bar',
@@ -22,8 +11,8 @@ export default () => Widget.Window({
   visible: true,
   child: Widget.CenterBox({
     className: 'bar',
-    startWidget: StartSpace(),
+    startWidget: LauncherButton(),
     centerWidget: Workspaces(),
     endWidget: Tray(),
-  }),
+  })
 })

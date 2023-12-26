@@ -1,7 +1,7 @@
 import { Widget } from '../../imports.js'
 
-import Header from './header.js'
-import Keybinds from './keybinds.js'
+import Head from './Head.js'
+import Body from './Body.js'
 
 export default () => Widget.Window({
   name: 'cheatsheet',
@@ -13,14 +13,14 @@ export default () => Widget.Window({
     vertical: true,
     className: 'cheatsheet-bg spacing-v-15',
     children: [
-      Header(),
-      Keybinds(),
+      Head(),
+      Body(),
 
       // Click outside to close
       Widget.EventBox({
         onPrimaryClick: () => App.closeWindow('cheatsheet'),
-        onSecondaryClick: () => App.closeWindow('cheatsheet'),
-        onMiddleClick: () => App.closeWindow('cheatsheet'),
+        // onSecondaryClick: () => App.closeWindow('cheatsheet'),
+        // onMiddleClick: () => App.closeWindow('cheatsheet'),
       })
     ],
   })

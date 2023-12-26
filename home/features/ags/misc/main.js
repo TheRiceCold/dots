@@ -1,2 +1,2 @@
-export { default as Clock } from './clock.js'
-export { default as RoundedCorner } from './roundedcorner.js'
+export { default as Clock } from './Clock.js'
+export { default as RoundedCorner } from './RoundedCorner.js'
