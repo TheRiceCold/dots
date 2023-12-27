@@ -50,7 +50,7 @@ export default () => Widget.EventBox({
   child: Widget.Box({
     children: [
       Tray(),
-      RoundedCorner('topright', { className: 'corner-black' })
+      RoundedCorner('topright', { className: 'corner' })
     ]
   })
 })

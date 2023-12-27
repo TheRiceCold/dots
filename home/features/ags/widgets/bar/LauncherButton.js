@@ -21,10 +21,10 @@ const distroIcon = (() => {
 export default () => Widget.EventBox({
   hpack: 'start',
   className: 'bar-startspace',
-  onPrimaryClick: () => App.toggleWindow('overview'),
+  onPrimaryClick: () => App.toggleWindow('launcher'),
   child: Widget.Box({
     children: [
-      RoundedCorner('topleft', { className: 'corner-black' }),
+      RoundedCorner('topleft', { className: 'corner' }),
       Widget.Label({ 
         label: distroIcon,
         className: 'launcher',

@@ -8,6 +8,8 @@ export const Service = await require('service')
 export const Variable = await require('variable')
 export const Utils = await import(resource('utils'))
 
+export const AgsWindow = await import(resource('widgets/window'))
+
 export const Applications = await service('applications')
 export const Audio = await service('audio')
 export const Battery = await service('battery')

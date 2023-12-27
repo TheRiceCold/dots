@@ -1,0 +1,63 @@
+@mixin floating-widget
+  margin: 8px
+  color: white
+  padding: 16px
+  border-radius: 8px
+  background-color: $background
+
+window#launcher .window-content
+  @include floating_widget
+
+  entry
+    // @include button
+    padding: 8px
+    border-radius: 8px
+    background: rgba(17,17,27,1)
+
+    label, image
+      padding: 8px
+      color: white
+
+  separator
+    margin-top: 8px
+    min-height: 1px
+
+  scrolledwindow
+    // @include scrollable
+    min-width: 500px
+    min-height: 500px
+
+  button.app-item
+    border-radius: 8px
+    // @include button($flat: true, $reactive: false)
+    > box
+      // @include spacing(0.5)
+
+    padding: 8px
+    transition: 200ms
+
+    label
+      transition: 200ms
+      &.title
+        font-weight: bold
+      &.description
+        // color: transparentize($fg-color, 0.3)
+
+    image
+      margin-right: 8px
+      transition: 200ms
+
+    &:hover, &:focus
+      background: rgba(17,17,27,1)
+      .title
+        color: #89b4fa
+      image
+        -gtk-icon-shadow: 2px 2px black
+
+    &:active
+      // border-radius: $radii
+      // background-color: transparentize($accent, 0.5)
+      // box-shadow: inset 0 0 0 $border-width $border-color
+
+      .title
+        // color: $fg-color
