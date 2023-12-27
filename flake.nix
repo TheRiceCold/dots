@@ -15,6 +15,11 @@
     };
 
     ags.url = "github:Aylur/ags";
+
+    more-waita = {
+      url = "github:somepaulo/MoreWaita";
+      flake = false;
+    };
  };
   
   outputs = inputs @ { ... }: {

@@ -1,6 +1,7 @@
-{ pkgs, config, ... }:
+{ inputs, config, ... }:
 
 let
+  home-manager = inputs.home-manager;
   ifExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in{
   users = {
@@ -21,7 +22,7 @@ in{
         "networkmanager" 
       ];
 
-      packages = [ pkgs.home-manager ];
+      packages = [ home-manager ];
     };
   };
 }

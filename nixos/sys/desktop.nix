@@ -1,8 +1,11 @@
 { pkgs, ... }:
 
 {
-  programs.adb.enable = true;
-  programs.dconf.enable = true;
+  programs = {
+    adb.enable = true;
+    dconf.enable = true;
+    light.enable = true; 
+  };
 
   hardware = {
     opengl = {
@@ -13,11 +16,14 @@
     opentabletdriver.enable = true;
   };
 
-  services.blueman.enable = true;
 
-  programs.light.enable = true; 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+  };
 
-  environment.systemPackages = [ pkgs.linux-firmware ];
+  security.polkit.enable = true;
+  # environment.systemPackages = [ pkgs.linux-firmware ];
 
   fonts.fonts = with pkgs; [ 
     jetbrains-mono 
@@ -37,6 +43,22 @@
         RestartSec = 1;
         TimeoutStopSec = 10;
       };
+    };
+  };
+
+  services = {
+    blueman.enable = true;
+    gvfs.enable = true;
+    devmon.enable = true;
+    udisks2.enable = true;
+    upower.enable = true;
+    power-profiles-daemon.enable = true;
+    accounts-daemon.enable = true;
+    gnome = {
+      evolution-data-server.enable = true;
+      glib-networking.enable = true;
+      gnome-keyring.enable = true;
+      gnome-online-accounts.enable = true;
     };
   };
 }
