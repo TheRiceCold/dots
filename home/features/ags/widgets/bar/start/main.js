@@ -1,5 +1,5 @@
-import { App, Widget, Hyprland } from '../../imports.js'
-import { RoundedCorner } from '../../misc/main.js'
+import { App, Widget, Hyprland } from '../../../imports.js'
+import { RoundedCorner } from '../../../misc/main.js'
 
 import GLib from 'gi://GLib'
 
@@ -25,19 +25,19 @@ export default () => Widget.EventBox({
   child: Widget.Box({
     children: [
       RoundedCorner('topleft', { className: 'corner' }),
-      Widget.Label({ 
-        label: distroIcon,
-        className: 'launcher',
-      }),
-      Widget.Label({
-        xalign: 0,
-        className: 'client',
-        connections: [[Hyprland.active.client, label => {
-          const title = Hyprland.active.client._class
-          label.label = title.length === 0 
-            ? 'Desktop' : title.charAt(0).toUpperCase() + title.slice(1)
-        }]],
-      }),
+      // Widget.Label({ 
+      //   label: distroIcon,
+      //   className: 'launcher',
+      // }),
+      // Widget.Label({
+      //   xalign: 0,
+      //   className: 'client',
+      //   connections: [[Hyprland.active.client, label => {
+      //     const title = Hyprland.active.client._class
+      //     label.label = title.length === 0 
+      //       ? 'Desktop' : title.charAt(0).toUpperCase() + title.slice(1)
+      //   }]],
+      // }),
     ]
   })
 })

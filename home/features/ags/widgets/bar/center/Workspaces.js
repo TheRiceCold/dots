@@ -1,4 +1,4 @@
-import { Widget, Hyprland } from '../../imports.js'
+import { Widget, Hyprland } from '../../../imports.js'
 
 const NUM_OF_WORKSPACES = 10
 

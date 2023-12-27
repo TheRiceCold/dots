@@ -1,16 +1,14 @@
 @import 'workspaces'
 
 .bar
-  min-height: 2rem
   @include workspaces 
 
   .corner
-    background: $background
-    border-radius:  1.705rem
-    -gtk-outline-radius:  1.705rem
+    background: black
+    border-radius:  1.5rem
+    -gtk-outline-radius:  1.5rem
 
   .bar-startspace
-    background: $background
     border-radius: 0 0 28px 0
 
     .launcher
@@ -22,8 +20,4 @@
       font-size: 1.1rem
       font-weight: bold
       padding-right: 28px
-    
 
-  .bar-endspace
-    background: $background
-    border-radius: 0 0 0 32px

@@ -19,7 +19,7 @@ in
         margin-bottom = 0;
 
         modules-left = [ 
-          "custom/launcher"
+          # "custom/launcher"
         ];
 
         modules-center = [
@@ -31,9 +31,9 @@ in
         modules-right = [
           "tray"
           "pulseaudio"
-          "battery"
           "network"
-          "clock"
+          "battery"
+          # "clock"
         ];
 
         battery = {

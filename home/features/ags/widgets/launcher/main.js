@@ -27,8 +27,8 @@ const Launcher = () => {
 
   const entry = Widget.Entry({
     hexpand: true,
-    // placeholder_text: 'Search Apps',
-    primary_icon_name: 'folder-saved-search-symbolic',
+    placeholder_text: 'Search Apps',
+    // primary_icon_name: 'folder-saved-search-symbolic',
     // set some text so on-change works the first time
     text: '-',
     on_accept: ({ text }) => {

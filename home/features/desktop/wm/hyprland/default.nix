@@ -52,8 +52,10 @@ in {
       monitor = [ ",preferred,auto,1" ];
 
       exec = [
-        "ags"
         "wl-paste --watch cliphist store"
+        "swww init"
+        "waybar"
+        "ags"
       ];
 
       input = {

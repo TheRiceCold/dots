@@ -1,5 +1,4 @@
-import { App, Widget, SystemTray } from '../../imports.js'
-import { RoundedCorner } from '../../misc/main.js'
+import { Widget, SystemTray } from '../../../imports.js'
 
 const { Gravity } = imports.gi.Gdk
 
@@ -14,7 +13,7 @@ const SysTrayItem = item => Widget.Button({
   onSecondaryClick: btn => item.menu.popup_at_widget(btn, Gravity.SOUTH, Gravity.NORTH, null),
 })
 
-const Tray = () => Widget.Box({
+export default () => Widget.Box({
   spacing: 8,
   className: 'bar-systray bar-group',
   attribute: {
@@ -42,15 +41,3 @@ const Tray = () => Widget.Box({
 })
   .hook(SystemTray, (box, id) => box.attribute.onAdded(box, id), 'added')
   .hook(SystemTray, (box, id) => box.attribute.onRemoved(box, id), 'removed')
-
-
-export default () => Widget.EventBox({
-  hpack: 'end',
-  className: 'bar-endspace',
-  child: Widget.Box({
-    children: [
-      Tray(),
-      RoundedCorner('topright', { className: 'corner' })
-    ]
-  })
-})

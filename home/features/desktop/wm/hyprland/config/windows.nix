@@ -23,10 +23,7 @@
       "float, title:^(Picture-in-Picture)" 
     ];
 
-    # layerrule = [ "blur, waybar" ];
-    blurls = [ 
-      "waybar" 
-      "lockscreen" 
-    ];
+    layerrule = [ "blur, waybar" ];
+    # blurls = [ "waybar" "lockscreen" ];
   };
 }
