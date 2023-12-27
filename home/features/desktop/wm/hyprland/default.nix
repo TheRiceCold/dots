@@ -45,12 +45,14 @@ in {
   wayland.windowManager.hyprland = {
     enable = true; 
     package = hyprland;
+    systemd.enable = true;
+    xwayland.enable = true;
+
     settings = {
-      monitor = ",preferred,auto,1";
-      # monitor = "eDP-1,1920x1080@60,0x0,1";
+      monitor = [ ",preferred,auto,1" ];
 
       exec = [
-        "waybar"
+        "ags"
         "wl-paste --watch cliphist store"
       ];
 
@@ -62,8 +64,8 @@ in {
       };
 
       dwindle = {
-        no_gaps_when_only = false;
         force_split = 0;
+        no_gaps_when_only = false;
         special_scale_factor = 0.8;
         split_width_multiplier = 1.0;
         use_active_for_splits = true;
@@ -81,5 +83,14 @@ in {
         new_window_takes_over_fullscreen = 2;
       };
     };
+  };
+
+  xdg.desktopEntries."org.gnome.Settings" = {
+    name = "Settings";
+    comment = "Gnome Control Center";
+    icon = "org.gnome.Settings";
+    exec = "env XDG_CURRENT_DESKTOP=gnome ${pkgs.gnome.gnome-control-center}/bin/gnome-control-center";
+    categories = [ "X-Preferences" ];
+    terminal = false;
   };
 }

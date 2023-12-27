@@ -43,6 +43,7 @@
       "SUPER, b, exec, firefox"
       "SUPER, RETURN, exec, foot"
       "SUPER, e, exec, foot joshuto"
+      "SUPER, Space, exec, ags -t launcher"
       "SUPER, Slash, exec, ags -t cheatsheet"
 
       (mvfocus "k" "u")

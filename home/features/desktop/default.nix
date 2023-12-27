@@ -1,6 +1,7 @@
 { inputs, pkgs, ... }:
 {
   imports = [
+    ./theme
     ./wm/hyprland
     ./widgets/waybar
     inputs.ags.homeManagerModules.default
