@@ -18,15 +18,8 @@ in
         margin-right = 0;
         margin-bottom = 0;
 
-        modules-left = [ 
-          # "custom/launcher"
-        ];
-
-        modules-center = [
-          "cava"
-          "hyprland/workspaces" 
-          "cava"
-        ];
+        # modules-left = [  "custom/launcher" ];
+        modules-center = [ "cava" "hyprland/workspaces" "cava" ];
 
         modules-right = [
           "tray"
@@ -90,10 +83,6 @@ in
             "4" = [];
             "5" = [];
           };
-        };
-
-        "hyprland/window" = {
-          format = "{}";
         };
 
         tray = {

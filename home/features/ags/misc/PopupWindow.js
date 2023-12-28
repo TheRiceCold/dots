@@ -1,5 +1,7 @@
 import { App, Widget } from '../imports.js'
 
+const { closeWindow } = App
+
 export default ({
   name,
   child,
@@ -14,6 +16,14 @@ export default ({
 
   child: Widget.Box({ 
     className: 'window-content',
-    child 
+    children: [
+      child,
+      // Click Outside to Close
+      Widget.EventBox({
+        onPrimaryClick: () => closeWindow(name),
+        onSecondaryClick: () => closeWindow(name),
+        onMiddleClick: () => closeWindow(name),
+      })
+    ],
   }),
 })

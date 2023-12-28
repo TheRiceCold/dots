@@ -1,5 +1,5 @@
 import { Widget, App, Applications } from '../../imports.js'
-import PopupWindow from '../../misc/PopupWindow.js'
+import { PopupWindow } from '../../misc/main.js'
 import AppItem from './AppItem.js'
 
 const WINDOW_NAME = 'launcher'

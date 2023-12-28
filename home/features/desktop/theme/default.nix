@@ -36,11 +36,6 @@ in {
     ];
 
     sessionVariables = {
-      # GTK_THEME = "Nordic";
-      # QT_AUTO_SCREEN_SCALE_FACTOR  = "1";
-      # QT_QPA_PLATFORMTHEME = "gtk3";
-      # QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-      # DISABLE_QT5_COMPAT = "0";
       XCURSOR_THEME = cursor-theme;
       XCURSOR_SIZE = "24";
     };

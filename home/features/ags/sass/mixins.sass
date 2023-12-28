@@ -1,0 +1,59 @@
+@mixin widget
+  color: red
+  transition: 200ms
+  border-radius: 8px
+  border: 1px solid blue
+  background-color: $background
+
+@mixin floating-widget
+  margin: 8px
+  color: white
+  padding: 16px
+  border-radius: 8px
+  background-color: $background
+
+@mixin hidden
+  background-color: transparent
+  background-image: none
+  border-color: transparent
+  box-shadow: none
+  -gtk-icon-transform: scale(0)
+
+  *
+    background-color: transparent
+    background-image: none
+    border-color: transparent
+    box-shadow: none
+    -gtk-icon-transform: scale(0)
+
+
+@mixin spacing($multiplier: 1, $spacing: 8px, $rec: false) 
+  &.horizontal > *
+    margin: 0 $spacing * $multiplier / 2
+    &:first-child
+      margin-left: 0 
+    &:last-child
+      margin-right: 0
+
+  &.vertical > *
+    margin: $spacing * $multiplier / 2 0
+    &:first-child 
+      margin-top: 0
+    &:last-child
+      margin-bottom: 0
+
+  @if $rec
+    box
+      &.horizontal > *
+        margin: 0 $spacing * $multiplier / 2
+        &:first-child
+          margin-left: 0
+        &:last-child
+          margin-right: 0
+
+      &.vertical > *
+        margin: $spacing * $multiplier / 2 0
+        &:first-child 
+          margin-top: 0
+        &:last-child 
+          margin-bottom: 0

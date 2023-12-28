@@ -1,5 +1,5 @@
-import { App, Widget, Hyprland } from '../../../imports.js'
-import { RoundedCorner } from '../../../misc/main.js'
+import { App, Widget, Hyprland } from '../../imports.js'
+import { RoundedCorner } from '../../misc/main.js'
 
 import GLib from 'gi://GLib'
 
@@ -24,7 +24,7 @@ export default () => Widget.EventBox({
   onPrimaryClick: () => App.toggleWindow('launcher'),
   child: Widget.Box({
     children: [
-      RoundedCorner('topleft', { className: 'corner' }),
+      RoundedCorner('topleft', { className: 'corner-black' }),
       // Widget.Label({ 
       //   label: distroIcon,
       //   className: 'launcher',
