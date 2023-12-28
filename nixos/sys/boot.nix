@@ -3,7 +3,7 @@
   boot.loader = {
     timeout = 0;
     systemd-boot.enable = true; # Set to false if GRUB is enabled
-    systemd-boot.consoleMode = "auto";
+    # systemd-boot.consoleMode = "auto";
 
     # grub = {
     #   enable = true;
@@ -12,7 +12,7 @@
     #   splashImage = ../../assets/yukopi_wallpaper.png; 
     # };
 
-    efi.efiSysMountPoint = "/boot";
+    # efi.efiSysMountPoint = "/boot";
     efi.canTouchEfiVariables = true;
   };
 

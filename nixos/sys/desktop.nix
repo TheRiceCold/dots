@@ -12,10 +12,12 @@
       enable = true;
       driSupport32Bit = true;
     };
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = false;
+    };
     opentabletdriver.enable = true;
   };
-
 
   xdg.portal = {
     enable = true;

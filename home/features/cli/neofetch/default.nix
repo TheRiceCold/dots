@@ -4,7 +4,6 @@
   xdg.configFile."neofetch/config.conf".text = ''
     print_info() {
       prin " \n \n ╭───────┤ $(color 5) NixOS $(color 15)├───────╮"
-      info underline
       info " " kernel
       info " " shell
       info " " term

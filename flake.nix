@@ -12,9 +12,12 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     ags.url = "github:Aylur/ags";
-
     more-waita = {
       url = "github:somepaulo/MoreWaita";
       flake = false;
