@@ -18,10 +18,14 @@
       key-bindings = {
         scrollback-up-page = "Page_Up";
         scrollback-down-page = "Page_Down";
+
         clipboard-copy = "Control+c";
         clipboard-paste = "Control+v";
+
         search-start = "Control+f";
       };
+
+      # search-bindings = { };
 
       colors = {
         # Catppuccin Espresso

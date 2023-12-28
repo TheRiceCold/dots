@@ -3,6 +3,7 @@
   imports = [
     ./theme
     ./wm/hyprland
+    # ./widgets/ags
     ./widgets/waybar
     inputs.ags.homeManagerModules.default
   ];

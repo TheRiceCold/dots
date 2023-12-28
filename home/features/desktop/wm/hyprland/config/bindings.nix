@@ -43,6 +43,7 @@
       "SUPER, b, exec, firefox"
       "SUPER, RETURN, exec, foot"
       "SUPER, e, exec, foot joshuto"
+      "SUPERSHIFT, c, exec, hyprpicker"
 
       # AGS keybinds
       "SUPER, Tab, exec, ags -t overview"
@@ -64,10 +65,10 @@
       (resizeactive "l" "20 0")
       (resizeactive "h" "-20 0")
 
-      (mvactive "k" "0 -20")
-      (mvactive "j" "0 20")
-      (mvactive "l" "20 0")
-      (mvactive "h" "-20 0")
+      (mvactive "k" "0 -30")
+      (mvactive "j" "0 30")
+      (mvactive "l" "30 0")
+      (mvactive "h" "-30 0")
     ] ++
     # Change workspace
     (map (i: ws (toString i) (toString i)) arr) ++
