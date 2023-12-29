@@ -27,18 +27,18 @@ const Launcher = () => {
 
   const entry = Widget.Entry({
     hexpand: true,
-    placeholder_text: 'Search Apps',
+    // placeholder_text: 'Search Apps',
     // primary_icon_name: 'folder-saved-search-symbolic',
     // set some text so on-change works the first time
     text: '-',
-    on_accept: ({ text }) => {
+    onAccept: ({ text }) => {
       const list = Applications.query(text || '')
       if (list[0]) {
         App.toggleWindow(WINDOW_NAME)
         launchApp(list[0])
       }
     },
-    on_change: ({ text }) => items.map(item => {
+    onChange: ({ text }) => items.map(item => {
       if (item.attribute) {
         const { app, revealer } = item.attribute
         revealer.reveal_child = app.match(text)
@@ -66,7 +66,4 @@ const Launcher = () => {
   })
 }
 
-export default () => PopupWindow({
-  name: WINDOW_NAME,
-  child: Launcher(),
-})
+export default () => PopupWindow({ name: WINDOW_NAME, child: Launcher() })

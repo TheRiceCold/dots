@@ -1,18 +1,27 @@
-import { App } from './imports.js'
+import { App, Utils } from './imports.js'
 
-import Desktop from './widgets/desktop/main.js'
-import Launcher from './widgets/launcher/main.js'
-import CheatSheet from './widgets/cheatsheet/main.js'
-import Workspaces from './widgets/workspaces/main.js'
-import ScreenCorners from './widgets/screencorners/main.js'
+import Bar from './windows/bar/main.js'
+import Desktop from './windows/desktop/main.js'
+import Launcher from './windows/launcher/main.js'
+import Overview from './windows/overview/main.js'
+import CheatSheet from './windows/cheatsheet/main.js'
+import Indicators from './windows/indicators/main.js'
+import ScreenCorners from './windows/screencorners/main.js'
 
+const css = `${App.configDir}/style.css`
+const sass = `${App.configDir}/scss/main.sass`
+Utils.exec(`sassc ${sass} ${css}`)
+
+App.resetCss()
 App.applyCss(`${App.configDir}/main.css`)
 
 const windows = [
+  Bar(),
   Desktop(),
   Launcher(),
+  Overview(),
   CheatSheet(),
-  Workspaces(),
+  Indicators(),
 ].concat(ScreenCorners)
 
 export default {

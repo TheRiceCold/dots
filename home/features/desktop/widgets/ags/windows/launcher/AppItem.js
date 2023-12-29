@@ -2,7 +2,7 @@ import { Widget, App, Utils } from '../../imports.js'
 
 export default app => {
   const title = Widget.Label({
-    class_name: 'title',
+    className: 'title',
     label: app.name,
     xalign: 0,
     vpack: 'center',
@@ -10,7 +10,7 @@ export default app => {
   })
 
   const description = Widget.Label({
-    class_name: 'description',
+    className: 'description',
     label: app.description || '',
     wrap: true,
     xalign: 0,
@@ -30,7 +30,7 @@ export default app => {
   })
 
   return Widget.Button({
-    class_name: 'app-item',
+    className: 'app-item',
     attribute: app,
     child: Widget.Box({ children: [icon, textBox] }),
     on_clicked: () => {

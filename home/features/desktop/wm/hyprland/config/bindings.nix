@@ -43,7 +43,7 @@
       "SUPER, b, exec, firefox"
       "SUPER, RETURN, exec, foot"
       "SUPER, e, exec, foot joshuto"
-      "SUPERSHIFT, c, exec, hyprpicker"
+      "SUPERSHIFT, c, exec, hyprpicker -a"
 
       # AGS keybinds
       "SUPER, Tab, exec, ags -t overview"

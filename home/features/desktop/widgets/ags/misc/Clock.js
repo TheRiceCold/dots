@@ -1,5 +1,4 @@
 import { Widget } from '../imports.js'
-import GLib from 'gi://GLib'
 
 export default ({
   format = '%H:%M:%S %B %e. %A',
@@ -9,6 +8,6 @@ export default ({
   className: 'clock',
   ...rest,
   connections: [[interval, label =>
-    label.label = GLib.DateTime.new_now_local().format(format) || 'wrong format',
+    label.label = imports.gi.GLib.DateTime.new_now_local().format(format) || 'wrong format',
   ]],
 })

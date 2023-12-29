@@ -4,7 +4,7 @@ let
   hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
 in {
   imports = [
-    ./plugins.nix
+    # ./plugins.nix
     ./windows.nix
     ./bindings.nix
     ./animations.nix
@@ -23,7 +23,6 @@ in {
       exec = [
         "wl-paste --watch cliphist store"
         "swww init"
-        "waybar"
         "ags"
       ];
 
