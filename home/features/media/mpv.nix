@@ -1,4 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.mpv ];
+  home.packages = with pkgs; [ 
+    (mpv.override { scripts = [mpvScripts.mpris]; })
+  ];
 }
