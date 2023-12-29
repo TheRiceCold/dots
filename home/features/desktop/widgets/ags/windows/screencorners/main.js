@@ -1,4 +1,4 @@
-import { Widget } from '../../imports.js';
+import { Widget } from '../../imports.js'
 import { RoundedCorner } from '../../misc/main.js'
 
 export default [ 

@@ -31,27 +31,23 @@
   margin: 0.476rem
   box-shadow: 0 2px 3px transparentize(black, 0.55)
 
+.corner
+  @include large-rounding
+  background: rgb(37, 37, 58)
+
+.corner-black
+  background: black
+  @include large-rounding
+
 @import 'colors'
 @import 'mixins'
 @import 'classes'
 
 // Widgets
+@import 'topbar'
 @import 'desktop'
 @import 'launcher'
 @import 'overview'
 @import 'workspaces'
 @import 'cheatsheet'
-
-.bar
-  @include workspaces 
-
-  .bar-startspace
-    border-radius: 0 0 28px 0
-
-.corner
-  @include large-rounding
-  background: rgba(37, 37, 58, 0.75)
-
-.corner-black
-  background: black
-  @include large-rounding
+@import 'osd'

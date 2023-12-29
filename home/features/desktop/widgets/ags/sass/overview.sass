@@ -72,39 +72,42 @@
   // background-color: $activecolor
 
 .overview-tasks
-  @include large-rounding
-  @include elevation-border
   @include elevation2
-  padding: 0.341rem
-  background-color: $background
+  @include normal-rounding
+  @include elevation-border
+  background-color: #11111B
   // color: $onBackground
 
-.overview-tasks-workspace
-  @include normal-rounding
-  // @include elevation-border
-  margin: 0.341rem
-  // background-color: mix($t_t_surface, $t_onSurface, 93%)
+  .overview-tasks-workspace
+    margin: 12px
+    background: #CBA6F7
+    @include small-rounding
+    // @include elevation-border
+  
+  .overview-tasks-workspace-number
+    // @include mainfont
+    // color: mix($t_onSurface, $t_surface, 93%)
 
-.overview-tasks-workspace-number
-  // @include mainfont
-  // color: mix($t_onSurface, $t_surface, 93%)
+  .overview-tasks-window
+    @include menu_decel
+    @include small-rounding
+    margin: 2px
+    border: 1px solid white
+    background: rgba(255,255,255,0.25)
+    // color: $onSecondaryContainer
+    // border: 0.068rem solid $t_t_t_onSecondaryContainer
 
-.overview-tasks-window
-  @include menu_decel
-  @include normal-rounding
-  // background-color: $l_t_secondaryContainer
-  // color: $onSecondaryContainer
-  // border: 0.068rem solid $t_t_t_onSecondaryContainer
+  .overview-tasks-window:hover,
+  .overview-tasks-window:focus
+    background: white
+    // background-color: mix($l_t_secondaryContainer, $primary, 95%)
 
-.overview-tasks-window:hover,
-.overview-tasks-window:focus
-  // background-color: mix($l_t_secondaryContainer, $primary, 95%)
+  .overview-tasks-window:active
+    // background: #89B4FA
 
-.overview-tasks-window:active
-  // background-color: mix($l_t_secondaryContainer, $primary, 90%)
+  .overview-tasks-window-selected
+    background: #89B4FA
+    // background-color: mix($l_t_secondaryContainer, $primary, 90%)
 
-.overview-tasks-window-selected
-  // background-color: mix($l_t_secondaryContainer, $primary, 90%)
-
-.overview-tasks-window-dragging 
-  opacity: 0.2
+  .overview-tasks-window-dragging 
+    opacity: 0.2
