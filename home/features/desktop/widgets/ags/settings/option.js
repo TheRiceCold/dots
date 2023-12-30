@@ -1,11 +1,8 @@
 import options from '../options.js'
-import { reloadSass } from './sass.js';
-import { Service, Utils } from '../imports.js'
+import reloadSass from './reloadSass.js'
+import { Service } from '../imports.js'
 
-const CACHE_FILE = Utils.CACHE_DIR + '/options.json'
-let cacheObj = JSON.parse(Utils.readFile(CACHE_FILE) || '{}')
-
-export class Opt extends Service {
+export default class Option extends Service {
   static { Service.register(this, {}, { 'value': [ 'jsobject' ] }) }
 
   #value
@@ -40,23 +37,12 @@ export class Opt extends Service {
   #init() {
     getOptions()
 
-    if (cacheObj[this.id] !== undefined) 
-      this.setValue(cacheObj[this.id])
-
     const words = this.id
       .split('.').flatMap(w => w.split('_'))
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
 
     this.title ||= words.join(' ')
     this.category ||= words.length === 1 ? 'General' : words.at(0) || 'General'
-
-    this.connect('changed', () => {
-      cacheObj[this.id] = this.value
-      Utils.writeFile(
-        JSON.stringify(cacheObj, null, 2),
-        CACHE_FILE,
-      )
-    })
   }
 
   get value() { return this.#value }
@@ -74,11 +60,7 @@ export class Opt extends Service {
     if (this.value !== value) {
       this.#value = this.format(value)
       this.changed('value')
-
-      if (reload && !this.noReload) {
-        reloadSass()
-        // setupHyprland()
-      }
+      if (reload && !this.noReload) reloadSass()
     }
   }
 
@@ -88,14 +70,12 @@ export class Opt extends Service {
   }
 }
 
-export const Option = (value, config) => new Opt(value, config)
-
 export const getOptions = (object = options, path = '') =>
   Object.keys(object).flatMap(key => {
     const obj = object[key]
     const id = path ? path + '.' + key : key
 
-    if (obj instanceof Opt) {
+    if (obj instanceof Option) {
       obj.id = id
       return obj
     }

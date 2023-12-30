@@ -1,4 +1,7 @@
-@import '/tmp/ags/sass/options.sass'
+@import 'variables.sass'
+
+* 
+  all: unset
 
 $hover: transparentize($_widget-bg, ($widget-opacity * 0.9) / 100)
 $widget-bg: transparentize($_widget-bg, $widget-opacity / 100)
@@ -18,31 +21,14 @@ $popover-radius: if($radii == 0, 0, $radii + $popover-padding)
 $wm-gaps: floor($spacing * $wm-gaps-multiplier)
 $shader-fg: #fff
 
-@mixin menu_decel
-  transition: 300ms cubic-bezier(0.1, 1, 0, 1)
-
-@mixin elevation-border
-  // border-top: 1px solid mix($t_t_surface, $onSurface, 90%)
-  // border-left: 1px solid mix($t_t_surface, $onSurface, 90%)
-  // border-right: 1px solid mix($t_t_surface, $onSurface, 95%)
-  // border-bottom: 1px solid mix($t_t_surface, $onSurface, 95%)
-
-@mixin elevation2
-  margin: 0.476rem
-  box-shadow: 0 2px 3px transparentize(black, 0.55)
-
-@import 'colors'
-@import 'mixins'
 @import 'classes'
-
 @import 'common/main'
 @import 'windows/main'
 
 .corner
+  background: $bg-color
   @include large-rounding
-  background: rgb(37, 37, 58)
 
 .corner-black
   background: black
   @include large-rounding
-
