@@ -1,14 +1,15 @@
 import options from '../options.js'
+import { reloadSass } from './sass.js';
 import { Service, Utils } from '../imports.js'
 
 const CACHE_FILE = Utils.CACHE_DIR + '/options.json'
 let cacheObj = JSON.parse(Utils.readFile(CACHE_FILE) || '{}')
 
 export class Opt extends Service {
-  static { Service.register(this, {}, { 'value': ['jsobject'] }) }
+  static { Service.register(this, {}, { 'value': [ 'jsobject' ] }) }
 
   #value
-  #scss = ''
+  #sass = ''
   unit = 'px'
   noReload = false
   persist = false
@@ -19,7 +20,7 @@ export class Opt extends Service {
   category = ''
   enums = []
   format = v => v
-  scssFormat = v => v
+  sassFormat = v => v
 
   constructor(value, config) {
     super()
@@ -27,15 +28,14 @@ export class Opt extends Service {
     this.type = typeof value
     this.defaultValue = value
 
-    if (config) Object.keys(config).forEach(c => this[c] = config[c])
+    if (config) 
+      Object.keys(config).forEach(c => this[c] = config[c])
+
     import('../options.js').then(this.#init.bind(this))
   }
 
-  set scss(scss) { this.#scss = scss }
-  get scss() {
-    return this.#scss || this.id
-      .split('.').join('-').split('_').join('-')
-  }
+  set sass(sass) { this.#sass = sass }
+  get sass() { return this.#sass || this.id.split('.').join('-').split('_').join('-') }
 
   #init() {
     getOptions()
@@ -76,14 +76,15 @@ export class Opt extends Service {
       this.changed('value')
 
       if (reload && !this.noReload) {
-        // reloadScss()
+        reloadSass()
         // setupHyprland()
       }
     }
   }
 
   reset(reload = false) {
-    if (!this.persist) this.setValue(this.defaultValue, reload)
+    if (!this.persist) 
+      this.setValue(this.defaultValue, reload)
   }
 }
 
@@ -99,7 +100,8 @@ export const getOptions = (object = options, path = '') =>
       return obj
     }
 
-    if (typeof obj === 'object') return getOptions(obj, id)
+    if (typeof obj === 'object') 
+      return getOptions(obj, id)
 
     return []
   })

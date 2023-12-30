@@ -1,22 +1,22 @@
-*
-  all: unset
-  font-family: 'JetBrainsMono Nerd Font'
+@import '/tmp/ags/sass/options.sass'
 
-@mixin small-rounding
-  border-radius: 0.818rem
-  -gtk-outline-radius: 0.818rem
+$hover: transparentize($_widget-bg, ($widget-opacity * 0.9) / 100)
+$widget-bg: transparentize($_widget-bg, $widget-opacity / 100)
+$active-gradient: linear-gradient($accent-gradient)
 
-@mixin normal-rounding
-  border-radius: 1.159rem
-  -gtk-outline-radius: 1.159rem
+$hover-fg: if($color-scheme == 'dark', lighten($fg-color, 10%), darken($fg-color, 8%))
 
-@mixin large-rounding
-  border-radius: 1.705rem
-  -gtk-outline-radius: 1.705rem
+$border-color: transparentize($_border-color, $border-opacity / 100)
+$border: $border-width solid $border-color
 
-@mixin full-rounding
-  border-radius: 9999px
-  -gtk-outline-radius: 9999px
+$text-shadow: 2px 2px 2px $shadow
+
+$popover-border-color: transparentize($_border-color, max(($border-opacity - 1) / 100, 0))
+$popover-padding: $padding * $popover-padding-multiplier
+$popover-radius: if($radii == 0, 0, $radii + $popover-padding)
+
+$wm-gaps: floor($spacing * $wm-gaps-multiplier)
+$shader-fg: #fff
 
 @mixin menu_decel
   transition: 300ms cubic-bezier(0.1, 1, 0, 1)
@@ -31,6 +31,13 @@
   margin: 0.476rem
   box-shadow: 0 2px 3px transparentize(black, 0.55)
 
+@import 'colors'
+@import 'mixins'
+@import 'classes'
+
+@import 'common/main'
+@import 'windows/main'
+
 .corner
   @include large-rounding
   background: rgb(37, 37, 58)
@@ -39,15 +46,3 @@
   background: black
   @include large-rounding
 
-@import 'colors'
-@import 'mixins'
-@import 'classes'
-
-// Widgets
-@import 'topbar'
-@import 'desktop'
-@import 'launcher'
-@import 'overview'
-@import 'workspaces'
-@import 'cheatsheet'
-@import 'osd'

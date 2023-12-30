@@ -1,21 +1,11 @@
-import { App, Utils } from '../imports.js'
 import options from '../options.js'
+import { reloadSass } from './sass.js'
 import setGlobals from '../settings/globals.js'
 
 export default () => {
-  loadSass()
+  reloadSass()
   setGlobals()
   gtkFontSettings()
-}
-
-function loadSass() {
-  const css = `${App.configDir}/main.css`
-  const sass = `${App.configDir}/sass/main.sass`
-
-  Utils.exec(`sassc ${sass} ${css}`)
-  App.resetCss()
-  App.applyCss(`${App.configDir}/main.css`)
-
 }
 
 function gtkFontSettings() {

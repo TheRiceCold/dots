@@ -1,0 +1,52 @@
+@import 'battery'
+
+$bar-spacing: $spacing / 2
+$button-radius: if($bar-style == 'floating', max(0, $radii - $bar-spacing), $radii)
+
+.topbar
+  min-height: 2.75rem
+
+
+  @if $bar-style == 'normal'
+    background: $bg-color
+
+  @if not $screen-corners and $bar-style == 'normal'
+    @if $bar-position == 'bottom'
+      border-top: $border
+    @else
+      border-bottom: $border
+
+  @if $bar-style == 'floating'
+    @include floating-widget
+    border-radius: $radii
+    margin: $wm-gaps
+    padding: 0
+
+  @if $bar-style == 'separated'
+    > .end > button:last-child > *
+      margin-right: $wm-gaps
+
+    > .start > button:first-child > *
+      margin-left: $wm-gaps
+
+  .panel-button
+    @include panel-button
+
+  .tray-item, .color-picker
+    @include panel-button($flat: true)
+
+  separator
+    min-width: 5px
+    min-height: 5px
+    border-radius: $radii
+    background-color: transparentize($fg-color, 0.86)
+
+  @include battery 
+
+  .recorder
+    image 
+      color: transparentize($red, 0.3)
+    &:hover image 
+      color: transparentize($red, 0.15)
+    &:active image 
+      color: $red

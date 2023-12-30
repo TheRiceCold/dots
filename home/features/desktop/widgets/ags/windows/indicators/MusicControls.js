@@ -126,11 +126,11 @@ const CoverArt = ({ player, ...rest }) => Widget.Box({
 
               // Generate colors
               Utils.execAsync(['bash', '-c',
-                `${App.configDir}/scripts/color_generation/generate_colors_material.py --path '${coverPath}' > ${App.configDir}/scss/_musicmaterial.scss ${lightDark}`
+                `${App.configDir}/scripts/color_generation/generate_colors_material.py --path '${coverPath}' > ${App.configDir}/sass/_musicmaterial.sass ${lightDark}`
               ]).then(() => {
                 Utils.exec(`wal -i "${player.coverPath}" -n -t -s -e -q ${lightDark}`)
-                Utils.exec(`bash -c "cp ~/.cache/wal/colors.scss ${App.configDir}/scss/_musicwal.scss"`)
-                Utils.exec(`sassc ${App.configDir}/scss/_music.scss ${stylePath}`)
+                Utils.exec(`bash -c "cp ~/.cache/wal/colors.sass ${App.configDir}/sass/_musicwal.sass"`)
+                Utils.exec(`sassc ${App.configDir}/sass/_music.sass ${stylePath}`)
                 self.css = `background-image: url('${coverPath}');`
                 App.applyCss(`${stylePath}`)
               }).catch(print)

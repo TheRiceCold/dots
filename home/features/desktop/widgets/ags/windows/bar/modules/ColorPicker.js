@@ -6,16 +6,21 @@ import PanelButton from './PanelButton.js'
 const { Gdk } = imports.gi
 
 export default () => PanelButton({
-  class_name: 'color-picker',
+  className: 'color-picker',
   content: Widget.Icon('color-select-symbolic'),
-  binds: [['tooltip-text', Colors, 'colors', v => `${v.length} colors`]],
+  binds: [[
+    'tooltip-text', 
+    Colors, 
+    'colors', 
+    v => `${v.length} colors`
+  ]],
   onClicked: () => Colors.pick(),
 
   on_secondary_click: btn => {
     if (Colors.colors.length === 0) return
 
     Widget.Menu({
-      class_name: 'colorpicker',
+      className: 'colorpicker',
       children: Colors.colors.map(color => Widget.MenuItem({
         child: Widget.Label(color),
         css: `background-color: ${color}`,
