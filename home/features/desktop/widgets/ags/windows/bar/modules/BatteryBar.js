@@ -1,5 +1,6 @@
 import { Widget, Battery } from '../../../imports.js'
-import { PanelButton, FontIcon } from '../../../misc/main.js'
+import { FontIcon } from '../../../misc/main.js'
+import PanelButton from './PanelButton.js'
 
 import options from '../../../options.js'
 
@@ -65,7 +66,7 @@ export default () => PanelButton({
         ? [ WholeButton() ] : [ 
           Indicator(), 
           PercentLabel(), 
-          // LevelBar() 
+          LevelBar() 
       ]],
     ],
   }),

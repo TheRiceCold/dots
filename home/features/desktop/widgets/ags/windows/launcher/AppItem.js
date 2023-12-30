@@ -33,7 +33,7 @@ export default app => {
     className: 'app-item',
     attribute: app,
     child: Widget.Box({ children: [icon, textBox] }),
-    on_clicked: () => {
+    onClicked: () => {
       App.closeWindow('launcher')
       app.launch()
     },

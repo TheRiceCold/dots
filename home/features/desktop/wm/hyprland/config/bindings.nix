@@ -39,11 +39,13 @@
       "SUPERALT, f, fakefullscreen"
 
       "SUPER, g, togglegroup"
+      "SUPER, s, togglespecialworkspace"
 
       "SUPER, b, exec, firefox"
       "SUPER, RETURN, exec, foot"
       "SUPER, e, exec, foot joshuto"
       "SUPERSHIFT, c, exec, hyprpicker -a"
+      "ControlSuper, v, exec, pavucontrol"
 
       # AGS keybinds
       "SUPER, Tab, exec, ags -t overview"

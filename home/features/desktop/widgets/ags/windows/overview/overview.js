@@ -85,12 +85,12 @@ const ContextWorkspaceArray = ({
   thisWorkspace 
 }) => Widget.MenuItem({
   label: `${label}`,
-  setup: (menuItem) => {
+  setup: menuItem => {
     let submenu = new Gtk.Menu()
     submenu.className = 'menu'
     for (let i = 1; i <= 10; i++) {
       let button = new Gtk.MenuItem({ label: `Workspace ${i}` })
-      button.connect("activate", () => {
+      button.connect('activate', () => {
         actionFunc(thisWorkspace, i)
         overviewTick.value = !overviewTick.value
       })

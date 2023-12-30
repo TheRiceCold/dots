@@ -1,4 +1,4 @@
-import { Widget, App } from '../imports.js'
+import { Widget, App } from '../../../imports.js'
 
 export default ({
   className,

@@ -1,31 +1,26 @@
 import { App, Utils } from './imports.js'
 
+import init from './settings/init.js'
 import Bar from './windows/bar/main.js'
 import Desktop from './windows/desktop/main.js'
 import Launcher from './windows/launcher/main.js'
-import Overview from './windows/overview/main.js'
+// import Overview from './windows/overview/main.js'
 import CheatSheet from './windows/cheatsheet/main.js'
-import Indicators from './windows/indicators/main.js'
+// import Indicators from './windows/indicators/main.js'
 import ScreenCorners from './windows/screencorners/main.js'
-
-const css = `${App.configDir}/style.css`
-const sass = `${App.configDir}/scss/main.sass`
-Utils.exec(`sassc ${sass} ${css}`)
-
-App.resetCss()
-App.applyCss(`${App.configDir}/main.css`)
 
 const windows = [
   Bar(),
   Desktop(),
   Launcher(),
-  Overview(),
+  // Overview(),
   CheatSheet(),
-  Indicators(),
+  // Indicators(),
 ].concat(ScreenCorners)
 
 export default {
-  css: `${App.configDir}/main.css`,
+  windows,
+  onConfigParsed: init,
   stackTraceOnError: true,
-  windows
+  css: `${App.configDir}/main.css`,
 }

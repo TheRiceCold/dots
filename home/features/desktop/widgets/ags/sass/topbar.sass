@@ -1,6 +1,14 @@
 .bar-bg
-  background: grey
+  background: $background
   min-height: 2.75rem
+
+  .powermenu, .recorder
+    image 
+      // color: transparentize($red, 0.3)
+    &:hover image 
+      // color: transparentize($red, 0.15)
+    &:active image 
+      color: red
 
   .battery-bar
     .font-icon 

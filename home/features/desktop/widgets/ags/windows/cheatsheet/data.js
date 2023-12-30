@@ -87,7 +87,7 @@ const column3 = [
     icon: '󱓞',
     name: 'Apps',
     binds: [
-      { keys: ["⌘", "+", "Return"], action: "Launch terminal: foot" },
+      { keys: ["⌘", "+", "Return"], action: "Launch terminal: Foot" },
       { keys: ["⌘", "+", "B"], action: "Launch browser: Firefox" },
       { keys: ["⌘", "+", "E"], action: "Launch file manager: joshuto" },
       { keys: ["⌘", "+", "X"], action: "Launch editor: GNOME Text Editor" },
