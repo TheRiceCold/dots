@@ -6,7 +6,7 @@ export default async () => {
     // globalThis.iconBrowser = (await import('../misc/IconBrowser.js')).default
     globalThis.app = App.default
     globalThis.audio = Audio.default
-    globalThis.recorder = (await import('../services/screenrecord.js')).default
+    globalThis.recorder = (await import('../services/ScreenRecorder.js')).default
     globalThis.brightness = (await import('../services/brightness.js')).default
     globalThis.indicator = (await import('../services/onscreenindicator.js')).default
 

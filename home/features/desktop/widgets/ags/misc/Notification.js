@@ -30,11 +30,12 @@ const NotificationIcon = ({ app_entry, app_icon, image }) => {
       min-height: 78px;
     `,
     child: Widget.Icon({
-      icon, size: 58,
-      hpack: 'center', 
-      vpack: 'center', 
+      icon,
+      size: 58,
       hexpand: true,
       vexpand: true,
+      hpack: 'center', 
+      vpack: 'center', 
     }),
   })
 }
@@ -43,49 +44,49 @@ export default notification => {
   const content = Widget.Box({
     className: 'content',
     children: [
-          NotificationIcon(notification),
+      NotificationIcon(notification),
+      Widget.Box({
+        hexpand: true,
+        vertical: true,
+        children: [
           Widget.Box({
-              hexpand: true,
-              vertical: true,
-              children: [
-                Widget.Box({
-                    children: [
-                      Widget.Label({
-                        className: 'title',
-                        xalign: 0,
-                        justification: 'left',
-                        hexpand: true,
-                        max_width_chars: 24,
-                        truncate: 'end',
-                        wrap: true,
-                        label: notification.summary,
-                        use_markup: true,
-                      }),
-                      Widget.Label({
-                        className: 'time',
-                        vpack: 'start',
-                        label: imports.gi.GLib.DateTime.new_from_unix_local(notification.time).format('%H:%M'),
-                      }),
-                      Widget.Button({
-                        className: 'close-button',
-                        vpack: 'start',
-                        child: Widget.Icon('window-close-symbolic'),
-                        onClicked: () => notification.close(),
-                      }),
-                    ],
-                  }),
-                  Widget.Label({
-                    className: 'description',
-                    hexpand: true,
-                    use_markup: true,
-                    xalign: 0,
-                    justification: 'left',
-                    label: notification.body,
-                    wrap: true,
-                  }),
-              ],
+            children: [
+              Widget.Label({
+                className: 'title',
+                xalign: 0,
+                justification: 'left',
+                hexpand: true,
+                max_width_chars: 24,
+                truncate: 'end',
+                wrap: true,
+                label: notification.summary,
+                use_markup: true,
+              }),
+              Widget.Label({
+                className: 'time',
+                vpack: 'start',
+                label: imports.gi.GLib.DateTime.new_from_unix_local(notification.time).format('%H:%M'),
+              }),
+              Widget.Button({
+                className: 'close-button',
+                vpack: 'start',
+                child: Widget.Icon('window-close-symbolic'),
+                onClicked: () => notification.close(),
+              }),
+            ],
           }),
-      ],
+          Widget.Label({
+            className: 'description',
+            hexpand: true,
+            use_markup: true,
+            xalign: 0,
+            justification: 'left',
+            label: notification.body,
+            wrap: true,
+          }),
+        ],
+      }),
+    ],
   })
 
   const actionsbox = Widget.Revealer({

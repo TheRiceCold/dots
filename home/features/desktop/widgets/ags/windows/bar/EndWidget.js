@@ -5,12 +5,12 @@ import {
   SubMenu,
   BatteryBar,
   DateButton,
-  ColorPicker,
+  Utilities,
   ScreenRecord,
   SeparatorDot,
   SystemIndicator,
 } from './modules/exports.js'
-import Recorder from '../../services/screenrecord.js'
+import { ScreenRecorder } from '../../services/main.js'
 
 const submenuItems = Variable(1)
 SystemTray.connect('changed', () => {
@@ -23,10 +23,10 @@ export default () => Widget.Box({
   children: [
     SubMenu({
       items: submenuItems,
-      children: [ Tray(), ColorPicker() ],
+      children: [ Tray(), Utilities() ],
     }),
     ScreenRecord(),
-    SeparatorDot(Recorder, r => r.recording),
+    SeparatorDot(ScreenRecorder, r => r.recording),
     SeparatorDot(Battery, b => b.available),
     BatteryBar(),
     SeparatorDot(),

@@ -1,5 +1,7 @@
 import { Variable } from './imports.js'
 
+export const showMusicControls = Variable(false, {})
+
 export const uptime = Variable('', {
   poll: [60_000, 'cat /proc/uptime', line => {
       const uptime = Number.parseInt(line.split('.')[0]) / 60

@@ -32,8 +32,8 @@ const Header = () => Widget.Box({
 })
 
 const NotificationList = () => Widget.Box({
-  vertical: true,
   vexpand: true,
+  vertical: true,
   connections: [[Notifications, box => {
     box.children = Notifications.notifications.reverse().map(Notification)
     box.visible = Notifications.notifications.length > 0
@@ -48,8 +48,8 @@ const Placeholder = () => Widget.Box({
   vexpand: true,
   hexpand: true,
   children: [
-      Widget.Icon(icons.notifications.silent),
-      Widget.Label('Your inbox is empty'),
+    Widget.Icon(icons.notifications.silent),
+    Widget.Label('Your inbox is empty'),
   ],
   binds: [['visible', Notifications, 'notifications', n => n.length === 0]],
 })

@@ -85,3 +85,13 @@ export const getOptions = (object = options, path = '') =>
 
     return []
   })
+
+
+export function getValues() {
+  const obj = {}
+  for (const opt of getOptions())
+    if (opt.category !== 'exclude')
+      obj[opt.id] = opt.value
+
+  return JSON.stringify(obj, null, 2)
+}

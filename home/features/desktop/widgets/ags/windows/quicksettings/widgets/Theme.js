@@ -1,10 +1,10 @@
 import { Widget } from '../../../imports.js'
-import { setTheme, openSettings } from '../../../settings/theme.js'
 import { ArrowToggleButton, Menu, opened } from '../ToggleButton.js'
 
-import options from '../../../options.js'
-import themes from '../../../themes.js'
 import icons from '../../../icons.js'
+import themes from '../../../themes.js'
+import options from '../../../options.js'
+import { setTheme, openSettings } from '../../../settings/theme.js'
 
 export const ThemeToggle = () => ArrowToggleButton({
   name: 'theme',

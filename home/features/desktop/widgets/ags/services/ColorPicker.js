@@ -56,4 +56,4 @@ class Colors extends Service {
   }
 }
 
-export default new Colors
+export default new Colors()
