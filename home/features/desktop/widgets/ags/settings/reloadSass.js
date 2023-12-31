@@ -11,11 +11,18 @@ export default async () => {
 
     const unit = typeof opt.value === 'number' ? opt.unit : ''
     const value = opt.sassFormat ? opt.sassFormat(opt.value) : opt.value
-    return `$${opt.sass}: ${value}${unit};`
+    return `$${opt.sass}: ${value}${unit}`
   })
 
-  await Utils.writeFile(vars.join('\n'), `${App.configDir}/sass/variables.sass`)
-  await Utils.execAsync(`sassc ${App.configDir}/sass/main.sass ${App.configDir}/main.css`)
-  App.resetCss()
-  App.applyCss(`${App.configDir}/main.css`)
+  try {
+    await Utils.writeFile(vars.join('\n'), `${App.configDir}/sass/variables.sass`)
+    await Utils.execAsync(`sassc ${App.configDir}/sass/main.sass ${App.configDir}/main.css`)
+    App.resetCss()
+    App.applyCss(`${App.configDir}/main.css`)
+  } catch (err) {
+    if (err instanceof Error)
+      console.error(err.message)
+    if (typeof err === 'string') 
+      console.error(err);
+  }
 }

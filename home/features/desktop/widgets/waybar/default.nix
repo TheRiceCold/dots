@@ -22,10 +22,10 @@ in
         modules-center = [ "cava" "hyprland/workspaces" "cava" ];
 
         modules-right = [
-          "tray"
-          "pulseaudio"
-          "network"
-          "battery"
+          # "tray"
+          # "pulseaudio"
+          # "network"
+          # "battery"
           # "clock"
         ];
 

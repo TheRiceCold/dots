@@ -20,11 +20,11 @@ const SysTrayItem = item => PanelButton({
       self.connect('destroy', () => item.menu?.disconnect(id))
   },
 
-  on_primary_click: btn => item.menu?.popup_at_widget(
+  onPrimaryClick: btn => item.menu?.popup_at_widget(
     btn, Gdk.Gravity.SOUTH, Gdk.Gravity.NORTH, null
   ),
 
-  on_secondary_click: btn => item.menu?.popup_at_widget(
+  onSecondaryClick: btn => item.menu?.popup_at_widget(
     btn, Gdk.Gravity.SOUTH, Gdk.Gravity.NORTH, null
   ),
 })

@@ -9,10 +9,10 @@ export const getPlayer = (name = options.mpris.preferred.value) =>
 const Indicator = ({ player, direction = 'right' }) => HoverRevealer({
   className: `media panel-button ${player.name}`,
   direction,
-  on_primary_click: () => player.playPause(),
-  on_scroll_up: () => player.next(),
-  on_scroll_down: () => player.previous(),
-  on_secondary_click: () => player.playPause(),
+  onPrimaryClick: () => player.playPause(),
+  onScrollUp: () => player.next(),
+  onScrollDown: () => player.previous(),
+  onSecondaryClick: () => player.playPause(),
   indicator: mpris.PlayerIcon(player),
   child: Widget.Label({
     vexpand: true,

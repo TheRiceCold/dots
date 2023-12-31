@@ -1,5 +1,4 @@
 import { Widget, Hyprland } from '../../../imports.js'
-import { RoundedCorner } from '../../../misc/main.js'
 
 const NUM_OF_WORKSPACES = 10
 
@@ -11,7 +10,7 @@ const WorkspaceButton = i => Widget.EventBox({
   btn.toggleClassName('active', Hyprland.active.workspace.id === i)
 })
 
-const Workspaces = () => Widget.EventBox({
+export default () => Widget.EventBox({
   className: 'workspaces-background',
   child: Widget.Box({
     className: 'workspaces',
@@ -30,13 +29,4 @@ const Workspaces = () => Widget.EventBox({
       item.toggleClassName('occupied-left', !ws_before || ws_before?.windows <= 0)
     })
   }, 'notify::workspaces')
-})
-
-
-export default () => Widget.Box({
-  children: [
-    RoundedCorner('topright', { className: 'corner-bar-group' }),
-    Workspaces(),
-    RoundedCorner('topleft', { className: 'corner-bar-group' }),
-  ]
 })

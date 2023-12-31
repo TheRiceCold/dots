@@ -37,7 +37,7 @@ $button-radius: if($bar-style == 'floating', max(0, $radii - $bar-spacing), $rad
   min-height: 2.75rem
 
   @if $bar-style == 'normal'
-    background: $bg-color
+    // background: $bg-color
 
   @if not $screen-corners and $bar-style == 'normal'
     @if $bar-position == 'bottom'
@@ -71,6 +71,32 @@ $button-radius: if($bar-style == 'floating', max(0, $radii - $bar-spacing), $rad
     background-color: transparentize($fg-color, 0.86)
 
   @include battery 
+
+  .quicksettings > box > box
+    @include spacing(1)
+
+  .quicksettings:not(.active):not(:active)
+    .bluetooth 
+      color: $blue
+    .battery
+      &.low 
+        color: $red
+      &.charged, &.charging 
+        color: $green
+
+  .media
+    &.spotify image 
+      color: $green
+    &.firefox image 
+      color: $orange
+    &.mpv image 
+      color: $magenta
+    label
+      margin-right: 4px
+
+  .notifications
+    image 
+      color: $yellow
 
   .recorder
     image 

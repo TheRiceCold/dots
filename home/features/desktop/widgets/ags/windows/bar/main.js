@@ -6,7 +6,8 @@ import EndWidget from './EndWidget.js'
 
 export default () => Widget.Window({
   name: 'bar',
-  exclusivity: 'exclusive',
+  layer: 'overlay',
+  exclusivity: 'ignore',
   anchor: ['top', 'left', 'right'],
   child: Widget.CenterBox({
     className: 'topbar',

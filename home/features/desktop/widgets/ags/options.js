@@ -6,7 +6,7 @@ const option = (value, config) => new Option(value, config)
 export default {
   spacing: option(8),
   padding: option(8),
-  radii: option(4),
+  radii: option(8),
 
   popover_padding_multiplier: option(1.4, {
     'category': 'General',
@@ -122,7 +122,7 @@ export default {
   },
 
   battery: {
-    showPercentage: option(true, {
+    showPercentage: option(false, {
       'persist': true,
       'noReload': false,
       'category': 'exclude',
@@ -171,6 +171,16 @@ export default {
         'org.gnome.Software',
       ], { 'sass': 'exclude' }),
     },
+  },
+
+  notifications: {
+    black_list: option(['Spotify'], { 'note': 'app-name | entry' }),
+    position: option(['top'], { 'note': 'anchor' }),
+    width: option(450),
+  },
+
+  dashboard: {
+    sys_info_size: option(70, { 'category': 'Desktop', 'sass': 'sys-info-size' }),
   },
 
   mpris: {

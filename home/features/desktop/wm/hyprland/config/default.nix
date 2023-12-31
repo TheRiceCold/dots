@@ -23,6 +23,7 @@ in {
       exec = [
         "wl-paste --watch cliphist store"
         "swww init"
+        "waybar"
         "ags"
       ];
 

@@ -51,12 +51,12 @@ export default {
     recording: 'media-record-symbolic',
   },
   notifications: {
-    noisy: 'preferences-system-notifications-symbolic',
     silent: 'notifications-disabled-symbolic',
+    noisy: 'preferences-system-notifications-symbolic',
   },
   trash: {
-    full: 'user-trash-full-symbolic',
     empty: 'user-trash-symbolic',
+    full: 'user-trash-full-symbolic',
   },
   mpris: {
     fallback: 'audio-x-generic-symbolic',
@@ -90,9 +90,9 @@ export default {
     },
   },
   system: {
-    cpu: 'org.gnome.SystemMonitor-symbolic',
-    ram: 'drive-harddisk-solidstate-symbolic',
-    temp: 'temperature-symbolic',
+    temp: '',
+    cpu: '',
+    ram: '',
   },
   dialog: {
     Search: '',
@@ -107,4 +107,4 @@ export default {
     Theme: '󰃟',
     Notifications: '󰂚 ',
   },
-};
+}

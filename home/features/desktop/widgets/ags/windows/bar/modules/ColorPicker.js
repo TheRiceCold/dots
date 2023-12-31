@@ -1,4 +1,5 @@
 import { Widget } from '../../../imports.js'
+import { FontIcon } from '../../../misc/main.js'
 
 import Colors from '../../../services/colorpicker.js'
 import PanelButton from './PanelButton.js'
@@ -7,7 +8,7 @@ const { Gdk } = imports.gi
 
 export default () => PanelButton({
   className: 'color-picker',
-  content: Widget.Icon('color-select-symbolic'),
+  content: FontIcon(''),
   binds: [[
     'tooltip-text', 
     Colors, 

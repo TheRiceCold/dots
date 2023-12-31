@@ -4,7 +4,7 @@ import { blurImg } from '../utils.js'
 
 export const CoverArt = (player, props) => Widget.Box({
   ...props,
-  class_name: 'cover',
+  className: 'cover',
   binds: [[
     'css', player, 'cover-path', 
     path => `background-image: url("${path}")`
@@ -13,7 +13,7 @@ export const CoverArt = (player, props) => Widget.Box({
 
 export const BlurredCoverArt = (player, props) => Widget.Box({
   ...props,
-  class_name: 'blurred-cover',
+  className: 'blurred-cover',
   connections: [[player, box => blurImg(player.cover_path).then(img => {
     img && box.setCss(`background-image: url("${img}")`)
   }), 'notify::cover-path']],
@@ -21,19 +21,19 @@ export const BlurredCoverArt = (player, props) => Widget.Box({
 
 export const TitleLabel = (player, props) => Widget.Label({
   ...props,
-  class_name: 'title',
+  className: 'title',
   binds: [['label', player, 'track-title']],
 })
 
 export const ArtistLabel = (player, props) => Widget.Label({
   ...props,
-  class_name: 'artist',
+  className: 'artist',
   binds: [['label', player, 'track-artists', a => a.join(', ') || '']],
 })
 
 export const PlayerIcon = (player, { symbolic = true, ...props } = {}) => Widget.Icon({
   ...props,
-  class_name: 'player-icon',
+  className: 'player-icon',
   tooltip_text: player.identity || '',
   connections: [[player, icon => {
     const name = `${player.entry}${symbolic ? '-symbolic' : ''}`
@@ -45,7 +45,7 @@ export const PlayerIcon = (player, { symbolic = true, ...props } = {}) => Widget
 
 export const PositionSlider = (player, props) => Widget.Slider({
   ...props,
-  class_name: 'position-slider',
+  className: 'position-slider',
   draw_value: false,
   onChange: ({ value }) => {
     player.position = player.length * value
@@ -70,53 +70,48 @@ function lengthStr(length) {
   return `${min}:${sec0}${sec}`
 }
 
-export const PositionLabel = player => Widget.Label({
-  properties: [['update', (label, time) => {
-    player.length > 0
-      ? label.label = lengthStr(time || player.position)
-      : label.visible = !!player
-  }]],
-  connections: [
-    [player, (l, time) => l._update(l, time), 'position'],
-    [1000, l => l._update(l)],
-  ],
-})
+export const PositionLabel = player => 
+  Widget.Label({
+    properties: [['update', (label, time) => {
+      player.length > 0
+        ? label.label = lengthStr(time || player.position)
+        : label.visible = !!player
+    }]],
+    connections: [
+      [player, (l, time) => l._update(l, time), 'position'],
+      [1000, l => l._update(l)],
+    ],
+  })
 
-export const LengthLabel = player => Widget.Label({
-  connections: [[player, label => {
-    player.length > 0
-      ? label.label = lengthStr(player.length)
-      : label.visible = !!player
-  }]],
-})
+export const LengthLabel = player => 
+  Widget.Label({
+    connections: [[player, label => {
+      player.length > 0
+        ? label.label = lengthStr(player.length)
+        : label.visible = !!player
+    }]],
+  })
 
-export const Slash = player => Widget.Label({
-  label: '/',
-  connections: [[player, label => {
-    label.visible = player.length > 0
-  }]],
-})
+export const Slash = player => 
+  Widget.Label({
+    label: '/',
+    connections: [[player, label => {
+      label.visible = player.length > 0
+    }]],
+  })
 
-const PlayerButton = ({ player, items, onClick, prop, canProp, cantValue }) => Widget.Button({
-  child: Widget.Stack({
-    items,
-    binds: [['shown', player, prop, p => `${p}`]],
-  }),
-  on_clicked: player[onClick].bind(player),
-  binds: [['visible', player, canProp, c => c !== cantValue]],
-})
+const PlayerButton = ({ player, items, onClick, prop, canProp, cantValue }) => 
+  Widget.Button({
+    child: Widget.Stack({ items, binds: [['shown', player, prop, p => `${p}`]] }),
+    onClicked: player[onClick].bind(player),
+    binds: [['visible', player, canProp, c => c !== cantValue]],
+  })
 
 export const ShuffleButton = player => PlayerButton({
   player,
   items: [
-    ['true', Widget.Label({
-      class_name: 'shuffle enabled',
-      label: icons.mpris.shuffle.enabled,
-    })],
-    ['false', Widget.Label({
-      class_name: 'shuffle disabled',
-      label: icons.mpris.shuffle.disabled,
-    })],
+    ['true', Widget.Label({ className: 'shuffle enabled', label: icons.mpris.shuffle.enabled })],
+    ['false', Widget.Label({ className: 'shuffle disabled', label: icons.mpris.shuffle.disabled })],
   ],
   onClick: 'shuffle',
   prop: 'shuffle-status',
@@ -127,18 +122,9 @@ export const ShuffleButton = player => PlayerButton({
 export const LoopButton = player => PlayerButton({
   player,
   items: [
-    ['None', Widget.Label({
-      class_name: 'loop none',
-      label: icons.mpris.loop.none,
-    })],
-    ['Track', Widget.Label({
-      class_name: 'loop track',
-      label: icons.mpris.loop.track,
-    })],
-    ['Playlist', Widget.Label({
-      class_name: 'loop playlist',
-      label: icons.mpris.loop.playlist,
-    })],
+    ['None', Widget.Label({ className: 'loop none', label: icons.mpris.loop.none })],
+    ['Track', Widget.Label({ className: 'loop track', label: icons.mpris.loop.track })],
+    ['Playlist', Widget.Label({ className: 'loop playlist', label: icons.mpris.loop.playlist })],
   ],
   onClick: 'loop',
   prop: 'loop-status',
@@ -150,15 +136,15 @@ export const PlayPauseButton = player => PlayerButton({
   player,
   items: [
     ['Playing', Widget.Label({
-      class_name: 'playing',
+      className: 'playing',
       label: icons.mpris.playing,
     })],
     ['Paused', Widget.Label({
-      class_name: 'paused',
+      className: 'paused',
       label: icons.mpris.paused,
     })],
     ['Stopped', Widget.Label({
-      class_name: 'stopped',
+      className: 'stopped',
       label: icons.mpris.stopped,
     })]
   ],
@@ -170,12 +156,7 @@ export const PlayPauseButton = player => PlayerButton({
 
 export const PreviousButton = player => PlayerButton({
   player,
-  items: [[
-    'true', Widget.Label({
-      class_name: 'previous',
-      label: icons.mpris.prev,
-    })
-  ]],
+  items: [[ 'true', Widget.Label({ className: 'previous', label: icons.mpris.prev }) ]],
   onClick: 'previous',
   prop: 'can-go-prev',
   canProp: 'can-go-prev',
@@ -184,12 +165,7 @@ export const PreviousButton = player => PlayerButton({
 
 export const NextButton = player => PlayerButton({
   player,
-  items: [[
-    'true', Widget.Label({
-      className: 'next',
-      label: icons.mpris.next,
-    })
-  ]],
+  items: [[ 'true', Widget.Label({ className: 'next', label: icons.mpris.next }) ]],
   onClick: 'next',
   prop: 'can-go-next',
   canProp: 'can-go-next',

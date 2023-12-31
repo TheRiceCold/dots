@@ -1,8 +1,12 @@
 import { 
-  App, Widget, 
-  Notifications, Bluetooth, Audio, Network 
+  App, 
+  Audio, 
+  Widget, 
+  Network,
+  Bluetooth, 
+  Notifications, 
 } from '../../../imports.js'
-import { HoverRevealer } from '../../../misc/main.js'
+import { FontIcon, HoverRevealer } from '../../../misc/main.js'
 import PanelButton from './PanelButton.js'
 // import Asusctl from '../../services/asusctl.js'
 import Indicator from '../../../services/onscreenindicator.js'
@@ -16,14 +20,13 @@ import icons from '../../../icons.js'
 //     .bind('visible', Asusctl, 'mode', m => m !== 'Hybrid')
 //     .bind('icon', Asusctl, 'mode', i => icons.asusctl.mode[i])
 
-const MicrophoneIndicator = () => Widget.Icon().hook(Audio, icon => {
+const MicrophoneIndicator = () => FontIcon().hook(Audio, icon => {
     if (!Audio.microphone) return
 
-    const { muted, low, medium, high } = icons.audio.mic
     if (Audio.microphone.is_muted)
-      return icon.icon = muted
+      return icon.icon = ''
 
-    const cons = [[67, high], [34, medium], [1, low], [0, muted]]
+    const cons = [[65, ''], [35, ''], [1, ''], [0, '']]
     icon.icon = cons.find(([n]) => n <= Audio.microphone.volume * 100)?.[1] || ''
 
     icon.visible = Audio.recorders.length > 0 || Audio.microphone.is_muted
@@ -44,26 +47,31 @@ const BluetoothDevicesIndicator = () => Widget.Box().hook(Bluetooth, box => {
   box.visible = Bluetooth.connectedDevices.length > 0
 }, 'notify::connected-devices')
 
-const BluetoothIndicator = () => Widget.Icon({
+const BluetoothIndicator = () => FontIcon({
+  icon: '󰂯',
   className: 'bluetooth',
-  icon: icons.bluetooth.enabled,
   visible: Bluetooth.bind('enabled'),
 })
 
-const NetworkIndicator = () => Widget.Icon().hook(Network, self => {
-  const icon = Network[Network.primary || 'wifi']?.iconName
-  self.icon = icon || ''
+const NetworkIndicator = () => FontIcon().hook(Network, self => {
+  // const icon = Network[Network.primary || 'wifi']?.iconName
+  const icon = '󰖩' 
+  self.icon = icon
   self.visible = !!icon
 })
 
-const AudioIndicator = () => Widget.Icon().hook(Audio, self => {
+const AudioIndicator = () => FontIcon().hook(Audio, self => {
   if (!Audio.speaker) return
 
-  const { muted, low, medium, high, overamplified } = icons.audio.volume
   if (Audio.speaker.is_muted) 
-    return self.icon = muted
+    return self.icon = '󰝟'
 
-  const cons = [[101, overamplified], [67, high], [34, medium], [1, low], [0, muted]]
+  const cons = [
+    [65, '󰕾'], 
+    [35, '󰖀'], 
+    [1, '󰕿'], 
+    [0, '󰝟']
+  ]
   self.icon = cons.find(([n]) => n <= Audio.speaker.volume * 100)?.[1] || ''
 }, 'speaker-changed')
 
@@ -85,9 +93,9 @@ export default () => PanelButton({
     children: [
       // Asusctl?.available && ProfileIndicator(),
       // Asusctl?.available && ModeIndicator(),
-      DNDIndicator(),
+      // DNDIndicator(),
       BluetoothDevicesIndicator(),
-      BluetoothIndicator(),
+      // BluetoothIndicator(),
       NetworkIndicator(),
       AudioIndicator(),
       MicrophoneIndicator(),
