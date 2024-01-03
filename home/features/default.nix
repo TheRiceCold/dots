@@ -5,6 +5,7 @@
     # ./wine
     ./shell
     ./media
+    ./tools
     ./editor
     ./browser
     ./desktop

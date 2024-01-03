@@ -11,14 +11,11 @@
       ",XF86MonBrightnessUp, exec, light -A 10"
       ",XF86MonBrightnessDown, exec, light -U 10"
       # Volume control
-      ",XF86AudioRaiseVolume, exec, pamixer -i 5"
-      ",XF86AudioLowerVolume, exec, pamixer -d 5"
+      ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+      ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
     ];
 
-    bindl = [
-      ",XF86AudioMute,exec, pamixer -t"
-      ",XF86AudioMicMute,exec, pamixer --default-source -t"
-    ];
+    bindl = [ ",XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle" ];
 
     bind = let 
       binding = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";

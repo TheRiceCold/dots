@@ -21,6 +21,8 @@
       (f "g4music")
       (f "pavucontrol")
       "float, title:^(Picture-in-Picture)" 
+
+      "opacity 0.8 0.8,class:^(foot)$"
     ];
 
     # layerrule = [ "blur, waybar" ];

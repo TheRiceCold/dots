@@ -62,14 +62,14 @@ in
           waves = false;
           input_delay = 2;
           format-icons = [ 
-            "<span foreground='#cba6f7'>▁</span>" 
-            "<span foreground='#cba6f7'>▂</span>" 
-            "<span foreground='#cba6f7'>▃</span>" 
-            "<span foreground='#cba6f7'>▄</span>" 
-            "<span foreground='#89b4fa'>▅</span>" 
-            "<span foreground='#89b4fa'>▆</span>" 
-            "<span foreground='#89b4fa'>▇</span>" 
-            "<span foreground='#89b4fa'>█</span>" 
+            "<span foreground='#7C6EEB'>▁</span>" 
+            "<span foreground='#7C6EEB'>▂</span>" 
+            "<span foreground='#7C6EEB'>▃</span>" 
+            "<span foreground='#7C6EEB'>▄</span>" 
+            "<span foreground='#5D9CED'>▅</span>" 
+            "<span foreground='#5D9CED'>▆</span>" 
+            "<span foreground='#5D9CED'>▇</span>" 
+            "<span foreground='#5D9CED'>█</span>" 
           ];
         };
 

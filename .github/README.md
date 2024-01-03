@@ -65,7 +65,14 @@ You can use `cfdisk` for create 3 partition if your on UEFI boot:
     git clone https://github.com/kaizen-dw/Flakes
     chmod +x ~/Flakes/scripts/install.sh && ~/Flakes/scripts/install.sh
   ```
+
 <p align="right"><a href="#top">back to top</a></p>
+
+# Extras
+
+## Add widgets(ags configuration)
+    `` git submodule init && git submodule update ``
+
 
 # Todo
 
