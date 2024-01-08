@@ -1,18 +1,23 @@
 { ... }:
 {
   wayland.windowManager.hyprland.settings = {
-    bindm = [
-      "SUPER, mouse:272, movewindow"
-      "SUPER, mouse:273, resizewindow"
-    ];
+    bindm = [ "SUPER, mouse:272, movewindow" "SUPER, mouse:273, resizewindow" ];
 
-    bindle = [
-      # Brightness control
-      ",XF86MonBrightnessUp, exec, light -A 10"
-      ",XF86MonBrightnessDown, exec, light -U 10"
+    bindle = let
       # Volume control
-      ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-      ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      v = key: exec: ",XF86Audio${key}Volume, exec, ${exec}";
+      # Brightness control
+      b = key: exec: ",XF86MonBrightness${key}, exec, ${exec}";
+      # Indicator
+      indicator = "ags -r 'indicator.popup(1);'";
+    in [
+      (b "Up" "light -A 10") (b "Up" indicator) 
+      (b "Down" "light -U 10") (b "Down" indicator) 
+
+      (v "Raise" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+") 
+      (v "Raise" indicator)
+      (v "Lower" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")
+      (v "Lower" indicator)
     ];
 
     bindl = [ ",XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle" ];
@@ -26,6 +31,7 @@
       swapwindow = binding "SUPERSHIFT" "swapwindow";
       resizeactive = binding "SUPER CTRL" "resizeactive";
       mvtows = binding "SUPERSHIFT" "movetoworkspacesilent";
+
     in [
       "SUPERSHIFT, q, exit"
       "SUPER, q, killactive"
@@ -40,11 +46,12 @@
 
       "SUPER, b, exec, firefox"
       "SUPER, RETURN, exec, foot"
-      "SUPER, e, exec, foot joshuto"
+      "SUPER, e, exec, kitty joshuto"
       "SUPERSHIFT, c, exec, hyprpicker -a"
       "ControlSuper, v, exec, pavucontrol"
 
       # AGS keybinds
+      "SUPER, a, exec, ags -t sideleft"
       "SUPER, Tab, exec, ags -t overview"
       "SUPER, Space, exec, ags -t launcher"
       "SUPER, Slash, exec, ags -t cheatsheet"

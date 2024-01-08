@@ -27,6 +27,12 @@
   security.polkit.enable = true;
   # environment.systemPackages = [ pkgs.linux-firmware ];
 
+  environment.loginShellInit = ''
+    if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+      exec Hyprland
+    fi
+  '';
+
   fonts.fonts = with pkgs; [ 
     jetbrains-mono 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

@@ -1,11 +1,12 @@
 { pkgs, ... }:
 {
   home.packages = [ pkgs.kitty ];
+  imports = [ ./colors/moonlight.nix ];
   programs.kitty = {
     enable = true;
     font = {
       size = 12;
-      name = "JetBrainsMono Nerd Font";
+      name = "FiraCode Nerd Font";
     };
     settings = {
       tab_fade = 1;

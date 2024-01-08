@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   home.packages = [ pkgs.firefox-wayland ];
 

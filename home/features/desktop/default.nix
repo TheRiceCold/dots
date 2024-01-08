@@ -3,16 +3,21 @@
   imports = [
     ./theme
     ./wm/hyprland
-    # ./widgets/ags
     ./widgets/waybar
     inputs.ags.homeManagerModules.default
   ];
 
   home.packages = with pkgs; [
-    sassc
+    dart-sass
     libnotify
+    webkitgtk
+    gtksourceview
+    gtk-layer-shell
     brightnessctl   # Brightness Control
-    (python311.withPackages (p: [ p.python-pam ]))
+    (python311.withPackages (p: [ 
+      p.requests
+      p.python-pam 
+    ]))
   ];
 
   programs.ags = {

@@ -1,8 +1,9 @@
 { pkgs, ... }: {
   imports = [ 
-    ./joshuto.nix
-    ./tmux.nix
+    ./joshuto
     ./neofetch
+    ./btop.nix
+    ./tmux.nix
     # ./zellij.nix
   ];
 

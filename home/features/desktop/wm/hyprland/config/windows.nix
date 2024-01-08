@@ -11,6 +11,7 @@
 
     windowrule = let
       f = regex: "float, ^(${regex})$";
+      ft = regex: "float, title:^(${regex})(.*)$";
     in [ 
       "tile, firefox"
 
@@ -20,16 +21,30 @@
       (f "joshuto")
       (f "g4music")
       (f "pavucontrol")
-      "float, title:^(Picture-in-Picture)" 
 
-      "opacity 0.8 0.8,class:^(foot)$"
+      (ft "Save As")
+      (ft "Library")
+      (ft "Open File")
+      (ft "Open Folder")
+      (ft "Select a File")
+      (ft "Choose wallpaper")
+      (ft "Picture-in-Picture")
     ];
 
-    # layerrule = [ "blur, waybar" ];
-    blurls = [ 
-      "ags"
-      "waybar" 
-      "lockscreen" 
+    layerrule = let
+      b = regex: "blur, ${regex}";
+    in [ 
+      (b "waybar")
+      (b "session")
+      (b "launcher")
+      (b "sideleft")
+      (b "sideright")
+      (b "indicator")
+      (b "notifications")
+      (b "gtk-layer-shell")
+
+      "noanim, sideleft"
+      "noanim, sideright"
     ];
   };
 }

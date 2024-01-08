@@ -107,24 +107,6 @@
         "type": "github"
       }
     },
-    "matugen": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1703769755,
-        "narHash": "sha256-5y297MwVX54SQiMDsVxADTHickydCQ+UIgmqVRf5MGE=",
-        "owner": "InioX",
-        "repo": "Matugen",
-        "rev": "65cfe290532d80a9fa4efc20034309b7f20ead29",
-        "type": "github"
-      },
-      "original": {
-        "owner": "InioX",
-        "repo": "Matugen",
-        "type": "github"
-      }
-    },
     "more-waita": {
       "flake": false,
       "locked": {
@@ -159,22 +141,6 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1691186842,
-        "narHash": "sha256-wxBVCvZUwq+XS4N4t9NqsHV4E64cPVqQ2fdDISpjcw0=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "18036c0be90f4e308ae3ebcab0e14aae0336fe42",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
         "lastModified": 1702312524,
         "narHash": "sha256-gkZJRDBUCpTPBvQk25G0B7vfbpEYM5s5OZqghkjZsnE=",
         "owner": "NixOS",
@@ -194,9 +160,8 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
-        "matugen": "matugen",
         "more-waita": "more-waita",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_2"
       }
     },
     "systems": {
