@@ -40,6 +40,7 @@
       (b "sideleft")
       (b "sideright")
       (b "indicator")
+      (b "cheatsheet")
       (b "notifications")
       (b "gtk-layer-shell")
 

@@ -1,4 +1,7 @@
 { ... }:
+let
+  binding = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
+in
 {
   wayland.windowManager.hyprland.settings = {
     bindm = [ "SUPER, mouse:272, movewindow" "SUPER, mouse:273, resizewindow" ];
@@ -23,7 +26,6 @@
     bindl = [ ",XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle" ];
 
     bind = let 
-      binding = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
       arr = [1 2 3 4 5 6 7 8 9];
       ws = binding "SUPER" "workspace";
       mvfocus = binding "SUPER" "movefocus";
