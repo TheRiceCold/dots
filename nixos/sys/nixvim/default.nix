@@ -6,10 +6,14 @@ in {
   imports = [
     nixvim
 
+    # Config files
     ./keymaps.nix
     ./options.nix
     ./telescope.nix
     ./treesitter.nix
+    ./toggleterm.nix
+    ./nvimtree.nix
+    ./whichkey.nix
     ./git.nix
     ./lsp.nix
   ];
@@ -17,29 +21,27 @@ in {
   programs.nixvim = {
     enable = true;
     package = pkgs.neovim-unwrapped;
-    colorschemes.gruvbox.enable = true;
 
     globals.mapleader = " ";
+
+    extraPlugins = with pkgs.vimPlugins; [ 
+      # Colorschemes
+      dracula-nvim
+      catppuccin-nvim
+
+      comment-nvim
+      toggleterm-nvim
+    ];
 
     plugins = {
       oil.enable = true;
       emmet.enable = true;
       neorg.enable = true;
       vimtex.enable = true;
-
-      nvim-tree = {
-        enable = true;
-        openOnSetupFile = true;
-      };
-
-      which-key = {
-        enable = true;
-        showKeys = true;
-      };
-
       bufferline.enable = true;
+      nvim-colorizer.enable = true;
     };
 
-    # extraPlugins = with pkgs.vimPlugins; [ ];
+    colorscheme = "catppuccin";
   };
 }

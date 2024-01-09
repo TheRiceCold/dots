@@ -40,6 +40,9 @@
         "typescript"
         "yaml"
       ];
+
+      # autotag.enable = true;
+      # autopairs.enable = true;
     };
 
     treesitter-context.enable = true;

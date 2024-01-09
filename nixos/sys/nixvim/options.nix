@@ -1,20 +1,25 @@
 {
   programs.nixvim.options = {
+    backup = false;
+    clipboard = "unnamedplus";
+    cmdheight = 1;
+    ignorecase = true;
+    showmode = false; # we don't need to see things like -- INSERT -- anymore
+    showtabline = 1; # always show tabs
+    smartcase = true;
+    smartindent = true;
+
     updatetime = 100; # Faster completion
 
     number = true;
     relativenumber = true;
 
     autoindent = true;
-    clipboard = "unnamedplus";
     expandtab = true;
     shiftwidth = 2;
-    smartindent = true;
     tabstop = 2;
 
-    ignorecase = true;
     incsearch = true;
-    smartcase = true;
     wildmode = "list:longest";
 
     swapfile = false;
