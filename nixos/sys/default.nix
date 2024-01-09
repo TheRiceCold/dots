@@ -8,5 +8,7 @@
     ./sound.nix
     ./users.nix
     ./virtualisation.nix
+
+    ./nixvim
   ];
 }
