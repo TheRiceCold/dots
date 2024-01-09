@@ -3,42 +3,43 @@
 let
   inherit (inputs.nixvim.nixosModules) nixvim;
 in {
-  imports = [ 
-    nixvim 
+  imports = [
+    nixvim
+
+    ./keymaps.nix
+    ./options.nix
+    ./telescope.nix
+    ./treesitter.nix
+    ./git.nix
     ./lsp.nix
   ];
 
   programs.nixvim = {
     enable = true;
-
+    package = pkgs.neovim-unwrapped;
     colorschemes.gruvbox.enable = true;
-
-    options = {
-      number = true;
-      relativenumber = true;
-    };
 
     globals.mapleader = " ";
 
-    # keymaps = [
-    #   {
-    #     action = "<cmd>Telescope live_grep<CR>";
-    #     key = "<leader>g";
-    #   }
-    # ];
-
     plugins = {
+      oil.enable = true;
+      emmet.enable = true;
       neorg.enable = true;
-      neo-tree.enable = true;
-      telescope.enable = true;
-      treesitter.enable = true;
-      # toggleterm.enable = true;
       vimtex.enable = true;
-      which-key.enable = true;
+
+      nvim-tree = {
+        enable = true;
+        openOnSetupFile = true;
+      };
+
+      which-key = {
+        enable = true;
+        showKeys = true;
+      };
+
+      bufferline.enable = true;
     };
 
-    extraPlugins = with pkgs.vimPlugins; [
-
-    ];
+    # extraPlugins = with pkgs.vimPlugins; [ ];
   };
 }

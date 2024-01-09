@@ -17,6 +17,7 @@
     clang
     gnumake
     killall
+    ripgrep
   ];
 
   services = {
