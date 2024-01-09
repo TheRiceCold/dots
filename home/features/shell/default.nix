@@ -10,7 +10,7 @@ let
 in { 
   imports = [ 
     ./git.nix
-    ./bash.nix
+    # ./bash.nix
     ./nushell.nix
     ./starship.nix
   ];

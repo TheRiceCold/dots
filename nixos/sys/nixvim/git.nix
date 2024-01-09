@@ -11,6 +11,10 @@
         changedelete = { };
       };
     };
+
+    neogit = {
+      enable = true;
+    };
   };
 }
 

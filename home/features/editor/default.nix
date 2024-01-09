@@ -3,7 +3,7 @@
   # imports = [ ./helix.nix ];
 
   home.packages = with pkgs; [ 
-    lunarvim 
+    # lunarvim 
     # emacs
     # vscodium
   ];

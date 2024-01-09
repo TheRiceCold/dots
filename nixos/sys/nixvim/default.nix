@@ -14,6 +14,7 @@ in {
     ./toggleterm.nix
     ./nvimtree.nix
     ./whichkey.nix
+    ./lualine.nix
     ./git.nix
     ./lsp.nix
   ];
