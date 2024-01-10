@@ -16,7 +16,6 @@ let
       vim.keymap.set("n", "<S-k>", api.node.open.preview, opts "Open Preview")
     end
   '';
-
 in {
   programs.nixvim = {
     plugins.nvim-tree.enable = true;
@@ -66,9 +65,9 @@ in {
                 unstaged = "",
                 staged = "S",
                 unmerged = "",
-                renamed = " ",
+                renamed = "",
                 untracked = "U",
-                deleted = " ",
+                deleted = "",
                 ignored = "◌",
               },
             },

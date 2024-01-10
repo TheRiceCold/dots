@@ -1,5 +1,7 @@
+{ pkgs, ... }:
 {
   programs.nixvim = {
+    extraPlugins = [ pkgs.vimPlugins.toggleterm-nvim ];
     plugins.toggleterm.enable = true;
 
     extraConfigLua = ''
@@ -138,34 +140,12 @@
         end,
       }
 
-      local bun_outdated = Terminal:new {
-        cmd = "bunx npm-check-updates@latest -ui --format group --packageManager bun",
-        dir = "git_dir",
-        direction = "float",
-        float_opts = {
-          border = "rounded",
-        },
-        -- function to run on opening the terminal
-        on_open = function(term)
-          vim.cmd "startinsert!"
-          vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
-        end,
-        -- function to run on closing the terminal
-        on_close = function(term)
-          vim.cmd "startinsert!"
-        end,
-      }
-
       function _lazygit_toggle()
         lazygit:toggle()
       end
 
-      function _bun_outdated()
-        bun_outdated:toggle()
-      end
 
-      vim.api.nvim_set_keymap("n", "<leader>gz", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
-      vim.api.nvim_set_keymap("n", "<leader>co", "<cmd>lua _bun_outdated()<CR>", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
     '';
   };
 }

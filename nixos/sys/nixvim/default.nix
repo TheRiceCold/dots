@@ -12,6 +12,8 @@ in {
     ./telescope.nix
     ./treesitter.nix
     ./toggleterm.nix
+    ./bufferline.nix
+    # ./autopairs.nix
     ./nvimtree.nix
     ./whichkey.nix
     ./lualine.nix
@@ -31,15 +33,15 @@ in {
       catppuccin-nvim
 
       comment-nvim
-      toggleterm-nvim
     ];
 
     plugins = {
+      dap.enable = true;
       oil.enable = true;
       emmet.enable = true;
       neorg.enable = true;
       vimtex.enable = true;
-      bufferline.enable = true;
+      undotree.enable = true;
       nvim-colorizer.enable = true;
     };
 

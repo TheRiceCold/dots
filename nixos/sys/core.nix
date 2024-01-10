@@ -18,6 +18,9 @@
     gnumake
     killall
     ripgrep
+
+    cargo
+    rustc
   ];
 
   services = {

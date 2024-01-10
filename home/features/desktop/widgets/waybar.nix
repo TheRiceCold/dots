@@ -6,7 +6,21 @@ in
   programs.waybar = {
     enable = true;
     package = pkgs.waybar;
-    style = import ./style.nix;
+    style = ''
+      * {
+        border: none;
+        border-radius: 0;
+        font-size: 13px;
+        font-family: JetBrainsMono Nerd Font;
+      }
+
+      window#waybar { 
+        padding: 8px 0; 
+        background: rgba(37, 37, 58, 0.75);
+      }
+
+      #workspaces { padding: 4px 40px; }
+    '';
     settings = {
       mainBar = {
         height = 35;
