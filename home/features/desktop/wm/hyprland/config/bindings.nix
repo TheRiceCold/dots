@@ -33,7 +33,6 @@ in
       swapwindow = binding "SUPERSHIFT" "swapwindow";
       resizeactive = binding "SUPER CTRL" "resizeactive";
       mvtows = binding "SUPERSHIFT" "movetoworkspacesilent";
-
     in [
       "SUPERSHIFT, q, exit"
       "SUPER, q, killactive"

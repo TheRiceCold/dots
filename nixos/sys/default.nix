@@ -9,6 +9,6 @@
     ./users.nix
     ./virtualisation.nix
 
-    ./nixvim
+    # ./nixvim
   ];
 }

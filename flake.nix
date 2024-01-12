@@ -8,10 +8,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-23.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+   # nixvim = {
+      # url = "github:nix-community/nixvim";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     hyprland = {
       url = "github:hyprwm/Hyprland";

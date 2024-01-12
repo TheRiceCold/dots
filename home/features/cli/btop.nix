@@ -4,7 +4,8 @@
     settings = {
       vim_keys = true;
       rounded_corners = false;
-      color_theme = "gruvbox_dark";
+      theme_background = false;
+      color_theme = "tokyo-storm";
     };
   };
 }

@@ -10,8 +10,9 @@
     };
 
     windowrule = let
-      f = regex: "float, ^(${regex})$";
-      ft = regex: "float, title:^(${regex})(.*)$";
+      f = win: "float, ^(${win})$"; # Float
+      ft = win: "float, title:^(${win})(.*)$"; # Float Title
+      o = val: win: "opacity ${val}, ^(${win})$"; # Opacity
     in [ 
       "tile, firefox"
 
@@ -29,11 +30,16 @@
       (ft "Select a File")
       (ft "Choose wallpaper")
       (ft "Picture-in-Picture")
+
+      (o "0.95" "foot")
     ];
 
+    # windowrulev2 = [ "pin, title:^(Picture-in-Picture)$" ];
+
     layerrule = let
-      b = regex: "blur, ${regex}";
+      b = win: "blur, ${win}";
     in [ 
+      (b "foot")
       (b "waybar")
       (b "session")
       (b "launcher")

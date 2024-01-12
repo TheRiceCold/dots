@@ -19,8 +19,9 @@
     killall
     ripgrep
 
-    cargo
-    rustc
+    neovim
+		cargo
+		nodejs
   ];
 
   services = {
