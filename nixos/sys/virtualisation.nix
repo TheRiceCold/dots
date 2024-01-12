@@ -2,12 +2,7 @@
 let
   dockerEnabled = config.virtualisation.docker.enable;
 in {
-  environment.systemPackages = with pkgs; [ 
-    podman-tui 
-    podman-compose 
-
-    virt-manager
-  ];
+  programs.virt-manager.enable = true;
 
   virtualisation = {
     # docker.enabled = true;

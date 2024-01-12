@@ -1,6 +1,8 @@
 { pkgs, ... }:
-{
-  boot.loader = {
+
+{ boot = {
+
+  loader = {
     timeout = 0;
     systemd-boot.enable = true; # Set to false if GRUB is enabled
     # systemd-boot.consoleMode = "auto";
@@ -16,5 +18,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-}
+  kernelPackages = pkgs.linuxPackages_latest;
+
+};}
