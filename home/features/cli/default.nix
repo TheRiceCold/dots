@@ -11,5 +11,6 @@
     # zoxide
     direnv
     lazygit
+    uchess
   ];
 }

@@ -9,6 +9,7 @@
       unzip
       wget
       gcc
+      bat
       clang
       gnumake
       killall

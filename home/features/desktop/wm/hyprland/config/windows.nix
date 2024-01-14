@@ -30,8 +30,6 @@
       (ft "Select a File")
       (ft "Choose wallpaper")
       (ft "Picture-in-Picture")
-
-      (o "0.95" "foot")
     ];
 
     # windowrulev2 = [ "pin, title:^(Picture-in-Picture)$" ];
@@ -48,7 +46,6 @@
       (b "indicator")
       (b "cheatsheet")
       (b "notifications")
-      (b "gtk-layer-shell")
 
       "noanim, sideleft"
       "noanim, sideright"
