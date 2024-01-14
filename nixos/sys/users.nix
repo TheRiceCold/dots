@@ -1,7 +1,6 @@
-{ inputs, config, ... }:
+{ config, ... }:
 
 let
-  home-manager = inputs.home-manager;
   ifExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in{
   users = {
@@ -10,19 +9,13 @@ in{
     users.kaizen = {
       isNormalUser = true;
       initialPassword = "password";
-      extraGroups = [ 
-        "wheel" 
-        "video"
-        "audio"
-      ] ++ ifExist [
+      extraGroups = [ "wheel" "video" "audio" ] ++ ifExist [
         "docker"
         "podman"
         "adbusers"
         "libvirtd"
         "networkmanager" 
       ];
-
-      packages = [ home-manager ];
     };
   };
 }

@@ -1,38 +1,31 @@
-{ ... }:
-let
-  binding = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
-in
 {
   wayland.windowManager.hyprland.settings = {
     bindm = [ "SUPER, mouse:272, movewindow" "SUPER, mouse:273, resizewindow" ];
 
-    bindle = let
-      # Volume control
+    binde = let
       v = key: exec: ",XF86Audio${key}Volume, exec, ${exec}";
-      # Brightness control
       b = key: exec: ",XF86MonBrightness${key}, exec, ${exec}";
-      # Indicator
-      indicator = "ags -r 'indicator.popup(1);'";
+      i = "ags -r 'indicator.popup(1);'";
     in [
-      (b "Up" "light -A 10") (b "Up" indicator) 
-      (b "Down" "light -U 10") (b "Down" indicator) 
+      (b "Up" "light -A 10") (b "Up" i) 
+      (b "Down" "light -U 10") (b "Down" i) 
 
-      (v "Raise" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+") 
-      (v "Raise" indicator)
-      (v "Lower" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")
-      (v "Lower" indicator)
+      (v "Raise" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+") (v "Raise" i)
+      (v "Lower" "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-") (v "Lower" i)
     ];
 
+    bindr = [ "SUPERSHIFT, f, exec, pkill ags || ags" ];
     bindl = [ ",XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle" ];
 
     bind = let 
+      b = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
       arr = [1 2 3 4 5 6 7 8 9];
-      ws = binding "SUPER" "workspace";
-      mvfocus = binding "SUPER" "movefocus";
-      mvactive = binding "SUPER ALT" "moveactive";
-      swapwindow = binding "SUPERSHIFT" "swapwindow";
-      resizeactive = binding "SUPER CTRL" "resizeactive";
-      mvtows = binding "SUPERSHIFT" "movetoworkspacesilent";
+      ws = b "SUPER" "workspace";
+      mvfocus = b "SUPER" "movefocus";
+      mvactive = b "SUPER ALT" "moveactive";
+      swapwindow = b "SUPERSHIFT" "swapwindow";
+      resizeactive = b "SUPER CTRL" "resizeactive";
+      mvtows =  b "SUPERSHIFT" "movetoworkspacesilent";
     in [
       "SUPERSHIFT, q, exit"
       "SUPER, q, killactive"

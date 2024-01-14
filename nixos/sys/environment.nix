@@ -22,6 +22,8 @@
       # Podman tools
       podman-tui
       podman-compose
+
+      linux-wifi-hotspot
     ];
 
     # loginShellInit = ''

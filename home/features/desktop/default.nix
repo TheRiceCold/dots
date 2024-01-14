@@ -10,9 +10,6 @@
   home.packages = with pkgs; [
     dart-sass
     libnotify
-    webkitgtk
-    gtksourceview
-    gtk-layer-shell
     brightnessctl   # Brightness Control
     (python311.withPackages (p: [ 
       p.requests
@@ -23,6 +20,12 @@
   programs.ags = {
     enable = true;
     # configDir = ./ags;
-    extraPackages = [ pkgs.libsoup_3 ];
+    extraPackages = with pkgs; [ 
+      libgtop
+      playerctl
+      libsoup_3 
+      webkitgtk_4_1
+      gtksourceview
+    ];
   };
 }
