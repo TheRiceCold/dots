@@ -21,12 +21,6 @@
         variant = "mocha";
       };
     };
-
-    cursorTheme = {
-      size = 22;
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-    };
   };
 }
 

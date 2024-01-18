@@ -28,8 +28,8 @@
 
     pointerCursor = {
       size = 22;
-      name = "Nordzy-cursors";
-      package = pkgs.nordzy-cursor-theme;
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
     };
   };
 
