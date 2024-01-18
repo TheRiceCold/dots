@@ -6,6 +6,7 @@
     ./shell
     ./media
     ./tools
+    ./games
     ./editor
     ./browser
     ./desktop

@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   home.sessionVariables.COLORTERM = "truecolor";
-  home.packages = [ pkgs.helix ];
   programs.helix = {
     enable = true;
+    package = pkgs.helix;
     settings = {
       theme = "gruvbox";
       editor = {

@@ -12,7 +12,7 @@
     windowrule = let
       f = win: "float, ^(${win})$"; # Float
       ft = win: "float, title:^(${win})(.*)$"; # Float Title
-      o = val: win: "opacity ${val}, ^(${win})$"; # Opacity
+      # o = val: win: "opacity ${val}, ^(${win})$"; # Opacity
     in [ 
       "tile, firefox"
 
@@ -30,6 +30,8 @@
       (ft "Select a File")
       (ft "Choose wallpaper")
       (ft "Picture-in-Picture")
+
+      "float, title:floating"
     ];
 
     # windowrulev2 = [ "pin, title:^(Picture-in-Picture)$" ];

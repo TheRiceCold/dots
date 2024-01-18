@@ -36,9 +36,10 @@ in {
     ];
 
     sessionVariables = {
-      XCURSOR_THEME = cursor-theme;
       XCURSOR_SIZE = "24";
+      XCURSOR_THEME = cursor-theme;
     };
+
     pointerCursor = {
       size = 24;
       gtk.enable = true;

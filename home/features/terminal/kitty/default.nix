@@ -12,6 +12,7 @@
       tab_fade = 1;
       tab_bar_style = "fade";
       cursor_shape = "underline";
+      confirm_os_window_close = 0;
     };
   };
 }

@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 {
   imports = [
-    ./theme
+    ./gtk
     ./wm/hyprland
     ./widgets/waybar.nix
     inputs.ags.homeManagerModules.default
@@ -21,6 +21,7 @@
     enable = true;
     # configDir = ./ags;
     extraPackages = with pkgs; [ 
+      vte
       libgtop
       playerctl
       libsoup_3 

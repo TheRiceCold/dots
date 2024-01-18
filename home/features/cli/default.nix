@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [ 
     ./joshuto
+    ./bat.nix
     ./neofetch
     ./btop.nix
     ./tmux.nix
@@ -11,6 +12,5 @@
     # zoxide
     direnv
     lazygit
-    uchess
   ];
 }

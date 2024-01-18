@@ -1,8 +1,7 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  home.packages = with pkgs; [ sioyek ];
-
   imports = [
-    ./zathura
+    # ./sioyek.nix
+    ./zathura.nix
   ];
 }
