@@ -1,10 +1,10 @@
 { pkgs, ... }: {
   imports = [ 
-    ./joshuto
-    ./bat.nix
+    ./bat
     ./neofetch
     ./btop.nix
     ./tmux.nix
+    ./yazi.nix
     # ./zellij.nix
   ];
 

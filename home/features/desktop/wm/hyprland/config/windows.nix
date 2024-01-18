@@ -16,6 +16,7 @@
     in [ 
       "tile, firefox"
 
+      (f "mpv")
       (f "rofi")
       (f "btop")
       (f "swayimg")

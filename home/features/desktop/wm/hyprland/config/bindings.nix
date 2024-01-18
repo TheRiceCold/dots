@@ -40,9 +40,9 @@
 
       "SUPER, b, exec, firefox"
       "SUPER, RETURN, exec, foot"
-      "SUPER, e, exec, kitty joshuto"
       "SUPERSHIFT, c, exec, hyprpicker -a"
       "ControlSuper, v, exec, pavucontrol"
+      "SUPER, e, exec, kitty --title floating yazi"
 
       # AGS keybinds
       "SUPER, a, exec, ags -t sideleft"

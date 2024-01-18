@@ -9,21 +9,30 @@
  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" />
  <br /><br />
   <div align="center">
-         <a href="https://nixos.org">
-            <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3">
-         </a>
-         <a href="https://github.com/kaizen-dw/Flakes/stargazers">
-            <img src="https://img.shields.io/github/stars/kaizen-dw/FLakes?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6">
-         </a>
-         <a href="https://github.com/kaizen-dw/Flakes/">
-            <img src="https://img.shields.io/github/repo-size/kaizen-dw/Flakes?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6">
-         </a>
-  </div>
-</div><br />
+    <a href="https://nixos.org">
+        <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3">
+    </a>
+    <a href="https://github.com/kaizen-dw/Flakes/stargazers">
+        <img src="https://img.shields.io/github/stars/kaizen-dw/FLakes?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6">
+    </a>
+     <a href="https://github.com/kaizen-dw/Flakes/">
+        <img src="https://img.shields.io/github/repo-size/kaizen-dw/Flakes?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6">
+     </a>
+  </div><br />
 
-&nbsp;[<kbd> <br> Overview&nbsp;<br> </kbd>](#-Overview)&nbsp;&nbsp;
-&nbsp;[<kbd> <br> Installation <br> </kbd>](#-Installation)&nbsp;&nbsp;
-<br><br><br>
+---
+
+
+**[<kbd> <br> Overview <br> </kbd>](#-Overview)** 
+**[<kbd> <br> Installation <br> </kbd>](#-Installation)** 
+**[<kbd> <br> Configure <br> </kbd>](#-Overview)** 
+**[<kbd> <br> Acknowledgements&nbsp; <br> </kbd>](#-Acknowledgements)**
+
+
+---
+
+</div>
+
 
 # 🗃️ Overview
 
@@ -32,47 +41,47 @@
 <details open>
 <summary>🖥️ <b>Display</b></summary>
  
-- Window Manager: [Hyprland](https://hyprland.org)
-- Wallpaper: [swww](https://github.com/GhostNaN/mpvpaper)
-- Widgets: [ags](https://github.com/aylur/ags)
+- Window Manager: [Hyprland][Hyprland]
+- Wallpaper: [Swww][Swww]
+- Widgets: [Ags][Ags]
 </details>
 
 <details open>
 <summary>🎯 <b>Core Applications</b></summary>
 
-- Editor: [LunarVim](https://neovim.io/) & [VSCodium]()
-- Browser: [Firefox](https://www.mozilla.org/en-US/firefox/developer/) & [Nyxt]()
-- Terminal: [Foot]() & [Kitty](https://sw.kovidgoyal.net/kitty)
+- Terminal: [Foot][Foot] & [Kitty][Kitty]
+- Browser: [Firefox][Firefox] & [Nyxt][Nyxt]
+- Editor: [LunarVim][LunarVim] & [VSCodium][VSCodium]
 
 </details>
 
 <details open>
 <summary>🎨 <b>Theme</b></summary>
 
-- Color Scheme: [catppuccin](https://github.com/nosvagor/vagari#palette)
-- Cursors: [Bibata Modern Ice](https://github.com/alvatip/Nordzy-cursors)
-- Icons: [Papirus Dark](https://github.com/alvatip/Nordzy-icon) (temporary)
+- Color Scheme: [Catppuccin][Catppuccin]
+- Cursor: [Bibata Modern Ice][Bibata-Cursor]
+- Icons: [Papirus Dark][Papirus-icon-theme]
 
 </details>
 
 <details open>
 <summary>💬 <b>Fonts</b></summary>
 
-- Sans Serif: [Ubuntu Nerd Font](https://fonts.google.com/specimen/Albert+Sans?query=Albert+Sans)
-- Monospace: [JetBrains Mono Nerd Font](https://github.com/tonsky/FiraCode)
-- Emoji: [Noto Color Emoji](https://fonts.google.com/noto/specimen/Noto+Color+Emoji)
+- Sans Serif: [Ubuntu Nerd Font][Ubuntu-Nerd-Font]
+- Monospace: [JetBrains Mono Nerd Font][JetBrains-Mono-Nerd-Font]
+- Emoji: [Noto Color Emoji][Noto-Color-Emoji]
 </details>
 
 <details>
  <summary>🍎 <b>Other Applications</b></summary>
 
-- File Explorer: [joshuto](https://github.com/sayanarijit/xplr)
-- Image Editing: [krita](https://www.gimp.org/)
-- Screen Recording: [wf-recorder](https://github.com/ammen99/wf-recorder)
-- Audio Editing: [audacity](https://www.audacityteam.org/)
-- Video Editing: [blender](https://www.blender.org/features/video-editing/)
+- File Explorer: [yazi][yazi]
+- Digital Painting: [Krita][Krita]
+- 3D Modeling tool: [Blender][Blender]
+- Screen Recording: [wf-recorder][wf-recorder]
 </details>
-<hr />
+
+---
 
 ### 📚 Structure
 - `flake.nix`: Entrypoint for NixOS configurations.
@@ -125,7 +134,48 @@ You can use `cfdisk` for create 3 partition if your on UEFI boot:
 
 <p align="right"><a href="#top">back to top</a></p>
 
+# 🙏 Acknowledgements
+
+- [aylur/dotfiles](Aylur)
+- [justinlime/dotfiles](justinlime)
+- [misterio77/nix-config](misterio77)
+- [Ruixi-rebirth/melted-flakes](Ruixi)
+
+<!-- Links -->
+[Hyprland]: https://github.com/hyprwm/Hyprland
+[Ags]: https://github.com/aylur/ags
+[Swww]: https://github.com/LGFae/swww
+
+[Foot]: https://codeberg.org/dnkl/foot
+[Kitty]: https://github.com/kovidgoyal/kitty
+
+[Nyxt]: https://github.com/atlas-engineer/nyxt
+[Firefox]: https://www.mozilla.org/en-US/firefox/browsers
+[LunarVim]: https://github.com/LunarVim/LunarVim
+[VSCodium]:https://vscodium.com/
+
+[Bibata-Cursor]: https://github.com/ful1e5/Bibata_Cursor
+[Catppuccin]: https://github.com/catppuccin/catppuccin
+[Papirus-icon-theme]: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+
+[yazi]: https://github.com/sxyazi/yazi
+[Krita]: https://krita.org/en/
+[Blender]: https://www.blender.org/
+
+[Starship]: https://github.com/starship/starship
+[Btop]: https://github.com/aristocratos/btop
+[Swaylock-effects]: https://github.com/mortie/swaylock-effects
+[mpv]: https://github.com/mpv-player/mpv
+[Neovim]: https://github.com/neovim/neovim
+[grimblast]: https://github.com/hyprwm/contrib
+[wl-clipboard]: https://github.com/bugaevc/wl-clipboard
+[wf-recorder]: https://github.com/ammen99/wf-recorder
+[hyprpicker]: https://github.com/hyprwm/hyprpicker
+[Catppuccin]: https://github.com/catppuccin/catppuccin
+[maxfetch]: https://github.com/jobcmax/maxfetch
+
 <!-- Acknowledgements -->
 [Aylur]: https://github.com/aylur/dotfiles
 [misterio77]: https://github.com/misterio77/nix-config
 [Ruixi]: https://github.com/Ruixi-rebirth/melted-flakes
+[justinlime]: https://github.com/justinlime/dotfiles
