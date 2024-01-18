@@ -1,7 +1,9 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.joshuto ];
-  programs.joshuto.enable = true;
+  programs.joshuto = {
+    enable = true;
+    package = pkgs.joshuto;
+  };
 
   xdg.configFile."joshuto/joshuto.toml".text = import ./joshuto.nix;
   xdg.configFile."joshuto/theme.toml".text = import ./theme.nix;

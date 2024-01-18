@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 {
-  home.packages = [ pkgs.starship ];
   programs.starship = {
     enable = true;
+    package = pkgs.starship;
     settings = {
       add_newline = true;
       format = lib.strings.concatStrings [

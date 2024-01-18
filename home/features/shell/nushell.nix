@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.nushell ];
   programs.nushell = {
     enable = true;
+    package = pkgs.nushell;
     environmentVariables = {
       PROMPT_INDICATOR_VI_INSERT = "\"  \"";
       PROMPT_INDICATOR_VI_NORMAL = "\"∙ \"";

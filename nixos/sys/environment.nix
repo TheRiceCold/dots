@@ -27,10 +27,10 @@
       linux-wifi-hotspot
     ];
 
-    # loginShellInit = ''
-    #   if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-    #     exec Hyprland
-    #   fi
-    # '';
+    loginShellInit = ''
+      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+        exec Hyprland
+      fi
+    '';
   };
 }

@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.kitty ];
   imports = [ ./colors/moonlight.nix ];
   programs.kitty = {
     enable = true;
+    package = pkgs.kitty;
     font = {
       size = 12;
       name = "FiraCode Nerd Font";

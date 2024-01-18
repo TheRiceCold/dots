@@ -1,18 +1,9 @@
 { pkgs, ... }:
 
 {
-  home.pointerCursor = {
-    size = 22;
-    name = "Nordzy-cursors";
-    package = pkgs.nordzy-cursor-theme;
-  };
-
   gtk = {
     enable = true;
-    font = {
-      size = 11;
-      name = "JetBrainsMono Nerd Font";
-    };
+    font.name = "Ubuntu Nerd Font";
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.catppuccin-papirus-folders.override {
@@ -22,18 +13,19 @@
     };
 
     theme = {
-      name = "Catppuccin-Mocha-Compat-Lavender-Dark";
+      name = "Catppuccin-Mocha-Compact-Lavender-Dark";
       package = pkgs.catppuccin-gtk.override {
-        size = "compact";
-        variant = "mocha";
         accents = [ "lavender" ];
+        size = "compact";
+        # tweaks = [ "rimless" ];
+        variant = "mocha";
       };
     };
 
     cursorTheme = {
       size = 22;
-      name = "Nordzy-cursors";
-      package = pkgs.nordzy-cursor-theme;
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
     };
   };
 }

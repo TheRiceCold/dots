@@ -11,11 +11,14 @@
         v = "nvim";
         c = "clear";
         hm = "home-manager";
-        nix-clean = "doas nix-collect-garbage -d";
         nix-rollback = "doas nixos-rebuild switch --rollback";
       };
 
       interactiveShellInit = ''
+        nix-clean() {
+          doas nix-collect-garbage -d
+        }
+
         nix-switch() {
           cd ~/Flakes && git add . && doas nixos-rebuild switch --flake .#$1
         }

@@ -7,15 +7,31 @@
     inputs.ags.homeManagerModules.default
   ];
 
-  home.packages = with pkgs; [
-    dart-sass
-    libnotify
-    brightnessctl   # Brightness Control
-    (python311.withPackages (p: [ 
-      p.requests
-      p.python-pam 
-    ]))
-  ];
+  home = {
+    packages = with pkgs; [
+      dart-sass
+      libnotify
+      brightnessctl   # Brightness Control
+      (python311.withPackages (p: [ 
+        p.requests
+        p.python-pam 
+      ]))
+
+      (pkgs.nerdfonts.override { 
+        fonts = [ 
+          "Ubuntu"
+          "FiraCode" 
+          "UbuntuMono"
+        ];
+      }) 
+    ];
+
+    pointerCursor = {
+      size = 22;
+      name = "Nordzy-cursors";
+      package = pkgs.nordzy-cursor-theme;
+    };
+  };
 
   programs.ags = {
     enable = true;

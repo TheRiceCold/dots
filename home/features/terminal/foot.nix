@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.foot ];
   programs.foot = {
     enable = true;
+    package = pkgs.foot;
     server.enable = true;
     settings = {
       main = {
