@@ -11,6 +11,7 @@
         v = "nvim";
         c = "clear";
         hm = "home-manager";
+        docker-compose = "podman-compose";
         nix-rollback = "doas nixos-rebuild switch --rollback";
       };
 

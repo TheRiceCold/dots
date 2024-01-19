@@ -4,72 +4,104 @@
     enable = true;
     package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
-      # nix language
-      bbenoist.nix
-      # nix-shell suport 
-      arrterian.nix-env-selector
-      # python
-      ms-python.python
-      # C/C++
-      ms-vscode.cpptools
+      vscodevim.vim
 
-      # Color theme
+      bbenoist.nix # nix language
+      arrterian.nix-env-selector # nix-shell suport 
+
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
+
+      eamodio.gitlens
+      esbenp.prettier-vscode
+      dbaeumer.vscode-eslint
+      formulahendry.auto-rename-tag
+      streetsidesoftware.code-spell-checker
     ];
+
     userSettings = {
-      "update.mode" = "none";
-      "extensions.autoUpdate" = false; # This stuff fixes vscode freaking out when theres an update
-      "window.titleBarStyle" = "custom"; # needed otherwise vscode crashes, see https://github.com/NixOS/nixpkgs/issues/246509
+      update.mode = "none";
 
-      "window.menuBarVisibility" = "toggle";
-      "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'SymbolsNerdFont', 'monospace', monospace";
-      "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font', 'SymbolsNerdFont'";
-      "editor.fontSize" = 16;
-      "workbench.colorTheme" = "Catppuccin Mocha";
-      "workbench.iconTheme" = "catppuccin-mocha";
-      "vsicons.dontShowNewVersionMessage" = true;
-      "explorer.confirmDragAndDrop" = false;
-      "editor.fontLigatures" = true;
-      "editor.minimap.enabled" = false;
-      "workbench.startupEditor" = "none";
+      extensions = {
+        autoUpdate = false;
+        experimental.affinity.vscodevim.vim = 1; # To improve performance
+      };
 
-      "editor.formatOnType" = true;
+      window = {
+        titleBarStyle = "custom"; # needed otherwise vscode crashes, see https://github.com/NixOS/nixpkgs/issues/246509
+        menuBarVisibility = "toggle";
+      };
 
-      "workbench.layoutControl.type" = "menu";
-      "workbench.editor.limit.enabled" = true;
-      "workbench.editor.limit.value" = 5;
-      "workbench.editor.limit.perEditorGroup" = true;
-      "workbench.editor.showTabs" = "single";
-      "files.autoSave" = "onWindowChange";
-      "explorer.openEditors.visible" = 0;
+      editor = {
+        fontSize = 16;
+        formatOnType = true;
+        fontLigatures = true;
+        mouseWheelZoom = true;
+        minimap.enabled = false;
+        renderControlCharacters = false;
+        fontFamily = "'JetBrainsMono Nerd Font', 'SymbolsNerdFont', 'monospace', monospace";
+
+        scrollbar = {
+          vertical = "hidden";
+          horizontal = "hidden";
+          verticalScrollbarSize = 2;
+          horizontalScrollbarSize = 2;
+        };
+      };
+
+      workbench = {
+        startupEditor = "none";
+        layoutControl.type = "menu";
+        iconTheme = "catppuccin-mocha";
+        colorTheme = "Catppuccin Mocha";
+        editor = {
+          limit = {
+            enabled = true;
+            value = 5;
+            perEditorGroup = true;
+          };
+          showTabs = "single";
+        };
+        activityBar.location = "hidden";
+        statusBar.visible = false;
+        layoutControl.enabled = false;
+      };
+
+      explorer = {
+        openEditors.visible = 0;
+        confirmDragAndDrop = false;
+      };
+
+      terminal.integrated.fontFamily = "'JetBrainsMono Nerd Font', 'SymbolsNerdFont'";
+
       "breadcrumbs.enabled" = false;
-      "editor.renderControlCharacters" = false;
-      "workbench.activityBar.location" = "hidden";
-      "workbench.statusBar.visible" = false;
-      "editor.scrollbar.verticalScrollbarSize" = 2;
-      "editor.scrollbar.horizontalScrollbarSize" = 2;
-      "editor.scrollbar.vertical" = "hidden";
-      "editor.scrollbar.horizontal" = "hidden";
-      "workbench.layoutControl.enabled" = false;
+      "files.autoSave" = "onWindowChange";
+      "vsicons.dontShowNewVersionMessage" = true;
 
-      "editor.mouseWheelZoom" = true;
+      vim = {
+        easymotion = true;
+        incsearch = true;
+        useSystemClipboard = true;
+        useCtrlKeys = true;
+        hlsearch = true;
+        insertModeKeyBindings = [
+          {
+            before = ["j" "j"];
+            after = ["<Esc>"];
+          }
+        ];
 
-      "C_Cpp.intelliSenseUpdateDelay" = 500;
-      "C_Cpp.codeAnalysis.updateDelay" = 500;
-      "C_Cpp.autocompleteAddParentheses" = true;
-      "C_Cpp.formatting" = "vcFormat";
-      "C_Cpp.vcFormat.newLine.beforeOpenBrace.block" = "sameLine";
-      "C_Cpp.vcFormat.newLine.beforeOpenBrace.function" = "sameLine";
-      "C_Cpp.vcFormat.newLine.beforeOpenBrace.lambda" = "sameLine";
-      "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace" = "sameLine";
-      "C_Cpp.vcFormat.newLine.beforeOpenBrace.type" = "sameLine";
-      "C_Cpp.vcFormat.space.pointerReferenceAlignment" = "right";
-      "C_Cpp.vcFormat.newLine.beforeElse" = false;
-      "C_Cpp.vcFormat.newLine.beforeCatch" = false;
-      "C_Cpp.vcFormat.indent.caseLabels" = true;
-      "C_Cpp.clang_format_fallbackStyle" = "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}";
+        leader =  "<space>";
+        handleKeys = {
+          "<C-a>" = false;
+          "<C-f>" = false;
+        };
+      };
+
+      editor.defaultFormatter = "esbenp.prettier-vscode";
+      "[javascript]".editor.defaultFormatter = "esbenp.prettier-vscode";
     };
+
     # Keybindings
     keybindings = [
       {

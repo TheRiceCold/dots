@@ -10,9 +10,9 @@
 
     ags.url = "github:Aylur/ags";
  };
-  
+
   outputs = inputs @ { ... }: {
-    nixosConfigurations = import ./nixos { inherit inputs; };
     homeConfigurations = import ./home { inherit inputs; };
+    nixosConfigurations = import ./nixos { inherit inputs; };
   };
 }

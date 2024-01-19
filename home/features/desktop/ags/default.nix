@@ -23,7 +23,8 @@
     packages = with pkgs; [
       dart-sass
       libnotify
-      brightnessctl   # Brightness Control
+      playerctl
+      brightnessctl
       (python311.withPackages (p: [ 
         p.requests
         p.python-pam 
@@ -39,7 +40,6 @@
     extraPackages = with pkgs; [ 
       vte
       libgtop
-      playerctl
       libsoup_3 
       webkitgtk_4_1
       gtksourceview

@@ -42,10 +42,10 @@
     in [ 
       (b "foot")
       (b "waybar")
-      (b "session")
+      # AGS
+      (b "sidebar")
       (b "launcher")
-      (b "sideleft")
-      (b "sideright")
+      (b "powermenu")
       (b "indicator")
       (b "cheatsheet")
       (b "notifications")

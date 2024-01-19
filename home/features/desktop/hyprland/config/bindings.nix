@@ -49,7 +49,7 @@
       "SUPER, Tab, exec, ags -t overview"
       "SUPER, Space, exec, ags -t launcher"
       "SUPER, Slash, exec, ags -t cheatsheet"
-      ",XF86PowerOff, exec, ags -t powermenu"
+      "Super, M, exec, ags run-js 'openMusicControls.value = (!Mpris.getPlayer() ? false : !openMusicControls.value);'"
 
       (mvfocus "k" "u")
       (mvfocus "j" "d")
