@@ -2,11 +2,6 @@
 {
   imports = [ 
     ./lunarvim.nix 
+    ./vscodium.nix 
   ];
-
-  # home.packages = with pkgs; [ 
-    # lunarvim 
-    # emacs
-    # vscodium
-  # ];
 }

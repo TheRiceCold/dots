@@ -9,6 +9,7 @@
         term = "xterm-256color";
         font = "JetBrainsMonoNerdFont:size=12";
       };
+
       cursor = {
         blink = false;
         style = "beam";

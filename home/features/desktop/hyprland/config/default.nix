@@ -1,8 +1,4 @@
-{ inputs, pkgs, ... }:
-
-let
-  hyprland = inputs.hyprland.packages.${pkgs.system}.hyprland;
-in {
+{
   imports = [
     # ./plugins.nix
     ./windows.nix
@@ -13,7 +9,6 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true; 
-    package = hyprland;
     systemd.enable = true;
     xwayland.enable = true;
 

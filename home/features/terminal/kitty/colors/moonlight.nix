@@ -1,4 +1,3 @@
-{ ... }:
 {
   programs.kitty.settings = {
     background = "#212337";

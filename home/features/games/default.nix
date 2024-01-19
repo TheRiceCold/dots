@@ -6,6 +6,6 @@
     _2048-in-terminal
 
     celeste-classic
-    celeste-classic-pm
+    # celeste-classic-pm
   ];
 }

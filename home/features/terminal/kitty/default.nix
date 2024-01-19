@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [ ./colors/moonlight.nix ];
+  imports = [ ./colors/catpuccin-mocha.nix ];
   programs.kitty = {
     enable = true;
     package = pkgs.kitty;

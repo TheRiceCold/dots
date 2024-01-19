@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [ 
-    ./bat
     ./neofetch
+    ./bat.nix
     ./btop.nix
     ./tmux.nix
     ./yazi.nix

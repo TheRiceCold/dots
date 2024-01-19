@@ -136,10 +136,10 @@ You can use `cfdisk` for create 3 partition if your on UEFI boot:
 
 # 🙏 Acknowledgements
 
+- [Misterio77/nix-config](Misterio77)
+- [Ruixi-rebirth/melted-flakes](Ruixi)
 - [aylur/dotfiles](Aylur)
 - [justinlime/dotfiles](justinlime)
-- [misterio77/nix-config](misterio77)
-- [Ruixi-rebirth/melted-flakes](Ruixi)
 
 <!-- Links -->
 [Hyprland]: https://github.com/hyprwm/Hyprland
@@ -172,10 +172,10 @@ You can use `cfdisk` for create 3 partition if your on UEFI boot:
 [wf-recorder]: https://github.com/ammen99/wf-recorder
 [hyprpicker]: https://github.com/hyprwm/hyprpicker
 [Catppuccin]: https://github.com/catppuccin/catppuccin
-[maxfetch]: https://github.com/jobcmax/maxfetch
+
 
 <!-- Acknowledgements -->
 [Aylur]: https://github.com/aylur/dotfiles
-[misterio77]: https://github.com/misterio77/nix-config
+[Misterio77]: https://github.com/Misterio77/nix-config
 [Ruixi]: https://github.com/Ruixi-rebirth/melted-flakes
 [justinlime]: https://github.com/justinlime/dotfiles

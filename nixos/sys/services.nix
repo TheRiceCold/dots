@@ -43,6 +43,7 @@
       };
     };
 
+
     gvfs.enable = true;
     upower.enable = true;
     devmon.enable = true;
@@ -50,6 +51,8 @@
     udisks2.enable = true;
     accounts-daemon.enable = true;
     power-profiles-daemon.enable = true;
+
+    flatpak.enable = true;
     gnome = {
       gnome-keyring.enable = true;
       glib-networking.enable = true;
