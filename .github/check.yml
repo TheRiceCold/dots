@@ -1,6 +1,6 @@
-name: Check
+name: Nix Flake Check
 
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   checks:
@@ -15,6 +15,6 @@ jobs:
           install_url: https://nixos.org/nix/install
           extra_nix_config: |
             auto-optimise-store = true
-            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            access-tokens = ${{ secrets.AUTH_TOKEN }}
             experimental-features = nix-command flakes
       - run: nix flake check
