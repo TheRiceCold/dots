@@ -15,7 +15,16 @@
     ];
 
     bindr = [ "SUPERSHIFT, f, exec, pkill ags || ags" ];
-    bindl = [ ",XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle" ];
+
+    bindl = let
+      b = key: exec: ",XF86Audio${key}, exec, ${exec}";
+    in [ 
+      (b "Mute" "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+      # media controls
+      (b "Play" "playerctl play-pause")
+      (b "Prev" "playerctl previous")
+      (b "Next" "playerctl next")
+    ];
 
     bind = let 
       b = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";

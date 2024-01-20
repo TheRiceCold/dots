@@ -1,10 +1,10 @@
 {
   imports = [
-    # ./plugins.nix
-    ./windows.nix
-    ./bindings.nix
+    ./binds
+    ./rules
     ./animations.nix
     ./decoration.nix
+    # ./plugins.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -28,6 +28,15 @@
           natural_scroll = true;
           disable_while_typing = true;
         };
+      };
+
+      general = {
+        gaps_in = 4;
+        gaps_out = 4;
+        border_size = 2;
+        cursor_inactive_timeout = 4;
+        "col.active_border" = "rgba(5529a5FF)";
+        "col.inactive_border" = "rgba(4b4358AA)";
       };
 
       dwindle = {
