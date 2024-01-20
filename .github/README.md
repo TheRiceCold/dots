@@ -3,35 +3,28 @@
 <h1 align="center">  
  <img src="https://files.catbox.moe/i4twd5.png" width="115px" />
 
-   Kaizen's Flakes<br />
-</h1>
-<div align="center">
- <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" />
- <br /><br />
-  <div align="center">
+ Kaizen's Flakes<br />
+ <div align="center">
+    <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br />
     <a href="https://nixos.org">
-        <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3">
+      <img src="https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3">
     </a>
     <a href="https://github.com/kaizen-dw/Flakes/stargazers">
-        <img src="https://img.shields.io/github/stars/kaizen-dw/FLakes?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6">
+      <img src="https://img.shields.io/github/stars/kaizen-dw/FLakes?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6">
     </a>
-     <a href="https://github.com/kaizen-dw/Flakes/">
-        <img src="https://img.shields.io/github/repo-size/kaizen-dw/Flakes?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6">
-     </a>
-  </div><br />
+    <a href="https://github.com/kaizen-dw/Flakes/">
+      <img src="https://img.shields.io/github/repo-size/kaizen-dw/Flakes?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6">
+    </a>
+  </div>
+</h1>
+<h1 align="center">
 
----
+  **[<kbd> <br> Overview <br> </kbd>](#-Overview)** 
+  **[<kbd> <br> Installation <br> </kbd>](#-Installation)** 
+  **[<kbd> <br> &nbsp;Structure&nbsp; <br> </kbd>](#-Structure)** 
+  **[<kbd> <br> Acknowledgements&nbsp; <br> </kbd>](#-Acknowledgements)**
 
-
-**[<kbd> <br> Overview <br> </kbd>](#-Overview)** 
-**[<kbd> <br> Installation <br> </kbd>](#-Installation)** 
-**[<kbd> <br> Configure <br> </kbd>](#-Overview)** 
-**[<kbd> <br> Acknowledgements&nbsp; <br> </kbd>](#-Acknowledgements)**
-
-
----
-
-</div>
+</h1>
 
 
 # 🗃️ Overview
@@ -50,8 +43,14 @@
 <summary>🎯 <b>Core Applications</b></summary>
 
 - Terminal: [Foot][Foot] & [Kitty][Kitty]
-- Browser: [Firefox][Firefox] & [Nyxt][Nyxt]
+- Browser: [Firefox][Firefox]
+- System Resource Monitor: [Btop][Btop]
+- File Manager: [yazi][yazi]
+- Image Viewer: [swayimg][swayimg]
 - Editor: [LunarVim][LunarVim] & [VSCodium][VSCodium]
+- Document Viewer: [zathura][zathura] || [sioyek][sioyek]
+- Media Player: [mpv][mpv]
+
 
 </details>
 
@@ -64,35 +63,51 @@
 
 </details>
 
-<details open>
-<summary>💬 <b>Fonts</b></summary>
+<details>
+<summary>📝 Shell aliases</summary>
 
-- Sans Serif: [Ubuntu Nerd Font][Ubuntu-Nerd-Font]
-- Monospace: [JetBrains Mono Nerd Font][JetBrains-Mono-Nerd-Font]
-- Emoji: [Noto Color Emoji][Noto-Color-Emoji]
+- `c`: `clear`
+- `v`: `lvim`
+- `nix-rollback`:  `doas nixos-rebuild switch --rollback`
+
 </details>
 
 <details>
- <summary>🍎 <b>Other Applications</b></summary>
+<summary>🔧 Shell functions</summary>
 
-- File Explorer: [yazi][yazi]
-- Digital Painting: [Krita][Krita]
-- 3D Modeling tool: [Blender][Blender]
-- Screen Recording: [wf-recorder][wf-recorder]
+- `nix-clean`
+    ```
+        nix-clean() {
+          doas nix-collect-garbage -d
+        }
+    ```
+- `nix-switch '<hostname>'`
+    ```
+        nix-switch() {
+          cd ~/Flakes && git add . && doas nixos-rebuild switch --flake .#$1
+        }
+    ```
+- `nix-rollback`
+    ```
+        nix-clean-switch() {
+          nix-clean && nix-switch $1
+        }
+    ```
+
 </details>
 
----
+<p align="right"><a href="#top">back to top</a></p>
 
-### 📚 Structure
+# 📚 Structure
 - `flake.nix`: Entrypoint for NixOS configurations.
+- `home`: Home-manager configurations
+    - `packages`: Mostly packages/apps configuration modules.
+    - `profiles`: Home-manager profiles
 - `nixos`: NixOS configurations for hosts and home-manager.
+    - `core`: Core NixOS configuration
     - `hosts`: NixOS configurations
         - `thinkpad`: Lenovo Thinkpad T495 - 16GB RAM, Ryzen 5 3500U
-    - `home`: Home-manager configurations
-    - `sys`: 
-- `assets`: Contains images, videos, etc. Anything that isn't code related.
-- `overlay`:
-- `templates`: 
+- `pkgs`: exported packages (currently empty)
 
 <p align="right"><a href="#top">back to top</a></p>
 
@@ -142,17 +157,16 @@ You can use `cfdisk` for create 3 partition if your on UEFI boot:
 - [justinlime/dotfiles](justinlime)
 
 <!-- Links -->
-[Hyprland]: https://github.com/hyprwm/Hyprland
-[Ags]: https://github.com/aylur/ags
+[Hyprland]: ../home/packages/desktop/hyprland/default.nix 
+[Ags]: ../home/packages/desktop/ags/default.nix
 [Swww]: https://github.com/LGFae/swww
 
-[Foot]: https://codeberg.org/dnkl/foot
-[Kitty]: https://github.com/kovidgoyal/kitty
+[Foot]: ../home/packages/terminal/foot.nix
+[Kitty]: ../home/packages/terminal/kitty/default.nix
 
-[Nyxt]: https://github.com/atlas-engineer/nyxt
-[Firefox]: https://www.mozilla.org/en-US/firefox/browsers
-[LunarVim]: https://github.com/LunarVim/LunarVim
-[VSCodium]:https://vscodium.com/
+[Firefox]: ../home/packages/browser/firefox.nix 
+[LunarVim]: ../home/packages/editor/lunarvim.nix
+[VSCodium]: ../home/packages/editor/vscodium/default.nix
 
 [Bibata-Cursor]: https://github.com/ful1e5/Bibata_Cursor
 [Catppuccin]: https://github.com/catppuccin/catppuccin
@@ -162,16 +176,12 @@ You can use `cfdisk` for create 3 partition if your on UEFI boot:
 [Krita]: https://krita.org/en/
 [Blender]: https://www.blender.org/
 
-[Starship]: https://github.com/starship/starship
-[Btop]: https://github.com/aristocratos/btop
-[Swaylock-effects]: https://github.com/mortie/swaylock-effects
-[mpv]: https://github.com/mpv-player/mpv
-[Neovim]: https://github.com/neovim/neovim
-[grimblast]: https://github.com/hyprwm/contrib
-[wl-clipboard]: https://github.com/bugaevc/wl-clipboard
-[wf-recorder]: https://github.com/ammen99/wf-recorder
-[hyprpicker]: https://github.com/hyprwm/hyprpicker
-[Catppuccin]: https://github.com/catppuccin/catppuccin
+[btop]: ../home/packages/cli/btop.nix
+[mpv]: ../home/packages/media/mpv.nix 
+[Starship]: ../home/packages/shell/starship.nix
+[zathura]: ../home/packages/tools/zathura.nix
+[sioyek]: ../home/packages/tools/sioyek.nix
+[swayimg]: https://github.com/artemsen/swayimg
 
 
 <!-- Acknowledgements -->
