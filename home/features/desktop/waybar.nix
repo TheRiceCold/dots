@@ -16,7 +16,7 @@ in
 
       window#waybar { 
         padding: 8px 0; 
-        background: rgba(37, 37, 58, 0.75);
+        background: #242339;
       }
 
       #workspaces { padding: 4px 40px; }

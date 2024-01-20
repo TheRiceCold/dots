@@ -1,56 +1,49 @@
-{ pkgs, ... }:
 {
-  home.packages = [ pkgs.zathura ];
+  programs.zathura = {
+    enable = true;
+    options = {
+      statusbar-home-tilde = true;
+      window-title-basename = true;
+      selection-clipboard = "clipboard";
+      font = "JetBrainsMono Nerd Font 12";
 
-  xdg.configFile."zathura/zathurarc".text = ''
-    set font                      "JetBrainsMono Nerd Font 12"
-    set selection-clipboard		    "clipboard"
-    set selection-notification	  "true"
-    set guioptions			          "sv"
-    set scroll-page-aware		      "true"
-    set statusbar-home-tilde	    "true"
-    set recolor			              "true"
-    set adjust-open			          "width"
+      default-fg = "#CDD6F4";
+      default-bg = "#1E1E2E";
 
-    set statusbar-h-padding		    10
-    set statusbar-v-padding		    10
+      completion-bg	= "#313244";
+      completion-fg	= "#CDD6F4";
+      completion-group-bg = "#313244";
+      completion-group-fg = "#89B4FA";
+      completion-highlight-bg	= "#575268";
+      completion-highlight-fg	= "#CDD6F4";
 
-    set default-fg                "#CDD6F4"
-    set default-bg 			          "#1E1E2E"
+      statusbar-fg = "#CDD6F4";
+      statusbar-bg = "#313244";
 
-    set completion-bg		          "#313244"
-    set completion-fg		          "#CDD6F4"
-    set completion-highlight-bg	  "#575268"
-    set completion-highlight-fg	  "#CDD6F4"
-    set completion-group-bg		    "#313244"
-    set completion-group-fg		    "#89B4FA"
+      notification-bg	= "#313244";
+      notification-fg	= "#CDD6F4";
+      notification-error-bg	= "#313244";
+      notification-error-fg	= "#F38BA8";
+      notification-warning-bg	= "#313244";
+      notification-warning-fg	= "#FAE3B0";
 
-    set statusbar-fg		          "#CDD6F4"
-    set statusbar-bg		          "#313244"
+      inputbar-fg = "#CDD6F4";
+      inputbar-bg = "#313244";
 
-    set notification-bg		        "#313244"
-    set notification-fg		        "#CDD6F4"
-    set notification-error-bg	    "#313244"
-    set notification-error-fg	    "#F38BA8"
-    set notification-warning-bg	  "#313244"
-    set notification-warning-fg	  "#FAE3B0"
+      recolor-darkcolor	= "#CDD6F4";
+      recolor-lightcolor = "#1E1E2E";
 
-    set inputbar-fg			          "#CDD6F4"
-    set inputbar-bg 		          "#313244"
+      index-fg = "#CDD6F4";
+      index-bg = "#1E1E2E";
+      index-active-fg	= "#CDD6F4";
+      index-active-bg = "#313244";
 
-    set recolor-lightcolor		    "#1E1E2E"
-    set recolor-darkcolor		      "#CDD6F4"
+      render-loading-bg	= "#1E1E2E";
+      render-loading-fg = "#CDD6F4";
 
-    set index-fg			            "#CDD6F4"
-    set index-bg			            "#1E1E2E"
-    set index-active-fg		        "#CDD6F4"
-    set index-active-bg		        "#313244"
-
-    set render-loading-bg		      "#1E1E2E"
-    set render-loading-fg		      "#CDD6F4"
-
-    set highlight-color		        "#575268"
-    set highlight-fg              "#F5C2E7"
-    set highlight-active-color	  "#F5C2E7"
-  '';
+      highlight-fg = "#F5C2E7";
+      highlight-color = "#575268";
+      highlight-active-color = "#F5C2E7";
+    };
+  };
 }

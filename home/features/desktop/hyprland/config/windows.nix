@@ -46,9 +46,7 @@
       (b "sidebar")
       (b "launcher")
       (b "powermenu")
-      (b "indicator")
       (b "cheatsheet")
-      (b "notifications")
 
       "noanim, sideleft"
       "noanim, sideright"

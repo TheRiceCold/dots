@@ -1,7 +1,6 @@
-{ ... }:
 {
   imports = [ 
+    ./vscodium
     ./lunarvim.nix 
-    ./vscodium.nix 
   ];
 }

@@ -1,15 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: 
+{
   imports = [ 
-    ./neofetch
     ./bat.nix
     ./btop.nix
     ./tmux.nix
     ./yazi.nix
-    # ./zellij.nix
+    ./zellij.nix
+    ./zoxide.nix
+
+    ./neofetch
   ];
 
   home.packages = with pkgs; [
-    # zoxide
     direnv
     lazygit
   ];

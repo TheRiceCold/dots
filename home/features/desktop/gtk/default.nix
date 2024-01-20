@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
-{
+let
+  theme = "Catppuccin-Mocha-Compact-Lavender-Dark";
+in {
+  home.sessionVariables.GTK_THEME = theme; 
+
   gtk = {
     enable = true;
     font.name = "Ubuntu Nerd Font";
@@ -13,7 +17,7 @@
     };
 
     theme = {
-      name = "Catppuccin-Mocha-Compact-Lavender-Dark";
+      name = theme;
       package = pkgs.catppuccin-gtk.override {
         accents = [ "lavender" ];
         size = "compact";
