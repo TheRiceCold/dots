@@ -12,7 +12,14 @@
   ];
 
   home.packages = with pkgs; [
-    direnv
     lazygit
+
+    glow
+    onefetch
   ];
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 }

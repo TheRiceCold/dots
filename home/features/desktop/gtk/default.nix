@@ -3,7 +3,10 @@
 let
   theme = "Catppuccin-Mocha-Compact-Lavender-Dark";
 in {
-  home.sessionVariables.GTK_THEME = theme; 
+  home.sessionVariables = {
+    GTK_THEME = theme; 
+    GTK_USE_PORTAL = "1";
+  };
 
   gtk = {
     enable = true;
@@ -20,8 +23,8 @@ in {
       name = theme;
       package = pkgs.catppuccin-gtk.override {
         accents = [ "lavender" ];
+        tweaks = [ "rimless" ];
         size = "compact";
-        # tweaks = [ "rimless" ];
         variant = "mocha";
       };
     };

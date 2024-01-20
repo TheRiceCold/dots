@@ -1,6 +1,10 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ 
-    (mpv.override { scripts = [mpvScripts.mpris]; })
-  ];
+  programs.mpv = {
+    enable = true;
+    config = {
+      gpu-context = "wayland";
+    };
+    scripts = with pkgs.mpvScripts; [ mpris thumbnail ];
+  };
 }

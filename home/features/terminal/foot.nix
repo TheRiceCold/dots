@@ -1,20 +1,27 @@
-{ pkgs, ... }:
 {
   programs.foot = {
     enable = true;
-    package = pkgs.foot;
     server.enable = true;
     settings = {
       main = {
         term = "xterm-256color";
         font = "JetBrainsMonoNerdFont:size=12";
+        notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
       };
 
       cursor = {
-        blink = false;
         style = "beam";
-        beam-thickness = 1.5;
+        beam-thickness = 2;
       };
+
+      bell = {
+        urgent = "yes";
+        notify = "yes";
+        command = "notify-send bell";
+        command-focused = "no";
+      };
+
+      mouse.hide-when-typing = "yes";
       
       key-bindings = {
         scrollback-up-page = "Page_Up";
