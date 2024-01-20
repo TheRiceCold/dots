@@ -27,10 +27,6 @@
         nix-clean-switch() {
           nix-clean && nix-switch $1
         }
-
-        killport() { 
-          kill $(lsof -t -i:$1) 
-        }
       '';
     };
   };

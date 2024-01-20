@@ -1,5 +1,5 @@
 {
-  imports = [ ../features ];
+  imports = [ ../packages ];
 
   home = {
     username = "kaizen";

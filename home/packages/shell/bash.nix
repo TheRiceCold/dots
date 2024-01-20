@@ -3,10 +3,10 @@
     enable = true;
     shellAliases = {
       x = "exit";
-      v = "nvim";
+      v = "lvim";
       c = "clear";
       hm = "home-manager";
-      rollback = "doas nixos-rebuild switch --rollback";
+      nix-rollback = "doas nixos-rebuild switch --rollback";
     };
     
     initExtra = ''

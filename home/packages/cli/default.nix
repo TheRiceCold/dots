@@ -13,8 +13,6 @@
 
   home.packages = with pkgs; [
     lazygit
-
-    glow
     onefetch
   ];
 
