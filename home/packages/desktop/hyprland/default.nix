@@ -15,7 +15,7 @@
       swaylock        # Lock Screen
 
       wl-clipboard    # Clipboard
-      cliphist        # Clipboard Manager
+      # cliphist        # Clipboard Manager
 
       wayshot
       wf-recorder

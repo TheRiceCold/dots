@@ -16,7 +16,8 @@
       monitor = [ ",preferred,auto,1" ];
 
       exec = [
-        "wl-paste --watch cliphist store"
+        # "wl-paste --type text --watch cliphist store"
+        # "wl-paste --type image --watch cliphist store"
         "swww init"
         "waybar"
         "ags"
