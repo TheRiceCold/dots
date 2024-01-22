@@ -5,8 +5,7 @@
       ft = win: "float, title:^(${win})$"; # Float Title
 
       p = win: "pin, title:^(${win})$";
-      w = num: win: "workspace ${num}, class:^(${win})$";
-      # o = val: win: "opacity ${val}, ^(${win})$"; # Opacity
+      o = val: win: "opacity ${val}, title:^(${win})$"; # Opacity
     in [ 
       "tile, firefox"
 
@@ -25,10 +24,9 @@
       (ft "Select a File")
       (ft "Choose wallpaper")
 
+      (o "1.0 1.0" "Picture-in-Picture")
       (p "Picture-in-Picture")
       (ft "Picture-in-Picture")
-
-      (w "2" "firefox")
 
       "float, title:floating"
     ];

@@ -29,5 +29,13 @@
         }
       '';
     };
+
+    neovim = {
+      enable = true;
+      withRuby = true;
+      withNodeJs = true;
+      withPython3 = true;
+      defaultEditor = true;
+    };
   };
 }

@@ -11,13 +11,15 @@
     ./neofetch
   ];
 
+  programs = {
+    lazygit.enable = true;
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+  };
+
   home.packages = with pkgs; [
-    lazygit
     onefetch
   ];
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
 }

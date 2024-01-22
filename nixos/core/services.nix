@@ -43,7 +43,6 @@
       };
     };
 
-
     gvfs.enable = true;
     upower.enable = true;
     devmon.enable = true;

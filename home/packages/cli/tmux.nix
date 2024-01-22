@@ -2,14 +2,16 @@
 {
   programs.tmux = {
     enable = true;
+    mouse = true;
     baseIndex = 1;
-    package = pkgs.tmux;
+    keyMode = "vi";
     terminal = "xterm-256color";
     extraConfig = ''
-
+      set -g @catppuccin_flavour 'mocha'
     '';
-    plugins = with pkgs; [
-      tmuxPlugins.resurrect
+    plugins = with pkgs.tmuxPlugins; [
+      resurrect
+      catppuccin
     ];
   };
 }

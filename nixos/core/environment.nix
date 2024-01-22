@@ -16,7 +16,6 @@
       ripgrep
 
       # Neovim pkg and lsp dependencies
-      neovim
       cargo
       nodejs
 
