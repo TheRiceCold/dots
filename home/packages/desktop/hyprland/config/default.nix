@@ -2,8 +2,6 @@
   imports = [
     ./binds
     ./rules
-    ./animations.nix
-    ./decoration.nix
     # ./plugins.nix
   ];
 
@@ -14,6 +12,9 @@
 
     settings = {
       monitor = [ ",preferred,auto,1" ];
+
+      animations = import ./animations.nix;
+      decoration = import ./decoration.nix;
 
       exec = [
         # "wl-paste --type text --watch cliphist store"

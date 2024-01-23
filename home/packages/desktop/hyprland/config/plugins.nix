@@ -2,9 +2,9 @@
 
 {
   wayland.windowManager.hyprland = {
-    plugins = [ 
+    plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [ 
       # hyprbars 
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails 
+      hyprtrails 
     ];
 
     settings.plugin = {

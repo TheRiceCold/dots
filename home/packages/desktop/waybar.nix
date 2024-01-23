@@ -19,7 +19,7 @@ in
         background: #242339;
       }
 
-      #workspaces { padding: 4px 40px; }
+      #workspaces { padding: 4px 28px; }
     '';
     settings = {
       mainBar = {
@@ -94,8 +94,6 @@ in
             "1" = [];
             "2" = [];
             "3" = [];
-            "4" = [];
-            "5" = [];
           };
         };
 
