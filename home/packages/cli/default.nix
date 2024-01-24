@@ -20,6 +20,8 @@
   };
 
   home.packages = with pkgs; [
+    cava
+    figlet
     onefetch
   ];
 }

@@ -15,7 +15,7 @@ let
     "${user}@${host}" = lib.homeManagerConfiguration {
       pkgs = pkgsFor.x86_64-linux;
       extraSpecialArgs = { inherit inputs; };
-      modules = [ ./profiles/${user}.nix ];
+      modules = [ ./profiles/${user}.nix ] ++ modules;
     };
   };
 in (
@@ -24,6 +24,6 @@ in (
     user = "kaizen";
     host = "thinkpad";
     system = "x86-64_linux";
-    modules = [];
+    modules = [ ./packages ./scripts ];
   }
 )
