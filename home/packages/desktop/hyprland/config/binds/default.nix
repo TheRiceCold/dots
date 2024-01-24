@@ -1,9 +1,9 @@
 {
   imports = [
-    ./ags.nix
     ./apps.nix
-    ./indicators
+    ./widgets.nix
     ./workspace.nix
+    ./indicators.nix
   ];
 
   wayland.windowManager.hyprland.settings = {

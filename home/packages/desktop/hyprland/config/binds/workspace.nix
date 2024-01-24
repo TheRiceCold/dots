@@ -1,45 +1,46 @@
 let
+  inherit (import ./mkBind.nix) window;
+
   arr = [1 2 3 4 5 6 7 8 9];
   b = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
+  ws = b "SUPER" "workspace";
+  mvtows =  b "SUPERSHIFT" "movetoworkspacesilent";
 in {
-  wayland.windowManager.hyprland.settings.bind = let
-    ws = b "SUPER" "workspace";
-    mvfocus = b "SUPER" "movefocus";
-    mvactive = b "SUPER ALT" "moveactive";
-    swapwindow = b "SUPERSHIFT" "swapwindow";
-    resizeactive = b "SUPER CTRL" "resizeactive";
-    mvtows =  b "SUPERSHIFT" "movetoworkspacesilent";
-  in [
-    "SUPER, q, killactive"
+  wayland.windowManager.hyprland.settings = {
+    bind = with window; [
+      (pin "SUPER, p")
+      (kill "SUPER, q")
+      (float "SUPER, t")
+      (maximized "SUPER, f")
+      (fullscreen "SUPERSHIFT, f")
 
-    "SUPER, t, togglefloating"
-    "SUPER, f, fullscreen, 1"
-    "SUPERSHIFT, f, fullscreen, 0"
-    "SUPERALT, f, fakefullscreen"
+      (focus "k" "u")
+      (focus "j" "d")
+      (focus "l" "r")
+      (focus "h" "l")
 
-    "SUPER, p, pin"
-    "SUPER, g, togglegroup"
-    "SUPER, s, togglespecialworkspace"
+      (move "k" "0 -30")
+      (move "j" "0 30")
+      (move "l" "30 0")
+      (move "h" "-30 0")
 
-    (mvfocus "k" "u")
-    (mvfocus "j" "d")
-    (mvfocus "l" "r")
-    (mvfocus "h" "l")
+      (swap "k" "u")
+      (swap "j" "d")
+      (swap "l" "r")
+      (swap "h" "l")
 
-    (swapwindow "k" "u")
-    (swapwindow "j" "d")
-    (swapwindow "l" "r")
-    (swapwindow "h" "l")
+      (resize "k" "0 -20")
+      (resize "j" "0 20")
+      (resize "l" "20 0")
+      (resize "h" "-20 0")
 
-    (resizeactive "k" "0 -20")
-    (resizeactive "j" "0 20")
-    (resizeactive "l" "20 0")
-    (resizeactive "h" "-20 0")
-
-    (mvactive "k" "0 -30")
-    (mvactive "j" "0 30")
-    (mvactive "l" "30 0")
-    (mvactive "h" "-30 0")
-  ] ++ (map (i: mvtows (toString i) (toString i)) arr) 
-  ++ (map (i: ws (toString i) (toString i)) arr);
+      # "SUPERALT, f, fakefullscreen"
+      # "SUPER, g, togglegroup"
+      # "SUPER, s, togglespecialworkspace"
+    ] ++ [
+      (ws "Tab" "e+1")
+      # (ws "ab" "e-1")
+    ] ++ (map (i: mvtows (toString i) (toString i)) arr) 
+    ++ (map (i: ws (toString i) (toString i)) arr);
+  };
 }

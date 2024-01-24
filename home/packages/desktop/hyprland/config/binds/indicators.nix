@@ -3,7 +3,7 @@ let
 in 
 {
   wayland.windowManager.hyprland.settings = {
-    bindl = with mkBind.media;[ mute play prev next ];
+    bindl = with mkBind.media; [ mute play prev next ];
 
     binde = with mkBind; [
       (brightness "Up" "10")  

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  run = key: app: "ControlSuper, ${key}, exec, ${app}";
+  run = key: app: "SUPER CTRL, ${key}, exec, ${app}";
 
   term = "${pkgs.foot}/bin/foot";
   alt-term = "${pkgs.kitty}/bin/kitty";
