@@ -37,9 +37,6 @@ in {
       # "SUPERALT, f, fakefullscreen"
       # "SUPER, g, togglegroup"
       # "SUPER, s, togglespecialworkspace"
-    ] ++ [
-      (ws "Tab" "e+1")
-      # (ws "ab" "e-1")
     ] ++ (map (i: mvtows (toString i) (toString i)) arr) 
     ++ (map (i: ws (toString i) (toString i)) arr);
   };

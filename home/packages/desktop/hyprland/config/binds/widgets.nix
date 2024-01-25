@@ -11,7 +11,6 @@
       (ags "Space" "launcher")
       (ags "a" "quicksettings")
       (ags "Slash" "cheatsheet")
-      # "Super, M, exec, ags run-js 'openMusicControls.value = (!Mpris.getPlayer() ? false : !openMusicControls.value);'"
     ];
   };
 }

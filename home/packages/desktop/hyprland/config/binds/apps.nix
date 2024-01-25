@@ -5,15 +5,15 @@ let
 
   term = "${pkgs.foot}/bin/foot";
   alt-term = "${pkgs.kitty}/bin/kitty";
+  file-manager-cli = "${pkgs.yazi}/bin/yazi";
   browser = "${pkgs.firefox-wayland}/bin/firefox";
 in {
   wayland.windowManager.hyprland.settings.bind = [
     "SUPER, b, exec, ${browser}"
     "SUPER, RETURN, exec, ${term}"
+    "SUPER, e, exec, ${alt-term} ${file-manager-cli}"
     (run "v" "pavucontrol")
     (run "s" "hyprpicker -a")
     (run "w" "${term} --title floating nmtui")
-    "SUPER, e, exec, ${alt-term} --title floating yazi"
-    # "SUPER, e, exec, foot --window-size-pixels=1000x800 --title=floating yazi"
   ];
 }

@@ -1,20 +1,16 @@
 {
-  rounding = 16;
   blur = {
     enabled = true;
-    size = 6;
+    size = 8;
     passes = 3;
-    xray = true;
-    ignore_opacity = true;
+    noise = 0.01;
+    contrast = 0.9;
+    brightness = 0.8;
     new_optimizations = true;
   };
 
-  active_opacity = 0.95;
-  inactive_opacity = 0.85;
-  fullscreen_opacity = 0.95;
-
-  shadow_range = 10;
+  shadow_range = 8;
   drop_shadow = true;
-  shadow_render_power = 5;
+  shadow_render_power = 2;
   "col.shadow" = "0x66000000";
 }
