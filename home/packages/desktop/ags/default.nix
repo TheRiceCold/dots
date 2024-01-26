@@ -27,7 +27,7 @@
       playerctl
       brightnessctl
       (python311.withPackages (p: [ 
-        p.requests
+        # p.requests
         p.python-pam 
       ]))
     ];

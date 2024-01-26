@@ -27,6 +27,8 @@ in {
 
       nerdfonts 
       font-awesome
+
+      showmethekey
     ];
 
     file = {

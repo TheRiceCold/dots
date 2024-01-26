@@ -35,8 +35,8 @@
 <summary>🖥️ <b>Display</b></summary>
  
 - Window Manager: [Hyprland][Hyprland]
+- Widgets: [Aylurs Gtk Shell][Ags]
 - Wallpaper: [Swww][Swww]
-- Widgets: [Ags][Ags]
 </details>
 
 <details open>
