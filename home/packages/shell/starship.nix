@@ -1,5 +1,10 @@
 { lib, ... }:
-{
+let
+  lang = icon: color: {
+    symbol = icon;
+    format = "[$symbol ](${color})";
+  };
+in {
   programs.starship = {
     enable = true;
     settings = {
@@ -19,8 +24,16 @@
         "$golang"
         "$cmd_duration"
         "$status"
-        "\n$character"
+        "$line_break"
+        "[❯](bold purple)"
+        ''''${custom.space}''
       ];
+      custom.space = {
+        when = ''! test $env'';
+        format = "  ";
+      };
+      continuation_prompt = "∙  ┆ ";
+      line_break = { disabled = false; };
       status = {
         symbol = "✗";
         not_found_symbol = "󰍉 Not Found";
@@ -34,11 +47,7 @@
       };
       cmd_duration = {
         min_time = 0;
-        format = "'[](bold fg:yellow)[$duration](bold bg:yellow fg:black)[](bold fg:yellow)'";
-      };
-      character = {
-        success_symbol = "[❯](bold purple)";
-        error_symbol = "[❯](bold red)";
+        format = "[$duration ](fg:yellow)";
       };
       nix_shell = {
         disabled = false;
@@ -50,27 +59,13 @@
       };
       directory = {
         format = " [](fg:bright-black)[$path](bg:bright-black fg:white)[](fg:bright-black)";
-        truncation_length = 4;
+        truncation_length = 6;
         truncation_symbol = "~/…/";
       };
-      directory.substitutions = {
-        "Documents" = "󰈙 ";
-        "Downloads" = " ";
-        "Music" = " ";
-        "Pictures" = " ";
-        "Videos" = " ";
-        "Projects" = "󱌢 ";
-        "School" = "󰑴 ";
-        "GitHub" = "";
-        ".config" = " ";
-        "Vault" = "󱉽 ";
-      };
       git_branch = {
-        symbol = "󰘬";
-        style = "bg: green";
-        truncation_length = 4;
-        truncation_symbol = "";
-        format = "• [](bold fg:green)[$symbol $branch(:$remote_branch)](fg:black bg:green)[](bold fg:green)";
+        symbol = "";
+        style = "";
+        format = "[ $symbol $branch](fg:purple)(:$remote_branch)";
       };
       git_commit = {
         tag_symbol = " ";
@@ -78,7 +73,6 @@
       };
       os = {
         disabled = false;
-        # format = "[](fg:blue)[$symbol](bg:blue fg:black)[](fg:blue)";
         format = "$symbol";
       };
       os.symbols = {
@@ -91,13 +85,14 @@
         SUSE = "[ ](fg:green)";
         Ubuntu = "[ ](fg:bright-purple)";
       };
-      # python = lang "" "yellow";
-      # nodejs = lang " " "yellow";
-      # lua = lang "󰢱" "blue";
-      # rust = lang "" "red";
-      # java = lang "" "red";
-      # c = lang "" "blue";
-      # golang = lang "" "blue";
+
+      python = lang "" "yellow";
+      nodejs = lang " " "yellow";
+      lua = lang "󰢱" "blue";
+      rust = lang "" "red";
+      java = lang "" "red";
+      c = lang "" "blue";
+      golang = lang "" "blue";
     };
   };
 }
