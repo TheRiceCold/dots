@@ -16,6 +16,7 @@ in {
     ./waybar.nix
   ];
 
+  xdg.mimeApps.enable = true;
   home = {
     packages = with pkgs; [ 
       material-icons
