@@ -8,6 +8,7 @@
     float = key: "${key}, togglefloating";
     maximized = key: "${key}, fullscreen, 1";
     fullscreen = key: "${key}, fullscreen, 0";
+    fakefullscreen = key: "${key}, fakefullscreen";
 
     focus = bind "SUPER" "movefocus";
     move = bind "SUPER ALT" "moveactive";

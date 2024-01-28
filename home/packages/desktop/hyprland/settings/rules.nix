@@ -20,9 +20,14 @@
 
     "opacity, 1.0, floating"
     "pin, title:^(Picture-in-Picture)$"
+
+    # "fakefullscreen, firefox"
   ];
 
   layer = [ 
+    "blur, bar"
+    "ignorezero, bar"
+
     "blur, foot"
 
     "blur, gtk-layer-shell"

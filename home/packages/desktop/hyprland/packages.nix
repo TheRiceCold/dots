@@ -10,10 +10,13 @@ with pkgs; [
   wlogout
   swaylock        # Lock Screen
 
-  wl-clipboard    # Clipboard
   cliphist        # Clipboard Manager
 
   wayshot
-  wf-recorder
   swappy
+
+  wf-recorder     # Screen Record
+  wl-clipboard    # Clipboard
+  wl-mirror
+  # wl-mirror-pick
 ]

@@ -13,6 +13,7 @@ in {
       (float "SUPER, t")
       (maximized "SUPER, f")
       (fullscreen "SUPERSHIFT, f")
+      (fakefullscreen "SUPERALT, f")
 
       (focus "k" "u")
       (focus "j" "d")
@@ -34,9 +35,14 @@ in {
       (resize "l" "20 0")
       (resize "h" "-20 0")
 
-      # "SUPERALT, f, fakefullscreen"
+    ] ++ [
       # "SUPER, g, togglegroup"
       # "SUPER, s, togglespecialworkspace"
+      "SUPER, minus, splitratio,-0.25"
+      "SUPERSHIFT, minus, splitratio,-0.3333333"
+
+      "SUPER, equal, splitratio,0.25"
+      "SUPERSHIFT, equal, splitratio,0.3333333"
     ] ++ (map (i: mvtows (toString i) (toString i)) arr) 
     ++ (map (i: ws (toString i) (toString i)) arr);
   };
