@@ -1,66 +1,26 @@
-{ inputs, pkgs, ... }:
-{
+{ pkgs, addons, ... }:
+let
+  homepage = "https://github.com/kaizen-dw";
+in {
   default = {
     bookmarks = { };
-    search.default = "Google";
-    extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+    extensions = with addons; [
       vimium-c
       clearurls
-      browserpass
+      # sidebery
+      # browserpass
+      sponsorblock
       ublock-origin
       auto-tab-discard
     ];
 
-    search = {
-      force = true;
-      engines = {
-        "Bing".metaData.hidden = true;
-        "Google".metaData.alias = "@g";
-
-        "Nix Packages" = {
-          urls = [
-            {
-              template = "https://search.nixos.org/packages";
-              params = [ 
-                { name = "channel"; value = "unstable"; }
-                { name = "type"; value = "packages"; }
-                { name = "query"; value = "{searchTerms}"; }
-              ];
-            }
-          ];
-          icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = ["@np"];
-        };
-
-        "Youtube" = {
-          urls = [
-            {
-              template = "https://youtube.com/results";
-              params = [
-                { name = "search_query"; value = "{searchTerms}"; }
-              ];
-            }
-          ];
-          definedAliases = ["@yt"];
-        };
-      };
-    };
+    search = import ./search.nix { inherit pkgs; };
 
     settings = { 
-      browser = {
-        startup.homepage = "https://github.com/kaizen-dw";
-        newtabpage.pinned = [
-          { title = "Facebook"; url = "https://facebook.com"; } 
-        ];
-      }; 
+      browser.startup.homepage = homepage;
     };
 
-    # userChrome = ''
-    #   
-    # '';
-
-    # userContent = ''
-
-    # '';
+    userChrome = '' '';
+    userContent = '' '';
   };
 }
