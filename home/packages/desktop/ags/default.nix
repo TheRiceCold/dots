@@ -24,7 +24,6 @@
     packages = with pkgs; [
       dart-sass
       libnotify
-      playerctl
       brightnessctl
       (python311.withPackages (p: [ 
         # p.requests
