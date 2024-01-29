@@ -15,10 +15,6 @@
       killall
       ripgrep
 
-      # Neovim pkg and lsp dependencies
-      cargo
-      nodejs
-
       # Podman tools
       podman-tui
       podman-compose

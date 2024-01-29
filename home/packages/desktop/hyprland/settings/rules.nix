@@ -21,7 +21,7 @@
     "opacity, 1.0, floating"
     "pin, title:^(Picture-in-Picture)$"
 
-    # "fakefullscreen, firefox"
+    "fakefullscreen, firefox"
   ];
 
   layer = [ 

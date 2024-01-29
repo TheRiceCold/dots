@@ -1,6 +1,6 @@
 { pkgs, addons, ... }:
 let
-  homepage = "https://github.com/kaizen-dw";
+  homepage = "https://kaizen-dw.github.io/firefox-startpage/";
 in {
   default = {
     bookmarks = { };
@@ -17,7 +17,7 @@ in {
     search = import ./search.nix { inherit pkgs; };
 
     settings = { 
-      browser.startup.homepage = homepage;
+      "browser.startup.homepage" = homepage;
     };
 
     userChrome = '' '';
