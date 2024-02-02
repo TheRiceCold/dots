@@ -8,8 +8,8 @@ in {
   default = "Google";
   engines = {
     "Bing".metaData.hidden = true;
-    "Google".metaData.alias = "@g";
 
+    "Google".metaData.alias = "@g";
     "Nix Packages" = {
       definedAliases = ["@np"];
       urls = [

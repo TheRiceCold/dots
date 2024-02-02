@@ -1,6 +1,6 @@
 {
   imports = [ 
-    ./vscodium
+    # ./vscodium
     ./lunarvim
   ];
 }

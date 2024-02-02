@@ -1,6 +1,6 @@
 { pkgs, addons, ... }:
 let
-  homepage = "https://kaizen-dw.github.io/firefox-startpage/";
+  homepage = "https://kaizen-dw.github.io/startpage/";
 in {
   default = {
     bookmarks = { };
@@ -11,6 +11,7 @@ in {
       # browserpass
       sponsorblock
       ublock-origin
+      new-tab-override
       auto-tab-discard
     ];
 
