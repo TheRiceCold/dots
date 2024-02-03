@@ -3,11 +3,11 @@
 let 
   inherit (inputs.nixpkgs.lib) nixosSystem;
 
-  mkHost = { name, system, modules }: {
+  mkHost = { name, system }: {
     ${name} = nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs name; };
       modules = [ ./hosts/${name} ./core ];
+      specialArgs = { inherit inputs name; };
     };
   };
 in (
@@ -15,6 +15,5 @@ in (
    mkHost {
     name = "thinkpad";
     system = "x86_64-linux";
-    modules = [ ];
   }
 )

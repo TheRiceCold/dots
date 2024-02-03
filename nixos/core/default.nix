@@ -15,18 +15,10 @@
   console.useXkbConfig = true;
   time.timeZone = "Asia/Manila";
   i18n.defaultLocale = "en_US.UTF-8";
+  documentation.nixos.enable = false; # .desktop
 
   sound.enable = true;
   networking.networkmanager.enable = true;
-
-  xdg.portal = {
-    enable = true;
-    config.common.default = "*";
-    extraPortals = with pkgs; [ 
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
-    ];
-  };
 
   fonts.packages = with pkgs; [ 
     jetbrains-mono 

@@ -1,31 +1,16 @@
 { pkgs, ... }:
 { 
-  environment = {
-    systemPackages = with pkgs; [
-      git
-      fzf
-      btop
-      lsof
-      unzip
-      wget
-      gcc
-      bat
-      clang
-      gnumake
-      killall
-      ripgrep
-
-      # Podman tools
-      podman-tui
-      podman-compose
-
-      linux-wifi-hotspot
-    ];
-
-    loginShellInit = ''
-      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-        exec Hyprland
-      fi
-    '';
-  };
+  environment.systemPackages = with pkgs; [
+    bat
+    gcc
+    git
+    fzf
+    btop
+    lsof
+    wget
+    clang
+    gnumake
+    ripgrep
+    home-manager
+  ];
 }

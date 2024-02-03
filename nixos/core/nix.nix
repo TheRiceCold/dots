@@ -3,7 +3,7 @@
   nix = {
     settings = {
       auto-optimise-store = true; # Optimize syslinks
-      # experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = "nix-command flakes";
     };
 
     gc = {
@@ -12,15 +12,6 @@
       dates = "weekly";
       options = "--delete-older-than 2d";
     };
-
-    package = pkgs.nixVersions.unstable;
-    registry.nixpkgs.flake = inputs.nixpkgs;
-    # nixPath = [ "nixpkgs=${channelPath}" ];
-    extraOptions = ''
-      experimental-features = nix-command flakes
-      keep-outputs          = true
-      keep-derivations      = true
-    '';
   };
 
   nixpkgs.config = {

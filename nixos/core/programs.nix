@@ -1,6 +1,5 @@
  { 
    programs = {
-    adb.enable = true;
     dconf.enable = true;
     light.enable = true;
     nano.enable = false;
@@ -12,6 +11,7 @@
         c = "clear";
         hm = "home-manager";
         docker-compose = "podman-compose";
+        nix-update = "doas nix flake update";
         nix-rollback = "doas nixos-rebuild switch --rollback";
       };
 

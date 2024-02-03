@@ -8,6 +8,5 @@
       enable = true;
       powerOnBoot = false;
     };
-    opentabletdriver.enable = true;
   };
 }

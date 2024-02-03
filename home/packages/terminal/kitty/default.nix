@@ -1,9 +1,7 @@
-{ pkgs, ... }:
 {
   imports = [ ./colors/catpuccin-mocha.nix ];
   programs.kitty = {
     enable = true;
-    package = pkgs.kitty;
     font = {
       size = 12;
       name = "FiraCode Nerd Font";
