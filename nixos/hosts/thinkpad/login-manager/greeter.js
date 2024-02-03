@@ -6,18 +6,27 @@ const name = Widget.Entry({
 })
 
 const password = Widget.Entry({
-  visibility: false,
   placeholderText: 'Password',
-  onAccept: () => {
-    greetd.login(name.text || '', password.text || '', 'Hyprland')
-      .catch(err => response.label = JSON.stringify(err))
-  },
+  onAccept: loginHandler,
+  visibility: false,
 })
 
 const response = Widget.Label()
 
+function loginHandler() {
+  try {
+    greetd.login(
+      name.text || '', 
+      password.text || '', 
+      'Hyprland'
+    )
+  } catch (err) {
+    response.label = JSON.stringify(err)
+  }
+}
+
 const win = Widget.Window({
-  css: 'background-color: transparent;',
+  css: 'background: none',
   anchor: ['top', 'left', 'right', 'bottom'],
   child: Widget.Box({
     vertical: true,

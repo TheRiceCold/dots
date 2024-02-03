@@ -51,7 +51,6 @@
 - Document Viewer: [zathura][zathura] || [sioyek][sioyek]
 - Media Player: [mpv][mpv]
 
-
 </details>
 
 <details open>
@@ -99,13 +98,13 @@
 <p align="right"><a href="#top">back to top</a></p>
 
 # 📚 Structure
-- `flake.nix`: Entrypoint for NixOS configurations.
+- `flake.nix`: Entrypoint
 - `home`: Home-manager configurations
-    - `packages`: Mostly packages/apps configuration modules.
+    - `packages`: folder arranged package configurations.
     - `profiles`: Home-manager profiles
-- `nixos`: NixOS configurations for hosts and home-manager.
-    - `core`: Core NixOS configuration
-    - `hosts`: NixOS configurations
+- `nixos`: NixOS configurations.
+    - `core`: Core configuration
+    - `hosts`: Host module configurations
         - `thinkpad`: Lenovo Thinkpad T495 - 16GB RAM, Ryzen 5 3500U
 - `pkgs`: exported packages (currently empty)
 
@@ -137,24 +136,23 @@ You can use `cfdisk` for create 3 partition if your on UEFI boot:
     mkfs.ext4 -L nixos /dev/nvme0n1p3
     ```
 
-### 2. Install
+### 2. Install (replace hostname, I use thinkpad btw)
   ```
     nix-env -iA nixos.git 
-    git clone https://github.com/kaizen-dw/Flakes
-    chmod +x ~/Flakes/scripts/install.sh && ~/Flakes/scripts/install.sh
+    git clone https://github.com/kaizen-dw/Flakes && cd Flakes
+    nixos-rebuild switch --flake .#hostname
   ```
 
-### 3. Add widgets(ags configuration)
+### 3. Submodules (Ags widgets)
     git submodule init && git submodule update
 
 <p align="right"><a href="#top">back to top</a></p>
 
 # 🙏 Acknowledgements
 
-- [Misterio77/nix-config](Misterio77)
 - [Ruixi-rebirth/melted-flakes](Ruixi)
+- [Misterio77/nix-config](Misterio77)
 - [aylur/dotfiles](Aylur)
-- [justinlime/dotfiles](justinlime)
 
 <!-- Links -->
 [Hyprland]: ../home/packages/desktop/hyprland/default.nix 
@@ -188,4 +186,3 @@ You can use `cfdisk` for create 3 partition if your on UEFI boot:
 [Aylur]: https://github.com/aylur/dotfiles
 [Misterio77]: https://github.com/Misterio77/nix-config
 [Ruixi]: https://github.com/Ruixi-rebirth/melted-flakes
-[justinlime]: https://github.com/justinlime/dotfiles

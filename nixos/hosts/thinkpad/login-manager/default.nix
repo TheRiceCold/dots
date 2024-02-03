@@ -1,11 +1,13 @@
 { inputs, pkgs, ... }:
 
 let
-  ags = inputs.ags.packages.${pkgs.system}.ags;
+  wallpaper = pkgs.writeText "wallpaper" ''
+    preload=${../../../assets/nixos-wallpaper.png}
+    wallpaper=, ${../../../assets/nixos-wallpaper.png}
+  ''; # Fix: wallpaper not working
   conf = pkgs.writeText "config" ''
-    exec-once = swww init
-    exec-once = swww img ${../../../assets/nixos-wallpaper.png}
-    exec-once = ags -c ${./greeter.js}; hyprctl dispatch exit
+    exec-once=hyprpaper -c ${wallpaper}
+    exec-once=ags -c ${./greeter.js}; hyprctl dispatch exit
     misc {
       force_default_wallpaper = 0
       disable_hyprland_logo = true
@@ -34,25 +36,15 @@ in {
     xwayland.enable = true;
   };
 
-  xdg.portal = {
-    enable = true;
-    config.common.default = "*";
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-  };
-
   security = {
     polkit.enable = true;
     pam.services.ags = { };
   };
 
-  environment.systemPackages = [ 
-    ags
-    pkgs.swww
-    pkgs.loupe
-  ];
+  environment.systemPackages = [ inputs.ags.packages.${pkgs.system}.ags ];
 
-  systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
+  systemd.user.services = {
+    polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
       wantedBy = [ "graphical-session.target" ];
       wants = [ "graphical-session.target" ];
