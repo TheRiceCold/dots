@@ -38,6 +38,7 @@ in {
     ] ++ [
       # "SUPER, g, togglegroup"
       # "SUPER, s, togglespecialworkspace"
+      "ALT, Tab, focuscurrentorlast"
       "SUPER, minus, splitratio,-0.25"
       "SUPERSHIFT, minus, splitratio,-0.3333333"
 

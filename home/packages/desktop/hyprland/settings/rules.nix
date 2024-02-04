@@ -4,9 +4,13 @@
       "mpv"
       "rofi"
       "kitty"
-      "swayimg"
+      "blueman"
       "g4music"
+      "swayimg"
       "pavucontrol"
+
+      "com.github.Aylur.ags"
+
       "title: floating"
       "title:^(Save As)$"
       "title:^(Library)$"

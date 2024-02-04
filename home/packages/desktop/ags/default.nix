@@ -6,7 +6,6 @@
     packages = with pkgs; [
       dart-sass
       libnotify
-      brightnessctl
       python311Packages.python-pam
     ];
   };
