@@ -1,20 +1,20 @@
 name: Nix Flake Check
 
-on: [push, pull_request, workflow_dispatch]
+on: 
+  push:
+    branches: [ main ]
 
 jobs:
   checks:
-    name: Check expressions
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
-      - name: Install Nix
       - uses: cachix/install-nix-action@v20
         with: 
-          install_url: https://nixos.org/nix/install
-          extra_nix_config: |
-            auto-optimise-store = true
-            access-tokens = ${{ secrets.AUTH_TOKEN }}
-            experimental-features = nix-command flakes
+          nix_path: nixpkgs=channel:nixos-unstable
+
+        extra_nix_config: |
+          auto-optimise-store = true
+          access-tokens = ${{ secrets.GITHUB_TOKEN }}
+          experimental-features = nix-command flakes
       - run: nix flake check
