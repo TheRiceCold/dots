@@ -22,6 +22,7 @@
   home.packages = with pkgs; [
     cava
     figlet
+    ydotool
     onefetch
   ];
 }

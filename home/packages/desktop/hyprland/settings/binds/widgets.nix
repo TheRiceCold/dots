@@ -11,6 +11,7 @@
       (ags "Space" "launcher")
       (ags "a" "quicksettings")
       (ags "Slash" "cheatsheet")
+      "ControlSuper, k, exec, ags -t osk"
     ];
   };
 }
