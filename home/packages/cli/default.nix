@@ -7,6 +7,7 @@
     ./yazi.nix
     ./zellij.nix
     ./zoxide.nix
+    ./kubernetes.nix
 
     ./neofetch
   ];

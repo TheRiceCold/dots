@@ -12,13 +12,5 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
-
-    gvfs.enable = true;
-    upower.enable = true;
-    devmon.enable = true;
-    blueman.enable = true;
-    udisks2.enable = true;
-    accounts-daemon.enable = true;
-    power-profiles-daemon.enable = true;
   };
 }

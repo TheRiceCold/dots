@@ -1,6 +1,7 @@
 { 
   security = {
     sudo.enable = false;
+    # Enable real-time kit
     rtkit.enable = true;
 
     doas = {

@@ -13,11 +13,4 @@ in {
     package = pkgs.firefox-wayland;
     profiles = import ./profiles { inherit pkgs addons; };
   };
-
-  xdg.mimeApps.defaultApplications = {
-    "text/xml" = [ "firefox.desktop" ];
-    "text/html" = [ "firefox.desktop" ];
-    "x-scheme-handler/http" = [ "firefox.desktop" ];
-    "x-scheme-handler/https" = [ "firefox.desktop" ];
-  };
 }
