@@ -9,6 +9,7 @@
       "swayimg"
       "pavucontrol"
 
+      "showmethekey"
       "com.github.Aylur.ags"
 
       "title: floating"
@@ -25,11 +26,13 @@
     "fullscreen, firefox"
     # "fakefullscreen, firefox"
     "opacity, 1.0, floating"
+    "opacity, 0.8, showmethekey"
     "pin, title:^(Picture-in-Picture)$"
   ] ++ (map (i: "float, ${i}") float);
 
   layer = let
     ags = [
+      "osk"
       "launcher"
       "overview"
       "dashboard"
@@ -42,6 +45,7 @@
   in [ 
     "blur, bar"
     "ignorezero, bar"
+    "blur, showmethekey"
 
     "blur, gtk-layer-shell"
     "ignorezero, gtk-layer-shell"

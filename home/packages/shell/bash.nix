@@ -1,14 +1,8 @@
+{ shellAliases, ... }:
 {
   programs.bash = {
     enable = true;
-    shellAliases = {
-      x = "exit";
-      v = "lvim";
-      c = "clear";
-      hm = "home-manager";
-      nix-rollback = "doas nixos-rebuild switch --rollback";
-    };
-    
+    inherit shellAliases; 
     initExtra = ''
       eval "$(zoxide init bash)"
       eval "$(starship init bash)"

@@ -1,5 +1,7 @@
 {
   services = {
+    blueman.enable = true;
+
     create_ap = {
       enable = true; 
       settings = {
@@ -9,6 +11,7 @@
         INTERNET_IFACE = "enp3s0f0";
       };
     };
+
     flatpak.enable = true;
   };
 }

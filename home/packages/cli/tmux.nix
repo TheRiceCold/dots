@@ -1,9 +1,7 @@
 { pkgs, ... }:
 {
   programs.tmux = {
-    enable = true;
     mouse = true;
-    baseIndex = 1;
     keyMode = "vi";
     terminal = "xterm-256color";
     extraConfig = ''

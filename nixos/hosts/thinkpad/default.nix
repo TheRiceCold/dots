@@ -1,8 +1,8 @@
-{ pkgs, name, stateVersion, ... }:
+{ config, pkgs, name, stateVersion, ... }:
 
 {
   imports = [ 
-    # ./login-manager
+    ./login-manager
     ./services.nix 
     ./environment.nix 
     ./hardware-configuration.nix 
@@ -12,6 +12,16 @@
   programs = {
     adb.enable = true;
     virt-manager.enable = true;
+
+    corectrl = {
+      enable = true;
+      gpuOverclock.enable = true;
+    };
+
+    tmux = {
+      enable = true;
+      baseIndex = 1;
+    };
   };
 
   virtualisation = {
@@ -24,11 +34,13 @@
 
   hardware.opentabletdriver.enable = true;
 
-  xdg.portal = {
-    enable = true;
-    config.common.default = "*";
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+  boot = {
+    extraModulePackages = with config.boot.kernelPackages; [zenpower];
+    blacklistedKernelModules = [ "k10temp" ];
   };
+
+  # Allow systemd to handle coredumps.
+  systemd.coredump.enable = true;
 
   system.stateVersion = stateVersion;
 }

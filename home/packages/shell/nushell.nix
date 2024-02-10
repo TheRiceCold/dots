@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, shellAliases, ... }:
 {
   programs.nushell = {
     enable = true;
+    inherit shellAliases;
     package = pkgs.nushell;
     environmentVariables = {
       PROMPT_INDICATOR_VI_INSERT = "\"  \"";

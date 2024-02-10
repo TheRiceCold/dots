@@ -2,7 +2,6 @@
   imports = [
     ./cli
     ./dev
-    # ./wine
     ./shell
     ./media
     ./tools

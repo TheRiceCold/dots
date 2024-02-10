@@ -5,7 +5,7 @@
     vitetris
     _2048-in-terminal
 
+    bottles
     celeste-classic
-    # celeste-classic-pm
   ];
 }
