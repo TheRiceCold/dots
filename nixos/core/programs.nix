@@ -1,13 +1,30 @@
  { 
    programs = {
+    git.enable = true;
     light.enable = true;
     nano.enable = false;
+
+    direnv = {
+      enable = true; 
+      nix-direnv.enable = true;
+    };
+
+    neovim = {
+      enable = true;
+      withRuby = true;
+      withNodeJs = true;
+      withPython3 = true;
+      defaultEditor = true;
+    };
 
     bash = {
       shellAliases = {
         x = "exit";
         v = "nvim";
         c = "clear";
+        mv = "mv -iv";
+        cp = "cp -riv";
+
         hm = "home-manager";
         docker-compose = "podman-compose";
         nix-update = "doas nix flake update";
@@ -27,14 +44,6 @@
           nix-clean && nix-switch $1
         }
       '';
-    };
-
-    neovim = {
-      enable = true;
-      withRuby = true;
-      withNodeJs = true;
-      withPython3 = true;
-      defaultEditor = true;
     };
   };
 }

@@ -1,0 +1,7 @@
+{
+  imports = [
+    ./office 
+    ./browsers
+    ./graphics
+  ];
+}

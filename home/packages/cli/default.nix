@@ -2,7 +2,7 @@
 {
   imports = [ 
     ./bat.nix
-    ./tmux.nix
+    ./zellij.nix
     ./kubernetes.nix
     ./neofetch
   ];
@@ -18,11 +18,6 @@
       };
     };
 
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-
     lazygit.enable = true;
 
     # File Explorer
@@ -30,23 +25,14 @@
       enable = true;
       package = pkgs.yazi;
     };
-
-    # zellij = {
-    #   enable = true;
-    #   package = pkgs.zellij;
-    # };
-
-    zoxide = {
-      enable = true;
-      options = [ "--cmd cd" ];
-    };
   };
 
-
   home.packages = with pkgs; [
+    eza # Modern replacement for ls
     cava
     figlet
     ydotool
     onefetch
+    pipes-rs
   ];
 }

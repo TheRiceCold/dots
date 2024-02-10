@@ -1,19 +1,39 @@
+{ lib, ... }:
+
 let
   shellAliases = {
-    x = "exit";
     v = "lvim";
-    c = "clear";
-    mv = "mv -iv";
-    cp = "cp -riv";
+    zj = "zellij";
 
-    hm = "home-manager";
-    nix-rollback = "doas nixos-rebuild switch --rollback";
+    l = "$eza -l --icons --git -a";
+    lt = "eza --tree --level=2 --long --icons --git";
   };
 in { 
-  imports = [ 
-    ./git.nix
-    ./starship.nix
-    (import ./bash.nix { inherit shellAliases; })
-    # (import ./nushell.nix { inherit pkgs shellAliases; })
-  ];
+  programs = {
+    git = {
+      enable = true;
+      userName = "kaizen-dw";
+      userEmail = "dalewaltergh@gmail.com";
+      extraConfig = {
+        color.ui = true;
+        core.editor = "lvim";
+      };
+    };
+
+    zoxide = {
+      enable = true;
+      options = [ "--cmd cd" ];
+    };
+
+    starship = import ./starship.nix { inherit lib; };
+
+    bash = {
+      enable = true;
+      inherit shellAliases; 
+      initExtra = ''
+        eval "$(zoxide init bash)"
+        eval "$(starship init bash)"
+      '';
+    };
+  };
 }

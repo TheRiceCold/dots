@@ -1,6 +1,7 @@
 {
-  imports = [
-    ./kitty
-    ./foot.nix
-  ];
+  imports = [ ./kitty ];
+
+  programs = {
+    foot = import ./foot.nix;
+  };
 }
