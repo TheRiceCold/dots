@@ -23,7 +23,10 @@
     # File Explorer
     yazi = {
       enable = true;
-      package = pkgs.yazi;
+      enableBashIntegration = true;
+      keymap = { };
+      settings = { };
+      theme = { };
     };
   };
 

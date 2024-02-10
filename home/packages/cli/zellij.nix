@@ -1,8 +1,6 @@
-{ pkgs, ... }:
 {
   programs.zellij = {
     enable = true;
-    package = pkgs.zellij;
     settings = {
       theme = "catppuccin-mocha";
       themes = {

@@ -1,9 +1,5 @@
 {
-  imports = [ 
-    ./lunarvim
-    # ./vscodium
-  ];
-
+  imports = [ ./lunarvim ./helix ];
 
   home.packages = [
     # jetbrains-toolbox
