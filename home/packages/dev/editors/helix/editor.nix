@@ -14,7 +14,7 @@
   indent-guides = {
     render = true;
     character = "┊";
-    rainbow-option = "dim";
+    # rainbow-option = "dim";
   };
   lsp = {
     display-messages = true;

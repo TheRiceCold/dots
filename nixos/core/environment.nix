@@ -10,7 +10,6 @@
     wget
     clang
     gnumake
-    ripgrep
     home-manager
   ];
 }

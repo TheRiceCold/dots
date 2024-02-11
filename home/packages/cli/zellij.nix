@@ -20,6 +20,7 @@
       }
 
       shared_except "locked" {
+        unbind "Ctrl h"
         bind "Ctrl n" { NewTab; } 
 
         bind "Alt 1" { GoToTab 1; }
@@ -40,7 +41,5 @@
         bind "Alt m" { SwitchToMode "Move"; }
       }
     }
-
-   default_layout "compact"
   '';
 }

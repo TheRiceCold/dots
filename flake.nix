@@ -8,6 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    helix-ext.url = "github:omentic/helix-ext";
     ags.url = "github:Aylur/ags";
 
     firefox-addons = {
