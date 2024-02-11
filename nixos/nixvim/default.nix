@@ -1,82 +1,57 @@
 { inputs, pkgs, ... }:
-{
-	imports = [ inputs.nixvim.nixosModules.nixvim ];
+let
+  icons = import ./icons.nix;
+in {
+	imports = [ 
+    inputs.nixvim.nixosModules.nixvim 
+    (import ./utils.nix { inherit icons; })
+  ];
 
 	programs.nixvim = {
 	  enable = true;
 
-		extraPlugins = with pkgs.vimPlugins; [
-			comment-nvim
-			catppuccin-nvim
-		];
-
-	  options = {
-			tabstop = 2;
-	    number = true;
-			cmdheight = 1;
-			showtabline = 1;
-			smartcase = true;
-			showmode = false;
-			updatetime = 100;
-			autoindent = true;
-			ignorecase = true;
-			smartindent = true;
-	    relativenumber = true;
-			clipboard = "unnamedplus";
-	  };
+		extraPlugins = with pkgs.vimPlugins; [ catppuccin-nvim ];
 
 	  globals.mapleader = " ";
-
 		colorscheme = "catppuccin";
+	  options = import ./options.nix;
 
 	  plugins = {
-			emmet.enable = true;
-	    telescope.enable = true;
-	    which-key = {
+	    lsp = import ./lsp.nix;
+      nvim-cmp = { enable = true; };
+
+			# Git
+      neogit = { enable = true; };
+			gitsigns = { enable = true; };
+
+	    telescope = {
 				enable = true;
-				showHelp = true;
-				showKeys = true;
-				triggers = "auto";
-				plugins = {
-					marks = false;
-					registers = false;
-					spelling = {
-						enabled = true;
-						suggestions = 20;
-					};
+				defaults = {
+				  prompt_prefix = "${icons.ui.telescope} ";
+				  color_devicons = true;
+          vimgrep_arguments = [
+            "rg"
+            "--color=never"
+            "--no-heading"
+            "--with-filename"
+            "--line-number"
+            "--column"
+            "--smart-case"
+            "--hidden"
+            "--glob=!.git/"
+          ];
 				};
-
-				window = {
-					winblend = 0;
-					border = "rounded";
-					position = "bottom";
-					margin = { top = 1; right = 0; bottom = 1; left = 0; };
-					padding = { top = 2; right = 2; bottom = 2; left = 2; };
-				};
-
-				layout = {
-					spacing = 3;
-					align = "left";
-					height = { min = 4; max = 25; };
-					width = { min = 20; max = 50; };
-				};
-			};
+      };
+			navic = { enable = true; };
+      lualine.enable = true;
 			bufferline.enable = true;
-			nvim-colorizer.enable = true;
-	    lsp = {
-	      enable = true;
-	      servers = {
-	        tsserver.enable = true;
-	        tailwindcss.enable = true;
-	        rust-analyzer.enable = true;
-	      };
-	    };
+      treesitter = {
+        enable = true;
+        indent = true;
+        nixGrammars = true;
+        ensureInstalled = [ "comment" "markdown_inline" "regex" ];
+      };
 	  };
-
 		keymaps = import ./keymaps.nix;
-
-		extraConfigLua = ''
-
-		'';
 	};
 }
