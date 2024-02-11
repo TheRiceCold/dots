@@ -24,6 +24,23 @@
     mode.normal = "NORMAL";
     mode.insert = "INSERT";
     mode.select = "SELECT";
+
+    left = [
+      "mode"
+      "spacer"
+      "diagnostics"
+      "version-control"
+      "file-name"
+      "read-only-indicator"
+      "file-modification-indicator"
+      "spinner"
+    ];
+    right = [
+      "file-encoding"
+      "file-type"
+      "selections"
+      "position"
+    ];
   };
   whitespace = {
     render.tab = "all";

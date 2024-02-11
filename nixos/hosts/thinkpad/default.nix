@@ -22,8 +22,12 @@
       enable = true;
       baseIndex = 1;
       keyMode = "vi";
-      plugins = with pkgs; [
-        ressurect
+      plugins = with pkgs.tmuxPlugins; [ 
+        resurrect 
+        continuum
+        yank
+        sensible
+        vim-tmux-navigator
       ];
     };
   };

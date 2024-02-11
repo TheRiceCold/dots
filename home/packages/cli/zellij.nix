@@ -1,43 +1,46 @@
 {
-  programs.zellij = {
-    enable = true;
-    settings = {
-      theme = "catppuccin-mocha";
-      themes = {
-        gruvbox-dark = {
-          bg = [40 40 40];
-          fg = [213 196 161];
-          red = [204 36 29];
-          green = [152 151 26];
-          blue = [69 133 136];
-          yellow = [215 153 33];
-          magenta = [177 98 134];
-          orange = [214 93 14];
-          cyan = [104 157 106];
-          black = [60 56 54];
-          white = [251 241 199];
-        };
+  programs.zellij.enable = true;
 
-        catppuccin-mocha = {
-          bg = "#585b70";
-          fg = "#cdd6f4";
-          red = "#f38ba8";
-          green = "#a6e3a1";
-          blue = "#89b4fa";
-          yellow = "#f9e2af";
-          magenta = "#f5c2e7"; # Pink
-          orange = "#fab387";  # Peach
-          cyan = "#89dceb";    # Sky
-          black = "#181825";   # Mantle
-          white = "#cdd6f4";
-        };
-      };
-      keybinds = {
-        normal = { };
-        locked = { };
-        resize = { };
-        pane = { };
-      };
-    };
-  };
+  # https://zellij.dev/documentation/keybindings-possible-actions
+  xdg.configFile."zellij/config.kdl".text = ''
+    theme "catppuccin-mocha"
+
+    themes { }
+
+    keybinds {
+      normal {  }
+      pane { }      
+      locked { }
+      tab { }
+      resize {
+        bind "Alt r" { SwitchToMode "Normal"; }
+      }
+      move { 
+        bind "Alt m" { SwitchToMode "Normal"; }
+      }
+
+      shared_except "locked" {
+        bind "Ctrl n" { NewTab; } 
+
+        bind "Alt 1" { GoToTab 1; }
+        bind "Alt 2" { GoToTab 2; }
+        bind "Alt 3" { GoToTab 3; }
+        bind "Alt 4" { GoToTab 4; }
+        bind "Alt 5" { GoToTab 5; }
+        bind "Alt 6" { GoToTab 6; }
+        bind "Alt 7" { GoToTab 7; }
+        bind "Alt 8" { GoToTab 8; }
+        bind "Alt 9" { GoToTab 9; }
+      }
+
+      shared_except "resize" "locked" {
+        bind "Alt r" { SwitchToMode "Resize"; }
+      }
+      shared_except "move" "locked" {
+        bind "Alt m" { SwitchToMode "Move"; }
+      }
+    }
+
+   default_layout "compact"
+  '';
 }

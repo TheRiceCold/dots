@@ -22,7 +22,7 @@
         x = "exit";
         v = "nvim";
         c = "clear";
-        mv = "mv -iv";
+        m = "mv -iv";
         cp = "cp -riv";
 
         hm = "home-manager";
@@ -32,12 +32,20 @@
       };
 
       interactiveShellInit = ''
+        __my-flakes() {
+          cd ~/Flakes && git add .         
+        }
+
+        hm-switch() {
+          __my-flakes && home-manager switch --flake .
+        }
+
         nix-clean() {
           doas nix-collect-garbage -d
         }
 
         nix-switch() {
-          cd ~/Flakes && git add . && doas nixos-rebuild switch --flake .#$1
+          __my-flakes && doas nixos-rebuild switch --flake .#$1
         }
         
         nix-clean-switch() {

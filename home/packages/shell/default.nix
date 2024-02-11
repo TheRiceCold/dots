@@ -4,8 +4,9 @@ let
   shellAliases = {
     v = "lvim";
     zj = "zellij";
+    lg = "lazygit";
 
-    l = "$eza -l --icons --git -a";
+    l = "eza -l --icons --git -a";
     lt = "eza --tree --level=2 --long --icons --git";
   };
 in { 
