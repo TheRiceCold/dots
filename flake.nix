@@ -7,8 +7,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    helix-ext.url = "github:omentic/helix-ext";
+    # helix-ext.url = "github:omentic/helix-ext";
     ags.url = "github:Aylur/ags";
 
     firefox-addons = {

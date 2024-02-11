@@ -6,7 +6,7 @@ let
   mkHost = { name, system, stateVersion }: {
     ${name} = nixosSystem {
       inherit system;
-      modules = [ ./core ./hosts/${name} ];
+      modules = [ ./core ./nixvim ./hosts/${name} ];
       specialArgs = { inherit inputs name stateVersion; };
     };
   };

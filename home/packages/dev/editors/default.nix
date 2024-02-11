@@ -1,5 +1,5 @@
 {
-  imports = [ ./lunarvim ./helix ];
+  imports = [ ./helix ];
 
   home.packages = [
     # jetbrains-toolbox

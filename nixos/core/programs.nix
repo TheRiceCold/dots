@@ -1,4 +1,4 @@
- { 
+{ 
    programs = {
     git.enable = true;
     light.enable = true;
@@ -9,13 +9,13 @@
       nix-direnv.enable = true;
     };
 
-    neovim = {
-      enable = true;
-      withRuby = true;
-      withNodeJs = true;
-      withPython3 = true;
-      defaultEditor = true;
-    };
+    # neovim = {
+      # enable = true;
+      # withRuby = true;
+      # withNodeJs = true;
+      # withPython3 = true;
+      # defaultEditor = true;
+    # };
 
     bash = {
       shellAliases = {

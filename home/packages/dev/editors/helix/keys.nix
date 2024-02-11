@@ -2,11 +2,6 @@
   insert = {
     C-s = ":w";
     C-c = "normal_mode";
-
-    A-h = "move_char_left";
-    A-j = "move_line_down";
-    A-k = "move_line_up";
-    A-l = "move_char_right";
   };
   normal = {
     C-s = ":w";
@@ -15,9 +10,6 @@
     C-j = "jump_view_down";
     C-k = "jump_view_up";
     C-l = "jump_view_right";
-
-    A-k = [ "extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before" ];
-    A-j = [ "extend_to_line_bounds" "delete_selection" "paste_after" ];
 
     L = ":bnext";
     H = ":bprev";
