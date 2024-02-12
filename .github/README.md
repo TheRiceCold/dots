@@ -17,7 +17,6 @@
     <img src='https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png' width='600px' />
   </div>
 
-
   **[<kbd> <br> Overview <br> </kbd>](#-Overview)** 
   **[<kbd> <br> Installation <br> </kbd>](#-Installation)** 
   **[<kbd> <br> &nbsp;Keybindings&nbsp; <br> </kbd>](#-Keybindings)** 
@@ -33,7 +32,7 @@
 <summary>🖥️ <b>Core packages</b></summary><br />
 
 - Shell: [bash][bash]
-- Text Editor: [neovim][neovim]
+- Text Editor: [nixvim][nixvim]
 - Syntax Highlighting: [bat][bat]
 - System Resource Monitor: [btop][btop]
 - Sound Server: [pipewire][pipewire]
@@ -44,17 +43,17 @@
 <details>
 <summary>🎯 <b>Home Packages</b></summary><br />
 
-- **Terminal:** [Foot][Foot] & [Kitty][Kitty]
-- **Text Editor:** [LunarVim][LunarVim] & [VSCodium][VSCodium]
+- **Terminal:** [foot][foot] & [kitty][kitty]
+- **Text Editor:** [helix][helix] & [lunarvim][lunarvim] & [vscodium][vscodium]
 - **Display/Desktop Packages:**
-  - Window Manager: [Hyprland][Hyprland]
-  - Widgets: [Aylurs Gtk Shell][Ags]
-  - Wallpaper: [Swww][Swww]
-  - Browser: [Firefox][Firefox]
+  - Window Manager: [hyprland][hyprland]
+  - Widgets: [Aylurs Gtk Shell][ags]
+  - Wallpaper: [swww][Swww]
+  - Browser: [firefox][firefox]
 - **CLI Packages**
   - File Manager: [yazi][yazi]
+  - Terminal Multiplexer: [zellij][zellij]
   - System Information Tool: [neofetch][neofetch]
-  - Terminal Multiplexer: [tmux][tmux] & [zellij][zellij]
 - **Media Packages**
   - Media Player: [mpv][mpv]
   - Image Viewer: [swayimg][swayimg]
@@ -173,8 +172,8 @@
 [Ags]: ../home/packages/desktop/ags/default.nix
 [Swww]: https://github.com/LGFae/swww
 
-[tmux]: https://github.com/tmux/tmux
-[zellij]: https://github.com/zellij-org/zellij
+[zellij]: ../home/packages/cli/zellij
+[tmux]: ../nixos/hosts/thinkpad/default.nix
 [neofetch]: https://github.com/dylanaraps/neofetch
 
 [bash]: ../nixos/core/programs.nix
@@ -182,13 +181,15 @@
 [pipewire]: ../nixos/core/services.nix
 [podman]: ../nixos/core/virtualisation.nix
 
-[Foot]: ../home/packages/terminal/foot.nix
-[Kitty]: ../home/packages/terminal/kitty/default.nix
+[foot]: ../home/packages/terminal/foot.nix
+[kitty]: ../home/packages/terminal/kitty/default.nix
 
-[Firefox]: ../home/packages/browser/firefox.nix 
-[LunarVim]: ../home/packages/editor/lunarvim.nix
+[nixvim]: ../nixos/nixvim
+[firefox]: ../home/packages/desktop/browsers/firefox.nix 
+[lunarVim]: ../home/packages/dev/editors/lunarvim.nix
 [neovim]: https://github.com/kaizen-dw/neovim-config
-[VSCodium]: ../home/packages/editor/vscodium/default.nix
+[helix]: ../home/packages/dev/editors/helix/default.nix
+[vscodium]: ../home/packages/dev/editors/vscodium/default.nix
 
 [Bibata-Cursor]: https://github.com/ful1e5/Bibata_Cursor
 [Catppuccin]: https://github.com/catppuccin/catppuccin
@@ -203,12 +204,11 @@
 [godot]: https://godotengine.org/
 
 [btop]: ../home/packages/cli/btop.nix
-[mpv]: ../home/packages/media/mpv.nix 
+[mpv]: ../home/packages/media/default.nix 
 [Starship]: ../home/packages/shell/starship.nix
-[zathura]: ../home/packages/tools/zathura.nix
-[sioyek]: ../home/packages/tools/sioyek.nix
+[zathura]: ../home/packages/desktop/apps/office/zathura.nix
+[sioyek]: ../home/packages/desktop/apps/office/sioyek.nix
 [swayimg]: https://github.com/artemsen/swayimg
-
 
 <!-- Acknowledgements -->
 [Ruixi]: https://github.com/Ruixi-rebirth/flakes

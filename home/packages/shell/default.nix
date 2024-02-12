@@ -2,7 +2,6 @@
 
 let
   shellAliases = {
-    v = "lvim";
     zj = "zellij";
     lg = "lazygit";
 
@@ -17,7 +16,7 @@ in {
       userEmail = "dalewaltergh@gmail.com";
       extraConfig = {
         color.ui = true;
-        core.editor = "lvim";
+        core.editor = "nvim";
       };
     };
 
