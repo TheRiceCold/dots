@@ -19,10 +19,6 @@ in [
 
   (n "<S-u>" "<C-r>") # Redo map
 
-  # ["<A-j>"] = "<Esc>:m .+1<CR>==gi",
-  # -- Move current line / block with Alt-j/k ala vscode.
-  # ["<A-k>"] = "<Esc>:m .-2<CR>==gi",
-
   # Buffers
   (buffer "b" "enew") # New Buffer
   (buffer "w" "write") # Write Buffer
@@ -39,11 +35,8 @@ in [
   (git "s" (telescope "git_status"))
   (git "b" (telescope "git_branches"))
 
-  # Utilities
-  (nv (lead "e") (cmd "Oil")) # File explorer
-
   # Extras
-  (nv (lead "e") (lua "MiniFiles.open()"))
   (nv (lead "n") (cmd "set nu!")) # Toggle line numbers
   (nv "<c-/>" "<Plug>(comment_toggle_linewise_visual)")
+  (nv (lead "e") (lua "MiniFiles.open({ windows = { preview = true } })"))
 ]

@@ -5,7 +5,6 @@
     ./boot.nix
     ./users.nix
     ./hardware.nix
-    ./programs.nix
     ./security.nix
     ./services.nix
     ./environment.nix
@@ -19,6 +18,11 @@
 
   sound.enable = true;
   networking.networkmanager.enable = true;
+
+  programs = {
+    git.enable = true;
+    light.enable = true;
+  };
 
   fonts.packages = with pkgs; [ 
     jetbrains-mono 

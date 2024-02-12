@@ -6,6 +6,7 @@ in {
     inputs.nixvim.nixosModules.nixvim 
     (import ./utils.nix { inherit icons; })
   ];
+  environment.systemPackages = with pkgs; [ ripgrep ];
 
 	programs.nixvim = {
 	  enable = true;
@@ -18,7 +19,11 @@ in {
 
 	  plugins = {
 	    lsp = import ./lsp.nix;
+      packer = import ./packer.nix;
+
       inc-rename = { enable = true; };
+      markdown-preview.enable = true;
+
       nvim-cmp = { enable = true; };
 
       # UI

@@ -24,9 +24,7 @@
       disabledFiletypes = [ "TelescopePrompt" "spectre_panel" ];
     };
 
-    todo-comments = {
-      enable = true;
-    };
+    todo-comments = { enable = true; };
 
     # Nodule references: https://github.com/echasnovski/mini.nvim/blob/main/readmes
     mini = {
@@ -44,17 +42,8 @@
             relnum_with_alt = true;
           };
         };
-        clue = {
-          triggers = [     
-            { mode = "n"; keys = "<leader>"; }
-            { mode = "v"; keys = "<leader>"; }
-          ];
-          clues = { };
-        };
         files = { };
-        indentscope = { 
-          symbol = icons.ui.line.left;
-        };
+        indentscope.symbol = icons.ui.line.left;
         jump2d = {
           view.dim = true;
           mappings.start_jumping = "f";
@@ -73,10 +62,9 @@
             line_up = "<M-k>";
           };
         };
-        # pairs = { };
-        tabline = { };
+        tabline = { }; 
         # test = { };
-        trailspace = { only_in_normal_buffers = true; };
+        trailspace = { };
       };
     };
   };

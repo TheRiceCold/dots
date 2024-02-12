@@ -3,8 +3,6 @@
   environment.systemPackages = with pkgs; [
     bat
     gcc
-    git
-    fzf
     btop
     lsof
     wget
