@@ -4,18 +4,28 @@ let
 in {
 	imports = [
     inputs.nixvim.nixosModules.nixvim 
-    (import ./utils.nix { inherit icons; })
+    (import ./utils { inherit icons; })
   ];
-  environment.systemPackages = with pkgs; [ ripgrep ];
+
+  environment.systemPackages = with pkgs; [ 
+    ripgrep # for telescope live_grep
+  ];
 
 	programs.nixvim = {
 	  enable = true;
-
-		extraPlugins = with pkgs.vimPlugins; [ catppuccin-nvim ];
-
 	  globals.mapleader = " ";
-		colorscheme = "catppuccin";
 	  options = import ./options.nix;
+
+    colorschemes = {
+      catppuccin = {
+        enable = true;
+        flavour = "mocha";
+        dimInactive.enabled = true;
+      };
+    #   gruvbox = { enable = true; };
+    };
+
+		colorscheme = "catppuccin";
 
 	  plugins = {
 	    lsp = import ./lsp.nix;
@@ -30,7 +40,7 @@ in {
       noice = { enable = true; };
 
 			# Git
-      neogit = { enable = true; };
+      neogit.enable = true;
 			gitsigns = { enable = true; };
 
 	    telescope = {
