@@ -2,7 +2,7 @@
 let
   icons = import ./icons.nix;
 in {
-	imports = [ 
+	imports = [
     inputs.nixvim.nixosModules.nixvim 
     (import ./utils.nix { inherit icons; })
   ];
@@ -18,7 +18,11 @@ in {
 
 	  plugins = {
 	    lsp = import ./lsp.nix;
+      inc-rename = { enable = true; };
       nvim-cmp = { enable = true; };
+
+      # UI
+      noice = { enable = true; };
 
 			# Git
       neogit = { enable = true; };
@@ -43,8 +47,7 @@ in {
 				};
       };
 			navic = { enable = true; };
-      lualine.enable = true;
-			bufferline.enable = true;
+      lualine = { enable = true; };
       treesitter = {
         enable = true;
         indent = true;

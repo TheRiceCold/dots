@@ -1,43 +1,49 @@
-#TODO: Messy AF, need refactoring
-[
-	# Buffers
-	{ mode = "n"; key = "<S-l>"; action = "<cmd>BufferLineCycleNext<cr>"; }
-	{ mode = "n"; key = "<S-h>"; action = "<cmd>BufferLineCyclePrev<cr>"; }
+let
+  lead = key: "<leader>${key}";
+  cmd = exec: "<cmd>${exec}<cr>";
+  lua = arg: cmd "lua ${arg}";
 
-  # Better window navigation
-  { mode = ["n" "v"]; key = "<C-h>"; action = "<C-w>h"; options.silent = true; }
-  { mode = ["n" "v"]; key = "<C-j>"; action = "<C-w>j"; options.silent = true; }
-  { mode = ["n" "v"]; key = "<C-k>"; action = "<C-w>k"; options.silent = true; }
-  { mode = ["n" "v"]; key = "<C-l>"; action = "<C-w>l"; options.silent = true; }
+  # Modes (n: Normal, nv: Normal, Visual)
+  n = key: action: { mode = "n"; inherit key action; };
+  nv = key: action: { mode = ["n" "v"]; inherit key action; };
+  niv = key: action: { mode = ["n" "i" "v"]; inherit key action; };
 
-  { mode = ["n" "i" "v"]; key = "<A-k>"; action = "<esc>:m .+1<cr>"; options.silent = true; }
-  { mode = ["n" "i" "v"]; key = "<A-j>"; action = "<esc>:m .-2<cr>"; options.silent = true; }
-    # ["<A-j>"] = "<Esc>:m .+1<CR>==gi",
-    # -- Move current line / block with Alt-j/k ala vscode.
-    # ["<A-k>"] = "<Esc>:m .-2<CR>==gi",
+  buffer = key: arg: (nv (lead key) (cmd arg));
+  telescope = arg: cmd "Telescope ${arg} theme=ivy";
+  find = key: arg: (nv (lead "f${key}") (telescope arg));
+  git = key: arg: (nv (lead "g${key}") arg);
 
-  { mode = "n"; key = "<S-u>"; action = "<C-r>"; options.silent = true; }
+in [
+  (n "<S-l>" (cmd "bnext")) # Switch to next buffer
+  (n "<S-h>" (cmd "bprevious")) # Switch to previous buffer
 
-  { mode = ["n" "v"]; key = "<C-/>"; action = "<Plug>(comment_toggle_linewise_visual)"; }
+  (n "<S-u>" "<C-r>") # Redo map
 
-  # LEADER KEYS
+  # ["<A-j>"] = "<Esc>:m .+1<CR>==gi",
+  # -- Move current line / block with Alt-j/k ala vscode.
+  # ["<A-k>"] = "<Esc>:m .-2<CR>==gi",
+
   # Buffers
-  { mode = ["n" "v"]; key = "<leader>w"; action = "<cmd>write<cr>"; options.silent = true; }
-  { mode = ["n" "v"]; key = "<leader>c"; action = "<cmd>bdelete<cr>"; options.silent = true; }
-  { mode = ["n" "v"]; key = "<leader>n"; action = "<cmd>set nu!<cr>"; options.silent = true; }
-  { mode = ["n" "v"]; key = "<leader>b"; action = "<cmd>enew<cr>"; options.silent = true; }
+  (buffer "b" "enew") # New Buffer
+  (buffer "w" "write") # Write Buffer
+  (buffer "d" "bdelete") # Delete Buffer
 
   # Telescope
-  { mode = ["n" "v"]; key = "<leader>ff"; action = "<cmd>Telescope fd theme=ivy<cr>"; }
-  { mode = ["n" "v"]; key = "<leader>fb"; action = "<cmd>Telescope buffers theme=ivy<cr>"; }
-  { mode = ["n" "v"]; key = "<leader>/"; action = "<cmd>Telescope live_grep theme=ivy<cr>"; }
-  { mode = ["n" "v"]; key = "<leader>fa"; action = "<cmd>Telescope find_file follow=true hidden=true theme=ivy<cr>"; }
+  (find "f" "fd") # Find files
+  (find "b" "buffers") # Find Buffers
+  (find "t" "live_grep") # Find Text (Global)
+  (find "a" "fd follow=true hidden=true") # Find files (including hidden files)
 
   # Git
-  { mode = ["n" "v"]; key = "<leader>gg"; action = "<cmd>Neogit<cr>"; }
-  { mode = ["n" "v"]; key = "<leader>gs"; action = "<cmd>Telescope git_status theme=ivy<cr>"; }
-  { mode = ["n" "v"]; key = "<leader>gb"; action = "<cmd>Telescope git_branch theme=ivy<cr>"; }
+  (git "g" (cmd "Neogit"))
+  (git "s" (telescope "git_status"))
+  (git "b" (telescope "git_branches"))
 
-  # Utils
-  { mode = ["n" "v"]; key = "<leader>e"; action = "<cmd>Oil<cr>"; }
+  # Utilities
+  (nv (lead "e") (cmd "Oil")) # File explorer
+
+  # Extras
+  (nv (lead "e") (lua "MiniFiles.open()"))
+  (nv (lead "n") (cmd "set nu!")) # Toggle line numbers
+  (nv "<c-/>" "<Plug>(comment_toggle_linewise_visual)")
 ]
