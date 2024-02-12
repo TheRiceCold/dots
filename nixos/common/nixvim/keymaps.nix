@@ -13,6 +13,7 @@ let
   find = key: arg: (nv (lead "f${key}") (telescope arg));
   git = key: arg: (nv (lead "g${key}") arg);
 
+  term = opts: (lua "require('toggleterm.terminal').Terminal:new({ ${opts}, hidden = true, on_open = function(_) vim.cmd 'startinsert!' end, }):toggle()");
 in [
   (n "<S-l>" (cmd "bnext")) # Switch to next buffer
   (n "<S-h>" (cmd "bprevious")) # Switch to previous buffer
@@ -32,11 +33,13 @@ in [
 
   # Git
   (git "g" (cmd "Neogit"))
+  (git "l" (term "cmd = 'lazygit' "))
   (git "s" (telescope "git_status"))
   (git "b" (telescope "git_branches"))
 
-  # Extras
+  # Utils
+  (nv (lead "e") (lua "MiniFiles.open()"))
+
+  # Options
   (nv (lead "n") (cmd "set nu!")) # Toggle line numbers
-  (nv "<c-/>" "<Plug>(comment_toggle_linewise_visual)")
-  (nv (lead "e") (lua "MiniFiles.open({ windows = { preview = true } })"))
 ]
