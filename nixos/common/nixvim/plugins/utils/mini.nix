@@ -1,6 +1,5 @@
-{ icons, ... }:
 # Nodule references: https://github.com/echasnovski/mini.nvim/blob/main/readmes
-{
+{ icons, ... }: {
   enable = true;
   modules = {
     animate = { };

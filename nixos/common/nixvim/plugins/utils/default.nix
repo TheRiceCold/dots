@@ -1,7 +1,8 @@
 { icons, ... }:
-{
+let 
+  icons = import ../../icons.nix;
+in {
 	programs.nixvim.plugins = {
-    emmet.enable = true;
     comment-nvim = {
       enable = true;
       sticky = true;
@@ -11,6 +12,7 @@
       opleader = { line = "gc"; block = "gb"; };
       mappings = { basic = true; extra = true; };
     };
+    emmet.enable = true;
 
     nvim-autopairs = { 
       enable = true; 
@@ -23,14 +25,17 @@
       disabledFiletypes = [ "TelescopePrompt" "spectre_panel" ];
     };
 
+    nvim-colorizer = { enable = true; };
+    # nvim-ufo.enable = true; # FIX: this mf folds everything
+    multicursors.enable = true;
+    obsidian.enable = true;
+
     todo-comments = { enable = true; };
     toggleterm = { 
       enable = true; 
       direction = "float";
       openMapping = "<c-1>";
-      floatOpts = {
-        border = "curved";
-      };
+      floatOpts = { border = "curved"; };
     };
 
     mini = import ./mini.nix { inherit icons; };
