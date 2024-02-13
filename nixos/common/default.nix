@@ -6,7 +6,7 @@
     nano.enable = false;
 
     direnv = {
-      enable = true; 
+      enable = true;
       nix-direnv.enable = true;
     };
 

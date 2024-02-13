@@ -23,8 +23,8 @@
   in [ 
     # "tile, firefox"
     # "noblur, .*" # Disables blur for windows. Substantially improves performance.
-    "fullscreen, firefox"
-    # "fakefullscreen, firefox"
+    # "fullscreen, firefox"
+    "fakefullscreen, firefox"
     "opacity, 1.0, floating"
     "opacity, 0.8, showmethekey"
     "pin, title:^(Picture-in-Picture)$"
