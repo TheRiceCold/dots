@@ -25,6 +25,7 @@
   networking.hostName = name;
   programs = {
     adb.enable = true;
+    dconf.enable = true;
     virt-manager.enable = true;
 
     corectrl = {
@@ -72,18 +73,28 @@
         INTERNET_IFACE = "enp3s0f0";
       };
     };
-    flatpak.enable = true;
+
+    upower.enable = true;
+    power-profiles-daemon.enable = true;
   };
 
-  hardware.opentabletdriver.enable = true;
+  security.polkit.enable = true;
+
+  hardware = {
+    opentabletdriver.enable = true;
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
+  };
 
   boot = {
-    extraModulePackages = with config.boot.kernelPackages; [zenpower];
     blacklistedKernelModules = [ "k10temp" ];
+    extraModulePackages = with config.boot.kernelPackages; [zenpower];
   };
 
   # Allow systemd to handle coredumps.
   systemd.coredump.enable = true;
-
   system.stateVersion = stateVersion;
 }
