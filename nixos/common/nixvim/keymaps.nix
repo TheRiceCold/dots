@@ -1,19 +1,17 @@
 let
-  lead = key: "<leader>${key}";
   cmd = exec: "<cmd>${exec}<cr>";
   lua = arg: cmd "lua ${arg}";
+  lead = key: "<leader>${key}";
 
   # Modes (n: Normal, nv: Normal, Visual)
-  n = key: action: { mode = "n"; inherit key action; };
+  n = key: action: { mode = "n"; inherit key action; options.desc = ""; };
   nv = key: action: { mode = ["n" "v"]; inherit key action; };
   niv = key: action: { mode = ["n" "i" "v"]; inherit key action; };
 
-  buffer = key: arg: (nv (lead key) (cmd arg));
-  telescope = arg: cmd "Telescope ${arg} theme=ivy";
-  find = key: arg: (nv (lead "f${key}") (telescope arg));
   git = key: arg: (nv (lead "g${key}") arg);
-
-  term = opts: (lua "require('toggleterm.terminal').Terminal:new({ ${opts}, hidden = true, on_open = function(_) vim.cmd 'startinsert!' end, }):toggle()");
+  buffer = key: arg: (nv (lead key) (cmd arg));
+  telescope = arg: (cmd "Telescope ${arg} theme=ivy");
+  find = key: arg: (nv (lead "f${key}") (telescope arg));
 in [
   (n "<S-l>" (cmd "bnext")) # Switch to next buffer
   (n "<S-h>" (cmd "bprevious")) # Switch to previous buffer
@@ -28,12 +26,15 @@ in [
   # Telescope
   (find "f" "fd") # Find files
   (find "b" "buffers") # Find Buffers
-  (find "t" "live_grep") # Find Text (Global)
+  (find "k" "keymaps") # Find Keymaps
+  (find "j" "jumplist") # Find Keymaps
+  (find "g" "live_grep") # Find Text (Global)
+  (find "e" "file_browser") # Browser files (Explorer)
   (find "a" "fd follow=true hidden=true") # Find files (including hidden files)
 
   # Git
   (git "g" (cmd "Neogit"))
-  (git "l" (term "cmd = 'lazygit' "))
+  (git "l" (cmd "LazyGit"))
   (git "s" (telescope "git_status"))
   (git "b" (telescope "git_branches"))
 

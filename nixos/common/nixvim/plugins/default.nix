@@ -1,26 +1,29 @@
+{ pkgs, ... }:
 {
-  imports = [ ./utils ];
-  programs.nixvim.plugins = { 
-    lsp = import ./lsp.nix;
-    packer = import ./packer.nix;
-    telescope = import ./telescope.nix ;
+  imports = [ ./cmp.nix ./git.nix ./utils ];
+  programs.nixvim = {
+    extraPlugins = with pkgs.vimPlugins; [ lazygit-nvim ];
+    plugins = {
+      lsp = import ./lsp.nix;
+      telescope = import ./telescope.nix ;
 
-    inc-rename = { enable = true; };
-    lualine = { enable = true; };
-    markdown-preview.enable = true;
+      inc-rename = { enable = true; };
+      lualine = { enable = true; };
+      markdown-preview.enable = true;
 
-    noice.enable = true;
-    nvim-cmp = { enable = true; };
+      noice.enable = true;
+      nvim-cmp = { enable = true; };
 
-    # Git
-    neogit.enable = true;
-    gitsigns = { enable = true; };
-
-    treesitter = {
-      enable = true;
-      indent = true;
-      nixGrammars = true;
-      ensureInstalled = [ "comment" "markdown_inline" "regex" ];
+      treesitter = {
+        enable = true;
+        indent = true;
+	      folding = false;
+        nixGrammars = true;
+	      nixvimInjections = true;
+        ensureInstalled = [ "comment" "markdown_inline" "regex" ];
+      };
+      treesitter-context.enable = true;
+      rainbow-delimiters.enable = true;
     };
   };
 }

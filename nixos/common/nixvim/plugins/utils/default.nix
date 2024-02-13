@@ -1,5 +1,5 @@
 { icons, ... }:
-let 
+let
   icons = import ../../icons.nix;
 in {
 	programs.nixvim.plugins = {
@@ -14,8 +14,8 @@ in {
     };
     emmet.enable = true;
 
-    nvim-autopairs = { 
-      enable = true; 
+    nvim-autopairs = {
+      enable = true;
       mapBs = true;
       disableInMacro = false;
       enableAfterQuote = true;
@@ -29,14 +29,7 @@ in {
     # nvim-ufo.enable = true; # FIX: this mf folds everything
     multicursors.enable = true;
     obsidian.enable = true;
-
     todo-comments = { enable = true; };
-    toggleterm = { 
-      enable = true; 
-      direction = "float";
-      openMapping = "<c-1>";
-      floatOpts = { border = "curved"; };
-    };
 
     mini = import ./mini.nix { inherit icons; };
   };
