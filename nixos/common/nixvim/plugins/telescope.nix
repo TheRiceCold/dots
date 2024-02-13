@@ -16,11 +16,14 @@ in {
       "--hidden"
       "--glob=!.git/"
     ];
+    mappings = [
+
+    ];
   };
   extensions = {
     file_browser = { enable = true; };
     # frecency.enable = true;
-    fzf-native = { enable = true; };
+    # fzf-native = { enable = true; };
     # media-files = { enable = true; };
     # project-nvim = { enable = true; };
   };

@@ -4,13 +4,13 @@
   modules = {
     animate = { };
 
-    basics = { 
+    basics = {
       options = { };
       mappings = { basic = true; windows = true; };
       autocommands = { basic = true; relnum_with_alt = true; };
     };
 
-    files = { 
+    files = {
       mappings = { };
       windows = { preview = true; };
     };
@@ -35,7 +35,7 @@
       };
     };
 
-    tabline = { }; 
+    tabline = { };
     # test = { };
     trailspace = { };
   };
