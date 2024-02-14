@@ -15,9 +15,9 @@
       fuzzyCompletion = true;
     };
 
-    bash = import ./bash.nix;
     thefuck.enable = true;
     wshowkeys.enable = true;
-    less.enable = lib.mkDefault false; # I use bat
+    bash = import ./bash.nix;
+    less.enable = lib.mkDefault false; # I'd rather use bat
   };
 }

@@ -27,23 +27,9 @@
     adb.enable = true;
     dconf.enable = true;
     virt-manager.enable = true;
-
     corectrl = {
       enable = true;
       gpuOverclock.enable = true;
-    };
-
-    tmux = {
-      enable = true;
-      baseIndex = 1;
-      keyMode = "vi";
-      plugins = with pkgs.tmuxPlugins; [
-        resurrect
-        continuum
-        yank
-        sensible
-        vim-tmux-navigator
-      ];
     };
   };
 
