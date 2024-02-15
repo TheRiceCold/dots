@@ -1,8 +1,9 @@
 { pkgs, ... }:
 {
-  imports = [ ./cmp.nix ./utils ];
+  imports = [ ./cmp.nix ./utils ./extras ];
   programs.nixvim = {
     extraPlugins = with pkgs.vimPlugins; [ lazygit-nvim ];
+
     plugins = {
       lsp = import ./lsp.nix;
       telescope = import ./telescope.nix ;
@@ -23,12 +24,8 @@
         ensureInstalled = [ "comment" "markdown_inline" "regex" ];
       };
       treesitter-context.enable = true;
+      ts-autotag.enable = true;
       rainbow-delimiters.enable = true;
-
-      gitsigns = {
-        enable = true;
-        currentLineBlame = true;
-      };
     };
     extraConfigLua = "require('telescope').load_extension('lazygit')";
   };

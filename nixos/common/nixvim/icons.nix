@@ -1,6 +1,6 @@
 {
   kind = {
-    array = "";
+    array = "󰅪 ";
     boolean = "";
     class = "";
     color = "";
@@ -8,21 +8,21 @@
     constructor = "";
     enum = "";
     enummember = "";
-    event = "";
+    event = " ";
     field = "";
-    file = "";
+    file = "󰈙";
     folder = "󰉋";
     function = "";
     interface = "";
-    key = "";
+    key = "󰌋 ";
     keyword = "";
     method = "";
     module = "";
     namespace = "";
     null = "󰟢";
-    number = "";
+    number = "󰎠 ";
     object = "";
-    operator = "";
+    operator = "󰆕 ";
     package = "";
     property = "";
     reference = "";
@@ -90,7 +90,7 @@
     ellipsis = "";
     emptyfolder = "";
     emptyfolderopen = "";
-    file = "";
+    file = "󰈙";
     filesymlink = "";
     files = "";
     findfile = "󰈞";
