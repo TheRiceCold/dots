@@ -26,11 +26,10 @@ in {
       disabledFiletypes = [ "TelescopePrompt" "spectre_panel" ];
     };
 
-    nvim-colorizer = { enable = true; };
+    nvim-colorizer.enable = true;
     # nvim-ufo.enable = true; # FIX: this mf folds everything
-    multicursors.enable = true;
     obsidian.enable = true;
-    todo-comments = { enable = true; };
+    todo-comments.enable = true;
     toggleterm = {
       enable = true;
       direction = "float";

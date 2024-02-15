@@ -10,6 +10,24 @@
       autocommands = { basic = true; relnum_with_alt = true; };
     };
 
+    clue = {
+      clues = [
+        { mode = ""; keys = "<leader>f"; desc = "+Find"; }
+        { mode = ""; keys = "<leader>g"; desc = "+Git"; }
+        { mode = ""; keys = "<leader>l"; desc = "+Lsp"; }
+        { mode = ""; keys = "<leader>c"; desc = "+Comment"; }
+        { mode = ""; keys = "<leader>t"; desc = "+Terminal"; }
+        { mode = ""; keys = "gD"; desc = "references"; }
+        { mode = ""; keys = "gi"; desc = "implementation"; }
+        { mode = ""; keys = "gd"; desc = "Go to definition"; }
+      ];
+      triggers = [
+        { mode = ""; keys = "g"; }
+        { mode = ""; keys = "z"; }
+        { mode = ""; keys = "<leader>"; }
+      ];
+    };
+
     files = {
       mappings = { };
       windows.preview = true;
@@ -23,13 +41,13 @@
 
     move = {
       mappings = {
-        left = "<M-h>";
-        right = "<M-l>";
+        left = "<S-,>";
+        right = "<S-.>";
         down = "<M-j>";
         up = "<M-k>";
 
-        line_left = "<M-h>";
-        line_right = "<M-l>";
+        line_left = "<S-,>";
+        line_right = "<S-.>";
         line_down = "<M-j>";
         line_up = "<M-k>";
       };

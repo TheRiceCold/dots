@@ -1,12 +1,12 @@
 {
   enable = true;
   servers = {
+    nixd.enable = true;
     cssls.enable = true;
     bashls.enable = true;
     clangd.enable = true;
     jsonls.enable = true;
     yamlls.enable = true;
-    rnix-lsp.enable = true;
     tsserver.enable = true;
     tailwindcss.enable = true;
     rust-analyzer = {
