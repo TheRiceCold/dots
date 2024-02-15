@@ -34,7 +34,7 @@ in {
     toggleterm = {
       enable = true;
       direction = "float";
-      openMapping = "<c-\/>";
+      openMapping = "<c-\\>";
       floatOpts = { border = "curved"; };
     };
 

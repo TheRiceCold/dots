@@ -12,7 +12,7 @@
 
     files = {
       mappings = { };
-      windows = { preview = true; };
+      windows.preview = true;
     };
 
     indentscope.symbol = icons.ui.line.left;

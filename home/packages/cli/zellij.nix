@@ -1,28 +1,86 @@
 {
   programs.zellij.enable = true;
 
-  # https://zellij.dev/documentation/keybindings-possible-actions
+  # NOTE: https://zellij.dev/documentation
   xdg.configFile."zellij/config.kdl".text = ''
     theme "catppuccin-mocha"
 
     themes { }
 
-    keybinds {
-      normal {  }
-      pane { }      
-      locked { }
-      tab { }
-      resize {
-        bind "Alt r" { SwitchToMode "Normal"; }
+    keybinds clear-defaults=true {
+      normal { }
+      pane {
+        bind "Ctrl p" { SwitchToMode "normal"; }
+        bind "h" "Left" { MoveFocus "left"; }
+        bind "j" "Down" { MoveFocus "down"; }
+        bind "k" "Up" { MoveFocus "up"; }
+        bind "l" "Right" { MoveFocus "right"; }
+        bind "n" { NewPane; SwitchToMode "normal"; }
+        bind "x" { CloseFocus; SwitchToMode "normal"; }
+        bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0; }
       }
-      move { 
-        bind "Alt m" { SwitchToMode "Normal"; }
+      locked {
+        bind "Ctrl g" { SwitchToMode "normal"; }
+      }
+      tab {
+        bind "Ctrl t" { SwitchToMode "normal"; }
+        bind "x" { CloseTab; SwitchToMode "normal"; }
+        bind "c" { SwitchToMode "RenameTab"; TabNameInput 0; }
+        bind "h" "Left" "Up" "k" { GoToPreviousTab; }
+        bind "l" "Right" "Down" "j" { GoToNextTab; }
+      }
+      resize {
+        bind "Ctrl r" { SwitchToMode "normal"; }
+      }
+      move {
+        bind "Ctrl m" { SwitchToMode "normal"; }
+      }
+      scroll {
+        bind "Ctrl s" { SwitchToMode "normal"; }
+        bind "k" "Up" { ScrollUp; }
+        bind "j" "Down" { ScrollDown; }
+      }
+      search {
+        bind "Ctrl s" { SwitchToMode "normal"; }
+        bind "k" "Up" { ScrollUp; }
+        bind "j" "Down" { ScrollDown; }
+      }
+      session {
+        bind "Ctrl o" { SwitchToMode "normal"; }
+        bind "d" { Detach; }
+        bind "w" {
+          LaunchOrFocusPlugin "zellij:session-manager" {
+            floating true
+            move_to_focused_tab true
+          };
+          SwitchToMode "Normal"
+        }
+      } 
+
+      RenameTab {
+        bind "Enter" "Ctrl c" "Esc" { SwitchToMode "normal"; }
+      }
+
+      RenamePane {
+        bind "Enter" "Ctrl c" "Esc" { SwitchToMode "normal"; }
+      }
+
+      tmux {
+        bind "Ctrl b" { SwitchToMode "normal"; }
+        bind "c" { NewTab; SwitchToMode "normal"; }
+        bind "," { SwitchToMode "RenameTab"; TabNameInput 0; }
+        bind "h" "Left" { MoveFocus "Left"; SwitchToMode "normal"; }
+        bind "l" "Right" { MoveFocus "Right"; SwitchToMode "normal"; }
+        bind "j" "Down" { MoveFocus "Down"; SwitchToMode "normal"; }
+        bind "k" "Up" { MoveFocus "Up"; SwitchToMode "normal"; }
+      }
+
+      shared {
+        bind "Ctrl s" { SwitchToMode "search"; }
+        bind "Ctrl g" { SwitchToMode "locked"; }
       }
 
       shared_except "locked" {
-        unbind "Ctrl h"
-        bind "Ctrl n" { NewTab; } 
-
         bind "Alt 1" { GoToTab 1; }
         bind "Alt 2" { GoToTab 2; }
         bind "Alt 3" { GoToTab 3; }
@@ -32,14 +90,42 @@
         bind "Alt 7" { GoToTab 7; }
         bind "Alt 8" { GoToTab 8; }
         bind "Alt 9" { GoToTab 9; }
+
+        bind "Ctrl q" { Quit; }
+        bind "Ctrl d" { Detach; }
+        bind "Ctrl n" { NewTab; }
+        bind "Alt n" { NewPane; }
+
+        bind "Alt h" { MoveFocusOrTab "Left"; }
+        bind "Alt l" { MoveFocusOrTab "Right"; }
       }
 
+      shared_except "normal" "locked" {
+        bind "Esc" { SwitchToMode "normal"; }
+      }
+      shared_except "pane" "locked" {
+        bind "Ctrl p" { SwitchToMode "pane"; }
+      }
+      shared_except "session" "locked" {
+        bind "Ctrl o" { SwitchToMode "session"; }
+      }
+      shared_except "scroll" "locked" {
+        bind "Ctrl s" { SwitchToMode "scroll"; }
+      }
       shared_except "resize" "locked" {
-        bind "Alt r" { SwitchToMode "Resize"; }
+        bind "Ctrl r" { SwitchToMode "resize"; }
+      }
+      shared_except "tab" "locked" {
+        bind "Ctrl t" { SwitchToMode "tab"; }
       }
       shared_except "move" "locked" {
-        bind "Alt m" { SwitchToMode "Move"; }
+        bind "Ctrl m" { SwitchToMode "move"; }
+      }
+      shared_except "tmux" "locked" {
+        bind "Ctrl b" { SwitchToMode "tmux"; }
       }
     }
+
+    plugins { }
   '';
 }
