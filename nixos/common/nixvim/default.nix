@@ -4,6 +4,7 @@ let
 in {
   environment.systemPackages = with pkgs; [
     ripgrep # for telescope live_grep
+    lazygit
   ];
 
 	imports = [ nixvim ./plugins ];

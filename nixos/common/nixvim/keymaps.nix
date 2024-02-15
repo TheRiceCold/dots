@@ -33,8 +33,7 @@ in [
   (find "a" "fd follow=true hidden=true") # Find files (including hidden files)
 
   # Git
-  (git "g" (cmd "Neogit"))
-  (git "l" (cmd "LazyGit"))
+  (git "g" (cmd "LazyGit"))
   (git "s" (telescope "git_status"))
   (git "b" (telescope "git_branches"))
 

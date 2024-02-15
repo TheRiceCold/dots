@@ -1,6 +1,6 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 {
-  imports = [ 
+  imports = [
     ./bat.nix
     ./zellij.nix
     ./kubernetes.nix
@@ -17,8 +17,6 @@
         color_theme = "tokyo-storm";
       };
     };
-
-    lazygit.enable = true;
 
     # File Explorer
     yazi = {
