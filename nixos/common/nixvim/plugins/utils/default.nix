@@ -30,6 +30,12 @@ in {
     multicursors.enable = true;
     obsidian.enable = true;
     todo-comments = { enable = true; };
+    toggleterm = {
+      enable = true;
+      direction = "float";
+      openMapping = "<c-\/>";
+      floatOpts = { border = "curved"; };
+    };
 
     mini = import ./mini.nix { inherit icons; };
   };

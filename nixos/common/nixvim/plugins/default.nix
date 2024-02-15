@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [ ./cmp.nix ./git.nix ./utils ];
+  imports = [ ./cmp.nix ./utils ];
   programs.nixvim = {
     extraPlugins = with pkgs.vimPlugins; [ lazygit-nvim ];
     plugins = {
@@ -24,6 +24,12 @@
       };
       treesitter-context.enable = true;
       rainbow-delimiters.enable = true;
+
+      gitsigns = {
+        enable = true;
+        currentLineBlame = true;
+      };
     };
+    extraConfigLua = "require('telescope').load_extension('lazygit')";
   };
 }
