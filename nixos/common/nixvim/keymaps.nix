@@ -2,44 +2,44 @@ let
   cmd = exec: "<cmd>${exec}<cr>";
   lua = arg: cmd "lua ${arg}";
   lead = key: "<leader>${key}";
-
-  # Modes (n: Normal, nv: Normal, Visual)
-  n = key: action: { mode = "n"; inherit key action; options.desc = ""; };
-  nv = key: action: { mode = ["n" "v"]; inherit key action; };
-  niv = key: action: { mode = ["n" "i" "v"]; inherit key action; };
-
-  git = key: arg: (nv (lead "g${key}") arg);
-  buffer = key: arg: (nv (lead key) (cmd arg));
   telescope = arg: (cmd "Telescope ${arg} theme=ivy");
-  find = key: arg: (nv (lead "f${key}") (telescope arg));
-in [
-  (n "<S-l>" (cmd "bnext")) # Switch to next buffer
-  (n "<S-h>" (cmd "bprevious")) # Switch to previous buffer
 
-  (n "<S-u>" "<C-r>") # Redo map
+  k = insert: key: action: desc: {
+    inherit key action;
+    options.desc = desc;
+    mode = if insert == true then "i" else "";
+  };
+
+  git = key: act: desc: (k "" (lead "g${key}") act desc);
+  buffer = key: act: desc: (k "" (lead key) (cmd act) desc);
+  find = key: act: desc: (k "" (lead "f${key}") (telescope act) desc);
+in [
+  (k ""  "<S-u>" "<C-r>" "Redo")
+  (k "" "<S-l>" (cmd "bnext") "Next buffer")
+  (k "" "<S-h>" (cmd "bprevious") "Previous buffer")
 
   # Buffers
-  (buffer "b" "enew") # New Buffer
-  (buffer "w" "write") # Write Buffer
-  (buffer "d" "bdelete") # Delete Buffer
+  (buffer "b" "enew" "New Buffer")
+  (buffer "w" "write" "Write Buffer")
+  (buffer "d" "bdelete" "Delete Buffer")
 
   # Telescope
-  (find "f" "fd") # Find files
-  (find "b" "buffers") # Find Buffers
-  (find "k" "keymaps") # Find Keymaps
-  (find "j" "jumplist") # Find Keymaps
-  (find "g" "live_grep") # Find Text (Global)
-  (find "e" "file_browser") # Browser files (Explorer)
-  (find "a" "fd follow=true hidden=true") # Find files (including hidden files)
+  (find "f" "fd" "Find files")
+  (find "b" "buffers" "Find buffers")
+  (find "k" "keymaps" "Find keymaps")
+  (find "j" "jumplist" "Find jumplist")
+  (find "g" "live_grep" "Find live grep")
+  (find "e" "file_browser" "Browse explorer")
+  (find "a" "fd follow=true hidden=true" "Find all files")
 
   # Git
-  (git "g" (cmd "LazyGit"))
-  (git "s" (telescope "git_status"))
-  (git "b" (telescope "git_branches"))
+  (git "g" (cmd "LazyGit") "Lazygit")
+  (git "s" (telescope "git_status") "Git status")
+  (git "b" (telescope "git_branches") "Git Branches")
 
   # Utils
-  (nv (lead "e") (lua "MiniFiles.open()"))
+  (k "" (lead "e") (lua "MiniFiles.open()") "Explorer")
 
   # Options
-  (nv (lead "n") (cmd "set nu!")) # Toggle line numbers
+  (k "" (lead "n") (cmd "set nu!") "Toggle line numbers")
 ]

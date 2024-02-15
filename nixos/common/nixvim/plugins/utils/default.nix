@@ -17,6 +17,7 @@ in {
     nvim-autopairs = {
       enable = true;
       mapBs = true;
+      checkTs = true;
       disableInMacro = false;
       enableAfterQuote = true;
       enableMoveright = true;

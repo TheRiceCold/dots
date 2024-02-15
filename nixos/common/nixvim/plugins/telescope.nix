@@ -21,7 +21,10 @@ in {
     ];
   };
   extensions = {
-    file_browser = { enable = true; };
+    file_browser = {
+      enable = true;
+      hidden = true;
+    };
     # frecency.enable = true;
     # fzf-native = { enable = true; };
     # media-files = { enable = true; };
