@@ -9,6 +9,7 @@
     };
 
     ags.url = "github:Aylur/ags";
+    kaivim.url = "github:kaizen-dw/kaivim";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";

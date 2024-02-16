@@ -1,5 +1,12 @@
-{ lib, ... }:
-{
+{ inputs, lib, pkgs, ... }:
+let
+  kaivim = inputs.kaivim.packages.${pkgs.system}.default;
+in {
+  environment.systemPackages = with pkgs; [
+    bat btop
+    lazygit ripgrep kaivim # kaivim and dependencies
+  ];
+
   programs = {
     nano.enable = false;
 
