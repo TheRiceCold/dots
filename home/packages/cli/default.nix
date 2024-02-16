@@ -18,6 +18,8 @@
       };
     };
 
+    lazygit.enable = true;
+
     # File Explorer
     yazi = {
       enable = true;
@@ -31,6 +33,7 @@
   home.packages = with pkgs; [
     eza # Modern replacement for ls
     cava
+    toipe  # A truty typing tester
     figlet
     ydotool
     onefetch
