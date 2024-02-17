@@ -15,6 +15,8 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
  };
 
   outputs = inputs @ { ... }: {
