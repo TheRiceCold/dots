@@ -1,7 +1,8 @@
 { inputs, ... }:
 
-let 
+let
   inherit (inputs.nixpkgs.lib) nixosSystem;
+  inherit (inputs.disko.nixosModules) disko;
 
   mkHost = { name, system, stateVersion, modules }: {
     ${name} = nixosSystem {
@@ -16,6 +17,6 @@ in (
     name = "thinkpad";
     stateVersion = "23.11";
     system = "x86_64-linux";
-    modules = [ ./common ];
+    modules = [ disko ./common ];
   }
 )

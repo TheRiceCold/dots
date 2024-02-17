@@ -8,6 +8,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ags.url = "github:Aylur/ags";
     kaivim.url = "github:kaizen-dw/kaivim";
 
