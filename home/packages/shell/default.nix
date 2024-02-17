@@ -8,7 +8,7 @@ let
     l = "eza -l --icons --git -a";
     lt = "eza --tree --level=2 --long --icons --git";
   };
-in { 
+in {
   programs = {
     git = {
       enable = true;
@@ -29,7 +29,7 @@ in {
 
     bash = {
       enable = true;
-      inherit shellAliases; 
+      inherit shellAliases;
       initExtra = ''
         eval "$(zoxide init bash)"
         eval "$(starship init bash)"

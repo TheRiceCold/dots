@@ -44,7 +44,7 @@ in {
 
       "SUPER, equal, splitratio,0.25"
       "SUPERSHIFT, equal, splitratio,0.3333333"
-    ] ++ (map (i: mvtows (toString i) (toString i)) arr) 
+    ] ++ (map (i: mvtows (toString i) (toString i)) arr)
     ++ (map (i: ws (toString i) (toString i)) arr);
   };
 }

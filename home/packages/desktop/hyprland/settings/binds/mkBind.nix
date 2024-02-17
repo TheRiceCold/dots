@@ -16,9 +16,9 @@
     resize = bind "SUPER CTRL" "resizeactive";
   };
 
-  media = let 
+  media = let
     mute = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
-    bind = key: exec: ",XF86Audio${key}, exec, ${exec}"; 
+    bind = key: exec: ",XF86Audio${key}, exec, ${exec}";
   in {
     mute = bind "Mute" mute;
     # stop = bind "Stop" "";

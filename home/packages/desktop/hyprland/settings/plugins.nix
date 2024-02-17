@@ -1,9 +1,9 @@
 { inputs, pkgs, ... }:
 
 {
-  plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [ 
-    # hyprbars 
-    hyprtrails 
+  plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [
+    # hyprbars
+    hyprtrails
   ];
 
   settings.plugin = {

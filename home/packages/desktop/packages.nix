@@ -1,5 +1,5 @@
 { pkgs, ... }:
-let 
+let
   nerdfonts = (pkgs.nerdfonts.override { fonts = [
     "Ubuntu"
     "UbuntuMono"
@@ -17,7 +17,7 @@ in {
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
-    nerdfonts 
+    nerdfonts
     font-awesome
 
     # showmethekey

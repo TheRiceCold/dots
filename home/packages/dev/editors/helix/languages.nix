@@ -48,7 +48,7 @@ in {
       formatter.command = "nixpkgs-fmt";
     }
   ];
-  language-server = { 
+  language-server = {
     astro-lsp = {
       command = "astro-ls";
       args = [ "--stdio" ];

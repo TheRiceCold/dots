@@ -4,7 +4,7 @@
     vscodevim.vim
 
     bbenoist.nix # nix language
-    arrterian.nix-env-selector # nix-shell suport 
+    arrterian.nix-env-selector # nix-shell suport
 
     catppuccin.catppuccin-vsc
     catppuccin.catppuccin-vsc-icons

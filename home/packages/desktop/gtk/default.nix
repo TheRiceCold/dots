@@ -4,7 +4,7 @@ let
   theme = "Catppuccin-Mocha-Compact-Lavender-Dark";
 in {
   home.sessionVariables = {
-    GTK_THEME = theme; 
+    GTK_THEME = theme;
     GTK_USE_PORTAL = "1";
   };
 

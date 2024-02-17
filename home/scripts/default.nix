@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = let 
+  home.packages = let
     screen-record = pkgs.writeShellScriptBin "screen-record" ''
       #!/usr/bin/env bash
 
@@ -20,7 +20,7 @@
           wf-recorder --pixel-format yuv420p -f './recording_'"$(getdate)"'.mp4' -t --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor & disown
         elif [[ "$1" == "--fullscreen" ]]; then
           wf-recorder --pixel-format yuv420p -f './recording_'"$(getdate)"'.mp4' -t & disown
-        else 
+        else
           wf-recorder --pixel-format yuv420p -f './recording_'"$(getdate)"'.mp4' -t --geometry "$(slurp)" & disown
         fi
       fi

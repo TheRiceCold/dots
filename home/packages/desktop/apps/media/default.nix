@@ -10,8 +10,8 @@ in {
       # use a different version of spicetify-themes than the one provided by
       # spicetify-nix
       themes = pkgs.fetchgit {
-        url = "https://github.com/spicetify/spicetify-themes";
         rev = "72488a0c245cde37a52dcf10da0a624eb279bb53";
+        url = "https://github.com/spicetify/spicetify-themes";
         sha256 = "3DI0K+En3vIliIAUpa92orBs66z7XJJR+4WCcdPMaKo=";
       };
     in

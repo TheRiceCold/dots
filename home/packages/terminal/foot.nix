@@ -21,7 +21,6 @@
     };
 
     mouse.hide-when-typing = "yes";
-    
     key-bindings = {
       scrollback-up-page = "Page_Up";
       scrollback-down-page = "Page_Down";

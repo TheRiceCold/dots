@@ -5,7 +5,7 @@ with pkgs; [
   nodePackages.vscode-css-languageserver-bin
   nodePackages.vscode-langservers-extracted
   nodePackages.typescript-language-server
-  typescript 
+  typescript
   nodePackages.volar
   nodePackages."@astrojs/language-server"
   nixpkgs-fmt

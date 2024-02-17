@@ -4,7 +4,7 @@ in {
   imports = [ ./binds ];
 
   wayland.windowManager.hyprland = {
-    enable = true; 
+    enable = true;
     systemd.enable = true;
     xwayland.enable = true;
 

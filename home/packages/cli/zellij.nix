@@ -55,7 +55,7 @@
           };
           SwitchToMode "Normal"
         }
-      } 
+      }
 
       RenameTab {
         bind "Enter" "Ctrl c" "Esc" { SwitchToMode "normal"; }
