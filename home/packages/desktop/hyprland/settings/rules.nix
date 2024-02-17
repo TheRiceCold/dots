@@ -20,13 +20,12 @@
       "title:^(Select a File)$"
       "title:^(Picture-in-Picture)$"
     ];
-  in [ 
+  in [
     # "tile, firefox"
     # "noblur, .*" # Disables blur for windows. Substantially improves performance.
     # "fullscreen, firefox"
     "fakefullscreen, firefox"
     "opacity, 1.0, floating"
-    "opacity, 0.8, showmethekey"
     "pin, title:^(Picture-in-Picture)$"
   ] ++ (map (i: "float, ${i}") float);
 
@@ -42,7 +41,7 @@
       "quicksettings"
       "notifications"
     ];
-  in [ 
+  in [
     "blur, bar"
     "ignorezero, bar"
     "blur, showmethekey"

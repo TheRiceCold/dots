@@ -17,7 +17,7 @@ in {
 
     search = import ./search.nix { inherit pkgs; };
 
-    settings = { 
+    settings = {
       "browser.startup.homepage" = homepage;
     };
 

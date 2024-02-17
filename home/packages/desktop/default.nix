@@ -6,7 +6,6 @@
     ./gtk
     ./hyprland
 
-    ./xdg.nix
     ./waybar.nix
     ./packages.nix
   ];

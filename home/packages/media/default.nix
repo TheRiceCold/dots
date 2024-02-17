@@ -13,5 +13,4 @@
     pavucontrol
     easyeffects
   ];
-
 }
