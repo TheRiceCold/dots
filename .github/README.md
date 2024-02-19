@@ -1,6 +1,6 @@
 ###### *<div align=right><sub>contact: dalewaltergh@gmail.com</sub></div>*
 
-<h1 align='center'>  
+<h1 align='center'>
   <img src='https://files.catbox.moe/i4twd5.png' width='115px' />
 
   Kaizen's Flakes<br />
@@ -11,7 +11,7 @@
     <a href='https://github.com/kaizen-dw/Flakes/stargazers'>
       <img src='https://img.shields.io/github/stars/kaizen-dw/FLakes?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6'>
     </a>
-    <a href='https://github.com/kaizen-dw/Flakes/'>
+    <a href='https://github.com/kaizen-dw/Flakes'>
       <img src='https://img.shields.io/github/repo-size/kaizen-dw/Flakes?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6'>
     </a>
     <img src='https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png' width='600px' />
@@ -19,45 +19,75 @@
 
   **[<kbd> <br> Overview <br> </kbd>](#-Overview)** 
   **[<kbd> <br> Installation <br> </kbd>](#-Installation)** 
-  **[<kbd> <br> &nbsp;Keybindings&nbsp; <br> </kbd>](#-Keybindings)** 
   **[<kbd> <br> Acknowledgements&nbsp; <br> </kbd>](#-Acknowledgements)**
 
 </h1><br />
 
 # 🗃️ Overview
 
+### 📚 Structure
+- `flake.nix`: Entrypoint
+- `home`: Home-manager configurations
+  - `packages`: folder arranged package configurations.
+  - `profiles`: Home-manager profiles
+    - `kaizen`: Fully featured
+
+- `nixos`: NixOS configurations.
+  - `core`: Core configuration
+  - `hosts`: Host module configurations
+    - `thinkpad`: Lenovo Thinkpad T495 - 16GB RAM, Ryzen 5 3500U
+- `pkgs`: exported packages (currently empty)
+
+### 📝 Flake inputs
+- [Nix Packages][nixpkgs]: Collection of Nix Packages
+- [Home Manager][home-manager]: User environment management using Nix package manager
+- [Disko][disko]: Declarative disk partitioning and formatting using Nix
+- [Aylur GTK Shell][ags]: A customizable and extensible shell
+- [Matugen][matugen]: A material you color generation tool
+- [Spicetify Nix][spicetify-nix]: A nix flake for configuring [spicetify].
+- [Firefox Addons][firefox-addons]: Firefox addons as packages in [nur] repository
+- [Kaivim][kaivim]: an IDE like [Neovim] configuration built with [Nixvim]
+
 ### 📦 Packages
 
-<details>
-<summary>🖥️ <b>Core packages</b></summary><br />
-
-- Shell: [bash][bash]
-- Text Editor: [nixvim][nixvim]
-- Syntax Highlighting: [bat][bat]
-- System Resource Monitor: [btop][btop]
-- Sound Server: [pipewire][pipewire]
-- Containerization Tool: [podman][podman]
+- Core packages
+  - Shell: [bash][bash]
+  - Text Editor: [kaivim][kaivim]
+  - Sound Server: [pipewire][pipewire]
+  - Syntax Highlighting: [bat][bat]
+  - Containerization Tool: [podman][podman]
+  - System Resource Monitor: [btop][btop]
 
 </details>
 
 <details>
-<summary>🎯 <b>Home Packages</b></summary><br />
+<summary><b>Home Packages</b></summary><br />
 
-- **Terminal:** [foot][foot] & [kitty][kitty]
-- **Text Editor:** [helix][helix] & [lunarvim][lunarvim] & [vscodium][vscodium]
+- **Terminal:** [foot][foot]
+
+- **Text Editor & IDEs:** [helix][helix], [vscodium][vscodium] (disabled)
+
+- **CLI Packages**
+  - File Manager: [yazi][yazi]
+  - Terminal Multiplexer: [zellij][zellij]
+  - System Information Tool: [neofetch][neofetch]
+
 - **Display/Desktop Packages:**
   - Window Manager: [hyprland][hyprland]
   - Widgets: [Aylurs Gtk Shell][ags]
   - Wallpaper: [swww][Swww]
   - Browser: [firefox][firefox]
-- **CLI Packages**
-  - File Manager: [yazi][yazi]
-  - Terminal Multiplexer: [zellij][zellij]
-  - System Information Tool: [neofetch][neofetch]
+
 - **Media Packages**
   - Media Player: [mpv][mpv]
   - Image Viewer: [swayimg][swayimg]
   - Audio Control: [pavucontrol][pavucontrol]
+  - Audio streaming: [spotify/spicetify][spicetify]
+
+- **Games:**
+  - [Celeste Classic][celeste]
+  - Terminal: [2048][2048], [chess][uchess], [tetris][vitetris]
+
 - **Other Packages**
   - Game Engine: [godot][godot]
   - Raster Graphics: [krita][krita]
@@ -68,7 +98,7 @@
 </details>
 
 <details>
-<summary>🎨 <b>Themes</b></summary>
+<summary><b>Themes</b></summary>
 
 - Color Scheme: [Catppuccin][Catppuccin]
 - Cursor: [Bibata Modern Ice][Bibata-Cursor]
@@ -76,88 +106,29 @@
 
 </details>
 
-### 📚 Structure
-- `flake.nix`: Entrypoint
-- `home`: Home-manager configurations
-    - `packages`: folder arranged package configurations.
-    - `profiles`: Home-manager profiles
-- `nixos`: NixOS configurations.
-    - `core`: Core configuration
-    - `hosts`: Host module configurations
-        - `thinkpad`: Lenovo Thinkpad T495 - 16GB RAM, Ryzen 5 3500U
-- `pkgs`: exported packages (currently empty)
-
 <p align="right"><a href="#top">back to top</a></p>
 
 # 🚀 Installation
+
 ### Initial Steps
 - Download [NixOS minimal installation](https://nixos.org/download) ISO.
 - Boot into the installer.
 - Switch to root: `sudo -i`
 
-### 1. Partition
-- EFI partition depends how much `generations` you'll be needing. I only use 100MB because I typically don't need more than 3 generations.
+### Commands you should know
+- Rebuild and switch to change the system configuration
+```
+nix-switch 'thinkpad'
+```
+OR
+```
+doas nixos-rebuild switch --flake .#thinkpad
+```
+- Connect to internet (Change what's inside the brackets with your info).
+```
+iwctl --passphrase <passphrase> station <device> connect <SSID>
+```
 
-- My partition table:
-
-| Label |   Directory    | Size  |
-| ----- | -------------- | ----- |
-| Boot  | /dev/nvme0n1p1 | 100MB |
-| Swap  | /dev/nvme0n1p2 |  8GB  |
-| Root  | /dev/nvme0n1p3 | Rest  |
-
-- **Format created partitions**
-    - Boot
-    ```
-    mkfs.fat -F 32 -n boot /dev/nvme0n1p1
-    ```
-    - Swap
-    ```
-    mkswap -L /dev/nvme0n1p2
-    ```
-    - Root
-    ```
-    mkfs.ext4 -L nixos /dev/nvme0n1p3
-    ```
-
-### 2. Install my configuration
-- **Quick installation**
-  ```
-    chmod +x ./install.sh && ./install.sh
-  ```
-
-- **Manual Installation**
-  - Generate NixOS config
-
-  ```
-    nixos-generate-config --root /mnt
-  ```
-
-  - Clone this repository
-
-  ```
-    nix-env -iA nixos.git 
-    git clone https://github.com/kaizen-dw/Flakes && cd Flakes
-  ```
-
-  - Add Submodules (Ags widgets)
-
-  ```
-    git submodule init && git submodule update
-  ```
-
-  - Optional: Make your own host at `Flakes/nixos/hosts`
-  - Copy and replace hardware configuration, replace `<hostname>`, or just use 'basic'
-
-  ```
-    cp /mnt/etc/nixos/hardware-configuration.nix nixos/<hostname>/hardware-configuration.nix
-  ```
-
-  - Build by hostname, use the hostname you put your hardware configuration. 
-
-  ```
-    nixos-rebuild switch --flake .#<hostname>
-  ```
 
 <p align="right"><a href="#top">back to top</a></p>
 
@@ -165,31 +136,42 @@
 
 - [Ruixi-rebirth/melted-flakes](Ruixi)
 - [Misterio77/nix-config](Misterio77)
-- [aylur/dotfiles](Aylur)
+- [redyf/nixdots](redyf)
 
-<!-- Links -->
-[Hyprland]: ../home/packages/desktop/hyprland/default.nix 
-[Ags]: ../home/packages/desktop/ags/default.nix
+<!-- Flake Inputs -->
+[nixpkgs]: https://github.com/NixOS/nixpkgs/tree/nixpkgs-unstable
+[home-manager]: https://github.com/nix-community/disko
+[disko]: https://github.com/nix-community/disko
+[ags]: https://github.com/aylur/ags
+[matugen]: https://github.com/InioX/matugen
+[spicetify-nix]: https://github.com/the-argus/spicetify-nix
+[spicetify]: https://github.com/spicetify/spicetify-cli
+[firefox-addons]: https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons
+[nur]: https://github.com/nix-community/nur-combined
+[kaivim]: https://github.com/thecoderice/kaivim
+[neovim]: https://github.com/neovim/neovim
+[nixvim]: https://github.com/nix-community/nixvim
+
+
+<!-- Core Packages -->
+[ags-config]: ../home/packages/desktop/ags
 [Swww]: https://github.com/LGFae/swww
+[Hyprland]: ../home/packages/desktop/hyprland
+[bash]: ../nixos/core/programs.nix
 
 [zellij]: ../home/packages/cli/zellij
-[tmux]: ../nixos/hosts/thinkpad/default.nix
 [neofetch]: https://github.com/dylanaraps/neofetch
 
-[bash]: ../nixos/core/programs.nix
 [bat]: ../home/packages/cli/bat.nix
 [pipewire]: ../nixos/core/services.nix
 [podman]: ../nixos/core/virtualisation.nix
 
 [foot]: ../home/packages/terminal/foot.nix
-[kitty]: ../home/packages/terminal/kitty/default.nix
 
-[nixvim]: ../nixos/nixvim
-[firefox]: ../home/packages/desktop/browsers/firefox.nix 
-[lunarVim]: ../home/packages/dev/editors/lunarvim.nix
-[neovim]: https://github.com/kaizen-dw/neovim-config
-[helix]: ../home/packages/dev/editors/helix/default.nix
-[vscodium]: ../home/packages/dev/editors/vscodium/default.nix
+[kaivim]: https://github.com/kaizen-dw/kaivim
+[firefox]: ../home/packages/desktop/browsers/firefox.nix
+[helix]: ../home/packages/dev/editors/helix
+[vscodium]: ../home/packages/dev/editors/vscodium
 
 [Bibata-Cursor]: https://github.com/ful1e5/Bibata_Cursor
 [Catppuccin]: https://github.com/catppuccin/catppuccin
@@ -197,20 +179,25 @@
 
 [yazi]: https://github.com/sxyazi/yazi
 
+[krita]: https://krita.org/en
+[godot]: https://godotengine.org
+[blender]: https://www.blender.org
+[aseprite]: https://www.aseprite.org
 [pavucontrol]: https://github.com/pulseaudio/pavucontrol
-[aseprite]: https://www.aseprite.org/
-[krita]: https://krita.org/en/
-[blender]: https://www.blender.org/
-[godot]: https://godotengine.org/
 
 [btop]: ../home/packages/cli/btop.nix
-[mpv]: ../home/packages/media/default.nix 
+[mpv]: ../home/packages/media/default.nix
 [Starship]: ../home/packages/shell/starship.nix
 [zathura]: ../home/packages/desktop/apps/office/zathura.nix
 [sioyek]: ../home/packages/desktop/apps/office/sioyek.nix
 [swayimg]: https://github.com/artemsen/swayimg
 
+[celeste]: https://github.com/CelesteClassic
+[uchess]: https://github.com/tmountain/uchess
+[2048]: https://github.com/alewmoose/2048-in-terminal
+[vitetris]: https://github.com/vicgeralds/vitetris
+
 <!-- Acknowledgements -->
-[Ruixi]: https://github.com/Ruixi-rebirth/flakes
-[Misterio77]: https://github.com/Misterio77/nix-config
-[Aylur]: https://github.com/aylur/dotfiles
+[ruixi]: https://github.com/Ruixi-rebirth/flakes
+[misterio77]: https://github.com/Misterio77/nix-config
+[redyf]: https://github.com/redyf/nixdots
