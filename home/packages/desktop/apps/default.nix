@@ -1,7 +1,8 @@
 {
   imports = [
-    ./office
     ./media
+    ./social
+    ./office
     ./browsers
     ./graphics
   ];

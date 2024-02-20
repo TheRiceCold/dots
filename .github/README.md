@@ -148,7 +148,7 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 [spicetify]: https://github.com/spicetify/spicetify-cli
 [firefox-addons]: https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons
 [nur]: https://github.com/nix-community/nur-combined
-[kaivim]: https://github.com/thecoderice/kaivim
+[kaivim]: https://github.com/thericecold/kaivim
 [neovim]: https://github.com/neovim/neovim
 [nixvim]: https://github.com/nix-community/nixvim
 

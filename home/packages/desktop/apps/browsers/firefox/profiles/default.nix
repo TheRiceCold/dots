@@ -13,6 +13,7 @@ in {
       ublock-origin
       new-tab-override
       auto-tab-discard
+      istilldontcareaboutcookies
     ];
 
     search = import ./search.nix { inherit pkgs; };
