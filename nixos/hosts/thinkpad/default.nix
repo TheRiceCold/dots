@@ -1,9 +1,6 @@
 { config, pkgs, name, stateVersion, ... }:
 {
-  imports = [
-    # ./login-manager
-    ./hardware-configuration.nix
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
   disko = import ./disko.nix;
   environment = import ./environment.nix { inherit pkgs; };
@@ -21,7 +18,7 @@
 
   xdg.portal = {
     enable = true;
-    xdgOpenUsePortal = false;
+    wlr.enable = true;
     config.common.default = "*";
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
@@ -32,6 +29,11 @@
       enable = true;
       qemu.package = pkgs.qemu;
     };
+  };
+
+  security = {
+    polkit.enable = true;
+    pam.services.swaylock = {};
   };
 
   services = {
@@ -46,11 +48,11 @@
       };
     };
 
+    gvfs.enable = true;
     upower.enable = true;
+    gnome.gnome-keyring.enable = true;
     power-profiles-daemon.enable = true;
   };
-
-  security.polkit.enable = true;
 
   hardware = {
     opentabletdriver.enable = true;
@@ -63,7 +65,7 @@
 
   boot = {
     blacklistedKernelModules = [ "k10temp" ];
-    extraModulePackages = with config.boot.kernelPackages; [zenpower];
+    extraModulePackages = with config.boot.kernelPackages; [ zenpower ];
   };
 
   # Allow systemd to handle coredumps.
