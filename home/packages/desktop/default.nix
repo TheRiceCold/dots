@@ -5,11 +5,13 @@
     ./ags
     ./gtk
     ./hyprland
+    ./rofi.nix
     ./packages.nix
   ];
 
   home.pointerCursor = {
     size = 22;
+    gtk.enable = true;
     name = "Bibata-Modern-Ice";
     package = pkgs.bibata-cursors;
   };
@@ -17,12 +19,5 @@
   qt = {
     enable = true;
     platformTheme = "qtct";
-    style = {
-      name = "Catppuccin-Mocha-Dark";
-      package = pkgs.catppuccin-kde.override {
-        flavour = [ "mocha" ];
-        accents = [ "lavender" ];
-      };
-    };
   };
 }

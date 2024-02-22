@@ -1,8 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    aseprite
+    # figma-linux
+    # aseprite
     blender
     krita
+    gimp
   ];
 }

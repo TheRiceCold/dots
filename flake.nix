@@ -12,6 +12,7 @@
 
     ags.url = "github:aylur/ags";
     matugen.url = "github:iniox/matugen";
+    hyprlock.url = "github:hyprwm/hyprlock";
 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     firefox-addons = {
