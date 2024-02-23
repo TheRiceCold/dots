@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 let
   nerdfonts = (pkgs.nerdfonts.override { fonts = [
     "Ubuntu"
@@ -20,7 +20,7 @@ in {
     nerdfonts
     font-awesome
 
-    # showmethekey
+    # inputs.hyprlock.homeManagerModules.default
   ];
 
   home.file = {

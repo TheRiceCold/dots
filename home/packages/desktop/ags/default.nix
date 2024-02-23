@@ -1,18 +1,26 @@
 { inputs, pkgs, ... }:
-{
-  imports = [ inputs.ags.homeManagerModules.default ];
+let
+  ags = inputs.ags.homeManagerModules.default;
+  matugen = inputs.matugen.packages.${pkgs.system}.default;
 
-  home = {
-    packages = with pkgs; [
-      dart-sass
-      libnotify
-      python311Packages.python-pam
-    ];
-  };
+  # conf = pkgs.callPackage ./config { inherit inputs; };
+in {
+  imports = [ ags ];
+
+  services.playerctld.enable = true;
+
+  home.packages = with pkgs; [
+    bun
+    matugen
+    dart-sass
+    libnotify
+    playerctl
+    brightnessctl
+  ];
 
   programs.ags = {
     enable = true;
-    # configDir = ./ags;
-    # extraPackages = with pkgs; [ ];
+    # configDir = conf.config;
+    extraPackages = [ ];
   };
 }

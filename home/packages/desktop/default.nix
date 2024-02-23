@@ -1,20 +1,17 @@
 { pkgs, ... }:
 {
   imports = [
-    ./apps
     ./ags
-    ./gtk
+    ./apps
     ./hyprland
-    ./rofi.nix
-    ./packages.nix
+    ./gtk.nix
+    ./fonts.nix
   ];
 
-  home.pointerCursor = {
-    size = 22;
-    gtk.enable = true;
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
-  };
+  home.packages = with pkgs; [
+    bottles
+    wine-staging
+  ];
 
   qt = {
     enable = true;

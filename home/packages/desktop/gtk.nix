@@ -8,6 +8,13 @@ in {
     GTK_USE_PORTAL = "1";
   };
 
+  home.pointerCursor = {
+    size = 22;
+    gtk.enable = true;
+    name = "Bibata-Modern-Ice";
+    package = pkgs.bibata-cursors;
+  };
+
   gtk = {
     enable = true;
     font.name = "Ubuntu Nerd Font";
