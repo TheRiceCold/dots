@@ -16,11 +16,13 @@ in {
     libnotify
     playerctl
     brightnessctl
+
+    gtk3
   ];
 
   programs.ags = {
     enable = true;
     # configDir = conf.config;
-    extraPackages = [ ];
+    extraPackages = with pkgs; [ gtksourceview3 ];
   };
 }

@@ -4,7 +4,7 @@ let
 in {
   environment.systemPackages = with pkgs; [
     bat btop
-    lazygit ripgrep kaivim # kaivim and dependencies
+    lazygit ripgrep texliveMedium kaivim
   ];
 
   programs = {
@@ -25,6 +25,8 @@ in {
     bash = import ./bash.nix;
     less.enable = lib.mkDefault false; # I'd rather use bat
   };
+
+  services.flatpak.enable = true;
 
   nixpkgs = {
     overlays = [ ];
