@@ -1,0 +1,3 @@
+{
+  imports = [ ./sioyek.nix ];
+}

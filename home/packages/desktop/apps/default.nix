@@ -1,8 +1,8 @@
 {
   imports = [
     ./media
-    ./office
     ./browsers
     ./graphics
+    ./productivity
   ];
 }

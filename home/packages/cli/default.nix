@@ -19,24 +19,17 @@
     };
 
     lazygit.enable = true;
-
-    # File Explorer
-    yazi = {
-      enable = true;
-      enableBashIntegration = true;
-      keymap = { };
-      settings = { };
-      theme = { };
-    };
+    yazi.enable = true;
   };
 
   home.packages = with pkgs; [
-    eza # Modern replacement for ls
-    cava
-    toipe  # A truty typing tester
+    fd        # simple and fast alternative to find
+    eza       # Modern replacement for ls
+    cava      # Audio Virtualizer
+    toipe     # A truty typing tester
     figlet
     ydotool
-    onefetch
-    pipes-rs
+    onefetch  # Git summary tool
+    pipes-rs  # Animated pipes
   ];
 }

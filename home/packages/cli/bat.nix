@@ -16,11 +16,7 @@ let
     '';
   };
 in {
-  home.file = {
-    ".config/bat/themes" = {
-      source = "${catppuccin}";
-    };
-  };
+  home.file.".config/bat/themes".source = "${catppuccin}";
 
   programs.bat = {
     enable = true;

@@ -2,6 +2,7 @@
   shellAliases = {
     x = "exit";
     v = "nvim";
+    f = "fuck";
     c = "clear";
     m = "mv -iv";
     cp = "cp -riv";
@@ -14,7 +15,7 @@
 
   interactiveShellInit = ''
     __my-flakes() {
-      cd ~/Flakes && git add .         
+      cd ~/Flakes && git add .
     }
 
     hm-switch() {
@@ -28,7 +29,7 @@
     nix-switch() {
       __my-flakes && doas nixos-rebuild switch --flake .#$1
     }
-    
+
     nix-clean-switch() {
       nix-clean && nix-switch $1
     }
