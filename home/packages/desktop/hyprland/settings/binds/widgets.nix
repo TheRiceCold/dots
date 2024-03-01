@@ -5,10 +5,10 @@
     bind = let
       ags = key: win: "SUPER, ${key}, exec, ags -t ${win}";
     in [
+      (ags "m" "menu")
       (ags "Tab" "overview")
-      (ags "a" "quicksettings")
+      (ags "Space" "launcher")
       (ags "Slash" "cheatsheet")
-      (ags "Space" "applauncher")
     ];
   };
 }

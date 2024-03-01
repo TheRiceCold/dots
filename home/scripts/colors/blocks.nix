@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{ pkgs, ... }: let
   dark = "\\e[\${!j}\${i}m";
   bright = "\\e[9\${i}m";
 in pkgs.writeShellScriptBin "blocks" ''
@@ -61,5 +60,4 @@ case $1 in
 	8)	1x8;;
 	*)  1x6;;
 esac
-
 ''
