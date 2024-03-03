@@ -1,13 +1,6 @@
 { inputs, ... }:
 {
-  imports = [
-    ./cli
-    ./dev
-    ./shell
-    ./games
-    ./desktop
-    ./terminal
-  ];
+  imports = [ ./cli ./dev ./shell ./desktop ];
 
   nixpkgs.overlays = with inputs; [
     nur.overlay

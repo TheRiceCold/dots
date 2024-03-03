@@ -3,6 +3,7 @@
     ./media
     ./browsers
     ./graphics
+    ./terminals
     ./productivity
   ];
 }

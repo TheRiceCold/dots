@@ -3,27 +3,40 @@ let
   mkBind = import ./mkBind.nix;
 in
 {
-  imports = [ ./ags.nix ./workspace.nix ];
+  imports = [ ./workspace.nix ];
 
   wayland.windowManager.hyprland.settings = {
     bind = let
-      term = "${pkgs.foot}/bin/foot";
-      browser = "${pkgs.firefox-wayland}/bin/firefox";
-      color-picker = "${pkgs.hyprpicker}/bin/hyprpicker";
-      toggle = key: name: "SUPER, ${key}, exec, pypr toggle ${name}";
-    in [
+      apps = import ../../apps.nix { inherit pkgs; };
+      exec = key: cmd: "SUPERCRTL, ${key}, exec, ${cmd}";
+      ags = key: win: "SUPER, ${key}, exec, ags -t ${win}";
+      toggle = key: name: "SUPERCTRL, ${key}, exec, ${apps.pypr} toggle ${name}";
+    in with apps; [
       "SUPERSHIFT, q, exit"
-
-      "SUPER, b, exec, ${browser}"
       "SUPER, RETURN, exec, ${term}"
-      "SUPERCTRL, c, exec, ${color-picker} -a"
+      "SUPER, Equal, exec, ${pypr} zoom"
 
-      # Pypr
-      (toggle "v" "volume")
+      # Apps
+      (exec "b" browser)
+      (exec "v" audio-control)
+      (exec "c" "${color-picker} -a")
+
+      # Ags widgets
+      (ags "m" "media")
+      (ags "d" "datemenu")
+      (ags "Period" "menu")
+      (ags "Tab" "overview")
+      (ags "Space" "launcher")
+      (ags "Slash" "cheatsheet")
+
+      # Pypr scratchpads
+      (toggle "t" "term")
       (toggle "n" "network")
       (toggle "e" "explorer")
-      "SUPERSHIFT, Z, exec, pypr zoom"
+      (toggle "Escape" "system")
     ];
+
+    bindr = [ "ControlSuper, r, exec, ags -q; ags" ];
 
     bindm = [
       "SUPER, mouse:272, movewindow"

@@ -45,12 +45,7 @@
     down = bind "Down";
   };
 
-  # Pypr scratchpad
-  toggle = let
-    bind = key: name: "SUPER, ${key}, exec, pypr toggle ${name}";
-  in {
-    volume = key: bind key "volume";
-    network = key: bind key "network";
-    explorer = key: bind key "explorer";
-  };
+  # TODO: Add this binds
+  ags = { };
+  pypr = { };
 }

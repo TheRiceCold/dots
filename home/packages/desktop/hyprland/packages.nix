@@ -1,5 +1,4 @@
-{ inputs, pkgs, ... }:
-with pkgs; [
+{ pkgs, ... }: with pkgs; [
   swww            # Animated wallpaper Daemon
   slurp           # Region Selector
   swayimg         # Image Viewer

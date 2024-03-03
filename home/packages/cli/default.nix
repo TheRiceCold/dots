@@ -25,11 +25,17 @@
   home.packages = with pkgs; [
     fd        # simple and fast alternative to find
     eza       # Modern replacement for ls
-    cava      # Audio Virtualizer
-    toipe     # A truty typing tester
     figlet
     ydotool
     onefetch  # Git summary tool
+
+    cava      # Audio Virtualizer
     pipes-rs  # Animated pipes
+
+    # Games
+    toipe             # A truty typing tester
+    uchess
+    vitetris
+    _2048-in-terminal
   ];
 }

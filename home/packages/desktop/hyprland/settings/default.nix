@@ -9,8 +9,9 @@
 
     settings = let
       rules = import ./rules.nix;
+      apps = import ../apps.nix { inherit pkgs; };
     in {
-      exec = [ "pypr" "ags" ];
+      exec = with apps; [ pypr "ags" ];
       monitor = [ ",preferred,auto,1" ];
 
       input = {
