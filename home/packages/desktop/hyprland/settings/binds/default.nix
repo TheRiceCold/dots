@@ -1,11 +1,29 @@
+{ pkgs, ... }:
 let
   mkBind = import ./mkBind.nix;
 in
 {
-  imports = [ ./apps.nix ./widgets.nix ./workspace.nix ];
+  imports = [ ./ags.nix ./workspace.nix ];
 
   wayland.windowManager.hyprland.settings = {
-    bind = [ "SUPERSHIFT, q, exit" ];
+    bind = let
+      term = "${pkgs.foot}/bin/foot";
+      browser = "${pkgs.firefox-wayland}/bin/firefox";
+      color-picker = "${pkgs.hyprpicker}/bin/hyprpicker";
+      toggle = key: name: "SUPER, ${key}, exec, pypr toggle ${name}";
+    in [
+      "SUPERSHIFT, q, exit"
+
+      "SUPER, b, exec, ${browser}"
+      "SUPER, RETURN, exec, ${term}"
+      "SUPERCTRL, c, exec, ${color-picker} -a"
+
+      # Pypr
+      (toggle "v" "volume")
+      (toggle "n" "network")
+      (toggle "e" "explorer")
+      "SUPERSHIFT, Z, exec, pypr zoom"
+    ];
 
     bindm = [
       "SUPER, mouse:272, movewindow"

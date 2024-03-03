@@ -1,7 +1,5 @@
 { inputs, pkgs, ... }:
-let
-  hyprland-contrib = inputs.hyprland-contrib.packages.${pkgs.system};
-in with pkgs; with hyprland-contrib; [
+with pkgs; [
   swww            # Animated wallpaper Daemon
   slurp           # Region Selector
   swayimg         # Image Viewer
@@ -15,7 +13,5 @@ in with pkgs; with hyprland-contrib; [
   swappy          # Snapshot Editing Tool
   wshowkeys       # Display pressed keys
 
-  # Hyprland Contrib Packages
-  scratchpad      #
   grimblast       # Grab Images
 ]

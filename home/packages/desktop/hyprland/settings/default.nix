@@ -1,6 +1,5 @@
-let
-  rules = import ./rules.nix;
-in {
+{ inputs, pkgs, ... }:
+{
   imports = [ ./binds ];
 
   wayland.windowManager.hyprland = {
@@ -8,8 +7,10 @@ in {
     systemd.enable = true;
     xwayland.enable = true;
 
-    settings = {
-      exec = [ "ags" ];
+    settings = let
+      rules = import ./rules.nix;
+    in {
+      exec = [ "pypr" "ags" ];
       monitor = [ ",preferred,auto,1" ];
 
       input = {
@@ -50,6 +51,7 @@ in {
 
       layerrule = rules.layer;
       windowrule = rules.window;
+      windowrulev2 = rules.window2;
 
       animations = import ./animations.nix;
       decoration = import ./decoration.nix;

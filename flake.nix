@@ -14,8 +14,6 @@
     nur.url = "github:nix-community/NUR";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
 
-    hyprland-contrib.url = "github:hyprwm/contrib";
-
     ags.url = "github:aylur/ags";
     matugen.url = "github:iniox/matugen";
     hyprlock.url = "github:hyprwm/hyprlock";
