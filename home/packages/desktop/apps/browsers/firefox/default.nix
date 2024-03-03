@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 let
-  addons = inputs.firefox-addons.packages.${pkgs.system};
+  addons = pkgs.nur.repos.rycee.firefox-addons;
 in {
   home.sessionVariables = {
     BROWSER = "firefox";

@@ -1,3 +1,4 @@
+{ inputs, ... }:
 {
   imports = [
     ./cli
@@ -6,5 +7,10 @@
     ./games
     ./desktop
     ./terminal
+  ];
+
+  nixpkgs.overlays = with inputs; [
+    nur.overlay
+    nixpkgs-wayland.overlay
   ];
 }

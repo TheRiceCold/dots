@@ -5,7 +5,9 @@
     bind = let
       ags = key: win: "SUPER, ${key}, exec, ags -t ${win}";
     in [
-      (ags "m" "menu")
+      (ags "m" "media")
+      (ags "d" "datemenu")
+      (ags "Period" "menu")
       (ags "Tab" "overview")
       (ags "Space" "launcher")
       (ags "Slash" "cheatsheet")

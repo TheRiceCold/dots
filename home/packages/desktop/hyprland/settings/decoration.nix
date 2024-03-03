@@ -15,7 +15,6 @@
   inactive_opacity = 0.85;
 
   shadow_range = 8;
-  drop_shadow = true;
   shadow_render_power = 2;
-  "col.shadow" = "0x66000000";
+  "col.shadow" = "rgba(00000044)";
 }

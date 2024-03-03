@@ -9,8 +9,8 @@
   ];
 
   home.packages = with pkgs; [
-    bottles
-    wine-staging
+    # bottles
+    # wine-staging
   ];
 
   qt = {

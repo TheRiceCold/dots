@@ -1,7 +1,7 @@
 {
   imports = [
-    ./editors
     ./game
+    ./editors
     # ./adb.nix
     # ./clojure.nix
   ];

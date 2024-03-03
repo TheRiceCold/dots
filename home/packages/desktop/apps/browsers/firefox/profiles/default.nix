@@ -9,11 +9,16 @@ in {
       clearurls
       # sidebery
       # browserpass
-      sponsorblock
-      ublock-origin
       new-tab-override
       auto-tab-discard
+      don-t-fuck-with-paste
       istilldontcareaboutcookies
+
+      sponsorblock
+      ublock-origin
+
+      github-file-icons
+      reddit-enhancement-suite
     ];
 
     search = import ./search.nix { inherit pkgs; };

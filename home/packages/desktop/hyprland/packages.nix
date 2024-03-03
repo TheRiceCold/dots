@@ -1,22 +1,21 @@
-{ pkgs, ... }:
-
-with pkgs; [
-  swww            # Wallpaper Daemon
+{ inputs, pkgs, ... }:
+let
+  hyprland-contrib = inputs.hyprland-contrib.packages.${pkgs.system};
+in with pkgs; with hyprland-contrib; [
+  swww            # Animated wallpaper Daemon
   slurp           # Region Selector
-  grimblast       # Grab Images
   swayimg         # Image Viewer
   hyprpicker      # Color Picker
-
-  wlogout
-  swaylock        # Lock Screen
-
   cliphist        # Clipboard Manager
-
-  wayshot
-  swappy
-
   wf-recorder     # Screen Record
-  wl-clipboard    # Clipboard
-  wl-mirror
+  wl-clipboard    # Clipboard Utility
+  # wl-mirror
   # wl-mirror-pick
+
+  swappy          # Snapshot Editing Tool
+  wshowkeys       # Display pressed keys
+
+  # Hyprland Contrib Packages
+  scratchpad      #
+  grimblast       # Grab Images
 ]

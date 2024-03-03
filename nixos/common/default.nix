@@ -4,7 +4,7 @@ let
 in {
   environment.systemPackages = with pkgs; [
     bat btop
-    lazygit ripgrep texliveMedium kaivim
+    lazygit ripgrep tectonic # kaivim
   ];
 
   programs = {
@@ -27,8 +27,4 @@ in {
   };
 
   services.flatpak.enable = true;
-
-  nixpkgs = {
-    overlays = [ ];
-  };
 }

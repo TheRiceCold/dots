@@ -4,7 +4,7 @@
     # figma-linux
     # aseprite
     inkscape
-    # blender
+    blender
     krita
     # gimp
   ];
