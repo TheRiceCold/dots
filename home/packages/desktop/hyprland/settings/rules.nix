@@ -13,6 +13,7 @@
     ];
   in [
     "fakefullscreen, firefox"
+    "pin, title:^(scratchpad-term)$"
     "pin, title:^(Picture-in-Picture)$"
   ] ++ (map (i: "float,title:^(${i})$") float-title);
 
