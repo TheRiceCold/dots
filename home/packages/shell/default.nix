@@ -30,9 +30,12 @@ in {
     bash = {
       enable = true;
       inherit shellAliases;
-      initExtra = ''
+
+      initExtra = /* bash */ ''
+
         eval "$(zoxide init bash)"
         eval "$(starship init bash)"
+
       '';
     };
   };

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs }: {
   top = "${pkgs.btop}/bin/btop";
   term = "${pkgs.foot}/bin/foot";
   pypr = "${pkgs.pyprland}/bin/pypr";

@@ -1,10 +1,5 @@
 { pkgs, ... }:
 {
-  loginShellInit = ''
-    if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-      exec Hyprland
-    fi
-  '';
   systemPackages = with pkgs; [
     # Utilities
     unzip
@@ -15,4 +10,12 @@
     podman-tui
     podman-compose
   ];
+
+  loginShellInit = /* bash */''
+
+    if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+      exec Hyprland
+    fi
+
+  '';
 }

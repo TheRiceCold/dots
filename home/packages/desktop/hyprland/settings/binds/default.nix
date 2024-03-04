@@ -26,24 +26,18 @@ in
       (ags "d" "datemenu")
       (ags "Period" "menu")
       (ags "Tab" "overview")
+      (ags "F4" "powermenu")
       (ags "Space" "launcher")
       (ags "Slash" "cheatsheet")
 
       # Pypr scratchpads
       (toggle "t" "term")
-      (toggle "n" "network")
       (toggle "e" "explorer")
       (toggle "Escape" "system")
     ];
 
-    bindr = [ "ControlSuper, r, exec, ags -q; ags" ];
+    bindr = [ "SUPER, r, exec, ags -q; ags" ];
 
-    bindm = [
-      "SUPER, mouse:272, movewindow"
-      "SUPER, mouse:273, resizewindow"
-    ];
-
-    bindl = with mkBind.media; [ mute play prev next ];
     binde = with mkBind; [
       (brightness.up "5")
       (brightness.down "5")
@@ -51,5 +45,7 @@ in
       (volume.up "5")
       (volume.down "5")
     ];
+
+    bindl = with mkBind.media; [ mute play prev next ];
   };
 }

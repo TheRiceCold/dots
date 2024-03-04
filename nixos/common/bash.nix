@@ -13,7 +13,8 @@
     nix-rollback = "doas nixos-rebuild switch --rollback";
   };
 
-  interactiveShellInit = ''
+  interactiveShellInit = /* bash */ ''
+
     __my-flakes() {
       cd ~/Flakes && git add .
     }
@@ -33,5 +34,13 @@
     nix-clean-switch() {
       nix-clean && nix-switch $1
     }
+
+    # Run only on first instance
+    # INFO: I added this for my pyprland scratchpad terminal at home/packages/desktop/hyprland/pypr.nix
+    LIVE_COUNTER=$(ps a | awk '{print $2}' | grep -vi "tty*" | uniq | wc -l);
+    if [ $LIVE_COUNTER -eq 1 ]; then
+      neofetch
+    fi
+
   '';
 }

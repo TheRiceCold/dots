@@ -7,7 +7,14 @@ let
   mvtows =  b "SUPERSHIFT" "movetoworkspacesilent";
 in {
   wayland.windowManager.hyprland.settings = {
+    bindm = [
+      "SUPER, mouse:272, movewindow"
+      "SUPER, mouse:273, resizewindow"
+    ];
+
     bind = with window; [
+      "ALT, Tab, focuscurrentorlast"
+
       (pin "SUPER, p")
       (kill "SUPER, q")
       (float "SUPER, t")
@@ -34,16 +41,6 @@ in {
       (resize "j" "0 20")
       (resize "l" "20 0")
       (resize "h" "-20 0")
-
-    ] ++ [
-      # "SUPER, g, togglegroup"
-      # "SUPER, s, togglespecialworkspace"
-      "ALT, Tab, focuscurrentorlast"
-      "SUPER, minus, splitratio,-0.25"
-      "SUPERSHIFT, minus, splitratio,-0.3333333"
-
-      "SUPER, equal, splitratio,0.25"
-      "SUPERSHIFT, equal, splitratio,0.3333333"
     ] ++ (map (i: mvtows (toString i) (toString i)) arr)
     ++ (map (i: ws (toString i) (toString i)) arr);
   };
