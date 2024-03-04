@@ -1,8 +1,7 @@
-{
-  programs.zellij.enable = true;
+# NOTE: https://zellij.dev/documentation
+let
+  configFile = /* kdl */ ''
 
-  # NOTE: https://zellij.dev/documentation
-  xdg.configFile."zellij/config.kdl".text = ''
     theme "catppuccin-mocha"
 
     themes { }
@@ -128,4 +127,7 @@
 
     plugins { }
   '';
+in {
+  programs.zellij.enable = true;
+  xdg.configFile."zellij/config.kdl".text = configFile;
 }

@@ -4,7 +4,7 @@
     ./bat.nix
     ./zellij.nix
     ./kubernetes.nix
-    ./neofetch
+    ./fastfetch
   ];
 
   programs = {
