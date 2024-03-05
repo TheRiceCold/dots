@@ -10,17 +10,9 @@ let
   ]; });
 in {
   home.packages = with pkgs; [
-    # Fonts
-    material-icons
-    material-design-icons
-    lexend
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
     nerdfonts
     font-awesome
-
-    # inputs.hyprlock.homeManagerModules.default
+    cantarell-fonts
   ];
 
   home.file = {

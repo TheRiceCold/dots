@@ -2,9 +2,9 @@
 {
   imports = [
     ./bat.nix
-    ./zellij.nix
     ./kubernetes.nix
 
+    ./zellij
     ./sysfetch
   ];
 

@@ -1,14 +1,14 @@
-{ pkgs, addons, ... }:
+{ pkgs, ... }:
 let
+  addons = pkgs.nur.repos.rycee.firefox-addons;
   homepage = "https://kaizen-dw.github.io/startpage/";
 in {
   default = {
     bookmarks = { };
     extensions = with addons; [
       vimium-c
+
       clearurls
-      # sidebery
-      # browserpass
       new-tab-override
       auto-tab-discard
       don-t-fuck-with-paste
@@ -18,7 +18,6 @@ in {
       ublock-origin
 
       github-file-icons
-      reddit-enhancement-suite
     ];
 
     search = import ./search.nix { inherit pkgs; };

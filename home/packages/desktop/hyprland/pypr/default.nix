@@ -6,7 +6,7 @@ let
     scratch-term-common = ''
       excludes = "*"
       unfocus = "hide"
-      size = "50% 45%" # width height
+      size = "40% 40%" # width height
       animation = "fromTop"
     '';
   in /* toml */ ''
@@ -19,16 +19,17 @@ let
     ${scratch-term-common}
     command = "${term} -t scratchpad-term"
 
-    [scratchpads.system]
-    lazy = true
-    ${scratch-term-common}
-    command = "${term} ${top}"
-
     [scratchpads.explorer]
     lazy = true
     ${scratch-term-common}
     command = "${term} ${file-manager-cli}"
 
+
+    [scratchpads.system]
+    lazy = true
+    size = "50% 50%"
+    animation = "fromBottom"
+    command = "${term} ${top}"
   '';
 in {
   home.packages = [ pkgs.pyprland ];
