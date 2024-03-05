@@ -18,6 +18,7 @@
   </div>
 
   **[<kbd> <br> Overview <br> </kbd>](#-Overview)** 
+  **[<kbd> <br>&nbsp;Packages&nbsp;<br> </kbd>](#-Packages)** 
   **[<kbd> <br> Installation <br> </kbd>](#-Installation)** 
   **[<kbd> <br> Acknowledgements&nbsp; <br> </kbd>](#-Acknowledgements)**
 
@@ -30,7 +31,9 @@
 - `home`: Home-manager configurations
   - `packages`: folder arranged package configurations.
   - `profiles`: Home-manager profiles
-    - `kaizen`: Fully featured
+    - `kaizen`: Profile for continuous improvement
+  - `scripts`: Written shell script bin
+    - `colors`: Nice looking colorscripts
 
 - `nixos`: NixOS configurations.
   - `core`: Core configuration
@@ -39,70 +42,80 @@
 - `pkgs`: exported packages (currently empty)
 
 ### 📝 Flake inputs
-- [Nix Packages][nixpkgs]: Collection of Nix Packages
-- [Home Manager][home-manager]: User environment management using Nix package manager
-- [Disko][disko]: Declarative disk partitioning and formatting using Nix
-- [Aylur GTK Shell][ags]: A customizable and extensible shell
-- [Matugen][matugen]: A material you color generation tool
+- [Nix Packages][nixpkgs]: Collection of Nix Packages.
+- [Disko][disko]: Declarative disk partitioning and formatting using Nix.
+- [Home Manager][home-manager]: User environment management using Nix package manager.
+- [NUR][nur]: Nix User Repositories, user contributed packages.
+- [Nix Packages Wayland][nixpkgs-wayland]: Packages for Wayland.
+- [Aylur GTK Shell][ags]: A customizable and extensible shell.
+- [Matugen][matugen]: A material you color generation tool.
+- [Hyprlock][hyprlock]: GPU-accelerated screen locking utility for [Hyprland].
+- [Kaivim][kaivim]: an IDE like [Neovim] configuration built with [Nixvim].
 - [Spicetify Nix][spicetify-nix]: A nix flake for configuring [spicetify].
-- [Firefox Addons][firefox-addons]: Firefox addons as packages in [nur] repository
-- [Kaivim][kaivim]: an IDE like [Neovim] configuration built with [Nixvim]
 
-### 📦 Packages
+<p align="right"><a href="#top">back to top</a></p>
 
-- Core packages
+# 📦 Packages
+
+- Common packages and services
   - Shell: [bash][bash]
   - Text Editor: [kaivim][kaivim]
   - Sound Server: [pipewire][pipewire]
-  - Syntax Highlighting: [bat][bat]
   - Containerization Tool: [podman][podman]
   - System Resource Monitor: [btop][btop]
+  - Others: [Flatpak][flatpak], [thefuck][thefuck], [fzf][fzf], [bat][bat]
 
 </details>
 
 <details>
 <summary><b>Home Packages</b></summary><br />
 
-- **Terminal:** [foot][foot]
-
-- **Text Editor & IDEs:** [helix][helix], [vscodium][vscodium] (disabled)
+- **Shell Packages**: [nushell]
+  - [starship]: Shell prompt
+  -
 
 - **CLI Packages**
-  - File Manager: [yazi][yazi]
-  - Terminal Multiplexer: [zellij][zellij]
-  - System Information Tool: [neofetch][neofetch]
+  - File Manager: [yazi]
+  - Terminal Multiplexer: [zellij]
+  - Games: [2048][2048], [chess][uchess], [tetris][vitetris]
+  - System Information Tools: [fastfetch], [onefetch]
 
 - **Display/Desktop Packages:**
-  - Window Manager: [hyprland][hyprland]
+  - Window Manager: [hyprland]
+    - Plugins: [Pyprland]
   - Widgets: [Aylurs Gtk Shell][ags]
-  - Wallpaper: [swww][Swww]
-  - Browser: [firefox][firefox]
+  - Applications:
+    - Browser: [firefox]
+    - Graphics Editors:
+      - [Blender]: 3D graphics
+      - [Krita]: Raster graphics
+      - [Aseprite]: Pixel art tool
+      - [Inkscape]: Vector graphics
+    - Media players/Audio streaming: [mpv] & [Spotify][spicetify]
+  - Productivity Tools:
+      - [sioyek] & [zathura] (disabled): PDF viewer
+  - Terminal: [foot][foot] & [wezterm][wezterm] (disabled)
 
-- **Media Packages**
-  - Media Player: [mpv][mpv]
-  - Image Viewer: [swayimg][swayimg]
-  - Audio Control: [pavucontrol][pavucontrol]
-  - Audio streaming: [spotify/spicetify][spicetify]
-
-- **Games:**
-  - [Celeste Classic][celeste]
-  - Terminal: [2048][2048], [chess][uchess], [tetris][vitetris]
-
-- **Other Packages**
-  - Game Engine: [godot][godot]
-  - Raster Graphics: [krita][krita]
-  - 3D Graphics: [blender][blender]
-  - Pixel Art Tool: [aseprite][aseprite]
-  - Document Viewer: [zathura][zathura]
+- **Developers Packages**
+  - Game Engine: [godot]
+  - Text Editor & IDEs: [helix], [vscodium] (disabled)
 
 </details>
 
 <details>
 <summary><b>Themes</b></summary>
 
-- Color Scheme: [Catppuccin][Catppuccin]
+- Color Scheme: [Catppuccin]
 - Cursor: [Bibata Modern Ice][Bibata-Cursor]
 - Icons: [Papirus Dark][Papirus-icon-theme]
+
+</details>
+
+<details>
+<summary><b>Fonts</b></summary>
+
+- [FontAwesome]
+- [Nerd Fonts][nerdfonts]: JetBrains Mono, Ubuntu, UbuntuMono, FiraCode, Monoki
 
 </details>
 
@@ -114,6 +127,7 @@
 - Download [NixOS minimal installation](https://nixos.org/download) ISO.
 - Boot into the installer.
 - Switch to root: `sudo -i`
+- Install tools: `nix-shell`
 
 ### Commands you should know
 - Rebuild and switch to change the system configuration
@@ -140,62 +154,76 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 
 <!-- Flake Inputs -->
 [nixpkgs]: https://github.com/NixOS/nixpkgs/tree/nixpkgs-unstable
-[home-manager]: https://github.com/nix-community/disko
 [disko]: https://github.com/nix-community/disko
+[home-manager]: https://github.com/nix-community/disko
+[nur]: https://github.com/nix-community/NUR
+[nixpkgs-wayland]: https://github.com/nix-community/nixpkgs-wayland
 [ags]: https://github.com/aylur/ags
 [matugen]: https://github.com/InioX/matugen
-[spicetify-nix]: https://github.com/the-argus/spicetify-nix
-[spicetify]: https://github.com/spicetify/spicetify-cli
-[firefox-addons]: https://gitlab.com/rycee/nur-expressions?dir=pkgs/firefox-addons
-[nur]: https://github.com/nix-community/nur-combined
+[hyprlock]: https://github.com/hyprwm/hyprlock
 [kaivim]: https://github.com/thericecold/kaivim
-[neovim]: https://github.com/neovim/neovim
-[nixvim]: https://github.com/nix-community/nixvim
+[spicetify-nix]: https://github.com/the-argus/spicetify-nix
 
-
-<!-- Core Packages -->
-[ags-config]: ../home/packages/desktop/ags
-[Swww]: https://github.com/LGFae/swww
-[Hyprland]: ../home/packages/desktop/hyprland
-[bash]: ../nixos/core/programs.nix
-
-[zellij]: ../home/packages/cli/zellij
-[neofetch]: https://github.com/dylanaraps/neofetch
-
-[bat]: ../home/packages/cli/bat.nix
+<!-- Common Packages -->
+[bash]: ../nixos/common/bash.nix
+[btop]: ../home/packages/cli/default.nix
 [pipewire]: ../nixos/core/services.nix
 [podman]: ../nixos/core/virtualisation.nix
+[flatpak]: ../home/packages/cli/default.nix
+[thefuck]: ../home/packages/cli/default.nix
+[fzf]: ../home/packages/cli/default.nix
+[bat]: ../home/packages/cli/bat.nix
 
-[foot]: ../home/packages/terminal/foot.nix
+<!-- Shell Packages -->
+[nushell]: ../home/packages/shell/nushell.nix
+[Starship]: ../home/packages/shell/starship.nix
 
-[kaivim]: https://github.com/kaizen-dw/kaivim
+<!-- CLI Packages -->
+[yazi]: https://github.com/sxyazi/yazi
+[zellij]: ../home/packages/cli/zellij
+[fastfetch]: ../home/packages/cli/sysfetch/fastfetch.nix
+[onefetch]: ../home/packages/cli/sysfetch/fastfetch.nix
+<!-- Games -->
+[uchess]: https://github.com/tmountain/uchess
+[2048]: https://github.com/alewmoose/2048-in-terminal
+[vitetris]: https://github.com/vicgeralds/vitetris
+
+<!-- Desktop Packages -->
+[Hyprland]: ../home/packages/desktop/hyprland
+[pyprland]: ../home/packages/desktop/hyprland/pypr/default.nix
+[ags-config]: ../home/packages/desktop/ags
 [firefox]: ../home/packages/desktop/browsers/firefox.nix
-[helix]: ../home/packages/dev/editors/helix
-[vscodium]: ../home/packages/dev/editors/vscodium
+<!-- Graphics -->
+[inkscape]: https://github.com/inkscape/inkscape
+[krita]: https://krita.org/en
+[blender]: https://www.blender.org
+[aseprite]: https://www.aseprite.org
+<!-- Productivity -->
+[zathura]: ../home/packages/desktop/apps/office/zathura.nix
+[sioyek]: ../home/packages/desktop/apps/office/sioyek.nix
+<!-- Media -->
+[mpv]: ../home/packages/media/default.nix
+[spicetify]: https://github.com/spicetify/spicetify-cli
 
+<!-- Developers Packages -->
+[godot]: https://godotengine.org
+<!-- Text Editors -->
+[helix]: ../home/packages/dev/editors/helix
+[kaivim]: https://github.com/kaizen-dw/kaivim
+[nixvim]: https://github.com/nix-community/nixvim
+[vscodium]: ../home/packages/dev/editors/vscodium
+<!-- Terminals -->
+[wezterm]: ../home/packages/desktop/terminals/wezterm.nix
+[foot]: ../home/packages/desktop/terminals/foot.nix
+
+<!-- Themes -->
 [Bibata-Cursor]: https://github.com/ful1e5/Bibata_Cursor
 [Catppuccin]: https://github.com/catppuccin/catppuccin
 [Papirus-icon-theme]: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 
-[yazi]: https://github.com/sxyazi/yazi
-
-[krita]: https://krita.org/en
-[godot]: https://godotengine.org
-[blender]: https://www.blender.org
-[aseprite]: https://www.aseprite.org
-[pavucontrol]: https://github.com/pulseaudio/pavucontrol
-
-[btop]: ../home/packages/cli/btop.nix
-[mpv]: ../home/packages/media/default.nix
-[Starship]: ../home/packages/shell/starship.nix
-[zathura]: ../home/packages/desktop/apps/office/zathura.nix
-[sioyek]: ../home/packages/desktop/apps/office/sioyek.nix
-[swayimg]: https://github.com/artemsen/swayimg
-
-[celeste]: https://github.com/CelesteClassic
-[uchess]: https://github.com/tmountain/uchess
-[2048]: https://github.com/alewmoose/2048-in-terminal
-[vitetris]: https://github.com/vicgeralds/vitetris
+<!-- Fonts -->
+[nerdfonts]: https://www.nerdfonts.com/
+[fontawesome]: https://fontawesome.com/
 
 <!-- Acknowledgements -->
 [ruixi]: https://github.com/Ruixi-rebirth/flakes
