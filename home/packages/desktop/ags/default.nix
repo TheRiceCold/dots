@@ -1,23 +1,18 @@
+# TODO: Move to separate repo
 { inputs, pkgs, ... }:
-let
-  ags = inputs.ags.homeManagerModules.default;
-  matugen = inputs.matugen.packages.${pkgs.system}.default;
-
-  # conf = pkgs.callPackage ./config { inherit inputs; };
-in {
-  imports = [ ags ];
+{
+  imports = [ inputs.ags.homeManagerModules.default ];
 
   services.playerctld.enable = true;
 
   home.packages = with pkgs; [
     bun
-    matugen
     dart-sass
     libnotify
     playerctl
     brightnessctl
 
-    gtk3
+    inputs.matugen.packages.${pkgs.system}.default
   ];
 
   programs.ags = {

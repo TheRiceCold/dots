@@ -1,8 +1,7 @@
 { pkgs, ... }:
-{
-  home.packages = [ pkgs.sioyek ];
+let
+  configFile = /* dot */ ''
 
-  xdg.configFile."sioyek/prefs_user.config".text = ''
     startup_commands toggle_custom_color
 
     # === CATPPUCCIN MOCHA === #
@@ -31,5 +30,10 @@
     ui_background_color        #313244
     ui_selected_text_color     #cdd6f4
     ui_selected_background_color #585b70
+
   '';
+
+in {
+  home.packages = [ pkgs.sioyek ];
+  xdg.configFile."sioyek/prefs_user.config".text = configFile;
 }

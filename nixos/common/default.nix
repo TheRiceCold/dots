@@ -4,6 +4,7 @@ let
 in {
   environment.systemPackages = with pkgs; [
     bat btop
+    # TODO: move this packages to kaivim
     lazygit ripgrep tectonic # kaivim
   ];
 
@@ -21,7 +22,7 @@ in {
     };
 
     thefuck.enable = true;
-    wshowkeys.enable = true;
+    # wshowkeys.enable = true;
     bash = import ./bash.nix;
     less.enable = lib.mkDefault false; # I'd rather use bat
   };

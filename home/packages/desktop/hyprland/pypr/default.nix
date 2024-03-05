@@ -17,7 +17,7 @@ let
     [scratchpads.term]
     lazy = false
     ${scratch-term-common}
-    command = "${term} -t scratchpad-term"
+    command = "${term}"
 
     [scratchpads.explorer]
     lazy = true

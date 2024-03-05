@@ -1,19 +1,10 @@
 { inputs, pkgs, ... }:
 let
-  nerdfonts = (pkgs.nerdfonts.override { fonts = [
-    "Ubuntu"
-    "UbuntuMono"
-    "CascadiaCode"
-    "FantasqueSansMono"
-    "FiraCode"
-    "Mononoki"
-  ]; });
+  nerdfonts = (pkgs.nerdfonts.override {
+    fonts = [ "Ubuntu" "UbuntuMono" "CascadiaCode" "FiraCode" ];
+  });
 in {
-  home.packages = with pkgs; [
-    nerdfonts
-    font-awesome
-    cantarell-fonts
-  ];
+  home.packages = with pkgs; [ nerdfonts font-awesome ];
 
   home.file = {
     ".local/share/fonts" = {

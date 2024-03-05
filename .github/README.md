@@ -81,8 +81,10 @@
   - System Information Tools: [fastfetch], [onefetch]
 
 - **Display/Desktop Packages:**
-  - Window Manager: [hyprland]
-    - Plugins: [Pyprland]
+  - Window Manager: [Hyprland]
+    - Lockscreen: [Hyprlock]
+    - Plugins: [Pyprland]: scratchpads, zoom
+
   - Widgets: [Aylurs Gtk Shell][ags]
   - Applications:
     - Browser: [firefox]
@@ -189,20 +191,27 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 [vitetris]: https://github.com/vicgeralds/vitetris
 
 <!-- Desktop Packages -->
-[Hyprland]: ../home/packages/desktop/hyprland
-[pyprland]: ../home/packages/desktop/hyprland/pypr/default.nix
+<!-- Hyprland Packages/Plugins -->
+[hyprland]: ../home/packages/desktop/hyprland
+[pyprland]: ../home/packages/desktop/hyprland/pypr
+[hyprlock]: ../home/packages/desktop/hyprland/hyprlock
+
+<!-- Widgets -->
 [ags-config]: ../home/packages/desktop/ags
-[firefox]: ../home/packages/desktop/browsers/firefox.nix
+
+<!-- Browser -->
+[firefox]: ../home/packages/desktop/browsers/firefox
+
 <!-- Graphics -->
 [inkscape]: https://github.com/inkscape/inkscape
 [krita]: https://krita.org/en
 [blender]: https://www.blender.org
 [aseprite]: https://www.aseprite.org
 <!-- Productivity -->
-[zathura]: ../home/packages/desktop/apps/office/zathura.nix
-[sioyek]: ../home/packages/desktop/apps/office/sioyek.nix
+[zathura]: ../home/packages/desktop/apps/productivity/zathura.nix
+[sioyek]: ../home/packages/desktop/apps/productivity/sioyek.nix
 <!-- Media -->
-[mpv]: ../home/packages/media/default.nix
+[mpv]: ../home/packages/desktop/apps/media/default.nix
 [spicetify]: https://github.com/spicetify/spicetify-cli
 
 <!-- Developers Packages -->

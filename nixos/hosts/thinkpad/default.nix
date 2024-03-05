@@ -24,7 +24,7 @@
   };
 
   virtualisation = {
-    # waydroid.enable = true;
+    waydroid.enable = true;
     libvirtd = {
       enable = true;
       qemu.package = pkgs.qemu;
@@ -33,7 +33,7 @@
 
   security = {
     polkit.enable = true;
-    pam.services.swaylock = {};
+    pam.services.hyprlock = {};
   };
 
   services = {
