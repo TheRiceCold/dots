@@ -1,15 +1,9 @@
 { lib, ... }:
 {
   programs = {
-    bash = {
+    zoxide = {
       enable = true;
-      shellAliases = {
-        lg = "lazygit";
-      };
-
-      initExtra = /* bash */ ''
-        eval "$(zoxide init bash)"
-      '';
+      options = [ "--cmd cd" ];
     };
 
     git = {
@@ -22,9 +16,15 @@
       };
     };
 
-    zoxide = {
+    bash = {
       enable = true;
-      options = [ "--cmd cd" ];
+      shellAliases = {
+        lg = "lazygit";
+      };
+
+      initExtra = /* bash */ ''
+        eval "$(zoxide init bash)"
+      '';
     };
   };
 }

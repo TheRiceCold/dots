@@ -1,16 +1,12 @@
 { pkgs, ... }:
 {
   imports = [
-    ./ags
-    ./apps
     ./hyprland
+    ./apps
+
+    ./ags.nix
     ./gtk.nix
     ./fonts.nix
-  ];
-
-  home.packages = with pkgs; [
-    # bottles
-    # wine-staging
   ];
 
   qt = {

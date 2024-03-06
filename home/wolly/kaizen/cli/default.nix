@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [ ./zellij ./sysfetch ];
+  imports = [ ./zellij.nix ./sysfetch ];
 
   # NOTE: I should probably configure this
   programs.yazi.enable = true;
@@ -16,7 +16,7 @@
     lsix      # Shows thumbnails in terminal using sixel
 
     # Games
-    toipe               # A truty typing tester
+    toipe # A truty typing tester
     uchess
     vitetris
     _2048-in-terminal

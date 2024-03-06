@@ -13,7 +13,7 @@ in
       toggle = key: name: "SUPERCTRL, ${key}, exec, ${apps.pypr} toggle ${name}";
     in with apps; [
       "SUPERSHIFT, q, exit"
-      "SUPER, RETURN, exec, ${term}"
+      "SUPER, RETURN, exec, ${foot}"
       "SUPER, Equal, exec, ${pypr} zoom"
 
       # Apps

@@ -3,7 +3,7 @@
 let
   apps = import ../apps.nix { inherit pkgs; };
   configFile = with apps; let
-    scratch-term-common = ''
+    scratchpad-term-common = ''
       excludes = "*"
       unfocus = "hide"
       size = "40% 40%" # width height
@@ -16,24 +16,24 @@ let
 
     [scratchpads.term]
     lazy = false
-    ${scratch-term-common}
-    command = "${term}"
+    ${scratchpad-term-common}
+    command = "${footclient} -T scratchpad-term"
 
     [scratchpads.explorer]
     lazy = true
-    ${scratch-term-common}
-    command = "${term} ${file-manager-cli}"
+    ${scratchpad-term-common}
+    command = "${footclient} -T scratchpad-term ${file-manager-cli}"
 
     [scratchpads.system]
     lazy = true
     size = "50% 50%"
     animation = "fromBottom"
-    command = "${term} ${top}"
+    command = "${footclient} -T scratchpad-term ${top}"
+
   '';
 in {
-  home.packages = [ pkgs.pyprland ];
   xdg.configFile."hypr/pyprland.toml".text = configFile;
-
+  home.packages = [ pkgs.pyprland ];
   programs.bash.initExtra = /* bash */ ''
 
     # Runs only on first instance (scratchpad terminal)

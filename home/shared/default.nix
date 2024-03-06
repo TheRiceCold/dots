@@ -1,11 +1,16 @@
-{ inputs, stateVersion, ... }:
+{ inputs, user, stateVersion, ... }:
 {
-  imports = [ ./cli ./helix ./shell.nix ];
+  imports = [
+    ./cli
+    ./helix
+    ./firefox
+    ./shell.nix
+  ];
 
   home = {
-    username = "wolly";
+    username = user;
     stateVersion = stateVersion;
-    homeDirectory = "/home/wolly";
+    homeDirectory = "/home/${user}";
   };
 
   nixpkgs.overlays = with inputs; [ nur.overlay ];

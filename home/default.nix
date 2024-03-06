@@ -5,6 +5,7 @@ let
 
   mkHome = {
     modules,
+    user ? "wolly",
     stateVersion ? "23.11",
     system ? "x86_64-linux",
   }: home-manager.lib.homeManagerConfiguration {
@@ -13,7 +14,7 @@ let
       config.allowUnfree = true;
     };
     modules = [ ./shared ] ++ modules;
-    extraSpecialArgs = { inherit inputs stateVersion; };
+    extraSpecialArgs = { inherit inputs user stateVersion; };
   };
 in {
   "wolly@kaizen" = mkHome { modules = [ ./wolly/kaizen ]; };

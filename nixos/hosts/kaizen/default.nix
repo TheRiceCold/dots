@@ -1,9 +1,10 @@
-{ config, pkgs, ... }:
+{ config, disk, pkgs, ... }:
 {
   imports = [ ./services.nix ./hardware-configuration.nix ];
 
-  disko = import ./disko.nix;
+  disko = disk;
   networking.hostName = "kaizen";
+
   environment = {
     systemPackages = with pkgs; [
       linux-wifi-hotspot

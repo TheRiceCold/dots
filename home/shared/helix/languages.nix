@@ -47,12 +47,20 @@ in {
       roots = ["flake.lock"];
       formatter.command = "nixpkgs-fmt";
     }
+    {
+      name = "latex";
+      file-types = [ "tex" ];
+      language-servers = [ "texlab" "ltex" ];
+    }
   ];
   language-server = {
     astro-lsp = {
       command = "astro-ls";
       args = [ "--stdio" ];
       file-types = [ "astro" ];
+    };
+    texlab = {
+      command = "texlab";
     };
   };
 }

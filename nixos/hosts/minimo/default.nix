@@ -1,8 +1,8 @@
-{ pkgs, name, stateVersion, ... }:
-
+{ pkgs, disk, stateVersion, ... }:
 {
   imports = [ ./hardware-configuration.nix ];
 
+  disko = disk;
   networking.hostName = "minimo";
 
   services = {

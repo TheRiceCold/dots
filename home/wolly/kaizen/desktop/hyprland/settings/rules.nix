@@ -1,8 +1,8 @@
 {
   layer = [ ];
-
-  # FIX: floats and pin
-  window = let
+  window = [ "fakefullscreen, firefox" ];
+  # FIX: foot scratchpad terminal needs to be floated
+  window2 = let
     float-title = [
       "Save As"
       "Library"
@@ -10,16 +10,14 @@
       "Open Folder"
       "Select a File"
       "Picture-in-Picture"
+      "scratchpad-term"
     ];
   in [
-    "fakefullscreen, firefox"
-    "pin, title:^(scratchpad-term)$"
-    "pin, title:^(Picture-in-Picture)$"
-  ] ++ (map (i: "float,title:^(${i})$") float-title);
-
-  window2 = [
     "float,class:.*"
+    "tile,title:^(foot)$"
     "tile,class:^(firefox)$"
     "tile,title:^(Spotify)$"
-  ];
+
+    "pin, title:^(Picture-in-Picture)$"
+  ] ++ (map (i: "float,title:^(${i})$") float-title);
 }

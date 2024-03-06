@@ -17,7 +17,7 @@
   interactiveShellInit = /* bash */ ''
 
     hm-switch() {
-      git add. && home-manager switch --flake .
+      git add . ; home-manager switch --flake .
     }
 
     nix-clean() {
@@ -25,11 +25,11 @@
     }
 
     nix-switch() {
-      git add. && doas nixos-rebuild switch --flake .#$1
+      git add . ; doas nixos-rebuild switch --flake .#$1
     }
 
     nix-clean-switch() {
-      nix-clean && nix-switch $1
+      nix-clean; nix-switch $1
     }
 
   '';
