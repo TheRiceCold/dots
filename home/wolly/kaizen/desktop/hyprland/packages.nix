@@ -10,7 +10,7 @@
   swappy          # Snapshot Editing Tool
 
   # NOTE: Added, to be explored
-  swaynotificationcenter # gtk based notification daemon
+  # swaynotificationcenter # gtk based notification daemon
 
   # NOTE: For consideration
   # wl-mirror

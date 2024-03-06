@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [ ./helix ];
+  # imports = [ ./vscodium ];
 
   home.packages = [
     pkgs.neovide

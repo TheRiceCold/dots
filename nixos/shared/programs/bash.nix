@@ -16,12 +16,8 @@
 
   interactiveShellInit = /* bash */ ''
 
-    __my-flakes() {
-      cd ~/dot && git add .
-    }
-
     hm-switch() {
-      __my-flakes && home-manager switch --flake .
+      git add. && home-manager switch --flake .
     }
 
     nix-clean() {
@@ -29,7 +25,7 @@
     }
 
     nix-switch() {
-      __my-flakes && doas nixos-rebuild switch --flake .#$1
+      git add. && doas nixos-rebuild switch --flake .#$1
     }
 
     nix-clean-switch() {

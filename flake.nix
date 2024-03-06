@@ -19,6 +19,7 @@
     # sops-nix.url = "github:mic92/sops-nix"; # TODO: Implement this
 
     kaivim.url = "github:thericecold/kaivim";
+    helix-kai.url = "github:thericecold/helix-kai";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
  };
 

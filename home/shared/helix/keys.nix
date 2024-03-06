@@ -1,11 +1,9 @@
 {
   insert = {
-    C-s = ":w";
     C-c = "normal_mode";
   };
-  normal = {
-    C-s = ":w";
 
+  normal = {
     C-h = "jump_view_left";
     C-j = "jump_view_down";
     C-k = "jump_view_up";
@@ -21,11 +19,10 @@
     W = [ "move_next_long_word_start" "move_char_right" "collapse_selection" ];
     b = [ "move_prev_word_start" "collapse_selection" ];
     B = [ "move_prev_long_word_start" "collapse_selection" ];
-    j = "move_line_down";
-    k = "move_line_up";
     x = "delete_selection";
 
     space = {
+      w = ":w";
       c = ":bclose";
       l.f = ":format";
     };

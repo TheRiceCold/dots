@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # aseprite # INFO: Extreamly slow build
+    # aseprite # INFO: Takes forever to build
     inkscape
     blender
     krita
