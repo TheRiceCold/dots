@@ -6,8 +6,9 @@
     c = "clear";
     m = "mv -iv";
     cp = "cp -riv";
-
+    np = "nix profile";
     hm = "home-manager";
+
     docker-compose = "podman-compose";
     nix-update = "doas nix flake update";
     nix-rollback = "doas nixos-rebuild switch --rollback";

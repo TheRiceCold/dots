@@ -17,11 +17,26 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
+
   sound.enable = true;
   console.useXkbConfig = true;
   time.timeZone = "Asia/Manila";
   i18n.defaultLocale = "en_US.UTF-8";
-  networking.networkmanager.enable = true;
+
+  networking = {
+    networkmanager.enable = true;
+    firewall.enable = false;
+  };
+
+  programs.adb.enable = true;
+  services.udev.packages = [ pkgs.android-udev-rules ];
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    config.common.default = "*";
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+  };
 
   fonts.packages = with pkgs; [
     jetbrains-mono

@@ -3,15 +3,14 @@
   nix = {
     settings = {
       auto-optimise-store = true; # Optimize syslinks
+      trusted-users = [ "root" "@wheel" ];
       experimental-features = "nix-command flakes";
     };
-
     gc = {
       automatic = true;
-      persistent = true;
-      dates = "weekly";
-      options = "--delete-older-than 2d";
+      options = "--delete-older-than 3d";
     };
+    optimise.automatic = true;
   };
 
   nixpkgs.config = {

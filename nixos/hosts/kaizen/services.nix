@@ -11,11 +11,6 @@
         INTERNET_IFACE = "enp3s0f0";
       };
     };
-
-    gvfs.enable = true;
-    upower.enable = true;
-    gnome.gnome-keyring.enable = true;
-    power-profiles-daemon.enable = true;
   };
 }
 
