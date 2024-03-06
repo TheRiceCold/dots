@@ -1,3 +1,0 @@
-[submodule "home/features/desktop/widgets/ags"]
-	path = home/features/desktop/ags
-	url = git@github.com:kaizen-dw/ags-config.git

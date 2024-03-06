@@ -9,14 +9,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # pkgs overlay in home/packages/default.nix
+    # pkgs overlay at home/shared/default.nix
     nur.url = "github:nix-community/NUR";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
 
     ags.url = "github:aylur/ags";
     matugen.url = "github:iniox/matugen";
     hyprlock.url = "github:hyprwm/hyprlock";
-    # sops-nix.url = "github:mic92/sops-nix";
+    # sops-nix.url = "github:mic92/sops-nix"; # TODO: Implement this
 
     kaivim.url = "github:thericecold/kaivim";
     spicetify-nix.url = "github:the-argus/spicetify-nix";

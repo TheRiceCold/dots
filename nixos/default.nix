@@ -4,19 +4,16 @@ let
   inherit (inputs.nixpkgs.lib) nixosSystem;
   inherit (inputs.disko.nixosModules) disko;
 
-  mkHost = { name, system, stateVersion, modules }: {
-    ${name} = nixosSystem {
-      inherit system;
-      modules = [ ./core ./hosts/${name} ] ++ modules;
-      specialArgs = { inherit inputs name stateVersion; };
-    };
+  mkHost = {
+    modules,
+    stateVersion ? "23.11",
+    system ? "x86_64-linux",
+  }: nixosSystem {
+    inherit system;
+    modules = [ disko ./shared ] ++ modules;
+    specialArgs = { inherit inputs stateVersion; };
   };
-in (
-  # Personal Laptop (Thinkpad T495)
-   mkHost {
-    name = "thinkpad";
-    stateVersion = "23.11";
-    system = "x86_64-linux";
-    modules = [ disko ./common ];
-  }
-)
+in {
+  kaizen = mkHost { modules = [ ./hosts/kaizen ]; };
+  minimo = mkHost { modules = [ ./hosts/minimo ]; };
+}
