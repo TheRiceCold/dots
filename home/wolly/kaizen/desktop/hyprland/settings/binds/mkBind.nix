@@ -1,4 +1,9 @@
 {
+  exec = key: cmd: "SUPER, ${key}, exec, ${cmd}";
+  ags = key: win: "SUPER, ${key}, exec, ags -t ${win}";
+  run-app = key: cmd: "SUPER_CTRL, ${key}, exec, ${cmd}";
+  toggle = key: name: "SUPER_CTRL, ${key}, exec, pypr toggle ${name}";
+
   # WINDOW BINDINGS
   window = let
     bind = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
@@ -11,9 +16,9 @@
     fakefullscreen = key: "${key}, fakefullscreen";
 
     focus = bind "SUPER" "movefocus";
-    move = bind "SUPER ALT" "moveactive";
-    swap = bind "SUPERSHIFT" "swapwindow";
-    resize = bind "SUPER CTRL" "resizeactive";
+    move = bind "SUPER_ALT" "moveactive";
+    swap = bind "SUPER_SHIFT" "swapwindow";
+    resize = bind "SUPER_CTRL" "resizeactive";
   };
 
   media = let
@@ -33,19 +38,15 @@
     cmd = val: "wpctl set-volume @DEFAULT_AUDIO_SINK@ ${val}";
     bind = key: val: ",XF86Audio${key}Volume, exec, ${cmd val}";
   in {
-    up = val: bind "Raise" "${val}%+";
-    down = val: bind "Lower" "${val}%-";
+    up-value = val: bind "Raise" "${val}%+";
+    down-value = val: bind "Lower" "${val}%-";
   };
 
   brightness = let
     cmd = key: val: "light ${if key == "Up" then "-A" else "-U"} ${val}";
     bind = key: val: ",XF86MonBrightness${key}, exec, ${cmd key val}";
   in {
-    up = bind "Up";
-    down = bind "Down";
+    up-value = bind "Up";
+    down-value = bind "Down";
   };
-
-  # TODO: Add this binds
-  ags = { };
-  pypr = { };
 }

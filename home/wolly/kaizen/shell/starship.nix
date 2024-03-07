@@ -1,6 +1,5 @@
 # NOTE: prolly need some customization
-{ lib, ... }:
-{
+lib: {
   enable = true;
   settings = let
     lang = icon: color: {

@@ -24,9 +24,9 @@ let
   '';
 in {
   home.packages = [
-    (import ./blocks.nix { inherit pkgs; })
-    (import ./pacman.nix { inherit pkgs; })
-    (import ./tanks.nix { inherit pkgs ansi; })
-    (import ./crunch.nix { inherit pkgs ansi; })
+    (import ./blocks.nix pkgs)
+    (import ./pacman.nix pkgs)
+    (import ./tanks.nix pkgs ansi)
+    (import ./crunch.nix pkgs ansi)
   ];
 }

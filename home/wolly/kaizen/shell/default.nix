@@ -15,6 +15,6 @@
       '';
     };
 
-    starship = import ./starship.nix { inherit lib; };
+    starship = import ./starship.nix lib;
   };
 }

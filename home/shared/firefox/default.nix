@@ -7,6 +7,6 @@
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-wayland;
-    profiles.default = import ./profiles { inherit pkgs; };
+    profiles.default = import ./profiles pkgs;
   };
 }

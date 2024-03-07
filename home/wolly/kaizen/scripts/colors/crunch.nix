@@ -1,6 +1,5 @@
-{ pkgs, ansi, ... }: let
-in pkgs.writeShellScriptBin "crunch"
-''
+pkgs: ansi: pkgs.writeShellScriptBin "crunch" ''
+
 ${ansi}
 cat << EOF
  $reset$redf  ██  ██   $reset$boldon$redf██    $reset$greenf  ██  ██   $reset$boldon$greenf██    $reset$yellowf  ██  ██   $reset$boldon$yellowf██    $reset$bluef  ██  ██   $reset$boldon$bluef██    $reset$purplef  ██  ██   $reset$boldon$purplef██    $reset$cyanf  ██  ██   $reset$boldon$cyanf██
@@ -10,4 +9,5 @@ cat << EOF
  $reset$redf  ██  ██   $reset$boldon$redf██    $reset$greenf  ██  ██   $reset$boldon$greenf██    $reset$yellowf  ██  ██   $reset$boldon$yellowf██    $reset$bluef  ██  ██   $reset$boldon$bluef██    $reset$purplef  ██  ██   $reset$boldon$purplef██    $reset$cyanf  ██  ██   $reset$boldon$cyanf██ 
  $reset
 EOF
+
 ''

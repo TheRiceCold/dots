@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+pkgs:
 let
   dark = "\\e[\${!j}\${i}m";
 in pkgs.writeShellScriptBin "pac" ''

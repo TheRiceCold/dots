@@ -2,14 +2,11 @@
 {
   imports = [ ./services.nix ./hardware-configuration.nix ];
 
-  disko = disk;
+  disko = import disk;
   networking.hostName = "kaizen";
 
   environment = {
-    systemPackages = with pkgs; [
-      linux-wifi-hotspot
-      kaivim
-    ];
+    systemPackages = with pkgs; [ linux-wifi-hotspot ];
 
     loginShellInit = /* bash */''
 

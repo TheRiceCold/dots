@@ -1,6 +1,5 @@
-{ pkgs, ansi, ... }: let
-in pkgs.writeShellScriptBin "tanks"
-''
+pkgs: ansi: pkgs.writeShellScriptBin "tanks" ''
+
 ${ansi}
 
 cat << EOF
@@ -18,4 +17,5 @@ cat << EOF
   $redf██ ▀▀▀ ██$reset    $greenf██ ▀▀▀ ██$reset    $yellowf██ ▀▀▀ ██$reset    $bluef██ ▀▀▀ ██$reset    $purplef██ ▀▀▀ ██$reset    $cyanf██ ▀▀▀ ██$reset
 EOF
 echo ""
+
 ''

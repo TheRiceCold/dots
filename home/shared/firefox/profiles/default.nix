@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+pkgs:
 let
   addons = pkgs.nur.repos.rycee.firefox-addons;
   homepage = "https://kaizen-dw.github.io/startpage/";

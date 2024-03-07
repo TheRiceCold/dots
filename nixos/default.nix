@@ -8,7 +8,7 @@ let
     modules,
     stateVersion ? "23.11",
     system ? "x86_64-linux",
-    disk ? import ./disks/thinkpad.nix,
+    disk ? ./disks/thinkpad.nix,
   }: nixosSystem {
     inherit system;
     modules = [ disko ./shared ] ++ modules;

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-with pkgs; [
+pkgs: with pkgs; [
   emmet-ls
   marksman
   nodePackages.vscode-css-languageserver-bin

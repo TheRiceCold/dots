@@ -1,7 +1,7 @@
 # DOCS: https://github.com/hyprland-community/pyprland/wiki
 { inputs, pkgs, ... }:
 let
-  apps = import ../apps.nix { inherit pkgs; };
+  apps = import ../apps.nix pkgs;
   configFile = with apps; /* toml */ ''
 
     [pyprland]

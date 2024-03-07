@@ -10,9 +10,10 @@
     };
     # sops-nix.url = "github:mic92/sops-nix"; # TODO: Implement this
 
-    # pkgs overlay at home/shared/default.nix
     nur.url = "github:nix-community/NUR";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+
+    helix-kai.url = "github:thericecold/helix-kai";
 
     # Kaizen Inputs
     ags.url = "github:aylur/ags";
@@ -21,7 +22,6 @@
     pyprland.url = "github:hyprland-community/pyprland";
 
     kaivim.url = "github:thericecold/kaivim";
-    helix-kai.url = "github:thericecold/helix-kai";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
  };
 

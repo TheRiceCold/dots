@@ -2,9 +2,9 @@ let
   inherit (import ./mkBind.nix) window;
 
   arr = [1 2 3 4 5 6 7 8 9];
-  b = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
-  ws = b "SUPER" "workspace";
-  mvtows =  b "SUPERSHIFT" "movetoworkspacesilent";
+  bind = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
+  workspace = bind "SUPER" "workspace";
+  mvtows =  bind "SUPERSHIFT" "movetoworkspacesilent";
 in {
   wayland.windowManager.hyprland.settings = {
     bindm = [
@@ -42,6 +42,6 @@ in {
       (resize "l" "20 0")
       (resize "h" "-20 0")
     ] ++ (map (i: mvtows (toString i) (toString i)) arr)
-    ++ (map (i: ws (toString i) (toString i)) arr);
+    ++ (map (i: workspace (toString i) (toString i)) arr);
   };
 }

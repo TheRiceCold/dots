@@ -1,27 +1,18 @@
 { pkgs, ... }:
 let
   mkBind = import ./mkBind.nix;
+  apps = import ../../apps.nix pkgs;
 in
 {
   imports = [ ./workspace.nix ];
 
   wayland.windowManager.hyprland.settings = {
-    bind = let
-      apps = import ../../apps.nix { inherit pkgs; };
-      exec = key: cmd: "SUPERCRTL, ${key}, exec, ${cmd}";
-      ags = key: win: "SUPER, ${key}, exec, ags -t ${win}";
-      toggle = key: name: "SUPERCTRL, ${key}, exec, ${apps.pypr} toggle ${name}";
-    in with apps; [
-      "SUPERSHIFT, q, exit"
-      "SUPER, Equal, exec, ${pypr} zoom"
-      "SUPER, RETURN, exec, [tile] ${term}"
+    bind = with apps; with mkBind; [
+      # INFO: exec's prefix is SUPER
+      (exec "Equal" "pypr zoom")
+      (exec "Return" "[tile] ${term}")
 
-      # Apps
-      (exec "v" audio-control)
-      (exec "c" "${color-picker} -a")
-      (exec "b" "[workspace 2;tile] ${browser} --browser-window")
-
-      # Ags widgets
+      # INFO: ags' prefix is SUPER
       (ags "m" "media")
       (ags "d" "datemenu")
       (ags "Period" "menu")
@@ -30,20 +21,29 @@ in
       (ags "Space" "launcher")
       (ags "Slash" "cheatsheet")
 
-      # Pypr scratchpads
+      # INFO: run-app's prefix is SUPER_CTRL
+      (run-app "v" audio-control)
+      (run-app "c" "${color-picker} -a")
+      (run-app "b" "[workspace 2;maximize] ${browser} --browser-window")
+
+      # INFO: Pypr Scatchpads Toggle's prefix is SUPER_CTRL
       (toggle "t" "term")
       (toggle "e" "explorer")
       (toggle "Escape" "system")
+
+      "SUPER_SHIFT, q, exit"
     ];
 
-    bindr = [ "SUPER, r, exec, ags -q; ags" ];
+    bindr = with apps; [
+      "SUPER, r, exec, ags -q; ags" # Reset Ags
+    ];
 
     binde = with mkBind; [
-      (brightness.up "5")
-      (brightness.down "5")
+      (brightness.up-value "5")
+      (brightness.down-value "5")
 
-      (volume.up "5")
-      (volume.down "5")
+      (volume.up-value "5")
+      (volume.down-value "5")
     ];
 
     bindl = with mkBind.media; [ mute play prev next ];

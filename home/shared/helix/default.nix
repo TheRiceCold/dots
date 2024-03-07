@@ -4,8 +4,8 @@
   programs.helix = {
     enable = true;
     package = inputs.helix-kai.packages.${pkgs.system}.helix;
-    extraPackages = import ./packages.nix { inherit pkgs; };
-    languages = import ./languages.nix { inherit pkgs; };
+    extraPackages = import ./packages.nix pkgs;
+    languages = import ./languages.nix pkgs;
 
     settings = {
       theme = "catppuccin_mocha";
