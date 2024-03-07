@@ -8,9 +8,7 @@
   environment = {
     systemPackages = with pkgs; [
       linux-wifi-hotspot
-
-      # TODO: move this packages to kaivim
-      # lazygit ripgrep tectonic kaivim
+      kaivim
     ];
 
     loginShellInit = /* bash */''

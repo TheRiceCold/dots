@@ -1,39 +1,23 @@
 # DOCS: https://github.com/hyprland-community/pyprland/wiki
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 let
   apps = import ../apps.nix { inherit pkgs; };
-  configFile = with apps; let
-    scratchpad-term-common = ''
-      excludes = "*"
-      unfocus = "hide"
-      size = "40% 40%" # width height
-      animation = "fromTop"
-    '';
-  in /* toml */ ''
+  configFile = with apps; /* toml */ ''
 
     [pyprland]
     plugins = [ "scratchpads", "magnify" ]
 
     [scratchpads.term]
     lazy = false
-    ${scratchpad-term-common}
-    command = "${footclient} -T scratchpad-term"
-
-    [scratchpads.explorer]
-    lazy = true
-    ${scratchpad-term-common}
-    command = "${footclient} -T scratchpad-term ${file-manager-cli}"
-
-    [scratchpads.system]
-    lazy = true
-    size = "50% 50%"
-    animation = "fromBottom"
-    command = "${footclient} -T scratchpad-term ${top}"
+    size = "40% 40%" # width height
+    animation = "fromTop"
+    command = "${term}"
 
   '';
 in {
   xdg.configFile."hypr/pyprland.toml".text = configFile;
-  home.packages = [ pkgs.pyprland ];
+  home.packages = [ inputs.pyprland.packages.${pkgs.system}.default ];
+
   programs.bash.initExtra = /* bash */ ''
 
     # Runs only on first instance (scratchpad terminal)

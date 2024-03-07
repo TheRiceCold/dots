@@ -27,10 +27,10 @@
       nix-direnv.enable = true;
     };
 
-    fzf = {
-      keybindings = true;
-      fuzzyCompletion = true;
-    };
+    # fzf = {
+    #   keybindings = true;
+    #   fuzzyCompletion = true;
+    # };
 
     thefuck.enable = true;
     bash = import ./bash.nix;

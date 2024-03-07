@@ -13,13 +13,13 @@ in
       toggle = key: name: "SUPERCTRL, ${key}, exec, ${apps.pypr} toggle ${name}";
     in with apps; [
       "SUPERSHIFT, q, exit"
-      "SUPER, RETURN, exec, ${foot}"
       "SUPER, Equal, exec, ${pypr} zoom"
+      "SUPER, RETURN, exec, [tile] ${term}"
 
       # Apps
-      (exec "b" browser)
       (exec "v" audio-control)
       (exec "c" "${color-picker} -a")
+      (exec "b" "[workspace 2;tile] ${browser} --browser-window")
 
       # Ags widgets
       (ags "m" "media")
