@@ -1,4 +1,4 @@
-###### *<div align=right><sub>contact: dalewaltergh@gmail.com</sub></div>*
+###### *<div align=right><sub>Last nix update: march, 7, 2024</sub></div>*
 
 <h1 align='center'>
   <img src='https://files.catbox.moe/i4twd5.png' width='115px' />
@@ -8,116 +8,82 @@
     <a href='https://nixos.org'>
       <img src='https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3'>
     </a>
-    <a href='https://github.com/kaizen-dw/Flakes/stargazers'>
-      <img src='https://img.shields.io/github/stars/kaizen-dw/FLakes?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6'>
+    <a href='https://github.com/TheRiceCold/dot/stargazers'>
+      <img src='https://img.shields.io/github/stars/TheRiceCold/dot?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6'>
     </a>
-    <a href='https://github.com/kaizen-dw/Flakes'>
-      <img src='https://img.shields.io/github/repo-size/kaizen-dw/Flakes?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6'>
+    <a href='https://github.com/TheRiceCold/dot'>
+      <img src='https://img.shields.io/github/repo-size/TheRiceCold/dot?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6'>
     </a>
     <img src='https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png' width='600px' />
   </div>
 
   **[<kbd> <br> Overview <br> </kbd>](#-Overview)** 
-  **[<kbd> <br>&nbsp;Packages&nbsp;<br> </kbd>](#-Packages)** 
   **[<kbd> <br> Installation <br> </kbd>](#-Installation)** 
   **[<kbd> <br> Acknowledgements&nbsp; <br> </kbd>](#-Acknowledgements)**
 
 </h1><br />
 
-# 🗃️ Overview
+# ✈️  Overview
 
-### 📚 Structure
-- `flake.nix`: Entrypoint
-- `home`: Home-manager configurations
-  - `packages`: folder arranged package configurations.
-  - `profiles`: Home-manager profiles
-    - `kaizen`: Profile for continuous improvement
-  - `scripts`: Written shell script bin
-    - `colors`: Nice looking colorscripts
-
-- `nixos`: NixOS configurations.
-  - `core`: Core configuration
-  - `hosts`: Host module configurations
-    - `thinkpad`: Lenovo Thinkpad T495 - 16GB RAM, Ryzen 5 3500U
-- `pkgs`: exported packages (currently empty)
+### ▶️  Showcase
 
 ### 📝 Flake inputs
 - [Nix Packages][nixpkgs]: Collection of Nix Packages.
-- [Disko][disko]: Declarative disk partitioning and formatting using Nix.
 - [Home Manager][home-manager]: User environment management using Nix package manager.
+- [Disko][disko]: Declarative disk partitioning and formatting using Nix.
 - [NUR][nur]: Nix User Repositories, user contributed packages.
-- [Nix Packages Wayland][nixpkgs-wayland]: Packages for Wayland.
-- [Aylur GTK Shell][ags]: A customizable and extensible shell.
-- [Matugen][matugen]: A material you color generation tool.
+- [Nix Packages Wayland][nixpkgs-wayland]: Nix packages for Wayland.
+- [Pyprland]: Extensions made for [Hyprland].
 - [Hyprlock][hyprlock]: GPU-accelerated screen locking utility for [Hyprland].
+- [Matugen][matugen]: A material you color generation tool.
+- [Aylur GTK Shell][ags]: A customizable and extensible shell.
+- [Helix-kai]: A fork of [helix] with some patches applied.
 - [Kaivim][kaivim]: an IDE like [Neovim] configuration built with [Nixvim].
 - [Spicetify Nix][spicetify-nix]: A nix flake for configuring [spicetify].
 
-<p align="right"><a href="#top">back to top</a></p>
+### 🗃️ File Structure
+<details>
+<summary><b>nixos</b>: Configurations for all hosts. </summary>
 
-# 📦 Packages
+> [!NOTE]
+> Switch by `cd` to `dots` directory and run `nix-switch <hostname>`.
+> OR `doas nixos-rebuild switch --flake .#<hostname>`.
 
-- Common packages and services
-  - Shell: [bash][bash]
-  - Text Editor: [kaivim][kaivim]
-  - Sound Server: [pipewire][pipewire]
-  - Containerization Tool: [podman][podman]
-  - System Resource Monitor: [btop][btop]
-  - Others: [Flatpak][flatpak], [thefuck][thefuck], [fzf][fzf], [bat][bat]
+- Shared (Defaults)
+  - [bash][bash]: Shell
+  - [grub][grub]: Bootloader
+  - [pipewire][nixos-shared-services]: Sound server
+  - [doas][doas]: Less bloated sudo
+  - [podman][nixos-shared-virt]: Containerization tool
+  - [jetbrains mono][jetbrains-font]: Typeface Nerd Font
 
+  <details>
+    <summary><b>Kaizen</b>: Fully riced configuration that I will continue to improve.</summary>
+  </details>
+  <details>
+    <summary><b>Minimo</b>: Lightweight configuration for the minimalist.</summary>
+  </details>
 </details>
 
 <details>
-<summary><b>Home Packages</b></summary><br />
+<summary><b>home</b>: Home configurations for users and hosts. </summary>
 
-- **Shell Packages**: [nushell]
-  - [starship]: Shell prompt
-  -
+> [!NOTE]
+> Switch by `cd` to `dots` directory and run `hm-switch`.
+> OR `home-manager switch --flake .`.
 
-- **CLI Packages**
-  - File Manager: [yazi]
-  - Terminal Multiplexer: [zellij]
-  - Games: [2048][2048], [chess][uchess], [tetris][vitetris]
-  - System Information Tools: [fastfetch], [onefetch]
+- Shared (Defaults)
+  - [bash][bash]: Shell
+  - [firefox][firefox]: Browser
+  - [helix-kai]: Text editor
+  - [btop][btop]: System resource monitor
+  - [zoxide][zoxide]: Smarter cd command.
+  - [bat][bat]: cat but with syntax highlighting (catppuccin)
 
-- **Display/Desktop Packages:**
-  - Window Manager: [Hyprland]
-    - Lockscreen: [Hyprlock]
-    - Plugins: [Pyprland]: scratchpads, zoom
-
-  - Widgets: [Aylurs Gtk Shell][ags]
-  - Applications:
-    - Browser: [firefox]
-    - Graphics Editors:
-      - [Blender]: 3D graphics
-      - [Krita]: Raster graphics
-      - [Aseprite]: Pixel art tool
-      - [Inkscape]: Vector graphics
-    - Media players/Audio streaming: [mpv] & [Spotify][spicetify]
-  - Productivity Tools:
-      - [sioyek] & [zathura] (disabled): PDF viewer
-  - Terminal: [foot][foot] & [wezterm][wezterm] (disabled)
-
-- **Developers Packages**
-  - Game Engine: [godot]
-  - Text Editor & IDEs: [helix], [vscodium] (disabled)
-
-</details>
-
-<details>
-<summary><b>Themes</b></summary>
-
-- Color Scheme: [Catppuccin]
-- Cursor: [Bibata Modern Ice][Bibata-Cursor]
-- Icons: [Papirus Dark][Papirus-icon-theme]
-
-</details>
-
-<details>
-<summary><b>Fonts</b></summary>
-
-- [FontAwesome]
-- [Nerd Fonts][nerdfonts]: JetBrains Mono, Ubuntu, UbuntuMono, FiraCode, Monoki
+  <details>
+    <summary>Users</summary>
+    - wolly (main)
+  </details>
 
 </details>
 
@@ -145,10 +111,9 @@ doas nixos-rebuild switch --flake .#thinkpad
 iwctl --passphrase <passphrase> station <device> connect <SSID>
 ```
 
-
 <p align="right"><a href="#top">back to top</a></p>
 
-# 💐 Acknowledgements
+## 💐 Acknowledgements
 
 - [Ruixi-rebirth/melted-flakes](Ruixi)
 - [Misterio77/nix-config](Misterio77)
@@ -164,21 +129,16 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 [matugen]: https://github.com/InioX/matugen
 [hyprlock]: https://github.com/hyprwm/hyprlock
 [kaivim]: https://github.com/thericecold/kaivim
+[helix-kai]: https://github.com/thericecold/helix-kai
 [spicetify-nix]: https://github.com/the-argus/spicetify-nix
 
 <!-- Common Packages -->
-[bash]: ../nixos/common/bash.nix
-[btop]: ../home/packages/cli/default.nix
-[pipewire]: ../nixos/core/services.nix
-[podman]: ../nixos/core/virtualisation.nix
-[flatpak]: ../home/packages/cli/default.nix
-[thefuck]: ../home/packages/cli/default.nix
-[fzf]: ../home/packages/cli/default.nix
-[bat]: ../home/packages/cli/bat.nix
+[bash]: ../nixos/shared/programs/bash.nix
+[home-shared-cli]: ../home/shared/cli/default.nix
+[nixos-shared-services]: ../nixos/shared/services.nix
+[nixos-shared-virt]: ../nixos/shared/virtualisation.nix
 
-<!-- Shell Packages -->
-[nushell]: ../home/packages/shell/nushell.nix
-[Starship]: ../home/packages/shell/starship.nix
+[starship]: ../home/wolly/kaizen/shell/starship.nix
 
 <!-- CLI Packages -->
 [yazi]: https://github.com/sxyazi/yazi
@@ -191,39 +151,35 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 [vitetris]: https://github.com/vicgeralds/vitetris
 
 <!-- Desktop Packages -->
-<!-- Hyprland Packages/Plugins -->
-[hyprland]: ../home/packages/desktop/hyprland
-[pyprland]: ../home/packages/desktop/hyprland/pypr
-[hyprlock]: ../home/packages/desktop/hyprland/hyprlock
+[ags-config]: ../home/wolly/kaizen/desktop/ags.nix
+[pyprland]: ../home/wolly/kaizen/desktop/hyprland/pypr
+[hyprland-config]: ../home/wolly/kaizen/desktop/hyprland
+[hyprlock]: ../home/wolly/kaizen/desktop/hyprland/hyprlock
 
-<!-- Widgets -->
-[ags-config]: ../home/packages/desktop/ags
+<!-- Apps -->
+[helix]: ../home/shared/helix
+[firefox]: ../home/shared/firefox
+[vscodium]: ../home/wolly/kaizen/vscodium
+[foot]: ../home/wolly/kaizen/desktop/apps/foot.nix
+[sioyek]: ../home/wolly/kaizen/desktop/apps/sioyek.nix
 
-<!-- Browser -->
-[firefox]: ../home/packages/desktop/browsers/firefox
-
-<!-- Graphics -->
+<!-- Package Links -->
+[dwm]: https://dwm.suckless.org
+[hyprland]: https://hyprland.org
+[ags]: https://aylur.github.io/ags-docs
+[kaivim]: https://github.com/thericecold/kaivim
+[nixvim]: https://github.com/nix-community/nixvim
+[spicetify]: https://github.com/spicetify/spicetify-cli
 [inkscape]: https://github.com/inkscape/inkscape
+[jetbrains-font]: https://www.jetbrains.com/lp/mono/
+[neovim]: https://neovim.io
+[grub]: https://www.gnu.org/software/grub
+[doas]: https://github.com/slicer69/doas
+
+[godot]: https://godotengine.org
 [krita]: https://krita.org/en
 [blender]: https://www.blender.org
 [aseprite]: https://www.aseprite.org
-<!-- Productivity -->
-[zathura]: ../home/packages/desktop/apps/productivity/zathura.nix
-[sioyek]: ../home/packages/desktop/apps/productivity/sioyek.nix
-<!-- Media -->
-[mpv]: ../home/packages/desktop/apps/media/default.nix
-[spicetify]: https://github.com/spicetify/spicetify-cli
-
-<!-- Developers Packages -->
-[godot]: https://godotengine.org
-<!-- Text Editors -->
-[helix]: ../home/packages/dev/editors/helix
-[kaivim]: https://github.com/kaizen-dw/kaivim
-[nixvim]: https://github.com/nix-community/nixvim
-[vscodium]: ../home/packages/dev/editors/vscodium
-<!-- Terminals -->
-[wezterm]: ../home/packages/desktop/terminals/wezterm.nix
-[foot]: ../home/packages/desktop/terminals/foot.nix
 
 <!-- Themes -->
 [Bibata-Cursor]: https://github.com/ful1e5/Bibata_Cursor
