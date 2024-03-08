@@ -1,13 +1,25 @@
 { pkgs, ... }:
 {
-  imports = [ ./zellij.nix ./sysfetch ];
+  imports = [ ./zellij ./sysfetch ];
 
-  # NOTE: I should probably configure this
-  programs.yazi.enable = true;
+  programs = {
+    eza.enable = true;
+    neomutt = {
+      enable = true;
+      vimKeys = true;
+    };
+    yazi = {
+      # NOTE: I should probably configure this
+      enable = true;
+      enableBashIntegration = true;
+      keymap = { };
+      settings = { };
+      theme = { };
+    };
+  };
 
   home.packages = with pkgs; [
     fd        # simple and fast alternative to find
-    eza       # Modern replacement for ls
     ydotool
 
     # Just fun stuff
