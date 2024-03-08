@@ -27,7 +27,7 @@
 
 #### ▶️  Showcase
 
-#### 📝 Flake inputs
+#### 📝 Inputs
 - [Nix Packages][nixpkgs]: Collection of Nix Packages.
 - [Home Manager][home-manager]: User environment management using Nix package manager.
 - [Disko][disko]: Declarative disk partitioning and formatting using Nix.
@@ -43,13 +43,11 @@
 
 <p align="right"><a href="#top">back to top</a></p>
 
-#### 🗃️ File Structure
-> [!NOTE]
-> To switch host `cd` to `dots` directory and run `nix-switch <hostname>`.
-> OR `doas nixos-rebuild switch --flake .#<hostname>`.
-
 <details>
-  <summary> <b>Nixos</b>: configuration for all hosts.</summary>
+  <summary> <b>💻 Nixos</b>: configuration for all hosts.</summary>
+
+> [!IMPORTANT]
+> To switch host `cd` to `dots` directory and run `nix-switch <hostname>`.
 
   ---
   - **Shared** (defaults)
@@ -75,16 +73,16 @@
   - **Minimo**: Lightweight configuration for the minimalist.</summary>
     - Window Manager: [dwm]
 
+  <br />
   <p align="right"><a href="#top">back to top</a></p>
 </details>
-<hr /><br />
-
-> [!NOTE]
-> To switch home by `cd` to `dots` directory and run `hm-switch`.
-> OR `home-manager switch --flake .`.
+<br />
 
 <details>
-  <summary><b>Home</b>: Home configurations for users and hosts.</summary>
+  <summary><b>🏠 Home</b>: Home configurations for users and hosts.</summary>
+
+> [!IMPORTANT]
+> To switch home by `cd` to `dots` directory and run `hm-switch`.
 
   ---
   - [**Shared**][home-shared] (defaults)
@@ -97,8 +95,8 @@
 
   - [**Kaizen**][home-kaizen]: Fully riced configuration that I will continue to improve.
     - [CLI][home-kaizen-cli]:
-      - [Neomutt]: E-mail reader.
       - [Yazi]: File manager.
+      - [Neomutt]: E-mail reader.
       - [Zellij]: Terminal Multiplexer.
       - Other: [eza], [fastfetch], [onefetch]
     - [Desktop][home-kaizen-desktop]:
@@ -117,20 +115,19 @@
           - [scratchpads][pypr-scratch]: Dropdown scratchpads.
         - [Hyprlock][hyprlock-config]: Lockscreen
       - [Theme][home-kaizen-desktop]
+        - Widgets: [Ags][ags-config]
         - Icon: [Papirus-Dark][papirus-icon]
         - Font: Ubuntu Nerd Font
         - Cursor: [Bibata-Modern-Ice]
         - GTK: [Catppuccin-Mocha-Compact-Lavender-Dark][gtk-catppuccin]
-        - Widgets: [Ags][ags-config]
     - [Shell Scripts][home-kaizen-scripts]:
       - [Colorscripts][home-kaizen-colorscripts]: [blocks][blocks-color], [crunch][crunch-color], [pacman][pacman-color], and [tanks][tanks-color]
   ---
-  - [**Minimo**][home-minimo]:
+  - [**Minimo**][home-minimo]: (WIP)
 
-  <p align="right"><a href="#top">back to top</a></p>
+  <br /><p align="right"><a href="#top">back to top</a></p>
 </details>
-<hr /><br />
-
+<br />
 
 ## 🍳 How to cook (install)
 
