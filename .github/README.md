@@ -1,4 +1,4 @@
-###### *<div align=right><sub>Last nix update: march, 7, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: march, 8, 2024</sub></div>*
 
 <h1 align='center'>
   <img src='https://files.catbox.moe/i4twd5.png' width='115px' />
@@ -21,13 +21,13 @@
   **[<kbd> <br> Installation <br> </kbd>](#-Installation)** 
   **[<kbd> <br> Acknowledgements&nbsp; <br> </kbd>](#-Acknowledgements)**
 
-</h1><br />
+</h1>
 
-# ✈️  Overview
+## ✈️  Overview
 
-### ▶️  Showcase
+#### ▶️  Showcase
 
-### 📝 Flake inputs
+#### 📝 Flake inputs
 - [Nix Packages][nixpkgs]: Collection of Nix Packages.
 - [Home Manager][home-manager]: User environment management using Nix package manager.
 - [Disko][disko]: Declarative disk partitioning and formatting using Nix.
@@ -41,63 +41,106 @@
 - [Kaivim][kaivim]: an IDE like [Neovim] configuration built with [Nixvim].
 - [Spicetify Nix][spicetify-nix]: A nix flake for configuring [spicetify].
 
-### 🗃️ File Structure
-<details>
-<summary><b>nixos</b>: Configurations for all hosts. </summary>
-
-> [!NOTE]
-> Switch by `cd` to `dots` directory and run `nix-switch <hostname>`.
-> OR `doas nixos-rebuild switch --flake .#<hostname>`.
-
-- Shared (Defaults)
-  - [bash][bash]: Shell
-  - [grub][grub]: Bootloader
-  - [pipewire][nixos-shared-services]: Sound server
-  - [doas][doas]: Less bloated sudo
-  - [podman][nixos-shared-virt]: Containerization tool
-  - [jetbrains mono][jetbrains-font]: Typeface Nerd Font
-
-  <details>
-    <summary><b>Kaizen</b>: Fully riced configuration that I will continue to improve.</summary>
-  </details>
-  <details>
-    <summary><b>Minimo</b>: Lightweight configuration for the minimalist.</summary>
-  </details>
-</details>
-
-<details>
-<summary><b>home</b>: Home configurations for users and hosts. </summary>
-
-> [!NOTE]
-> Switch by `cd` to `dots` directory and run `hm-switch`.
-> OR `home-manager switch --flake .`.
-
-- Shared (Defaults)
-  - [bash][bash]: Shell
-  - [firefox][firefox]: Browser
-  - [helix-kai]: Text editor
-  - [btop][btop]: System resource monitor
-  - [zoxide][zoxide]: Smarter cd command.
-  - [bat][bat]: cat but with syntax highlighting (catppuccin)
-
-  <details>
-    <summary>Users</summary>
-    - wolly (main)
-  </details>
-
-</details>
-
 <p align="right"><a href="#top">back to top</a></p>
 
-# 🚀 Installation
+#### 🗃️ File Structure
+> [!NOTE]
+> To switch host `cd` to `dots` directory and run `nix-switch <hostname>`.
+> OR `doas nixos-rebuild switch --flake .#<hostname>`.
 
-### Initial Steps
+<details>
+  <summary> <b>Nixos</b>: configuration for all hosts.</summary>
+
+  ---
+  - **Shared** (defaults)
+    - [bash][bash]: Shell
+    - [grub][host-shared]: Bootloader
+    - [pipewire][host-shared-services]: Sound server
+    - [doas][host-shared]: Less bloated sudo
+    - [podman][host-shared-virt]: Containerization tool
+    - [jetbrains mono][jetbrains-font]: Typeface Nerd Font
+  ---
+
+  - **Kaizen**: Fully riced configuration that I will continue to improve.</summary>
+    - [Services][host-kaizen-services]: [Flatpak], Bluetooth Manager
+    - [Hardware][host-kaizen]: Bluetooth, [OpenGL], [OpenTabDriver].
+    - [Programs][host-kaizen]:
+      - [Hyprland][hyprland]: A highly customizable dynamic tiling wayland compositor.
+      - [virt-manager][virt-man]: GUI tool for managing virtual machines via libvirt.
+    - [Virtualisation][host-kaizen]:
+      - [libvirt] and [QEMU]
+      - [Waydroid][waydroid]: Container-based android system.
+  ---
+
+  - **Minimo**: Lightweight configuration for the minimalist.</summary>
+    - Window Manager: [dwm]
+
+  <p align="right"><a href="#top">back to top</a></p>
+</details>
+<hr /><br />
+
+> [!NOTE]
+> To switch home by `cd` to `dots` directory and run `hm-switch`.
+> OR `home-manager switch --flake .`.
+
+<details>
+  <summary><b>Home</b>: Home configurations for users and hosts.</summary>
+
+  ---
+  - [**Shared**][home-shared] (defaults)
+    - [firefox][firefox]: Browser.
+    - [helix-kai]: Text editor.
+    - [btop][home-shared-cli]: System resource monitor.
+    - [zoxide][home-shared-shell]: Smarter cd command.
+    - [bat][home-shared-cli]: `cat` with syntax highlighting (catppuccin).
+  ---
+
+  - [**Kaizen**][home-kaizen]: Fully riced configuration that I will continue to improve.
+    - [CLI][home-kaizen-cli]:
+      - [Neomutt]: E-mail reader.
+      - [Yazi]: File manager.
+      - [Zellij]: Terminal Multiplexer.
+      - Other: [eza], [fastfetch], [onefetch]
+    - [Desktop][home-kaizen-desktop]:
+      - [Apps][home-kaizen-apps]
+        - [foot][foot]: Terminal.
+        - [mpv][mpv]: Media player.
+        - [sioyek][sioyek]: PDF Viewer.
+        - [neovide][neovide]: Neovim GUI client.
+        - [spicetify][spicetify]: Customized spotify.
+        - [ncmpcpp][ncmpcpp]: MPD client music player.
+        - [vscodium] (disabled): Less bloat vscode.
+        - Other: [easyeffects], [krita], [blender], [inkscape], [libresprite] and [godot]
+      - [Hyprland][hyprland-config]:
+        - [Pyprland][pypr-config] extensions added:
+          - [magnify][pypr-magnify]: Toggle magnification (zoom).
+          - [scratchpads][pypr-scratch]: Dropdown scratchpads.
+        - [Hyprlock][hyprlock-config]: Lockscreen
+      - [Theme][home-kaizen-desktop]
+        - Icon: [Papirus-Dark][papirus-icon]
+        - Font: Ubuntu Nerd Font
+        - Cursor: [Bibata-Modern-Ice]
+        - GTK: [Catppuccin-Mocha-Compact-Lavender-Dark][gtk-catppuccin]
+        - Widgets: [Ags][ags-config]
+    - [Shell Scripts][home-kaizen-scripts]:
+      - [Colorscripts][home-kaizen-colorscripts]: [blocks][blocks-color], [crunch][crunch-color], [pacman][pacman-color], and [tanks][tanks-color]
+  ---
+  - [**Minimo**][home-minimo]:
+
+  <p align="right"><a href="#top">back to top</a></p>
+</details>
+<hr /><br />
+
+
+## 🍳 How to cook (install)
+
+#### Initial Steps
 - Download [NixOS minimal installation](https://nixos.org/download) ISO.
 - Boot into the installer.
 - Switch to root: `sudo -i`
 - Install tools: `nix-shell`
 
-### Commands you should know
+#### Commands you should know
 - Rebuild and switch to change the system configuration
 ```
 nix-switch 'thinkpad'
@@ -118,6 +161,7 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 - [Ruixi-rebirth/melted-flakes](Ruixi)
 - [Misterio77/nix-config](Misterio77)
 - [redyf/nixdots](redyf)
+- [aylur/dotfiles](redyf)
 
 <!-- Flake Inputs -->
 [nixpkgs]: https://github.com/NixOS/nixpkgs/tree/nixpkgs-unstable
@@ -132,16 +176,48 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 [helix-kai]: https://github.com/thericecold/helix-kai
 [spicetify-nix]: https://github.com/the-argus/spicetify-nix
 
-<!-- Common Packages -->
+<!-- Nixos Shared -->
 [bash]: ../nixos/shared/programs/bash.nix
+[host-shared]: ../nixos/shared/default.nix
 [home-shared-cli]: ../home/shared/cli/default.nix
-[nixos-shared-services]: ../nixos/shared/services.nix
-[nixos-shared-virt]: ../nixos/shared/virtualisation.nix
+[home-shared-shell]: ../home/shared/shell/default.nix
+[host-shared-services]: ../nixos/shared/services.nix
+[host-shared-virt]: ../nixos/shared/virtualisation.nix
+
+[host-kaizen]: ../nixos/hosts/kaizen/default.nix
+[host-kaizen-services]: ../nixos/hosts/kaizen/services.nix
 
 [starship]: ../home/wolly/kaizen/shell/starship.nix
 
+<!-- Home -->
+[home-shared]: ../home/shared/default.nix
+[home-kaizen]: ../home/wolly/kaizen/default.nix
+[home-kaizen-cli]: ../home/wolly/kaizen/cli/default.nix
+[home-kaizen-desktop]: ../home/wolly/kaizen/dekstop/default.nix
+[home-kaizen-scripts]: ../home/wolly/kaizen/scripts//default.nix
+[home-kaizen-apps]: ../home/wolly/kaizen/dekstop/apps/default.nix
+
+<!-- Hyprland Configurations -->
+[hyprland-config]: ../home/wolly/kaizen/desktop/hyprland/default.nix
+[hyprlock-config]: ../home/wolly/kaizen/desktop/hyprland/hyprlock/default.nix
+[pypr-config]: ../home/wolly/kaizen/desktop/hyprland/pypr/default.nix
+[pypr-magnify]: https://github.com/hyprland-community/pyprland/wiki/magnify
+[pypr-scratch]: https://github.com/hyprland-community/pyprland/wiki/scratchpads
+
+
+<!-- Color Scripts -->
+[home-kaizen-colorscripts]: ../home/wolly/kaizen/scripts/colors/default.nix
+[blocks-color]: ../home/wolly/kaizen/scripts/colors/blocks.nix
+[crunch-color]: ../home/wolly/kaizen/scripts/colors/crunch.nix
+[pacman-color]: ../home/wolly/kaizen/scripts/colors/pacman.nix
+[tanks-color]: ../home/wolly/kaizen/scripts/colors/tanks.nix
+
+<!-- Theme -->
+[papirus-icon]: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+[bibata-modern-ice]: https://github.com/ful1e5/Bibata_Cursor
+[gtk-catppuccin]: https://github.com/catppuccin/gtk
+
 <!-- CLI Packages -->
-[yazi]: https://github.com/sxyazi/yazi
 [zellij]: ../home/packages/cli/zellij
 [fastfetch]: ../home/packages/cli/sysfetch/fastfetch.nix
 [onefetch]: ../home/packages/cli/sysfetch/fastfetch.nix
@@ -151,10 +227,12 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 [vitetris]: https://github.com/vicgeralds/vitetris
 
 <!-- Desktop Packages -->
-[ags-config]: ../home/wolly/kaizen/desktop/ags.nix
 [pyprland]: ../home/wolly/kaizen/desktop/hyprland/pypr
 [hyprland-config]: ../home/wolly/kaizen/desktop/hyprland
 [hyprlock]: ../home/wolly/kaizen/desktop/hyprland/hyprlock
+[ags-config]: https://github.com/TheRiceCode/ags-config
+[home-minimo]: ../home/wolly/minimo/default.nix
+
 
 <!-- Apps -->
 [helix]: ../home/shared/helix
@@ -164,17 +242,30 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 [sioyek]: ../home/wolly/kaizen/desktop/apps/sioyek.nix
 
 <!-- Package Links -->
+[mpv]: https://mpv.io
+[ncmpcpp]: https://github.com/ncmpcpp/ncmpcpp
+[easyeffects]: https://github.com/wwmm/easyeffects
+[libresprite]: https://libresprite.github.io
+[neovide]: https://neovide.dev
 [dwm]: https://dwm.suckless.org
 [hyprland]: https://hyprland.org
+[opengl]: https://www.opengl.org
 [ags]: https://aylur.github.io/ags-docs
 [kaivim]: https://github.com/thericecold/kaivim
 [nixvim]: https://github.com/nix-community/nixvim
 [spicetify]: https://github.com/spicetify/spicetify-cli
 [inkscape]: https://github.com/inkscape/inkscape
-[jetbrains-font]: https://www.jetbrains.com/lp/mono/
+[jetbrains-font]: https://www.jetbrains.com/lp/mono
+[neomutt]: https://neomutt.org
+[eza]: https://github.com/eza-community/eza
 [neovim]: https://neovim.io
-[grub]: https://www.gnu.org/software/grub
-[doas]: https://github.com/slicer69/doas
+[flatpak]: https://flatpak.org
+[virt-man]: https://virt-manager.org
+[OpenTabDriver]: https://opentabletdriver.net
+[yazi]: https://github.com/sxyazi/yazi
+[libvirt]: https://libvirt.org
+[qemu]: https://www.qemu.org
+[waydroid]: https://waydro.id/
 
 [godot]: https://godotengine.org
 [krita]: https://krita.org/en
