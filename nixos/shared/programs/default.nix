@@ -17,6 +17,7 @@
   ];
 
   programs = {
+    adb.enable = true;
     git.enable = true;
     light.enable = true;
     dconf.enable = true;
@@ -33,7 +34,13 @@
     # };
 
     thefuck.enable = true;
-    bash = import ./bash.nix;
+    tmux = {
+      enable = true;
+      keyMode = "vi";
+      baseIndex = 1;
+    };
     less.enable = lib.mkDefault false; # I'd rather use bat
+
+    bash = import ./bash.nix;
   };
 }

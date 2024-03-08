@@ -18,12 +18,7 @@
   };
 
   programs = {
-    adb.enable = true;
     virt-manager.enable = true;
-    corectrl = {
-      enable = true;
-      gpuOverclock.enable = true;
-    };
     hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -41,17 +36,17 @@
   security.pam.services.hyprlock = {};
 
   hardware = {
-    opentabletdriver.enable = true;
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
     bluetooth = {
       enable = true;
       powerOnBoot = false;
       settings.General.Experimental = true;
     };
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
+    opentabletdriver.enable = true;
   };
 
   boot = {

@@ -3,6 +3,7 @@
   programs = {
     zoxide = {
       enable = true;
+      enableBashIntegration = true;
       options = [ "--cmd cd" ];
     };
 
@@ -14,17 +15,6 @@
         color.ui = true;
         core.editor = "nvim";
       };
-    };
-
-    bash = {
-      enable = true;
-      shellAliases = {
-        lg = "lazygit";
-      };
-
-      initExtra = /* bash */ ''
-        eval "$(zoxide init bash)"
-      '';
     };
   };
 }
