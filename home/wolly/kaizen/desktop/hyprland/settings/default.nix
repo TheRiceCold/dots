@@ -1,5 +1,4 @@
-{ inputs, pkgs, ... }:
-{
+{ inputs, pkgs, ... }: {
   imports = [ ./binds ];
 
   wayland.windowManager.hyprland = {
@@ -23,13 +22,12 @@
 
       general = {
         layout = "dwindle";
+        no_cursor_warps = true;
         resize_on_border = true;
       };
 
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-      };
+      dwindle.pseudotile = true;
+      dwindle.preserve_split = true;
 
       master = {
         new_is_master = true;

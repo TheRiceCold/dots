@@ -1,9 +1,7 @@
 # INFO: https://github.com/fastfetch-cli/fastfetch/wiki
 { lib, pkgs, ... }:
-{
-  home.packages = [ pkgs.fastfetch ];
-
-  xdg.configFile."fastfetch/config.jsonc".text = /* jsonc */ '' {
+let
+  config = /* jsonc */ '' {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 
     "logo": {
@@ -76,4 +74,7 @@
       }
     ]
   } '';
+in {
+  home.packages = [ pkgs.fastfetch ];
+  xdg.configFile."fastfetch/config.jsonc".text = config;
 }

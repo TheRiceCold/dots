@@ -15,11 +15,10 @@ in
       # INFO: ags' prefix is SUPER
       (ags "m" "media")
       (ags "d" "datemenu")
-      (ags "Period" "menu")
       (ags "Tab" "overview")
       (ags "F4" "powermenu")
       (ags "Space" "launcher")
-      (ags "Slash" "cheatsheet")
+      (ags "Period" "dropmenu")
 
       # INFO: run-app's prefix is SUPER_CTRL
       (run-app "v" audio-control)

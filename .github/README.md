@@ -1,9 +1,9 @@
-###### *<div align=right><sub>Last nix update: march, 8, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: march 9, 2024</sub></div>*
 
 <h1 align='center'>
   <img src='https://files.catbox.moe/i4twd5.png' width='115px' />
 
-  Kaizen's Flakes<br />
+  🦋 ButterflyOS 🦋<br />
   <div align='center'>
     <a href='https://nixos.org'>
       <img src='https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3'>
@@ -45,9 +45,10 @@
 
 <details>
   <summary> <b>💻 Nixos</b>: configuration for all hosts.</summary>
+  <br />
 
-> [!IMPORTANT]
-> To switch host `cd` to `dots` directory and run `nix-switch <hostname>`.
+  > [!TIP]
+  > To switch host `cd` to `dots` directory and run `nix-switch <hostname>`.
 
   ---
   - **Shared** (defaults)
@@ -80,9 +81,10 @@
 
 <details>
   <summary><b>🏠 Home</b>: Home configurations for users and hosts.</summary>
+  <br />
 
-> [!IMPORTANT]
-> To switch home by `cd` to `dots` directory and run `hm-switch`.
+  > [!TIP]
+  > To switch home by `cd` to `dots` directory and run `hm-switch`.
 
   ---
   - [**Shared**][home-shared] (defaults)

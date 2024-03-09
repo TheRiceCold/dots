@@ -1,5 +1,5 @@
-{ stateVersion, ... }:
-{
+{ stateVersion, ... }: {
+
   nix = {
     settings = {
       auto-optimise-store = true; # Optimize syslinks

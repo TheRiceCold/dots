@@ -1,7 +1,6 @@
-{ pkgs, ... }:
-{
-  home.packages = [ pkgs.onefetch ];
+{ pkgs, ... }: {
 
+  home.packages = [ pkgs.onefetch ];
   programs.bash.initExtra = /* bash */ ''
 
     # git repository greeter

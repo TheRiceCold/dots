@@ -1,7 +1,5 @@
 # INFO: Not included. I'm not a fan of the existing plugins as of now.
-{ inputs, pkgs, ... }:
-
-{
+{ inputs, pkgs, ... }: {
   plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [
     # hyprbars
     hyprtrails

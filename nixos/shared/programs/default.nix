@@ -1,5 +1,5 @@
-{ lib, pkgs, ... }:
-{
+{ lib, pkgs, ... }: {
+
   environment.systemPackages = with pkgs; [
     gcc
     lsof
@@ -28,17 +28,7 @@
       nix-direnv.enable = true;
     };
 
-    # fzf = {
-    #   keybindings = true;
-    #   fuzzyCompletion = true;
-    # };
-
     thefuck.enable = true;
-    tmux = {
-      enable = true;
-      keyMode = "vi";
-      baseIndex = 1;
-    };
     less.enable = lib.mkDefault false; # I'd rather use bat
 
     bash = import ./bash.nix;

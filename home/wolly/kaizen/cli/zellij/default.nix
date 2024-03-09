@@ -1,7 +1,5 @@
-{ pkgs, ...}:
 # NOTE: https://zellij.dev/documentation
-
-{
+{ pkgs, ... }: {
   programs.zellij.enable = true;
   xdg.configFile = {
     "zellij/plugins/zjstatus.wasm".source = pkgs.fetchurl {

@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-{
-  imports = [
-    ./colors
-  ];
+{ pkgs, ... }:{
+
+  imports = [ ./colors ];
 }
