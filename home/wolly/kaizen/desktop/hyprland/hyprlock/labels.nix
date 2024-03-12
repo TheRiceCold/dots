@@ -1,31 +1,42 @@
-[
+let
+  font_family = "Ubuntu Nerd Font";
+in [
+  { # Date
+    monitor = "";
+    valign = "top";
+    halign = "center";
+    font_size = 16;
+    position = { x = 0; y = -100; };
+    text = ''cmd[update:5000] echo "<b>$(date +"%A, %d %B")</b>"'';
+    inherit font_family;
+  }
   { # Time
     monitor = "";
-    font_size = 128;
-    valign = "center";
+    valign = "top";
     halign = "center";
-    position = { x = 0; y = 16; };
-    font_family = "JetBrainsMono Nerd Font";
+    font_size = 128;
+    position = { x = 0; y = -100; };
     text = ''cmd[update:1000] echo "<b>$(date +"%I:%M%p")</b>"'';
+    inherit font_family;
   }
 
   { # User
     monitor = "";
     font_size = 20;
     halign = "center";
-    valign = "center";
-    position = { x = 0; y = 0; };
-    text = "How's like being a bum $USER?";
-    font_family = "JetBrainsMono Nerd Font";
+    valign = "bottom";
+    position = { x = 0; y = 150; };
+    text = "   $USER";
+    inherit font_family;
   }
 
-  { # Type to unlock
-    monitor = "";
-    font_size = 16;
-    halign = "center";
-    valign = "bottom";
-    position = { x = 0; y = 30; };
-    text = "Hey nerd, type to unlock";
-    font_family = "JetBrainsMono Nerd Font";
-  }
+  # { # Type to unlock
+  #   monitor = "";
+  #   font_size = 16;
+  #   halign = "center";
+  #   valign = "bottom";
+  #   position = { x = 0; y = 30; };
+  #   text = "Hey nerd, type to unlock";
+  #   inherit font_family;
+  # }
 ]

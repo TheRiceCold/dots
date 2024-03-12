@@ -1,4 +1,4 @@
-# INFO: https://github.com/fastfetch-cli/fastfetch/wiki
+# DOCS: https://github.com/fastfetch-cli/fastfetch/wiki
 { lib, pkgs, ... }:
 let
   config = /* jsonc */ '' {

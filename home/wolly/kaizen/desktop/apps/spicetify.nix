@@ -28,5 +28,10 @@ in {
   };
 
   colorScheme = "catppuccin-mocha";
-  # enabledExtensions = with spicePkgs.extensions; [ ]; # TODO: add Full App Display, Keyboard Shortcut, Loopy loop, Pop-up lyrics
+  enabledExtensions = with spicePkgs.extensions; [
+    keyboardShortcut
+    popupLyrics
+    # Community Extensions
+    adblock
+  ]; # TODO: add Full App Display, Keyboard Shortcut, Loopy loop, Pop-up lyrics
 }

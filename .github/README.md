@@ -1,4 +1,4 @@
-###### *<div align=right><sub>Last nix update: march 9, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: march 12, 2024</sub></div>*
 
 <h1 align='center'>
   <img src='https://files.catbox.moe/i4twd5.png' width='115px' />
@@ -47,7 +47,6 @@
   <summary> <b>💻 Nixos</b>: configuration for all hosts.</summary>
   <br />
 
-  > [!TIP]
   > To switch host `cd` to `dots` directory and run `nix-switch <hostname>`.
 
   ---
@@ -59,7 +58,6 @@
     - [podman][host-shared-virt]: Containerization tool
     - [jetbrains mono][jetbrains-font]: Typeface Nerd Font
   ---
-
   - **Kaizen**: Fully riced configuration that I will continue to improve.</summary>
     - [Services][host-kaizen-services]: [Flatpak], Bluetooth Manager
     - [Hardware][host-kaizen]: Bluetooth, [OpenGL], [OpenTabDriver].
@@ -70,7 +68,6 @@
       - [libvirt] and [QEMU]
       - [Waydroid][waydroid]: Container-based android system.
   ---
-
   - **Minimo**: Lightweight configuration for the minimalist.</summary>
     - Window Manager: [dwm]
 
@@ -83,7 +80,6 @@
   <summary><b>🏠 Home</b>: Home configurations for users and hosts.</summary>
   <br />
 
-  > [!TIP]
   > To switch home by `cd` to `dots` directory and run `hm-switch`.
 
   ---

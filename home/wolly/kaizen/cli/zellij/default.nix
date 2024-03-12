@@ -1,4 +1,4 @@
-# NOTE: https://zellij.dev/documentation
+# DOCS: https://zellij.dev/documentation
 { pkgs, ... }: {
   programs.zellij.enable = true;
   xdg.configFile = {

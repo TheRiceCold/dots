@@ -1,12 +1,10 @@
 # TODO: Improve design.
-{ inputs, pkgs, ... }:
-{
+{ inputs, pkgs, ... }: {
+
   imports = [ inputs.hyprlock.homeManagerModules.default ];
   programs.hyprlock = {
     enable = true;
-    general = {
-
-    };
+    general = { };
     backgrounds = [
       {
         monitor = "";
@@ -24,15 +22,15 @@
       { # Password
         monitor = "";
         halign = "center";
-        valign = "center";
-        outline_thickness = 3;
+        valign = "bottom";
+        outline_thickness = 2;
         dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
         dots_spacing = 0.5; # Scale of dots' absolute size, 0.0 - 1.0
         dots_center = true;
-        hide_input = false;
+        hide_input = true;
         fade_on_empty = true;
-        position = { x = 0; y = -120; };
-        size = { width = 250; height = 50; };
+        position = { x = 0; y = 100; };
+        size = { width = 200; height = 40; };
         font_color = "rgb(200, 200, 200)";
         outer_color = "rgba(0, 0, 0, 0)";
         inner_color = "rgba(0, 0, 0, 0.5)";

@@ -91,8 +91,8 @@
       bind "Ctrl n" { NewTab; }
       bind "Alt n" { NewPane; }
 
-      bind "Alt h" { MoveFocusOrTab "Left"; }
-      bind "Alt l" { MoveFocusOrTab "Right"; }
+      bind "Alt Left" { MoveFocusOrTab "Left"; }
+      bind "Alt Right" { MoveFocusOrTab "Right"; }
 
       bind "Ctrl y" {
         LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm" {
@@ -106,6 +106,7 @@
 
           "new pane"                "alt + n"
           "new tab"                 "ctrl + n"
+          "go to tab index"         "alt + <index>"
           "rename tab"              "ctrl + t + c"
           "toggle fullscreen"       "ctrl + p + f"
           "toggle floating pane"    "ctrl + p + w"

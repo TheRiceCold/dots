@@ -18,6 +18,7 @@
     "maximize,class:^(krita)$"
     "maximize,class:^(blender)$"
     "maximize,class:^(Spotify)$"
+    "opacity 0.9, class:^(Spotify)$"
 
     "pin,title:^(Picture-in-Picture)$"
   ];
