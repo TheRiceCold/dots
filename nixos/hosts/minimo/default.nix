@@ -1,4 +1,4 @@
-{ pkgs, disk, stateVersion, ... }:
+{ disk, stateVersion, ... }:
 {
   imports = [ ./hardware-configuration.nix ];
 

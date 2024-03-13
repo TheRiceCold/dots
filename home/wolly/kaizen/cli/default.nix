@@ -4,6 +4,7 @@
   programs = {
     eza.enable = true;
     neomutt = {
+      # TODO: Setup this up
       enable = true;
       vimKeys = true;
     };

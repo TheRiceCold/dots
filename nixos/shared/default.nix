@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, stateVersion, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./nix.nix
     ./users.nix
@@ -14,7 +14,6 @@
       systemd-boot.enable = true; # Set to false if GRUB is enabled
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
   };
 
 

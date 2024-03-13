@@ -63,8 +63,8 @@
     - [Hardware][host-kaizen]: Bluetooth, [OpenGL], [OpenTabDriver].
     - [Programs][host-kaizen]:
       - [Droidcam][droidcam]: Turns phone camera into a webcam.
-      - [Hyprland][hyprland]: A highly customizable dynamic tiling wayland compositor.
       - [virt-manager][virt-man]: GUI tool for managing virtual machines via libvirt.
+      - [Hyprland][hyprland]: A highly customizable dynamic tiling wayland compositor.
     - [Virtualisation][host-kaizen]:
       - [libvirt] and [QEMU]
       - [Waydroid][waydroid]: Container-based android system.
