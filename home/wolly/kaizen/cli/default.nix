@@ -19,6 +19,7 @@
 
   home.packages = with pkgs; [
     fd        # simple and fast alternative to find
+    curlie    # Frontend to curl that adds ease of use of httpie
     ydotool
 
     # Just fun stuff

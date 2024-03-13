@@ -1,4 +1,4 @@
-###### *<div align=right><sub>Last nix update: march 12, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: march 13, 2024</sub></div>*
 
 <h1 align='center'>
   <img src='https://files.catbox.moe/i4twd5.png' width='115px' />
@@ -62,6 +62,7 @@
     - [Services][host-kaizen-services]: [Flatpak], Bluetooth Manager
     - [Hardware][host-kaizen]: Bluetooth, [OpenGL], [OpenTabDriver].
     - [Programs][host-kaizen]:
+      - [Droidcam][droidcam]: Turns phone camera into a webcam.
       - [Hyprland][hyprland]: A highly customizable dynamic tiling wayland compositor.
       - [virt-manager][virt-man]: GUI tool for managing virtual machines via libvirt.
     - [Virtualisation][host-kaizen]:
@@ -256,6 +257,7 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 [neovim]: https://neovim.io
 [flatpak]: https://flatpak.org
 [virt-man]: https://virt-manager.org
+[droidcam]: https://droidcam.app
 [OpenTabDriver]: https://opentabletdriver.net
 [yazi]: https://github.com/sxyazi/yazi
 [libvirt]: https://libvirt.org

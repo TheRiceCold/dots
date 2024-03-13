@@ -31,7 +31,9 @@ in {
     easyeffects # Equalizer
     pavucontrol # Audio/Volume control
 
+    # Development
     neovide     # Cool neovim GUI client
     godot_4     # Open source game engine
+    # postman     # API Development Environment
    ];
 }

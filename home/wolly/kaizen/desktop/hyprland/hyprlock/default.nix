@@ -18,6 +18,7 @@
         path = "${./images/yukopi.png}"; # only png supported for now
       }
     ];
+
     input-fields = [
       { # Password
         monitor = "";

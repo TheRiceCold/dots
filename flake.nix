@@ -17,6 +17,7 @@
 
     # Kaizen Inputs
     ags.url = "github:aylur/ags";
+    astal.url = "github:Aylur/astal";
     matugen.url = "github:iniox/matugen";
     hyprlock.url = "github:hyprwm/hyprlock";
     pyprland.url = "github:hyprland-community/pyprland";
