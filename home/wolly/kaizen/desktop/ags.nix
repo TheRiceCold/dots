@@ -1,11 +1,11 @@
 # TODO: Move to separate repo
 { inputs, pkgs, ... }:
 let
-  inherit (inputs) ags astal matugen;
+  inherit (inputs) ags matugen;
 in {
   imports = [
     ags.homeManagerModules.default
-    astal.homeManagerModules.default
+    # inputs.astal.homeManagerModules.default
   ];
 
   services.playerctld.enable = true;
@@ -22,12 +22,12 @@ in {
 
   programs = {
     cava.enable = true;
-    astal = {
-      enable = true;
-      extraPackages = with pkgs; [
-        libadwaita
-      ];
-    };
+    # astal = {
+    #   enable = true;
+    #   extraPackages = with pkgs; [
+    #     libadwaita
+    #   ];
+    # };
     ags = {
       enable = true;
       # configDir = conf.config;

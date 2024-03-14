@@ -155,10 +155,10 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 
 ## 💐 Acknowledgements
 
-- [Ruixi-rebirth/melted-flakes](Ruixi)
-- [Misterio77/nix-config](Misterio77)
-- [redyf/nixdots](redyf)
-- [aylur/dotfiles](redyf)
+- [Ruixi-rebirth/melted-flakes](Ruixi) - Inspired me to switch to NixOS
+- [Misterio77/nix-config](Misterio77)  - NixOS configuration
+- [aylur/dotfiles](aylur) - Desktop environment
+- [nawfalmrouyan/hyprland](newfalmrouyan) - Hyprland WM
 
 <!-- Flake Inputs -->
 [nixpkgs]: https://github.com/NixOS/nixpkgs/tree/nixpkgs-unstable
@@ -283,4 +283,5 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 <!-- Acknowledgements -->
 [ruixi]: https://github.com/Ruixi-rebirth/flakes
 [misterio77]: https://github.com/Misterio77/nix-config
-[redyf]: https://github.com/redyf/nixdots
+[aylur]: https://github.com/aylur/dotfiles
+[nawfalmrouyan]: https://github.com/nawfalmrouyan/hyprland

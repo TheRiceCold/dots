@@ -18,6 +18,9 @@ in {
   };
 
   home.packages = with pkgs; [
+    # Social
+    vesktop     # A custom Discord desktop app
+
     # Graphic Editors
     blender     # 3d graphics
     inkscape    # Vector graphics.

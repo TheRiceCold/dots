@@ -23,15 +23,18 @@ in {
 
     injectCss = true;
     replaceColors = true;
-    overwriteAssets = true;
     sidebarConfig = true;
+    overwriteAssets = true;
   };
 
   colorScheme = "catppuccin-mocha";
   enabledExtensions = with spicePkgs.extensions; [
-    keyboardShortcut
+    trashbin
+    loopyLoop
     popupLyrics
+    keyboardShortcut
     # Community Extensions
     adblock
-  ]; # TODO: add Full App Display, Keyboard Shortcut, Loopy loop, Pop-up lyrics
+    powerBar
+  ];
 }
