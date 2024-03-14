@@ -13,12 +13,12 @@ in
       (exec "Return" "[tile] ${term}")
 
       # INFO: ags' prefix is SUPER
-      (ags "m" "media")
-      (ags "d" "datemenu")
-      (ags "Tab" "overview")
-      (ags "F4" "powermenu")
-      (ags "Space" "launcher")
-      (ags "Period" "dropmenu")
+      (ags.media "m")
+      (ags.datemenu "d")
+      (ags.overview "Tab")
+      (ags.powermenu "F4")
+      (ags.launcher "Space")
+      (ags.dropmenu "Period")
 
       # INFO: run-app's prefix is SUPER_CTRL
       (run-app "v" audio-control)
@@ -33,7 +33,7 @@ in
       "SUPER_SHIFT, q, exit"
     ];
 
-    bindr = with apps; [
+    bindr = [
       "SUPER, r, exec, ags -q; ags" # Reset Ags
     ];
 

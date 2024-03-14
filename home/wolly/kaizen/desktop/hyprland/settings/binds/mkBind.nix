@@ -1,6 +1,5 @@
 {
   exec = key: cmd: "SUPER, ${key}, exec, ${cmd}";
-  ags = key: win: "SUPER, ${key}, exec, ags -t ${win}";
   run-app = key: cmd: "SUPER_CTRL, ${key}, exec, ${cmd}";
   toggle = key: name: "SUPER_CTRL, ${key}, exec, pypr toggle ${name}";
 
@@ -48,5 +47,18 @@
   in {
     up-value = bind "Up";
     down-value = bind "Down";
+  };
+
+  # WIDGET BINDINGS
+  ags = let
+    bind = key: win: "SUPER, ${key}, exec, ags -t ${win}";
+    menu = key: toggle: close: ''SUPER, ${key}, exec, ags -r "App.toggleWindow('${toggle}'); App.closeWindow('${close}')" '';
+  in {
+    media = key: bind key "media";
+    overview = key: bind key "overview";
+    launcher = key: bind key "launcher";
+    powermenu = key: bind key "powermenu";
+    datemenu = key: menu key "datemenu" "dropmenu";
+    dropmenu = key: menu key "dropmenu" "datemenu";
   };
 }

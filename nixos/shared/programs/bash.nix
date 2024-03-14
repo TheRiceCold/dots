@@ -8,6 +8,7 @@
     cp = "cp -riv";
     np = "nix profile";
     hm = "home-manager";
+    wttr = "http://wttr.in";
 
     docker-compose = "podman-compose";
     nix-update = "doas nix flake update";
