@@ -1,4 +1,4 @@
-###### *<div align=right><sub>Last nix update: march 14, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: march 15, 2024</sub></div>*
 
 <h1 align='center'>
   <img src='https://files.catbox.moe/i4twd5.png' width='115px' />
@@ -25,7 +25,7 @@
 
 ## ✈️  Overview
 
-#### ▶️  Showcase
+#### ▶️  Showcase (WIP)
 
 #### 📝 Inputs
 - [Nix Packages][nixpkgs]: Collection of Nix Packages.
@@ -105,6 +105,7 @@
         - [sioyek][sioyek]: PDF Viewer.
         - [neovide][neovide]: Neovim GUI client.
         - [spicetify][spicetify]: Customized spotify.
+        - [vesktop][vesktop]: Custom discord app.
         - [ncmpcpp][ncmpcpp]: MPD client music player.
         - [vscodium] (disabled): Less bloat vscode.
         - Other: [easyeffects], [krita], [blender], [inkscape], [libresprite] and [godot]
@@ -128,7 +129,7 @@
 </details>
 <br />
 
-## 🍳 How to cook (install)
+## 🍳 How to cook (Installation)
 
 #### Initial Steps
 - Download [NixOS minimal installation](https://nixos.org/download) ISO.
@@ -139,11 +140,11 @@
 #### Commands you should know
 - Rebuild and switch to change the system configuration
 ```
-nix-switch 'thinkpad'
+nix-switch kaizen
 ```
 OR
 ```
-doas nixos-rebuild switch --flake .#thinkpad
+doas nixos-rebuild switch --flake .#minimo
 ```
 - Connect to internet (Change what's inside the brackets with your info).
 ```
@@ -250,6 +251,7 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 [kaivim]: https://github.com/thericecold/kaivim
 [nixvim]: https://github.com/nix-community/nixvim
 [spicetify]: https://github.com/spicetify/spicetify-cli
+[vesktop]: https://github.com/Vencord/Vesktop
 [inkscape]: https://github.com/inkscape/inkscape
 [jetbrains-font]: https://www.jetbrains.com/lp/mono
 [neomutt]: https://neomutt.org
