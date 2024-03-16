@@ -8,8 +8,7 @@ in {
     foot = import ./foot.nix;
     sioyek = import ./sioyek.nix;
     spicetify = import ./spicetify.nix pkgs spicetify-nix;
-
-    ncmpcpp.enable = true;
+    # ncmpcpp.enable = true; # I only listen to spotify or youtube
     mpv = {
       enable = true;
       config.gpu-context = "wayland";
@@ -27,7 +26,7 @@ in {
     libresprite # Pixel art tool.
     krita       # Raster graphics, mostly used this for digital art/drawing
 
-    # Other Stuff
+    # Windows Stuff
     # wine-staging
     # bottles-unwrapped
 

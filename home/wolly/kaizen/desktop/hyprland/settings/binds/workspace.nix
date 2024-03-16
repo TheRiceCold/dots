@@ -1,7 +1,7 @@
 let
   inherit (import ./mkBind.nix) window;
 
-  arr = [1 2 3 4 5 6 7 8 9];
+  arr = [1 2 3 4 5]; # Number of workspaces
   bind = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
   workspace = bind "SUPER" "workspace";
   mvtows =  bind "SUPERSHIFT" "movetoworkspacesilent";

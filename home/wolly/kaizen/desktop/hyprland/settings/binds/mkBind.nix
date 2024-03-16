@@ -51,14 +51,16 @@
 
   # WIDGET BINDINGS
   ags = let
-    bind = key: win: "SUPER, ${key}, exec, ags -t ${win}";
-    menu = key: toggle: close: ''SUPER, ${key}, exec, ags -r "App.toggleWindow('${toggle}'); App.closeWindow('${close}')" '';
+    bind = exec: key: "SUPER, ${key}, exec, ${exec}";
+    toggle = win: bind "ags -t ${win}";
+    js = run: bind '' ags -r "${run}" '';
+    menu = toggle: close: (js "App.toggleWindow('${toggle}'); App.closeWindow('${close}');");
   in {
-    media = key: bind key "media";
-    overview = key: bind key "overview";
-    launcher = key: bind key "launcher";
-    powermenu = key: bind key "powermenu";
-    datemenu = key: menu key "datemenu" "dropmenu";
-    dropmenu = key: menu key "dropmenu" "datemenu";
+    overview = toggle "overview";
+    launcher = toggle "launcher";
+    powermenu = toggle "powermenu";
+    datemenu = menu "datemenu" "dropmenu";
+    dropmenu = menu "dropmenu" "datemenu";
+    media = js "openMedia.value = !openMedia.value;";
   };
 }

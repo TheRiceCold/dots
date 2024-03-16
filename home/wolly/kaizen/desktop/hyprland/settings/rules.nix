@@ -17,6 +17,7 @@
 
     "maximize,class:^(krita)$"
     "maximize,class:^(blender)$"
+    "maximize,class:^(vesktop)$"
     "maximize,class:^(Spotify)$"
     "opacity 0.9, class:^(Spotify)$"
 

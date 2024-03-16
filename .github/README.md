@@ -1,4 +1,4 @@
-###### *<div align=right><sub>Last nix update: march 15, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: march 16, 2024</sub></div>*
 
 <h1 align='center'>
   <img src='https://files.catbox.moe/i4twd5.png' width='115px' />
@@ -89,7 +89,7 @@
     - [helix-kai]: Text editor.
     - [btop][home-shared-cli]: System resource monitor.
     - [zoxide][home-shared-shell]: Smarter cd command.
-    - [bat][home-shared-cli]: `cat` with syntax highlighting (catppuccin).
+    - [bat][home-shared-cli]: Syntax highlighting (catppuccin).
   ---
 
   - [**Kaizen**][home-kaizen]: Fully riced configuration that I will continue to improve.
@@ -99,7 +99,7 @@
       - [Zellij]: Terminal Multiplexer.
       - Other: [eza], [fastfetch], [onefetch]
     - [Desktop][home-kaizen-desktop]:
-      - [Apps][home-kaizen-apps]
+      - [Apps][home-kaizen-apps]:
         - [foot][foot]: Terminal.
         - [mpv][mpv]: Media player.
         - [sioyek][sioyek]: PDF Viewer.
@@ -114,8 +114,8 @@
           - [magnify][pypr-magnify]: Toggle magnification (zoom).
           - [scratchpads][pypr-scratch]: Dropdown scratchpads.
         - [Hyprlock][hyprlock-config]: Lockscreen
-      - [Theme][home-kaizen-desktop]
-        - Widgets: [Ags][ags-config]
+      - [Theme][home-kaizen-desktop]:
+        - Widgets: [kaizen-widgets][ags-config]
         - Icon: [Papirus-Dark][papirus-icon]
         - Font: Ubuntu Nerd Font
         - Cursor: [Bibata-Modern-Ice]
@@ -195,7 +195,7 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 [home-kaizen-apps]: ../home/wolly/kaizen/dekstop/apps/default.nix
 
 <!-- Hyprland Configurations -->
-[hyprland-config]: ../home/wolly/kaizen/desktop/hyprland/default.nix
+[hyprland-config]: ../home/wolly/kaizen/desktop/hyprland
 [hyprlock-config]: ../home/wolly/kaizen/desktop/hyprland/hyprlock/default.nix
 [pypr-config]: ../home/wolly/kaizen/desktop/hyprland/pypr/default.nix
 [pypr-magnify]: https://github.com/hyprland-community/pyprland/wiki/magnify
@@ -226,9 +226,8 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 <!-- Desktop Packages -->
 [pyprland]: ../home/wolly/kaizen/desktop/hyprland/pypr
 [hyprland-config]: ../home/wolly/kaizen/desktop/hyprland
-[hyprlock]: ../home/wolly/kaizen/desktop/hyprland/hyprlock
-[ags-config]: https://github.com/TheRiceCode/ags-config
 [home-minimo]: ../home/wolly/minimo/default.nix
+[kaizen-widgets]: https://github.com/TheRiceCode/kaizen-widgets
 
 
 <!-- Apps -->
