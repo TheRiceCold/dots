@@ -6,13 +6,17 @@
   # WINDOW BINDINGS
   window = let
     bind = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
+    bind-exec = exec: key: "${key},${exec}";
   in {
-    pin = key: "${key}, pin";
-    kill = key: "${key}, killactive";
-    float = key: "${key}, togglefloating";
-    maximized = key: "${key}, fullscreen, 1";
-    fullscreen = key: "${key}, fullscreen, 0";
-    fakefullscreen = key: "${key}, fakefullscreen";
+    pin = bind-exec "pin";
+    kill = bind-exec "killactive";
+    float = bind-exec "togglefloating";
+    maximized = bind-exec "fullscreen, 1";
+    fullscreen = bind-exec "fullscreen, 0";
+    fakefullscreen =  bind-exec "fakefullscreen";
+    center_layout = bind-exec "exec, pypr layout_center toggle";
+    center_layout_up = bind-exec "exec, pypr layout_center prev2";
+    center_layout_down = bind-exec "exec, pypr layout_center next2";
 
     focus = bind "SUPER" "movefocus";
     move = bind "SUPER_ALT" "moveactive";
@@ -34,7 +38,7 @@
 
   # INDICATOR BINDINGS
   volume = let
-    cmd = val: "wpctl set-volume @DEFAULT_AUDIO_SINK@ ${val}";
+    cmd = val: "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ ${val}";
     bind = key: val: ",XF86Audio${key}Volume, exec, ${cmd val}";
   in {
     up-value = val: bind "Raise" "${val}%+";
@@ -56,11 +60,11 @@
     js = run: bind '' ags -r "${run}" '';
     menu = toggle: close: (js "App.toggleWindow('${toggle}'); App.closeWindow('${close}');");
   in {
+    media = js "toggleMedia();";
     overview = toggle "overview";
     launcher = toggle "launcher";
     powermenu = toggle "powermenu";
     datemenu = menu "datemenu" "dropmenu";
     dropmenu = menu "dropmenu" "datemenu";
-    media = js "openMedia.value = !openMedia.value;";
   };
 }

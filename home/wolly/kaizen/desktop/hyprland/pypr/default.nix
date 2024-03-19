@@ -5,13 +5,13 @@ let
   configFile = with apps; /* toml */ ''
 
     [pyprland]
-    plugins = [ "scratchpads", "magnify" ]
+    plugins = [ "scratchpads", "magnify", "layout_center" ]
 
     [scratchpads.term]
     lazy = false
-    size = "40% 40%" # width height
-    animation = "fromTop"
+    size = "38% 40%" # width height
     command = "${term}"
+    animation = "fromBottom"
 
   '';
 in {

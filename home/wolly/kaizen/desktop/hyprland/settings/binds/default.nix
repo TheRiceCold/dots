@@ -7,12 +7,13 @@ in
   imports = [ ./workspace.nix ];
 
   wayland.windowManager.hyprland.settings = {
-    bind = with apps; with mkBind; [
+    bind = with apps; with mkBind; with media; [
       # INFO: exec's prefix is SUPER
       (exec "Equal" "pypr zoom")
       (exec "Return" "[tile] ${term}")
 
       # INFO: ags' prefix is SUPER
+      "SUPER, r, exec, ags -q; ags" # Reset Ags
       (ags.media "m")
       (ags.datemenu "d")
       (ags.overview "Tab")
@@ -31,10 +32,9 @@ in
       (toggle "Escape" "system")
 
       "SUPER_SHIFT, q, exit"
-    ];
 
-    bindr = [
-      "SUPER, r, exec, ags -q; ags" # Reset Ags
+      # INFO: media binds
+      mute play prev next
     ];
 
     binde = with mkBind; [
@@ -44,7 +44,5 @@ in
       (volume.up-value "5")
       (volume.down-value "5")
     ];
-
-    bindl = with mkBind.media; [ mute play prev next ];
   };
 }
