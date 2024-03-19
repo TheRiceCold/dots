@@ -16,9 +16,12 @@ in {
     };
   };
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs; with gnome; [
     # Social
     vesktop     # A custom Discord desktop app
+
+    # Gnome Apps
+    nautilus
 
     # Graphic Editors
     blender     # 3d graphics

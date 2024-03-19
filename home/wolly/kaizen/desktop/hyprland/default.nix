@@ -1,22 +1,22 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
 
   imports = [ ./settings ./pypr ./hyprlock ];
   home = {
     sessionVariables = import ./variables.nix;
     packages = with pkgs; [
+      mpvpaper        # Video wallpaper
       swww            # Animated wallpaper Daemon
       slurp           # Region Selector
       hyprpicker      # Color Picker
-      wl-screenrec    # Screen recorder
+      wl-screenrec    # Screen Recorder
       wl-clipboard    # Clipboard Utility
 
+      grim            # Grab Images
       swayimg         # Image Viewer
-      grimblast       # Grab Images
       swappy          # Snapshot Editing Tool
+      gromit-mpx      # Desktop Annotation Tool
 
-      # NOTE: For consideration
-      # wl-mirror
-      # wl-mirror-pick
+      wl-mirror       # TODO: Learn to use
 
       # Might be useful but, I don't need it.
       # cliphist        # Clipboard Manager

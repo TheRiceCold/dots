@@ -1,26 +1,26 @@
 {
   layer = [ ];
+
   window = [ "fakefullscreen, firefox" ];
-  window2 = let
-    small-windows = [
-      "Save As"
-      "Library"
-      "Open File"
-      "Open Folder"
-      "Select a File"
-      "Picture-in-Picture"
-    ];
-  in [
-    "float,class:.*"
+
+  window2 = [
+    "float, class:.*"
+    "pin, title:^(Picture-in-Picture)$"
 
     "tile,class:^(firefox)$"
-
     "maximize,class:^(krita)$"
     "maximize,class:^(blender)$"
     "maximize,class:^(vesktop)$"
     "maximize,class:^(Spotify)$"
-    "opacity 0.9, class:^(Spotify)$"
 
-    "pin,title:^(Picture-in-Picture)$"
+    # "workspace 1, class:^(foot)$"
+    "workspace 2,class:^(firefox)$"
+    "workspace 3,class:^(Spotify)$"
+    "workspace 4,class:^(vesktop)$"
+
+    "opacity 0.9,class:^(firefox)$"
+    "opacity 0.9,class:^(Spotify)$"
+
+    "noblur, class:^(Gromit-mpx)$"
   ];
 }

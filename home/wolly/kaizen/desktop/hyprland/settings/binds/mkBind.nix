@@ -14,9 +14,10 @@
     maximized = bind-exec "fullscreen, 1";
     fullscreen = bind-exec "fullscreen, 0";
     fakefullscreen =  bind-exec "fakefullscreen";
+
     center_layout = bind-exec "exec, pypr layout_center toggle";
-    center_layout_up = bind-exec "exec, pypr layout_center prev2";
-    center_layout_down = bind-exec "exec, pypr layout_center next2";
+    center_layout_up = bind-exec "exec, pypr layout_center prev";
+    center_layout_down = bind-exec "exec, pypr layout_center next";
 
     focus = bind "SUPER" "movefocus";
     move = bind "SUPER_ALT" "moveactive";

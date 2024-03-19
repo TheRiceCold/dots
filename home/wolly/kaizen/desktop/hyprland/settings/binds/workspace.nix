@@ -22,9 +22,9 @@ in {
       (fullscreen "SUPERSHIFT, f")
       (fakefullscreen "SUPERALT, f")
 
-      (center_layout "ALT, c")
-      (center_layout_down "ALT, j")
-      (center_layout_up "ALT, k")
+      (center_layout "SUPER, c")
+      (center_layout_up "CTRL, k")
+      (center_layout_down "CTRL, j")
 
       (focus "k" "u")
       (focus "j" "d")
