@@ -1,17 +1,22 @@
 {
   layer = [ ];
 
-  window = [ "fakefullscreen, firefox" ];
+  window = [
+    "noblur, Gromit-mpx"
+    "fakefullscreen, firefox"
+    "float, title:^(Firefox — Sharing Indicator)$"
+  ];
 
   window2 = [
     "float, class:.*"
-    "pin, title:^(Picture-in-Picture)$"
 
-    "tile,class:^(firefox)$"
     "maximize,class:^(krita)$"
     "maximize,class:^(blender)$"
     "maximize,class:^(vesktop)$"
     "maximize,class:^(Spotify)$"
+
+    "maxsize 1000 1000, class:(firefox)"
+    "float, class:^(firefox)$, title:^(Picture-in-Picture)$"
 
     # "workspace 1, class:^(foot)$"
     "workspace 2,class:^(firefox)$"
@@ -20,7 +25,5 @@
 
     "opacity 0.9,class:^(firefox)$"
     "opacity 0.9,class:^(Spotify)$"
-
-    "noblur, class:^(Gromit-mpx)$"
   ];
 }

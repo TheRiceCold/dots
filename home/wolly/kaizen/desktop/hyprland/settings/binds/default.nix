@@ -13,7 +13,7 @@ in
       (exec "Return" "[tile] ${term}")
 
       # INFO: ags' prefix is SUPER
-      "SUPER, r, exec, ags -q; ags" # Reset Ags
+      "SUPER, r, exec, pkill ags; ags" # Reset Ags
       (ags.media "m")
       (ags.datemenu "d")
       (ags.overview "Tab")

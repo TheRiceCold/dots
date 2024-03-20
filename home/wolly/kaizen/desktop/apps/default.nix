@@ -5,7 +5,7 @@ in {
   imports = [ spicetify-nix.homeManagerModule ];
 
   programs = {
-    foot = import ./foot.nix;
+    foot = import ./foot.nix pkgs;
     sioyek = import ./sioyek.nix;
     spicetify = import ./spicetify.nix pkgs spicetify-nix;
     # ncmpcpp.enable = true; # I only listen to spotify or youtube
@@ -24,21 +24,22 @@ in {
     nautilus
 
     # Graphic Editors
-    blender     # 3d graphics
-    inkscape    # Vector graphics.
-    libresprite # Pixel art tool.
-    krita       # Raster graphics, mostly used this for digital art/drawing
+    blender         # 3d graphics
+    inkscape        # Vector graphics.
+    libresprite     # Pixel art tool.
+    krita           # Raster graphics, mostly used this for digital art/drawing
 
     # Windows Stuff
     # wine-staging
     # bottles-unwrapped
 
-    easyeffects # Equalizer
-    pavucontrol # Audio/Volume control
+    easyeffects     # Equalizer
+    pavucontrol     # Audio/Volume control
 
     # Development
-    neovide     # Cool neovim GUI client
-    godot_4     # Open source game engine
-    # postman     # API Development Environment
+    neovide         # Cool neovim GUI client
+    godot_4         # Open source game engine
+    warp-terminal
+    # postman         # API Development Environment
    ];
 }

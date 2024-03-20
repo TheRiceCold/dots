@@ -31,21 +31,24 @@ in {
       (focus "l" "r")
       (focus "h" "l")
 
+      (swap "k" "u")
+      (swap "j" "d")
+      (swap "l" "r")
+      (swap "h" "l")
+    ] ++ (map (i: mvtows (toString i) (toString i)) arr)
+    ++ (map (i: workspace (toString i) (toString i)) arr);
+
+    binde = with window; [
       (move "k" "0 -30")
       (move "j" "0 30")
       (move "l" "30 0")
       (move "h" "-30 0")
 
-      (swap "k" "u")
-      (swap "j" "d")
-      (swap "l" "r")
-      (swap "h" "l")
-
       (resize "k" "0 -20")
       (resize "j" "0 20")
       (resize "l" "20 0")
       (resize "h" "-20 0")
-    ] ++ (map (i: mvtows (toString i) (toString i)) arr)
-    ++ (map (i: workspace (toString i) (toString i)) arr);
+    ];
   };
+
 }

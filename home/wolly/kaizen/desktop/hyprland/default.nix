@@ -4,22 +4,15 @@
   home = {
     sessionVariables = import ./variables.nix;
     packages = with pkgs; [
-      mpvpaper        # Video wallpaper
-      swww            # Animated wallpaper Daemon
-      slurp           # Region Selector
-      hyprpicker      # Color Picker
-      wl-screenrec    # Screen Recorder
-      wl-clipboard    # Clipboard Utility
-
-      grim            # Grab Images
-      swayimg         # Image Viewer
-      swappy          # Snapshot Editing Tool
-      gromit-mpx      # Desktop Annotation Tool
-
-      wl-mirror       # TODO: Learn to use
+      wtype             # Input simulator
+      mpvpaper          # Video wallpaper
 
       # Might be useful but, I don't need it.
       # cliphist        # Clipboard Manager
+
+      # TODO: Learn to use, and install hyprshade
+      wl-mirror
+      wl-gammarelay-rs
     ];
   };
 }

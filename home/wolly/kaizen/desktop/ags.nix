@@ -1,4 +1,4 @@
-# TODO: Move to separate repo
+# TODO: Move to a kaizen-widgets repo
 { inputs, pkgs, ... }:
 let
   inherit (inputs) ags matugen;
@@ -16,6 +16,16 @@ in {
     libnotify
     playerctl
     brightnessctl
+
+    swww            # Animated wallpaper Daemon
+    hyprpicker      # Color Picker
+    wl-clipboard    # Clipboard Utility
+    swayimg         # Image Viewer
+    swappy          # Snapshot Editing Tool
+    gromit-mpx      # Desktop Annotation Tool
+    slurp           # Region Selector
+    grim            # Grab Images
+    wl-screenrec    # Screen Recorder
 
     matugen.packages.${pkgs.system}.default
   ];

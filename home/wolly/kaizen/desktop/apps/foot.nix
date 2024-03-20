@@ -1,5 +1,6 @@
-{
+pkgs: {
   enable = true;
+  package = pkgs.foot;
   server.enable = true;
   settings = {
     main = {

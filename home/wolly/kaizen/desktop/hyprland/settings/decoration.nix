@@ -1,4 +1,5 @@
-{ # INFO: borders, gaps, rounding, and colors are handled in my ags configuration
+{
+  # INFO: borders, gaps, rounding, and colors are handled in my ags configuration
   blur = {
     enabled = true;
     size = 8;
