@@ -36,6 +36,6 @@ in {
 
     # search-bindings = { };
 
-    colors = colors.rose-pine;
+    colors = colors.poimandres;
   };
 }

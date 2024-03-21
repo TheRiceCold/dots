@@ -1,17 +1,17 @@
 /* kdl */ ''
+  theme "poimandres"
+
   themes {
-    rose-pine {
-      fg "#e0def4"
-      bg "#191724"
+    poimandres {
+      fg "#E4F0FB"
+      bg "#171922"
       black "#26233a"
-      red "#eb6f92"
-      // green "#31748f"
-      green "#eb6f92"   // float border color
-      yellow "#f1be78"
-      blue "#9ccfd8"
-      // magenta "#c4a7e7"
-      magenta "#eb6f92" // session manager shortcut key color
-      cyan "#9ccfd8"
+      red "#D0679D"
+      green "#5DE4C7"
+      yellow "#FFFAC2"
+      blue "#89DDFF"
+      magenta "#BC93FA"
+      cyan "#ADD7FF"
       white "#e0def4"
       orange "#f1be78"
     }

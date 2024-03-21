@@ -1,24 +1,24 @@
 pkgs: spicetify-nix:
 let
   spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
-  themes = pkgs.fetchgit {
-    rev = "72488a0c245cde37a52dcf10da0a624eb279bb53";
-    url = "https://github.com/spicetify/spicetify-themes";
-    sha256 = "3DI0K+En3vIliIAUpa92orBs66z7XJJR+4WCcdPMaKo=";
+  themes = pkgs.fetchFromGitHub {
+    owner = "TheRiceCold";
+    repo = "spicetify-themes";
+    rev = "0764939d69bc5fda361ed846dd15b8a638060daa";
+    hash = "sha256-WAycs47qKJeJkfclwV9IX7FwDGa9mYfvjlvVM/yPwu8=";
   };
 in {
   enable = true;
   theme = {
     src = themes;
     name = "Sleek";
-
     injectCss = true;
     replaceColors = true;
     sidebarConfig = true;
     overwriteAssets = true;
   };
+  colorScheme = "poimandres";
 
-  colorScheme = "cherry";
   enabledExtensions = with spicePkgs.extensions; [
     trashbin
     loopyLoop

@@ -1,5 +1,4 @@
 /* kdl */ ''
-  theme "rose-pine"
   ${import ./themes.nix}
 
   keybinds clear-defaults=true {

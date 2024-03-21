@@ -1,6 +1,6 @@
 let
-  fg = "#eb6f92";
-  active = "#e0def4";
+  fg = "#5DE4C7";
+  active = "#E4F0FB";
 in /* kdl */ ''
   layout {
     default_tab_template {
