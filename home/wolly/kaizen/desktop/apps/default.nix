@@ -5,7 +5,7 @@ in {
   imports = [ spicetify-nix.homeManagerModule ];
 
   programs = {
-    foot = import ./foot.nix pkgs;
+    foot = import ./foot pkgs;
     sioyek = import ./sioyek.nix;
     spicetify = import ./spicetify.nix pkgs spicetify-nix;
     # ncmpcpp.enable = true; # I only listen to spotify or youtube

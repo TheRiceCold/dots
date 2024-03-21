@@ -9,17 +9,8 @@ let
 in {
   enable = true;
   theme = {
-    name = "Dribbblish";
     src = themes;
-    requiredExtensions = [
-      # define extensions that will be installed with this theme
-      {
-        # extension is "${src}/Dribbblish/dribbblish.js"
-        filename = "theme.js";
-        src = "${themes}/Dribbblish";
-      }
-    ];
-    appendName = true; # theme is located at "${src}/Dribbblish" not just "${src}"
+    name = "Sleek";
 
     injectCss = true;
     replaceColors = true;
@@ -27,7 +18,7 @@ in {
     overwriteAssets = true;
   };
 
-  colorScheme = "catppuccin-mocha";
+  colorScheme = "cherry";
   enabledExtensions = with spicePkgs.extensions; [
     trashbin
     loopyLoop

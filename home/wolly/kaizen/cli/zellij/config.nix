@@ -1,6 +1,6 @@
 /* kdl */ ''
-  theme "catppuccin-mocha"
-  themes { }
+  theme "rose-pine"
+  ${import ./themes.nix}
 
   keybinds clear-defaults=true {
     normal { }

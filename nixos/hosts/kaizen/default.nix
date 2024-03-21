@@ -19,6 +19,7 @@
 
   programs = {
     droidcam.enable = true;
+    # wshowkeys.enable = true;
     virt-manager.enable = true;
     hyprland = {
       enable = true;
