@@ -4,7 +4,7 @@
   programs = {
     eza.enable = true;
     neomutt = {
-      # TODO: Setup this up
+      # TODO: Set this up
       enable = true;
       vimKeys = true;
     };
@@ -24,6 +24,7 @@
 
     # Just fun stuff
     pipes-rs  # Animated pipes
+    krabby    # Print pokemon sprites
     slides    # Terminal based presentation tool # TODO: Learn this
     lsix      # Shows thumbnails in terminal using sixel
 

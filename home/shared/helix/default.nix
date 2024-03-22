@@ -8,7 +8,7 @@
     languages = import ./languages.nix pkgs;
 
     settings = {
-      theme = "catppuccin_mocha";
+      theme = "poimandres";
       keys = import ./keys.nix;
       editor = import ./editor.nix;
     };

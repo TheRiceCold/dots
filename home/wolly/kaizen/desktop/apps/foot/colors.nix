@@ -43,6 +43,7 @@
   };
 
   poimandres = {
+    alpha = 0.85;
     foreground = "a6accd";  #a6accd
     background = "1b1e28";  #1b1e28
 
