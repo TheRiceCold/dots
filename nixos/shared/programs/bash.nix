@@ -16,9 +16,12 @@
   };
 
   interactiveShellInit = /* bash */ ''
-
     hm-switch() {
       git add . ; home-manager switch --flake .
+    }
+
+    nix-update() {
+      doas nix flake update
     }
 
     nix-clean() {
@@ -33,5 +36,8 @@
       nix-clean; nix-switch $1
     }
 
+    nix-update-switch() {
+      nix-update; nix-clean-switch $1;
+    }
   '';
 }
