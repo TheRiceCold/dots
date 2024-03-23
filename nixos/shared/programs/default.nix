@@ -28,7 +28,6 @@
       nix-direnv.enable = true;
     };
 
-    thefuck.enable = true;
     less.enable = lib.mkDefault false; # I'd rather use bat
 
     bash = import ./bash.nix;
