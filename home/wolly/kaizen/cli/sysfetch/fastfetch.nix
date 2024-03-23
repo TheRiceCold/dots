@@ -1,7 +1,7 @@
 # DOCS: https://github.com/fastfetch-cli/fastfetch/wiki
 { lib, pkgs, ... }:
 let
-  module = type: key: color: ''{ "type": "${type}", "key": "${key}", keyColor: "${color}" }'';
+  module = type: key: color: ''{ "type": "${type}", "key": "${key}", "keyColor": "${color}" }'';
   config = /* jsonc */ '' {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 
@@ -28,7 +28,7 @@ let
       ${module "shell" "╭─" "green" },
       ${module "wm"    "├─" "green" },
       ${module "font"  "╰─" "green" },
-      "break"
+      "break",
 
       {
         "type": "title",
@@ -39,7 +39,7 @@ let
 
       ${module "os"       "├─" "green" },
       ${module "packages" "├─" "green" },
-      ${module "uptime"   "╰─󱎫" "green" },
+      ${module "uptime"   "╰─󱎫" "green" }
     ]
   } '';
 in {

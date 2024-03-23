@@ -4,30 +4,29 @@
   config = {
     startup_commands = "toggle_custom_color";
 
-    # === CATPPUCCIN MOCHA === #
-    background_color = "#1e1e2e";
-    text_highlight_color = "#f9e2af";
-    visual_mark_color = "#7f849c";
+    # === Poimandres === #
+    background_color = "#1b1e28";
+    text_highlight_color = "#fffac2";
+    visual_mark_color = "#add7ff";
 
-    search_highlight_color = "#f9e2af";
-    link_highlight_color = "#89b4fa";
-    synctex_highlight_color = "#a6e3a1";
+    search_highlight_color = "#fffac2";
+    link_highlight_color = "#89ddff";
+    synctex_highlight_color = "#5de4c7";
 
-    highlight_color_a = "#f9e2af";
-    highlight_color_b = "#a6e3a1";
-    highlight_color_c = "#89dceb";
+    highlight_color_a = "#fffac2";
+    highlight_color_b = "#5de4c7";
+    highlight_color_c = "#89ddff";
     highlight_color_d = "#eba0ac";
-    highlight_color_e = "#cba6f7";
-    highlight_color_f = "#f38ba8";
-    highlight_color_g = "#f9e2af";
+    highlight_color_e = "#fcc5e9";
+    highlight_color_f = "#d0679d";
+    highlight_color_g = "#fffac2";
 
+    custom_background_color = "#1b1e28";
+    custom_text_color = "#a6accd";
 
-    custom_background_color = "#1e1e2e";
-    custom_text_color = "#cdd6f4";
-
-    ui_text_color = "#cdd6f4";
+    ui_text_color = "#a6accd";
     ui_background_color = "#313244";
-    ui_selected_text_color = "#cdd6f4";
-    ui_selected_background_color = "#585b70";
+    ui_selected_text_color = "#a6accd";
+    ui_selected_background_color = "#28344a";
   };
 }

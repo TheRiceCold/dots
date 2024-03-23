@@ -1,12 +1,8 @@
-{ pkgs, ... }:
-let
-  theme = "Catppuccin-Mocha-Compact-Lavender-Dark";
-in {
+{ pkgs, ... }: {
   imports = [ ./hyprland ./apps ./ags.nix ];
 
   home = {
     sessionVariables = {
-      GTK_THEME = theme;
       GTK_USE_PORTAL = "1";
     };
     pointerCursor = {
@@ -25,16 +21,6 @@ in {
       package = pkgs.catppuccin-papirus-folders.override {
         flavor = "mocha";
         accent = "lavender";
-      };
-    };
-
-    theme = {
-      name = theme;
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "lavender" ];
-        tweaks = [ "rimless" ];
-        size = "compact";
-        variant = "mocha";
       };
     };
   };
