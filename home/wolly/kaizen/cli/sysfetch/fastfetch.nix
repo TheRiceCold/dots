@@ -1,5 +1,5 @@
 # DOCS: https://github.com/fastfetch-cli/fastfetch/wiki
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 let
   module = type: key: color: ''{ "type": "${type}", "key": "${key}", "keyColor": "${color}" }'';
   config = /* jsonc */ '' {
@@ -8,7 +8,7 @@ let
     "logo": {
       // NOTE: idk why but it can't render png
       "type": "sixel",
-      "source": "${./images/ibu.jpeg}",
+      "source": "${../../../../../assets/ibu.jpeg}",
     },
 
     "display": { "separator": " " },

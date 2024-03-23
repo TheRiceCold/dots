@@ -1,4 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: let
+  theme = {
+    name = "Matcha-dark-sea";
+    package = pkgs.matcha-gtk-theme;
+  };
+in {
   imports = [ ./hyprland ./apps ./ags.nix ];
 
   home = {
@@ -11,10 +16,12 @@
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
     };
+    file.".local/share/themes".source = "${theme.package}/share/themes";
   };
 
   gtk = {
     enable = true;
+    theme.name = theme.name;
     font.name = "Ubuntu Nerd Font";
     iconTheme = {
       name = "Papirus-Dark";

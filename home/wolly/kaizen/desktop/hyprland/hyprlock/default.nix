@@ -1,10 +1,12 @@
 # TODO: Improve design.
-{ inputs, pkgs, ... }: {
+{ inputs, ... }: {
 
   imports = [ inputs.hyprlock.homeManagerModules.default ];
   programs.hyprlock = {
     enable = true;
-    general = { };
+    general = { 
+      hide_cursor = true;
+    };
     backgrounds = [
       {
         monitor = "";
@@ -15,9 +17,18 @@
         brightness = 0.8000;
         vibrancy = 0.2100;
         vibrancy_darkness = 0.0;
-        path = "${./images/yukopi.png}"; # only png supported for now
+        path = "${../../../../../../assets/poimandres.png}"; # only png supported for now
       }
     ];
+
+    images = [ {
+      size = 300;
+      rounding = -1;
+      halign = "center";
+      valign = "center";
+      position = { x = 0; y = -4; };
+      path = "${../../../../../../assets/ibu.png}"; # only png supported for now
+    } ];
 
     input-fields = [
       { # Password
@@ -28,14 +39,13 @@
         dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
         dots_spacing = 0.5; # Scale of dots' absolute size, 0.0 - 1.0
         dots_center = true;
-        hide_input = true;
         fade_on_empty = true;
-        position = { x = 0; y = 100; };
-        size = { width = 200; height = 40; };
-        font_color = "rgb(200, 200, 200)";
+        position = { x = 0; y = 225; };
+        font_color = "rgb(142, 149, 177)";
+        inner_color = "rgba(0, 0, 0, 0)";
         outer_color = "rgba(0, 0, 0, 0)";
-        inner_color = "rgba(0, 0, 0, 0.5)";
-        # font_family = "JetBrainsMono Nerd Font";
+        fail_color = "rgb(183, 105, 150)";
+        size = { width = 200; height = 40; };
         placeholder_text = ''<i>Password</i>'';
       }
     ];

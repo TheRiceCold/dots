@@ -1,22 +1,25 @@
 let
   font_family = "Ubuntu Nerd Font";
+  color = "rgb(142, 149, 177)";
 in [
   { # Date
     monitor = "";
+    font_size = 16;
     valign = "top";
     halign = "center";
-    font_size = 16;
     position = { x = 0; y = -100; };
-    text = ''cmd[update:5000] echo "<b>$(date +"%A, %d %B")</b>"'';
+    color = "rgba(211, 228, 228, 0.75)";
+    text = ''cmd[update:5000] echo "$(date +"%A, %d %B")"'';
     inherit font_family;
   }
   { # Time
     monitor = "";
+    font_size = 128;
     valign = "top";
     halign = "center";
-    font_size = 128;
     position = { x = 0; y = -100; };
-    text = ''cmd[update:1000] echo "<b>$(date +"%I:%M%p")</b>"'';
+    color = "rgba(211, 228, 228, 0.75)";
+    text = ''cmd[update:1000] echo "$(date +"%I:%M")"'';
     inherit font_family;
   }
 
@@ -24,19 +27,9 @@ in [
     monitor = "";
     font_size = 20;
     halign = "center";
-    valign = "bottom";
-    position = { x = 0; y = 150; };
-    text = "   $USER";
-    inherit font_family;
+    valign = "center";
+    text = "Hi, $USER";
+    position = { x = 0; y = -200; };
+    inherit font_family color;
   }
-
-  # { # Type to unlock
-  #   monitor = "";
-  #   font_size = 16;
-  #   halign = "center";
-  #   valign = "bottom";
-  #   position = { x = 0; y = 30; };
-  #   text = "Hey nerd, type to unlock";
-  #   inherit font_family;
-  # }
 ]
