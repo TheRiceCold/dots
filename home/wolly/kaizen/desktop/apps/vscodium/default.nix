@@ -1,4 +1,4 @@
-# INFO: I like vscodium but I still don't see myself using it.
+# I like vscodium but I still don't see myself using it over neovim.
 { pkgs, ... }: {
 
   imports = [ ./user-settings.nix ];

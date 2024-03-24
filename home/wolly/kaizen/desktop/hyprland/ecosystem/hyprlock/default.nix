@@ -1,4 +1,3 @@
-# TODO: Improve design.
 { inputs, ... }: {
 
   imports = [ inputs.hyprlock.homeManagerModules.default ];
@@ -17,7 +16,7 @@
         brightness = 0.8000;
         vibrancy = 0.2100;
         vibrancy_darkness = 0.0;
-        path = "${../../../../../../assets/poimandres.png}"; # only png supported for now
+        path = "${../../../../../../../assets/poimandres.png}"; # only png supported for now
       }
     ];
 
@@ -27,7 +26,7 @@
       halign = "center";
       valign = "center";
       position = { x = 0; y = -4; };
-      path = "${../../../../../../assets/ibu.png}"; # only png supported for now
+      path = "${../../../../../../../assets/ibu.png}"; # only png supported for now
     } ];
 
     input-fields = [

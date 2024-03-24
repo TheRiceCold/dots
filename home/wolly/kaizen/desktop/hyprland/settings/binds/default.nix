@@ -10,11 +10,11 @@ in
     bind = with apps; with mkBind; with media; [
       "SUPER_SHIFT, q, exit"
 
-      # INFO: exec's prefix is SUPER
+      # prefix is SUPER
       (exec "Equal" "pypr zoom")
       (exec "Return" "[tile] ${term}")
 
-      # INFO: ags' prefix is SUPER
+      # prefix is SUPER
       "SUPER, r, exec, pkill ags; ags" # Reset Ags
       (ags.media "p")
       (ags.datemenu "d")
@@ -24,17 +24,17 @@ in
       (ags.shortcuts "Slash")
       (ags.dropmenu "Period")
 
-      # INFO: run-app's prefix is SUPER_CTRL
+      # prefix is SUPER_CTRL
       (run-app "v" audio-control)
       (run-app "c" "${color-picker} -a")
       (run-app "b" "[workspace 2] ${browser} --browser-window")
 
-      # INFO: Pypr Scatchpads Toggle's prefix is SUPER_CTRL
+      # Pypr Scatchpads Toggle's prefix is SUPER_CTRL
       (toggle "t" "term")
       (toggle "e" "explorer")
       (toggle "Escape" "system")
 
-      # INFO: media binds
+      # media binds
       mute play prev next
     ];
 

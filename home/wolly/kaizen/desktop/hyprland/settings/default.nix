@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{
   imports = [ ./binds ];
 
   wayland.windowManager.hyprland = {
@@ -10,7 +10,7 @@
       rules = import ./rules.nix;
     in {
       monitor = [ ",preferred,auto,1" ];
-      exec = [ "ags" "pypr" "hypridle"  ];
+      exec = [ "ags" "pypr" "hypridle" "hyprshade auto" ];
 
       input = {
         kb_layout = "us";

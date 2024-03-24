@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
-  imports = [ ./settings ./pypr ./hyprlock ./hypridle.nix ];
+  imports = [ ./settings ./pypr ./ecosystem ];
   home = {
     sessionVariables = import ./variables.nix;
     packages = with pkgs; [
