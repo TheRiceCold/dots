@@ -27,6 +27,12 @@
 
 #### ▶️  Showcase (WIP)
 
+**Hyprlock**
+![image](https://github.com/TheRiceCold/ButterflyOS/main/assets/screenshots/lockscreen)
+
+**Neovim, zellij, pypr scratchpad terminal, and fastfetch**
+![image](https://github.com/TheRiceCold/ButterflyOS/main/assets/screenshots/neovim)
+
 #### 📝 Inputs
 - [Nix Packages][nixpkgs]: Collection of Nix Packages.
 - [Home Manager][home-manager]: User environment management using Nix package manager.
