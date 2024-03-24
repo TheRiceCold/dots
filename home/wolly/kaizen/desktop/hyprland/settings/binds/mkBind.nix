@@ -64,6 +64,7 @@
     media = js "toggleMedia();";
     overview = toggle "overview";
     launcher = toggle "launcher";
+    shortcuts = toggle "shortcuts";
     powermenu = toggle "powermenu";
     datemenu = menu "datemenu" "dropmenu";
     dropmenu = menu "dropmenu" "datemenu";

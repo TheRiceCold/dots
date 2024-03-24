@@ -9,12 +9,11 @@
 
   window2 = [
     "float, class:.*"
+    "tile,class:^(firefox)$"
 
-    "maximize,class:^(krita)$"
     "maximize,class:^(blender)$"
     "maximize,class:^(vesktop)$"
     "maximize,class:^(Spotify)$"
-    "maximize,class:^(firefox)$"
 
     "float, class:^(firefox)$, title:^(Picture-in-Picture)$"
 
@@ -25,6 +24,7 @@
     "workspace 5,class:^(Virt-manager)$"
 
     "opacity 0.9,class:^(firefox)$"
-    "opacity 0.9,class:^(Spotify)$"
+    "opacity 0.85,class:^(Spotify)$"
+    "opacity 0.85,class:^(pavucontrol)$"
   ];
 }

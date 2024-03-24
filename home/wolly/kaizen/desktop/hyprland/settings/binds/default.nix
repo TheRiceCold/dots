@@ -4,34 +4,35 @@ let
   apps = import ../../apps.nix pkgs;
 in
 {
-  imports = [ ./workspace.nix ];
+  imports = [ ./window.nix ];
 
   wayland.windowManager.hyprland.settings = {
     bind = with apps; with mkBind; with media; [
+      "SUPER_SHIFT, q, exit"
+
       # INFO: exec's prefix is SUPER
       (exec "Equal" "pypr zoom")
       (exec "Return" "[tile] ${term}")
 
       # INFO: ags' prefix is SUPER
       "SUPER, r, exec, pkill ags; ags" # Reset Ags
-      (ags.media "m")
+      (ags.media "p")
       (ags.datemenu "d")
       (ags.overview "Tab")
       (ags.powermenu "F4")
       (ags.launcher "Space")
+      (ags.shortcuts "Slash")
       (ags.dropmenu "Period")
 
       # INFO: run-app's prefix is SUPER_CTRL
       (run-app "v" audio-control)
       (run-app "c" "${color-picker} -a")
-      (run-app "b" "[workspace 2;maximize] ${browser} --browser-window")
+      (run-app "b" "[workspace 2] ${browser} --browser-window")
 
       # INFO: Pypr Scatchpads Toggle's prefix is SUPER_CTRL
       (toggle "t" "term")
       (toggle "e" "explorer")
       (toggle "Escape" "system")
-
-      "SUPER_SHIFT, q, exit"
 
       # INFO: media binds
       mute play prev next

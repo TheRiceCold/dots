@@ -10,7 +10,7 @@
       rules = import ./rules.nix;
     in {
       monitor = [ ",preferred,auto,1" ];
-      exec = [ "pypr" "ags" ];
+      exec = [ "ags" "pypr" "hypridle"  ];
 
       input = {
         kb_layout = "us";

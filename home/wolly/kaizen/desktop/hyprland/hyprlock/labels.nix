@@ -1,35 +1,32 @@
 let
+  monitor =  "";
   font_family = "Ubuntu Nerd Font";
-  color = "rgb(142, 149, 177)";
+  color = "rgba(211, 228, 228, 0.75)";
+  date = int: format: ''cmd[update:${int}] echo "$(date +"${format}")"'';
 in [
   { # Date
-    monitor = "";
     font_size = 16;
     valign = "top";
     halign = "center";
-    position = { x = 0; y = -100; };
-    color = "rgba(211, 228, 228, 0.75)";
-    text = ''cmd[update:5000] echo "$(date +"%A, %d %B")"'';
-    inherit font_family;
+    text = date "5000" "%A, %d %B";
+    position = { x = 0; y = -115; };
+    inherit monitor font_family color;
   }
   { # Time
-    monitor = "";
-    font_size = 128;
+    font_size = 72;
     valign = "top";
     halign = "center";
-    position = { x = 0; y = -100; };
-    color = "rgba(211, 228, 228, 0.75)";
-    text = ''cmd[update:1000] echo "$(date +"%I:%M")"'';
-    inherit font_family;
+    text = date "1000" "%I:%M";
+    position = { x = 0; y = -140; };
+    inherit monitor font_family color;
   }
 
   { # User
-    monitor = "";
     font_size = 20;
     halign = "center";
     valign = "center";
-    text = "Hi, $USER";
     position = { x = 0; y = -200; };
-    inherit font_family color;
+    text = ''Hi there, <span text_transform="capitalize">$USER</span>'';
+    inherit monitor font_family color;
   }
 ]

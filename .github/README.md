@@ -1,4 +1,4 @@
-###### *<div align=right><sub>Last nix update: march 22, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: march 24, 2024</sub></div>*
 
 <h1 align='center'>
   <img src='https://files.catbox.moe/i4twd5.png' width='115px' />
@@ -225,7 +225,6 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 
 <!-- Desktop Packages -->
 [pyprland]: ../home/wolly/kaizen/desktop/hyprland/pypr
-[hyprland-config]: ../home/wolly/kaizen/desktop/hyprland
 [home-minimo]: ../home/wolly/minimo/default.nix
 [kaizen-widgets]: https://github.com/TheRiceCode/kaizen-widgets
 
@@ -246,8 +245,6 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 [dwm]: https://dwm.suckless.org
 [hyprland]: https://hyprland.org
 [opengl]: https://www.opengl.org
-[ags]: https://aylur.github.io/ags-docs
-[kaivim]: https://github.com/thericecold/kaivim
 [nixvim]: https://github.com/nix-community/nixvim
 [spicetify]: https://github.com/spicetify/spicetify-cli
 [vesktop]: https://github.com/Vencord/Vesktop
