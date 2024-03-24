@@ -28,10 +28,10 @@
 #### ▶️  Showcase (WIP)
 
 **Hyprlock**
-![image](https://github.com/TheRiceCold/ButterflyOS/main/assets/screenshots/lockscreen)
+![image](https://github.com/TheRiceCold/ButterflyOS/blob/main/assets/screenshots/lockscreen.jpg)
 
 **Neovim, zellij, pypr scratchpad terminal, and fastfetch**
-![image](https://github.com/TheRiceCold/ButterflyOS/main/assets/screenshots/neovim)
+![image](https://github.com/TheRiceCold/ButterflyOS/blob/main/assets/screenshots/neovim.png)
 
 #### 📝 Inputs
 - [Nix Packages][nixpkgs]: Collection of Nix Packages.
