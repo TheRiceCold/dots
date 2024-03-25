@@ -1,20 +1,19 @@
-###### *<div align=right><sub>Last nix update: march 24, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: march 25, 2024</sub></div>*
 
 <h1 align='center'>
-  <img src='https://files.catbox.moe/i4twd5.png' width='115px' />
+  <img src='https://github.com/TheRiceCold/ButterflyOS/blob/main/assets/ibu-circle.png' width='115px' />
 
-  🦋 ButterflyOS 🦋<br />
+  ButterflyOS<br />
   <div align='center'>
     <a href='https://nixos.org'>
-      <img src='https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3'>
-    </a>
-    <a href='https://github.com/TheRiceCold/dot/stargazers'>
-      <img src='https://img.shields.io/github/stars/TheRiceCold/dot?color=F5BDE6&labelColor=303446&style=for-the-badge&logo=starship&logoColor=F5BDE6'>
+      <img src='https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=5de4c7'>
     </a>
     <a href='https://github.com/TheRiceCold/dot'>
-      <img src='https://img.shields.io/github/repo-size/TheRiceCold/dot?color=C6A0F6&labelColor=303446&style=for-the-badge&logo=github&logoColor=C6A0F6'>
+      <img src='https://img.shields.io/github/languages/code-size/TheRiceCold/ButterflyOS?color=89ddff&labelColor=303446&style=for-the-badge&logo=github&logoColor=89ddff'>
     </a>
-    <img src='https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png' width='600px' />
+    <a href='https://github.com/TheRiceCold/ButterflyOS/stargazers'>
+      <img src='https://img.shields.io/github/stars/TheRiceCold/ButterflyOS?color=fffac2&labelColor=303446&style=for-the-badge&logo=starship&logoColor=fffac2'>
+    </a>
   </div>
 
   **[<kbd> <br> Overview <br> </kbd>](#-Overview)** 
@@ -23,11 +22,16 @@
 
 </h1>
 
+> [!NOTE]
+>
+> This is my personal configuration for my setup.
+> If something doesn't work, feel free to open up an issue or message me,
+
 ## ✈️  Overview
 
 #### ▶️  Showcase (WIP)
 
-**Hyprlock**
+**Lockscreen (hyprlock)**
 ![image](https://github.com/TheRiceCold/ButterflyOS/blob/main/assets/screenshots/lockscreen.jpg)
 
 **Neovim, zellij, pypr scratchpad terminal, and fastfetch**
@@ -159,7 +163,7 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 
 <p align="right"><a href="#top">back to top</a></p>
 
-## 💐 Acknowledgements
+## 🙏 Acknowledgements
 
 - [Ruixi-rebirth/melted-flakes](Ruixi) - Inspired me to switch to NixOS
 - [Misterio77/nix-config](Misterio77)  - NixOS configuration
