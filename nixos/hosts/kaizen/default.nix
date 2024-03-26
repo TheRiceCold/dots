@@ -1,14 +1,16 @@
-{ config, disk, pkgs, ... }:
-{
+{ inputs, config, disk, pkgs, ... }:
+let
+  kaivim = inputs.kaivim.packages.${pkgs.system}.default;
+in {
   imports = [ ./services.nix ./hardware-configuration.nix ];
 
   disko = import disk;
   networking.hostName = "kaizen";
 
   environment = {
-    systemPackages = with pkgs; [ linux-wifi-hotspot ];
+    systemPackages = with pkgs; [ kaivim linux-wifi-hotspot ];
 
-    loginShellInit = /* bash */''
+    loginShellInit = /* bash */ ''
 
       if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
         exec Hyprland
