@@ -59,14 +59,13 @@
     bind = exec: key: "SUPER, ${key}, exec, ${exec}";
     toggle = win: bind "ags -t ${win}";
     js = run: bind '' ags -r "${run}" '';
-    menu = toggle: close: (js "App.toggleWindow('${toggle}'); App.closeWindow('${close}');");
   in {
     media = js "toggleMedia();";
     overview = toggle "overview";
     launcher = toggle "launcher";
     shortcuts = toggle "shortcuts";
     powermenu = toggle "powermenu";
-    datemenu = menu "datemenu" "dropmenu";
-    dropmenu = menu "dropmenu" "datemenu";
+    datemenu = js "sidemenuShow('datemenu')";
+    quicksettings = js "sidemenuShow('quicksettings')";
   };
 }

@@ -22,7 +22,7 @@ in
       (ags.powermenu "F4")
       (ags.launcher "Space")
       (ags.shortcuts "Slash")
-      (ags.dropmenu "Period")
+      (ags.quicksettings "Period")
 
       # prefix is SUPER_CTRL
       (run-app "v" audio-control)

@@ -1,18 +1,18 @@
-###### *<div align=right><sub>Last nix update: march 26, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: march 29, 2024</sub></div>*
 
 <h1 align='center'>
-  <img src='https://github.com/TheRiceCold/ButterflyOS/blob/main/assets/ibu-circle.png' width='125px' />
+  <img src='https://github.com/TheRiceCold/ButterflyOS/blob/main/assets/ibu-circle.png' />
 
   ButterflyOS<br />
   <div align='center'>
     <a href='https://nixos.org'>
-      <img src='https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=5de4c7'>
+      <img src='https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=1b1e28&logo=NixOS&logoColor=add7ff&color=add7ff'>
     </a>
     <a href='https://github.com/TheRiceCold/dot'>
-      <img src='https://img.shields.io/github/languages/code-size/TheRiceCold/ButterflyOS?color=89ddff&labelColor=303446&style=for-the-badge&logo=github&logoColor=89ddff'>
+      <img src='https://img.shields.io/github/languages/code-size/TheRiceCold/ButterflyOS?color=5de4c7&labelColor=1b1e28&style=for-the-badge&logo=github&logoColor=5de4c7'>
     </a>
     <a href='https://github.com/TheRiceCold/ButterflyOS/stargazers'>
-      <img src='https://img.shields.io/github/stars/TheRiceCold/ButterflyOS?color=fffac2&labelColor=303446&style=for-the-badge&logo=starship&logoColor=fffac2'>
+      <img src='https://img.shields.io/github/stars/TheRiceCold/ButterflyOS?color=fcc5e9&labelColor=1b1e28&style=for-the-badge&logo=starship&logoColor=fcc5e9'>
     </a>
   </div>
 
@@ -31,11 +31,30 @@
 
 #### ▶️  Showcase (WIP)
 
-**Lockscreen (hyprlock)**
-![image](https://github.com/TheRiceCold/ButterflyOS/blob/main/assets/screenshots/lockscreen.jpg)
+<img src='https://github.com/TheRiceCold/ButterflyOS/blob/main/assets/screenshots/lockscreen.jpg' />
+<details>
+  <summary> <b>View details</b></summary>
 
-**Neovim, zellij, pypr scratchpad terminal, and fastfetch**
-![image](https://github.com/TheRiceCold/ButterflyOS/blob/main/assets/screenshots/neovim.png)
+- Lockscreen: [Hyprlock][hyprlock-config]
+- Idle Management: [Hypridle][hypridle-config]
+    - Lockscreen: 5mins timeout
+    - Suspend: 30mins timeout
+
+</details>
+
+<img src='https://github.com/TheRiceCold/ButterflyOS/blob/main/assets/screenshots/neovim.png' />
+<details>
+  <summary> <b>View details</b></summary>
+
+- Text editor: [kaivim]
+- Terminal Multiplexer: [zellij]
+- System fetch tool: [fastfetch]
+- Scratchpad: [Pyprland's scratchpad][pyprland]
+
+</details>
+
+
+<p align="right"><a href="#top">back to top</a></p>
 
 #### 📝 Inputs
 - [Nix Packages][nixpkgs]: Collection of Nix Packages.
@@ -48,7 +67,7 @@
 - [Matugen][matugen]: A material you color generation tool.
 - [Aylur GTK Shell][ags]: A customizable and extensible shell.
 - [Helix-kai]: A fork of [helix] with some patches applied.
-- [Kaivim][kaivim]: an IDE like [Neovim] configuration built with [Nixvim].
+- [Kaivim][kaivim]: Personal [Neovim] configuration built with [Nixvim].
 - [Spicetify Nix][spicetify-nix]: A nix flake for configuring [spicetify].
 
 <p align="right"><a href="#top">back to top</a></p>
@@ -124,6 +143,8 @@
           - [magnify][pypr-magnify]: Toggle magnification (zoom).
           - [scratchpads][pypr-scratch]: Dropdown scratchpads.
         - [Hyprlock][hyprlock-config]: Lockscreen
+        - [Hypridle][hypridle-config]: Idle management
+        - [Hyprshade][hyprshade-config]: Shader configuration tool
       - [Theme][home-kaizen-desktop]:
         - Widgets: [kaizen-widgets][ags-config]
         - Icon: [Papirus-Dark][papirus-icon]
@@ -145,20 +166,33 @@
 - Download [NixOS minimal installation](https://nixos.org/download) ISO.
 - Boot into the installer.
 - Switch to root: `sudo -i`
-- Install tools: `nix-shell`
+- Install utility packages: `nix-shell`
+
+### Quick Installation
+- Connecting to Wi-Fi.
+```
+iwctl --passphrase <passphrase> station <device> connect <SSID>
+```
+- Clone repo: `git clone https://github.com/TheRiceCold/ButterflyOS`
+- Generate configuration : nixos-generate-config --root /mnt
+- Copy hardware configuration: 
+```
+  cp /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/nixos-config/hosts/<host>
+```
+- Install: `nixos-install --flake kaizen`
 
 #### Commands you should know
-- Rebuild and switch to change the system configuration
-```
-nix-switch kaizen
-```
-OR
-```
-doas nixos-rebuild switch --flake .#minimo
-```
 - Connect to internet (Change what's inside the brackets with your info).
 ```
 iwctl --passphrase <passphrase> station <device> connect <SSID>
+```
+- Rebuild and switch to change the system configuration
+```
+nix-switch kaizen # OR $ doas nixos-rebuild switch --flake .#kaizen
+```
+- Switch home-manager
+```
+hm-switch kaizen # OR $ home-manager switch .
 ```
 
 <p align="right"><a href="#top">back to top</a></p>
@@ -179,6 +213,7 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 [ags]: https://github.com/aylur/ags
 [matugen]: https://github.com/InioX/matugen
 [hyprlock]: https://github.com/hyprwm/hyprlock
+[hypridle]: https://github.com/hyprwm/hypridle
 [kaivim]: https://github.com/thericecold/kaivim
 [helix-kai]: https://github.com/thericecold/helix-kai
 [spicetify-nix]: https://github.com/the-argus/spicetify-nix
@@ -206,10 +241,12 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 
 <!-- Hyprland Configurations -->
 [hyprland-config]: ../home/wolly/kaizen/desktop/hyprland
-[hyprlock-config]: ../home/wolly/kaizen/desktop/hyprland/hyprlock/default.nix
 [pypr-config]: ../home/wolly/kaizen/desktop/hyprland/pypr/default.nix
 [pypr-magnify]: https://github.com/hyprland-community/pyprland/wiki/magnify
 [pypr-scratch]: https://github.com/hyprland-community/pyprland/wiki/scratchpads
+[hypridle-config]: ../home/wolly/kaizen/desktop/hyprland/ecosystem/hypridle.nix
+[hyprshade-config]: ../home/wolly/kaizen/desktop/hyprland/ecosystem/hyprshade.nix
+[hyprlock-config]: ../home/wolly/kaizen/desktop/hyprland/ecosystem/hyprlock/default.nix
 
 
 <!-- Color Scripts -->
