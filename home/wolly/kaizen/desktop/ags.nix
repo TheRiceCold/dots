@@ -1,12 +1,8 @@
-# TODO: Move to a kaizen-widgets repo
 { inputs, pkgs, ... }:
 let
   inherit (inputs) ags matugen;
 in {
-  imports = [
-    ags.homeManagerModules.default
-    # inputs.astal.homeManagerModules.default
-  ];
+  imports = [ ags.homeManagerModules.default ];
 
   services.playerctld.enable = true;
 
@@ -32,16 +28,11 @@ in {
 
   programs = {
     cava.enable = true;
-    # astal = {
-    #   enable = true;
-    #   extraPackages = with pkgs; [
-    #     libadwaita
-    #   ];
-    # };
     ags = {
       enable = true;
-      # configDir = conf.config;
       extraPackages = with pkgs; [ gtksourceview3 ];
+      # INFO: I prefer the config to be in separate repo, https://github.com/TheRiceCold/kaizen-widgets
+      # configDir = conf.config;
     };
   };
 }

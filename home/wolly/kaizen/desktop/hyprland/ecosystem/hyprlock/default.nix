@@ -16,7 +16,7 @@
         brightness = 0.8000;
         vibrancy = 0.2100;
         vibrancy_darkness = 0.0;
-        path = "${../../../../../../../assets/poimandres.png}"; # only png supported for now
+        path = "~/.config/background.png"; # only png supported for now
       }
     ];
 
