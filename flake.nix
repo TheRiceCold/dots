@@ -13,8 +13,6 @@
     nur.url = "github:nix-community/NUR";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
 
-    helix-kai.url = "github:thericecold/helix-kai";
-
     # Kaizen Inputs
     ags.url = "github:aylur/ags";
     # astal.url = "github:Aylur/astal";

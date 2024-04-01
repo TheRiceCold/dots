@@ -65,6 +65,7 @@
     launcher = toggle "launcher";
     shortcuts = toggle "shortcuts";
     powermenu = toggle "powermenu";
+    apis = js "sidemenuShow('apis')";
     datemenu = js "sidemenuShow('datemenu')";
     quicksettings = js "sidemenuShow('quicksettings')";
   };
