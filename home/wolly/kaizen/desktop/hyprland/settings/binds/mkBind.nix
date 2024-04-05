@@ -57,16 +57,23 @@
   # WIDGET BINDINGS
   ags = let
     bind = exec: key: "SUPER, ${key}, exec, ${exec}";
-    toggle = win: bind "ags -t ${win}";
+    toggle-window = win: bind "ags -t ${win}";
     js = run: bind '' ags -r "${run}" '';
+
+    toggle-widget = win: name: js "toggleWidget('${win}', '${name}');";
+    popup = toggle-widget "popup";
+    sideleft = toggle-widget "sideleft";
+    sideright = toggle-widget "sideright";
   in {
-    media = js "toggleMedia();";
-    overview = toggle "overview";
-    launcher = toggle "launcher";
-    shortcuts = toggle "shortcuts";
-    powermenu = toggle "powermenu";
-    apis = js "sidemenuShow('apis')";
-    datemenu = js "sidemenuShow('datemenu')";
-    quicksettings = js "sidemenuShow('quicksettings')";
+    overview = toggle-window "overview";
+    launcher = toggle-window "launcher";
+    shortcuts = toggle-window "shortcuts";
+    powermenu = toggle-window "powermenu";
+
+    media = popup "media";
+    apis = sideleft "apis";
+    colors = popup "colors";
+    datemenu = sideright "datemenu";
+    quicksettings = sideright "quicksettings";
   };
 }
