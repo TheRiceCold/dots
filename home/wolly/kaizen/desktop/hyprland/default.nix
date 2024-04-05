@@ -11,7 +11,6 @@
       # Might be useful but, I don't need it.
       # cliphist        # Clipboard Manager
 
-      # TODO: Learn to use, and install hyprshade
       wl-mirror
       wl-gammarelay-rs
     ];
