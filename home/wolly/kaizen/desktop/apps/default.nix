@@ -2,7 +2,10 @@
 let
   inherit (inputs) spicetify-nix;
 in {
-  imports = [ spicetify-nix.homeManagerModule ];
+  imports = [ 
+    ./gromit-mpx.nix
+    spicetify-nix.homeManagerModule 
+  ];
 
   programs = {
     foot = import ./foot pkgs;
