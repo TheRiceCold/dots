@@ -19,6 +19,7 @@ in {
     wl-clipboard    # Clipboard Utility
     swayimg         # Image Viewer
     wl-screenrec    # Screen Recorder
+    gromit-mpx      # Annotation Tool
 
     matugen.packages.${pkgs.system}.default
   ];
