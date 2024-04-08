@@ -13,12 +13,17 @@
     nur.url = "github:nix-community/NUR";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
 
-    # Kaizen Inputs
+    hyprland.url = "github:hyprwm/hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    hyprlock.url = "github:hyprwm/hyprlock";
+    pyprland.url = "github:hyprland-community/pyprland";
+
     ags.url = "github:aylur/ags";
     # astal.url = "github:Aylur/astal";
     matugen.url = "github:iniox/matugen";
-    hyprlock.url = "github:hyprwm/hyprlock";
-    pyprland.url = "github:hyprland-community/pyprland";
 
     kaivim.url = "github:thericecold/kaivim";
     spicetify-nix.url = "github:the-argus/spicetify-nix";

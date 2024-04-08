@@ -1,6 +1,9 @@
 { pkgs, ... }: {
 
   imports = [ ./settings ./pypr ./ecosystem ];
+
+  wayland.windowManager.hyprland.enable = true;
+
   home = {
     sessionVariables = import ./variables.nix;
     packages = with pkgs; [

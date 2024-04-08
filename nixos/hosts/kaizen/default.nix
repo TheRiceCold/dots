@@ -1,6 +1,7 @@
 { inputs, config, disk, pkgs, ... }:
 let
   kaivim = inputs.kaivim.packages.${pkgs.system}.default;
+  inherit (inputs.hyprland.packages.${pkgs.system}) hyprland;
 in {
   imports = [ ./services.nix ./hardware-configuration.nix ];
 
@@ -21,10 +22,10 @@ in {
 
   programs = {
     droidcam.enable = true;
-    # wshowkeys.enable = true;
     virt-manager.enable = true;
     hyprland = {
       enable = true;
+      package = hyprland;
       xwayland.enable = true;
     };
   };
