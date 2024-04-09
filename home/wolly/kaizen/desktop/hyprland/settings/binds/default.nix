@@ -21,12 +21,12 @@ in {
 
       # prefix is SUPER
       "SUPER, r, exec, pkill ags; ags" # Reset Ags
-      (ags.media "p")
-      # (ags.overview "Tab")
+      (ags.overview "Tab")
       (ags.powermenu "F4")
       (ags.launcher "Space")
       (ags.shortcuts "Slash")
 
+      (ags.media "p")
       (ags.apis "Comma")
       (ags.datemenu "d")
       (ags.quicksettings "Period")
