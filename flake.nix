@@ -21,10 +21,6 @@
     hyprlock.url = "github:hyprwm/hyprlock";
     pyprland.url = "github:hyprland-community/pyprland";
 
-    ags.url = "github:aylur/ags";
-    # astal.url = "github:Aylur/astal";
-    matugen.url = "github:iniox/matugen";
-
     kaivim.url = "github:thericecold/kaivim";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
  };
