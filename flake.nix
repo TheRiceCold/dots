@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     # sops-nix.url = "github:mic92/sops-nix"; # TODO: Implement this
 
     nur.url = "github:nix-community/NUR";
@@ -19,7 +20,6 @@
       inputs.hyprland.follows = "hyprland";
     };
     hyprlock.url = "github:hyprwm/hyprlock";
-    pyprland.url = "github:hyprland-community/pyprland";
 
     kaizen.url = "github:thericecold/kaizen";
     kaivim.url = "github:thericecold/kaivim";

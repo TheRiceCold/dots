@@ -9,13 +9,19 @@
     packages = with pkgs; [
       wtype             # Input simulator
       mpvpaper          # Video wallpaper
-      showmethekey
+      # showmethekey
 
-      # Might be useful but, I don't need it.
-      # cliphist        # Clipboard Manager
+      wl-clipboard      # Clipboard Utility
+      # cliphist        # Clipboard Manager. Useful but I need it.
 
       wl-mirror
       wl-gammarelay-rs
+
+      wluma
+      wlr-randr
+
+      flameshot
+      watershot
     ];
   };
 }

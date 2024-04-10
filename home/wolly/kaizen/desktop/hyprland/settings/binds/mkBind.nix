@@ -1,6 +1,6 @@
 {
   exec = key: cmd: "SUPER, ${key}, exec, ${cmd}";
-  run-app = key: cmd: "SUPER_CTRL, ${key}, exec, ${cmd}";
+  run = key: cmd: "SUPER_CTRL, ${key}, exec, ${cmd}";
   toggle = key: name: "SUPER_CTRL, ${key}, exec, pypr toggle ${name}";
 
   # WINDOW BINDINGS
@@ -55,23 +55,25 @@
   };
 
   # WIDGET BINDINGS
-  ags = let
+  widgets = let
     bind = exec: key: "SUPER, ${key}, exec, ${exec}";
-    js = run: bind '' ags -r "${run}" '';
+    js = run: bind '' kaizen -r "${run}" '';
 
     # Toggler
-    window = win: bind "ags -t ${win}";
-    widget = name: js "toggleWidget('${name}');";
+    toggle = win: bind "kaizen -t ${win}";
+    show = name: js "toggleWidget('${name}');";
   in {
-    overview = window "overview";
-    launcher = window "launcher";
-    shortcuts = window "shortcuts";
-    powermenu = window "powermenu";
+    reset = bind "kaizen -q; kaizen";
 
-    media = widget "media";
-    apis = widget "apis";
-    colors = widget "colors";
-    datemenu = widget "datemenu";
-    quicksettings = widget "quicksettings";
+    overview = toggle "overview";
+    launcher = toggle "launcher";
+    shortcuts = toggle "shortcuts";
+    powermenu = toggle "powermenu";
+
+    apis = show "apis";
+    media = show "media";
+    colors = show "colors";
+    datemenu = show "date";
+    quicksettings = show "quicksettings";
   };
 }

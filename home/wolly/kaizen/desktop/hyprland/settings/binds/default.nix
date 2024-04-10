@@ -9,55 +9,48 @@ let
   mvtows =  bind "SUPER_SHIFT" "movetoworkspacesilent";
 in {
   wayland.windowManager.hyprland.settings = {
-    bind = with apps; with mkBind; with media; with window; [
-      "SUPER_SHIFT, q, exit"
-
-      # prefix is SUPER
-      (exec "Equal" "pypr zoom")
-      (exec "Return" "[tile] ${term}")
-
-      # media binds
-      mute play prev next
-
-      # prefix is SUPER
-      "SUPER, r, exec, pkill ags; ags" # Reset Ags
-      (ags.overview "Tab")
-      (ags.powermenu "F4")
-      (ags.launcher "Space")
-      (ags.shortcuts "Slash")
-
-      (ags.media "p")
-      (ags.apis "Comma")
-      (ags.datemenu "d")
-      (ags.quicksettings "Period")
-
-      # prefix is SUPER_CTRL
-      (run-app "v" audio-control)
-      (run-app "c" "${color-picker} -a")
-      (run-app "b" "[workspace 2] ${browser} --browser-window")
+    bind = with apps; with mkBind; with media; with widgets; with window; [
+      # Widgets prefix is SUPER
+      (reset "r")
+      (media "p")
+      (apis "Comma")
+      (datemenu "d")
+      (overview "Tab")
+      (powermenu "F4")
+      (launcher "Space")
+      (shortcuts "Slash")
+      (quicksettings "Period")
 
       # Pypr Scatchpads Toggle's prefix is SUPER_CTRL
       (toggle "t" "term")
       (toggle "e" "explorer")
       (toggle "Escape" "system")
 
-      # Windows
+      (exec "Return" "[tile] ${term}") # prefix is SUPER
+
+      # prefix is SUPER_CTRL
+      (run "v" audio-control)
+      (run "c" "${color-picker} -a")
+      (run "b" "[workspace 2] ${browser} --browser-window")
+
+      mute play prev next # media binds
+      "SUPER_SHIFT, q, exit" # Exit Hyprland
+
+      # Window
       (pin "SUPER, p")
       (kill "SUPER, q")
       (float "SUPER, t")
       (maximized "SUPER, m")
       (fullscreen "SUPER, f")
-      (fakefullscreen "SUPER_SHIFT, f")
       (center_layout "SUPER, c")
       (center_layout_up "CTRL, k")
       (center_layout_down "CTRL, j")
-
+      (fakefullscreen "SUPER_SHIFT, f")
       # prefix is SUPER
       (focus "k" "u") 
       (focus "j" "d")
       (focus "l" "r")
       (focus "h" "l")
-
       # prefix is SUPER_SHIFT
       (swap "k" "u")
       (swap "j" "d")

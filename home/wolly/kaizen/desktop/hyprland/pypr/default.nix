@@ -1,5 +1,5 @@
 # DOCS: https://github.com/hyprland-community/pyprland/wiki
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 let
   apps = import ../apps.nix pkgs;
   configFile = with apps; /* toml */ ''
@@ -15,8 +15,8 @@ let
 
   '';
 in {
+  home.packages = [ pkgs.pyprland ];
   xdg.configFile."hypr/pyprland.toml".text = configFile;
-  home.packages = [ inputs.pyprland.packages.${pkgs.system}.default ];
 
   programs.bash.initExtra = /* bash */ ''
 
