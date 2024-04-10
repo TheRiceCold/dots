@@ -1,4 +1,4 @@
-###### *<div align=right><sub>Last nix update: april 10, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: april 11, 2024</sub></div>*
 
 <h1 align='center'>
   <img src='https://github.com/TheRiceCold/ButterflyOS/blob/main/assets/ibu-circle.png' width='150px'/>
@@ -53,7 +53,6 @@
 
 </details>
 
-
 <p align="right"><a href="#top">back to top</a></p>
 
 #### 📝 Inputs
@@ -62,13 +61,9 @@
 - [Disko][disko]: Declarative disk partitioning and formatting using Nix.
 - [NUR][nur]: Nix User Repositories, user contributed packages.
 - [Nix Packages Wayland][nixpkgs-wayland]: Nix packages for Wayland.
-- [Pyprland]: Extensions made for [Hyprland].
-- [Hyprlock][hyprlock]: GPU-accelerated screen locking utility for [Hyprland].
-- [Matugen][matugen]: A material you color generation tool.
-- [Aylur GTK Shell][ags]: A customizable and extensible shell.
-- [Helix-kai]: A fork of [helix] with some patches applied.
+- [Kaizen][kaizen]: Desktop environment configured with [Ags].
 - [Kaivim][kaivim]: Personal [Neovim] configuration built with [Nixvim].
-- [Spicetify Nix][spicetify-nix]: A nix flake for configuring [spicetify].
+- [Spicetify Nix][spicetify-nix]: A nix flake for configuring [Spicetify].
 
 <p align="right"><a href="#top">back to top</a></p>
 
@@ -114,43 +109,41 @@
 
   ---
   - [**Shared**][home-shared] (defaults)
-    - [firefox][firefox]: Browser.
-    - [helix-kai]: Text editor.
-    - [btop][home-shared-cli]: System resource monitor.
-    - [zoxide][home-shared-shell]: Smarter cd command.
-    - [bat][home-shared-cli]: Syntax highlighting (catppuccin).
+    - [firefox][firefox]: Browser
+    - [helix]: Text Editor
+    - [zoxide][home-shared-shell]: Smarter cd command
+    - [btop][home-shared-cli]: System resource monitor
+    - [bat][home-shared-cli]: Syntax highlighting (catppuccin)
   ---
 
-  - [**Kaizen**][home-kaizen]: Fully riced configuration that I will continue to improve.
-    - [CLI][home-kaizen-cli]:
-      - [Yazi]: File manager.
-      - [Neomutt]: E-mail reader.
-      - [Zellij]: Terminal Multiplexer.
-      - Other: [eza], [fastfetch], [onefetch]
-    - [Desktop][home-kaizen-desktop]:
-      - [Apps][home-kaizen-apps]:
-        - [foot][foot]: Terminal.
-        - [mpv][mpv]: Media player.
-        - [sioyek][sioyek]: PDF Viewer.
-        - [neovide][neovide]: Neovim GUI client.
-        - [spicetify][spicetify]: Customized spotify.
-        - [vesktop][vesktop]: Custom discord app.
-        - [ncmpcpp][ncmpcpp]: MPD client music player.
-        - [vscodium] (disabled): Less bloat vscode.
-        - Other: [easyeffects], [krita], [blender], [inkscape], [libresprite] and [godot]
-      - [Hyprland][hyprland-config]:
-        - [Pyprland][pypr-config] extensions added:
-          - [magnify][pypr-magnify]: Toggle magnification (zoom).
-          - [scratchpads][pypr-scratch]: Dropdown scratchpads.
-        - [Hyprlock][hyprlock-config]: Lockscreen
-        - [Hypridle][hypridle-config]: Idle management
-        - [Hyprshade][hyprshade-config]: Shader configuration tool
-      - [Theme][home-kaizen-desktop]:
-        - Widgets: [kaizen-widgets][ags-config]
-        - Icon: [Papirus-Dark][papirus-icon]
-        - Font: Ubuntu Nerd Font
-        - Cursor: [Bibata-Modern-Ice]
-        - GTK: [Catppuccin-Mocha-Compact-Lavender-Dark][gtk-catppuccin]
+  - [**Kaizen**][home-kaizen]: Fully riced configuration that I will continue to improve
+    - Desktop Environment: [Kaizen]
+    - Window Manager: [Hyprland][hyprland-config]
+      - [Pyprland][pypr-config] extensions added:
+        - [scratchpads][pypr-scratch]: Dropdown scratchpads
+        - [magnify][pypr-magnify]: Toggle magnification (zoom)
+      - [Hyprlock][hyprlock-config]: Lockscreen
+      - [Hypridle][hypridle-config]: Idle management
+      - [Hyprshade][hyprshade-config]: Shader configuration tool
+    - [Terminal Applications][home-kaizen-cli]
+      - [Zellij][zellij]: Multiplexer
+      - [Yazi]: File Manager
+      - [Curlie]: httpie-like curl
+      - [Neomutt]: E-mail Reader
+      - [Slides]: Presentation Tool
+      - Utilities: [eza], [fastfetch], [onefetch]
+      - Games: [tetris][vitetris], [uchess], [toipe]
+      - Other: [pipes][pipes-rs], [krabby]
+    - [Desktop Applications][home-kaizen-apps]
+      - [foot][foot]: Terminal
+      - [mpv][mpv]: Media player
+      - [sioyek][sioyek]: PDF Viewer
+      - [neovide][neovide]: Neovim GUI client
+      - [spicetify][spicetify]: Customized spotify
+      - [vesktop][vesktop]: Custom discord app
+      - [ncmpcpp][ncmpcpp]: MPD client music player
+      - [vscodium] (disabled): Less bloat vscode
+      - Other: [easyeffects], [krita], [blender], [inkscape], [libresprite] and [godot]
     - [Shell Scripts][home-kaizen-scripts]:
       - [Colorscripts][home-kaizen-colorscripts]: [blocks][blocks-color], [crunch][crunch-color], [pacman][pacman-color], and [tanks][tanks-color]
   ---
@@ -199,10 +192,8 @@ hm-switch kaizen # OR $ home-manager switch .
 
 ## 🙏 Acknowledgements
 
+- [Misterio77/nix-config](Misterio77) - NixOs configuration
 - [Ruixi-rebirth/melted-flakes](Ruixi) - Inspired me to switch to NixOS
-- [Misterio77/nix-config](Misterio77)  - NixOS configuration
-- [aylur/dotfiles](aylur) - Desktop environment
-- [nawfalmrouyan/hyprland](newfalmrouyan) - Hyprland WM
 
 <!-- Flake Inputs -->
 [nixpkgs]: https://github.com/NixOS/nixpkgs/tree/nixpkgs-unstable
@@ -211,11 +202,10 @@ hm-switch kaizen # OR $ home-manager switch .
 [nur]: https://github.com/nix-community/NUR
 [nixpkgs-wayland]: https://github.com/nix-community/nixpkgs-wayland
 [ags]: https://github.com/aylur/ags
-[matugen]: https://github.com/InioX/matugen
 [hyprlock]: https://github.com/hyprwm/hyprlock
 [hypridle]: https://github.com/hyprwm/hypridle
 [kaivim]: https://github.com/thericecold/kaivim
-[helix-kai]: https://github.com/thericecold/helix-kai
+[kaizen]: https://github.com/thericecold/kaizen
 [spicetify-nix]: https://github.com/the-argus/spicetify-nix
 
 <!-- Nixos Shared -->
@@ -261,20 +251,11 @@ hm-switch kaizen # OR $ home-manager switch .
 [bibata-modern-ice]: https://github.com/ful1e5/Bibata_Cursor
 [gtk-catppuccin]: https://github.com/catppuccin/gtk
 
-<!-- CLI Packages -->
-[zellij]: ../home/packages/cli/zellij
-[fastfetch]: ../home/packages/cli/sysfetch/fastfetch.nix
-[onefetch]: ../home/packages/cli/sysfetch/fastfetch.nix
-<!-- Games -->
-[uchess]: https://github.com/tmountain/uchess
-[2048]: https://github.com/alewmoose/2048-in-terminal
-[vitetris]: https://github.com/vicgeralds/vitetris
 
 <!-- Desktop Packages -->
 [pyprland]: ../home/wolly/kaizen/desktop/hyprland/pypr
 [home-minimo]: ../home/wolly/minimo/default.nix
 [kaizen-widgets]: https://github.com/TheRiceCode/kaizen-widgets
-
 
 <!-- Apps -->
 [helix]: ../home/shared/helix
@@ -297,17 +278,31 @@ hm-switch kaizen # OR $ home-manager switch .
 [vesktop]: https://github.com/Vencord/Vesktop
 [inkscape]: https://github.com/inkscape/inkscape
 [jetbrains-font]: https://www.jetbrains.com/lp/mono
-[neomutt]: https://neomutt.org
-[eza]: https://github.com/eza-community/eza
 [neovim]: https://neovim.io
 [flatpak]: https://flatpak.org
 [virt-man]: https://virt-manager.org
 [droidcam]: https://droidcam.app
 [OpenTabDriver]: https://opentabletdriver.net
-[yazi]: https://github.com/sxyazi/yazi
 [libvirt]: https://libvirt.org
 [qemu]: https://www.qemu.org
 [waydroid]: https://waydro.id/
+
+<!-- Terminal Applications -->
+[neomutt]: https://neomutt.org
+[yazi]: https://github.com/sxyazi/yazi
+[eza]: https://github.com/eza-community/eza
+[zellij]: ../home/packages/cli/zellij
+[fastfetch]: ../home/packages/cli/sysfetch/fastfetch.nix
+[onefetch]: ../home/packages/cli/sysfetch/onefetch.nix
+[slides]: https://github.com/maaslalani/slides
+[curlie]: https://github.com/rs/curlie
+<!-- Games -->
+[toipe]: https://github.com/Samyak2/toipe
+[uchess]: https://github.com/tmountain/uchess
+[vitetris]: https://github.com/vicgeralds/vitetris
+<!-- Other -->
+[pipes-rs]: https://github.com/lhvy/pipes-rs
+[krabby]: https://github.com/yannjor/krabby
 
 [godot]: https://godotengine.org
 [krita]: https://krita.org/en
@@ -327,4 +322,3 @@ hm-switch kaizen # OR $ home-manager switch .
 [ruixi]: https://github.com/Ruixi-rebirth/flakes
 [misterio77]: https://github.com/Misterio77/nix-config
 [aylur]: https://github.com/aylur/dotfiles
-[nawfalmrouyan]: https://github.com/nawfalmrouyan/hyprland
