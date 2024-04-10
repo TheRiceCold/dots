@@ -1,10 +1,13 @@
-{ pkgs, ... }: let
+{ inputs, pkgs, ... }: let
   theme = {
     name = "Matcha-dark-sea";
     package = pkgs.matcha-gtk-theme;
   };
+  kaizen = inputs.kaizen.homeManagerModules.default;
 in {
-  imports = [ ./hyprland ./apps ];
+  imports = [ kaizen ./hyprland ./apps ];
+
+  programs.kaizen.enable = true;
 
   home = {
     sessionVariables = {

@@ -21,6 +21,7 @@
     hyprlock.url = "github:hyprwm/hyprlock";
     pyprland.url = "github:hyprland-community/pyprland";
 
+    kaizen.url = "github:thericecold/kaizen";
     kaivim.url = "github:thericecold/kaivim";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
  };
