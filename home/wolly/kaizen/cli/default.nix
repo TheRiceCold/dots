@@ -32,6 +32,5 @@
     toipe # A truty typing tester
     uchess
     vitetris
-    _2048-in-terminal
   ];
 }

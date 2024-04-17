@@ -16,7 +16,6 @@
     };
   };
 
-
   sound.enable = true;
   console.useXkbConfig = true;
   time.timeZone = "Asia/Manila";
@@ -30,13 +29,6 @@
   programs.adb.enable = true;
   services.udev.packages = [ pkgs.android-udev-rules ];
 
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    config.common.default = "*";
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-  };
-
   fonts.packages = with pkgs; [
     jetbrains-mono
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
@@ -44,10 +36,9 @@
 
   security = {
     polkit.enable = true;
-    sudo.enable = false;
-    # Enable real-time kit
-    rtkit.enable = true;
+    rtkit.enable = true; # Enable real-time kit
 
+    sudo.enable = false;
     doas = {
       enable = true;
       extraConfig = " permit nopass :wheel ";

@@ -1,44 +1,13 @@
-{ inputs, config, disk, pkgs, ... }:
-let
-  kaivim = inputs.kaivim.packages.${pkgs.system}.default;
-  inherit (inputs.hyprland.packages.${pkgs.system}) hyprland;
-in {
-  imports = [ ./services.nix ./hardware-configuration.nix ];
+{ config, disk, ... }: {
 
-  disko = import disk;
+  imports = [ 
+    ./desktop.nix 
+    ./services.nix 
+    ./hardware-configuration.nix 
+  ];
+
+  # disko = import disk;
   networking.hostName = "kaizen";
-
-  environment = {
-    systemPackages = with pkgs; [ kaivim linux-wifi-hotspot ];
-
-    loginShellInit = /* bash */ ''
-
-      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-        exec Hyprland
-      fi
-
-    '';
-  };
-
-  programs = {
-    droidcam.enable = true;
-    virt-manager.enable = true;
-    hyprland = {
-      enable = true;
-      package = hyprland;
-      xwayland.enable = true;
-    };
-  };
-
-  virtualisation = {
-    waydroid.enable = true;
-    libvirtd = {
-      enable = true;
-      qemu.package = pkgs.qemu;
-    };
-  };
-
-  security.pam.services.hyprlock = {};
 
   hardware = {
     bluetooth = {
@@ -56,7 +25,7 @@ in {
 
   boot = {
     blacklistedKernelModules = [ "k10temp" ];
-    extraModulePackages = with config.boot.kernelPackages; [ zenpower ];
+    extraModulePackages = [ config.boot.kernelPackages.zenpower ];
   };
 
   # Allow systemd to handle coredumps.

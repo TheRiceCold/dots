@@ -15,11 +15,15 @@
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
 
     hyprland.url = "github:hyprwm/hyprland";
+    hyprlock.url = "github:hyprwm/hyprlock";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-    hyprlock.url = "github:hyprwm/hyprlock";
+    hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     kaizen.url = "github:thericecold/kaizen";
     kaivim.url = "github:thericecold/kaivim";
