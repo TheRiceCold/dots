@@ -15,7 +15,6 @@ in {
       (media "p")
       (apis "Comma")
       (datemenu "d")
-      (overview "Tab")
       (powermenu "F4")
       (launcher "Space")
       (shortcuts "Slash")

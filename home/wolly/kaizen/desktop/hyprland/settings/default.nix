@@ -5,7 +5,7 @@ in {
 
   wayland.windowManager.hyprland.settings = {
     monitor = [ ",preferred,auto,1" ];
-    exec = [ "kaizen" "pypr" "hypridle" ];
+    exec = [ "ydotoold" "kaizen" "pypr" "hypridle" ];
 
     input = {
       kb_layout = "us";

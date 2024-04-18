@@ -1,4 +1,4 @@
-###### *<div align=right><sub>Last nix update: april 17, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: april 19, 2024</sub></div>*
 
 <h1 align='center'>
   <img src='https://github.com/TheRiceCold/ButterflyOS/blob/main/assets/ibu-circle.png' width='150px'/>

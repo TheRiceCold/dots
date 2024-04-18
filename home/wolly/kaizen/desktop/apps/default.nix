@@ -17,6 +17,9 @@ in {
   };
 
   home.packages = with pkgs; with gnome; [
+    # Ags
+    ydotool
+
     # Social
     vesktop     # A custom Discord desktop app
 
@@ -30,8 +33,8 @@ in {
     krita           # Raster graphics, mostly used this for digital art/drawing
 
     # Windows Stuff
-    # wine-staging
-    # bottles-unwrapped
+    wine-staging
+    bottles-unwrapped
 
     easyeffects     # Equalizer
     pavucontrol     # Audio/Volume control
@@ -39,7 +42,7 @@ in {
     # Development
     neovide         # Cool neovim GUI client
     godot_4         # Open source game engine
-    warp-terminal
+    # warp-terminal
     # postman         # API Development Environment
    ];
 }

@@ -19,6 +19,7 @@
     center_layout_up = bind-exec "exec, pypr layout_center prev";
     center_layout_down = bind-exec "exec, pypr layout_center next";
 
+
     focus = bind "SUPER" "movefocus";
     move = bind "SUPER_ALT" "moveactive";
     swap = bind "SUPER_SHIFT" "swapwindow";
@@ -65,7 +66,7 @@
   in {
     reset = bind "kaizen -q; kaizen";
 
-    overview = toggle "overview";
+    # overview = toggle "overview";
     launcher = toggle "launcher";
     shortcuts = toggle "shortcuts";
     powermenu = toggle "powermenu";
@@ -73,7 +74,8 @@
     apis = show "apis";
     media = show "media";
     colors = show "colors";
-    datemenu = show "date";
+    datemenu = show "datemenu";
+    keyboard = show "keyboard";
     quicksettings = show "quicksettings";
   };
 }
