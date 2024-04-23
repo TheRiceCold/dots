@@ -20,8 +20,8 @@
       wluma
       wlr-randr
 
-      flameshot
-      watershot
+      # flameshot
+      # watershot
     ];
   };
 }

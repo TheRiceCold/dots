@@ -8,7 +8,6 @@
     cp = "cp -riv";
     np = "nix profile";
     hm = "home-manager";
-    wttr = "http://wttr.in";
 
     docker-compose = "podman-compose";
     nix-update = "doas nix flake update";
@@ -37,7 +36,11 @@
     }
 
     nix-update-switch() {
-      nix-update; nix-clean-switch $1;
+      nix-update; nix-clean-switch $1
+    }
+
+    nix-update-input() {
+      nix flake lock --update-input $1
     }
   '';
 }
