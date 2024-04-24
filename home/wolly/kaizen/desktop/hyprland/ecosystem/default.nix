@@ -1,1 +1,1 @@
-{ imports = [ ./hyprlock ./hypridle.nix ./hyprshade.nix ]; }
+{ imports = [ /* ./hyprlock */ ./hypridle.nix ./hyprshade.nix ]; }
