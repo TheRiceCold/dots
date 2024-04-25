@@ -1,17 +1,24 @@
 { inputs, pkgs, ... }:
 let
   kaivim = inputs.kaivim.packages.${pkgs.system}.default;
-  kaizen = inputs.kaizen.packages.${pkgs.system}.default;
-  hyprland = inputs.hyprland.packages.${pkgs.system}.default;
+  # kaizen = inputs.kaizen.packages.${pkgs.system}.default;
 in {
-  environment.systemPackages = with pkgs; [ kaizen kaivim linux-wifi-hotspot ];
+  environment = {
+    systemPackages = with pkgs; [ /* kaizen */ kaivim linux-wifi-hotspot ];
+    loginShellInit = /* bash */ ''
+
+      if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+        exec Hyprland
+      fi
+
+    '';
+  };
 
   programs = {
     droidcam.enable = true;
     virt-manager.enable = true;
     hyprland = {
       enable = true;
-      package = hyprland;
       xwayland.enable = true;
     };
   };
@@ -23,8 +30,6 @@ in {
       qemu.package = pkgs.qemu;
     };
   };
-
-  hardware.opentabletdriver.enable = true;
 
   xdg.portal = {
     enable = true;

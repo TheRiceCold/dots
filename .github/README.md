@@ -1,18 +1,18 @@
-###### *<div align=right><sub>Last nix update: april 24, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: april 25, 2024</sub></div>*
 
-<h1 align='center'>
-  <img src='https://github.com/TheRiceCold/dots/blob/main/assets/ibu-circle.png' width='150px'/>
+<h1 align=center>
+  <img src='https://github.com/thericecold/dots/blob/main/assets/ibu-circle.png' width='150px'/>
 
-  Dot Riced Flakes<br />
-  <div align='center'>
+  Rice Flakes<br />
+  <div align=center>
     <a href='https://nixos.org'>
       <img src='https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=1b1e28&logo=NixOS&logoColor=add7ff&color=add7ff'>
     </a>
-    <a href='https://github.com/TheRiceCold/dots'>
-      <img src='https://img.shields.io/github/languages/code-size/TheRiceCold/dots?color=5de4c7&labelColor=1b1e28&style=for-the-badge&logo=github&logoColor=5de4c7'>
+    <a href='https://github.com/thericecold/dots'>
+      <img src='https://img.shields.io/github/languages/code-size/thericecold/dots?color=5de4c7&labelColor=1b1e28&style=for-the-badge&logo=github&logoColor=5de4c7'>
     </a>
-    <a href='https://github.com/TheRiceCold/dots/stargazers'>
-      <img src='https://img.shields.io/github/stars/TheRiceCold/dots?color=fcc5e9&labelColor=1b1e28&style=for-the-badge&logo=starship&logoColor=fcc5e9'>
+    <a href='https://github.com/thericecold/dots/stargazers'>
+      <img src='https://img.shields.io/github/stars/thericecold/dots?color=fcc5e9&labelColor=1b1e28&style=for-the-badge&logo=starship&logoColor=fcc5e9'>
     </a>
   </div>
 
@@ -31,18 +31,18 @@
 
 #### ▶️  Showcase (WIP)
 
-<img src='https://github.com/TheRiceCold/dots/blob/main/assets/screenshots/lockscreen.jpg' />
+<img src='https://github.com/thericecold/dots/blob/main/assets/screenshots/lockscreen.jpg' />
 <details>
   <summary> <b>View details</b></summary>
 
-- Lockscreen: [Hyprlock][hyprlock-config]
+- Lockscreen: [Hyprlock][hyprlock-config] (disabled)
 - Idle Management: [Hypridle][hypridle-config]
     - Lockscreen: 5mins timeout
     - Suspend: 30mins timeout
 
 </details>
 
-<img src='https://github.com/TheRiceCold/dots/blob/main/assets/screenshots/neovim.png' />
+<img src='https://github.com/thericecold/dots/blob/main/assets/screenshots/neovim.png' />
 <details>
   <summary> <b>View details</b></summary>
 
@@ -153,7 +153,7 @@
 </details>
 <br />
 
-## 🍳 How to cook (Installation)
+## 🫕 How to cook (Installation)
 
 #### Initial Steps
 - Download [NixOS minimal installation](https://nixos.org/download) ISO.
@@ -166,7 +166,7 @@
 ```
 iwctl --passphrase <passphrase> station <device> connect <SSID>
 ```
-- Clone repo: `git clone https://github.com/TheRiceCold/dots`
+- Clone repo: `git clone https://github.com/thericecold/dots`
 - Generate configuration : nixos-generate-config --root /mnt
 - Copy hardware configuration: 
 ```

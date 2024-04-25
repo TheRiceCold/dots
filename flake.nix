@@ -12,7 +12,6 @@
     # sops-nix.url = "github:mic92/sops-nix"; # TODO: Implement this
 
     nur.url = "github:nix-community/NUR";
-    hyprland.url = "github:hyprwm/hyprland";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
 
     kaizen.url = "github:thericecold/kaizen";
