@@ -17,32 +17,30 @@ in {
   };
 
   home.packages = with pkgs; with gnome; [
-    # Ags
-    ydotool
+    # Gnome Apps
+    nautilus        # File Manager
 
     # Social
-    vesktop     # A custom Discord desktop app
-
-    # Gnome Apps
-    nautilus
+    vesktop         # A custom Discord desktop app
 
     # Graphic Editors
-    blender         # 3d graphics
-    inkscape        # Vector graphics.
-    libresprite     # Pixel art tool.
-    krita           # Raster graphics, mostly used this for digital art/drawing
+    libresprite     # Pixel Art
+    blender         # 3d Graphics
+    inkscape        # Vector Graphics
+    krita           # Raster Graphics
 
     # Windows Stuff
     wine-staging
     bottles-unwrapped
+    # microsoft-edge-dev
 
     easyeffects     # Equalizer
     pavucontrol     # Audio/Volume control
 
     # Development
+    # dotnet-sdk_8    # .NET SDK 8
     neovide         # Cool neovim GUI client
     godot_4         # Open source game engine
-    # warp-terminal
     # postman         # API Development Environment
    ];
 }

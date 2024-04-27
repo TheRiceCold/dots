@@ -8,12 +8,10 @@
     ./programs
   ];
 
-  boot = {
-    loader = {
-      timeout = 0;
-      systemd-boot.enable = true; # Set to false if GRUB is enabled
-      efi.canTouchEfiVariables = true;
-    };
+  boot.loader = {
+    timeout = 0;
+    systemd-boot.enable = true; # Set to false if GRUB is enabled
+    efi.canTouchEfiVariables = true;
   };
 
   sound.enable = true;
@@ -30,7 +28,6 @@
   services.udev.packages = [ pkgs.android-udev-rules ];
 
   fonts.packages = with pkgs; [
-    lato
     jetbrains-mono
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];

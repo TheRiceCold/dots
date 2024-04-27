@@ -1,4 +1,4 @@
-###### *<div align=right><sub>Last nix update: april 25, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: april 27, 2024</sub></div>*
 
 <h1 align=center>
   <img src='https://github.com/thericecold/dots/blob/main/assets/ibu-circle.png' width='150px'/>
@@ -310,8 +310,8 @@ hm-switch kaizen # OR $ home-manager switch .
 [aseprite]: https://www.aseprite.org
 
 <!-- Themes -->
-[Bibata-Cursor]: https://github.com/ful1e5/Bibata_Cursor
 [Catppuccin]: https://github.com/catppuccin/catppuccin
+[Bibata-Cursor]: https://github.com/ful1e5/Bibata_Cursor
 [Papirus-icon-theme]: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 
 <!-- Fonts -->

@@ -16,6 +16,7 @@
 
     kaizen.url = "github:thericecold/kaizen";
     kaivim.url = "github:thericecold/kaivim";
+    pyprland.url = "github:hyprland-community/pyprland";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
  };
 

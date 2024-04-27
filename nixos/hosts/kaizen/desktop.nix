@@ -1,16 +1,16 @@
 { inputs, pkgs, ... }:
 let
   kaivim = inputs.kaivim.packages.${pkgs.system}.default;
-  # kaizen = inputs.kaizen.packages.${pkgs.system}.default;
+  kaizen = inputs.kaizen.packages.${pkgs.system}.default;
 in {
   environment = {
-    systemPackages = with pkgs; [ /* kaizen */ kaivim linux-wifi-hotspot ];
-    loginShellInit = /* bash */ ''
+    systemPackages = with pkgs; [ kaizen kaivim linux-wifi-hotspot ];
 
+    loginShellInit = /* bash */ ''
+      # INFO: If removed, xwayland apps won't work, idk why.
       if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
         exec Hyprland
       fi
-
     '';
   };
 
