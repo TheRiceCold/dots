@@ -3,12 +3,12 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    disko.url = "github:nix-community/disko";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    disko.url = "github:nix-community/disko";
     # sops-nix.url = "github:mic92/sops-nix"; # TODO: Implement this
 
     nur.url = "github:nix-community/NUR";

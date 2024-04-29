@@ -1,14 +1,16 @@
 ###### *<div align=right><sub>Last nix update: april 29, 2024</sub></div>*
 
-<h1 align=center>Rice Flakes<br />
+<h1 align=center>
+  Flakes<br />
+
   <div align=center>
-    <a href='https://nixos.org'>
+    <a href=https://nixos.org>
       <img src='https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=1b1e28&logo=NixOS&logoColor=add7ff&color=add7ff'>
     </a>
-    <a href='https://github.com/thericecold/dots'>
+    <a href=https://github.com/thericecold/dots>
       <img src='https://img.shields.io/github/languages/code-size/thericecold/dots?color=5de4c7&labelColor=1b1e28&style=for-the-badge&logo=github&logoColor=5de4c7'>
     </a>
-    <a href='https://github.com/thericecold/dots/stargazers'>
+    <a href=https://github.com/thericecold/dots/stargazers>
       <img src='https://img.shields.io/github/stars/thericecold/dots?color=fcc5e9&labelColor=1b1e28&style=for-the-badge&logo=starship&logoColor=fcc5e9'>
     </a>
   </div>
@@ -28,51 +30,57 @@
 
 #### ▶️  Showcase
 
+<b>Desktop</b>
+
 https://github.com/TheRiceCold/kaizen/assets/44263259/4c3e38e9-320c-4d7a-968a-509b556e1ac2
 
 <details>
   <summary> <b>View details</b></summary>
 
-- Desktop Environment: [Kaizen]
 - Window Manager: [Hyprland][hyprland-config]
+- Desktop Environment: [Kaizen]
 
 </details>
 
-<img src='https://github.com/thericecold/dots/blob/main/assets/screenshots/lockscreen.jpg' />
-<details>
-  <summary> <b>View details</b></summary>
-
-- Lockscreen: [Hyprlock][hyprlock-config] (disabled)
-- Idle Management: [Hypridle][hypridle-config]
-    - Lockscreen: 5mins timeout
-    - Suspend: 30mins timeout
-
-</details>
+---
+**Development Setup**
 
 <img src='https://github.com/thericecold/dots/blob/main/assets/screenshots/neovim.png' />
 <details>
   <summary> <b>View details</b></summary>
 
-- Text editor: [kaivim]
-- Terminal Multiplexer: [zellij]
-- System fetch tool: [fastfetch]
+- Text editor: [Kaivim]
+- Terminal Multiplexer: [Zellij]
 - Scratchpad: [Pyprland's scratchpad][pyprland]
 
 </details>
 
-<p align="right"><a href="#top">back to top</a></p>
+---
+
+<details>
+  <summary> <b>Archived but still cool</b></summary>
+
+  - **Lockscreen**: [Hyprlock][hyprlock-config]
+
+    <img src='https://github.com/thericecold/dots/blob/main/assets/screenshots/lockscreen.jpg' />
+
+</details>
+
+<p align=right><a href="#top">back to top</a></p>
 
 #### 📝 Inputs
 - [Nix Packages][nixpkgs]: Collection of Nix Packages.
 - [Home Manager][home-manager]: User environment management using Nix package manager.
 - [Disko][disko]: Declarative disk partitioning and formatting using Nix.
+- [Sops Nix][sops-nix]: Atomic, declarative, and reproducible secret provisioning for NixOS based on sops.
 - [NUR][nur]: Nix User Repositories, user contributed packages.
 - [Nix Packages Wayland][nixpkgs-wayland]: Nix packages for Wayland.
-- [Kaizen][kaizen]: Desktop environment configured with [Ags].
+- [Kaizen][kaizen]: Desktop environment configured using [Ags].
 - [Kaivim][kaivim]: Personal [Neovim] configuration built with [Nixvim].
+- [Pyprland][pyprland]: Plugins for [Hyprland] designed to supercharge productivity.
 - [Spicetify Nix][spicetify-nix]: A nix flake for configuring [Spicetify].
 
-<p align="right"><a href="#top">back to top</a></p>
+<p align=right><a href="#top">back to top</a></p>
 
 <details>
   <summary> <b>💻 Nixos</b>: configuration for all hosts.</summary>
@@ -104,7 +112,7 @@ https://github.com/TheRiceCold/kaizen/assets/44263259/4c3e38e9-320c-4d7a-968a-50
     - Window Manager: [dwm]
 
   <br />
-  <p align="right"><a href="#top">back to top</a></p>
+  <p align=right><a href="#top">back to top</a></p>
 </details>
 <br />
 
@@ -156,7 +164,7 @@ https://github.com/TheRiceCold/kaizen/assets/44263259/4c3e38e9-320c-4d7a-968a-50
   ---
   - [**Minimo**][home-minimo]: (WIP)
 
-  <br /><p align="right"><a href="#top">back to top</a></p>
+  <br /><p align=right><a href="#top">back to top</a></p>
 </details>
 <br />
 
@@ -195,25 +203,27 @@ nix-switch kaizen # OR $ doas nixos-rebuild switch --flake .#kaizen
 hm-switch kaizen # OR $ home-manager switch .
 ```
 
-<p align="right"><a href="#top">back to top</a></p>
+<p align=right><a href="#top">back to top</a></p>
 
 ## 🙏 Acknowledgements
 
-- [Misterio77/nix-config](Misterio77) - NixOs configuration
-- [Ruixi-rebirth/melted-flakes](Ruixi) - Inspired me to switch to NixOS
+- [Misterio77/nix-config](Misterio77) - To properly write configuration.
+- [Ruixi-rebirth/melted-flakes](Ruixi) - Inspired me to switch to NixOS.
 
 <!-- Flake Inputs -->
 [nixpkgs]: https://github.com/NixOS/nixpkgs/tree/nixpkgs-unstable
-[disko]: https://github.com/nix-community/disko
 [home-manager]: https://github.com/nix-community/disko
+[disko]: https://github.com/nix-community/disko
+[sops-nix]: https://github.com/Mic92/sops-nix
 [nur]: https://github.com/nix-community/NUR
 [nixpkgs-wayland]: https://github.com/nix-community/nixpkgs-wayland
-[ags]: https://github.com/aylur/ags
-[hyprlock]: https://github.com/hyprwm/hyprlock
-[hypridle]: https://github.com/hyprwm/hypridle
 [kaivim]: https://github.com/thericecold/kaivim
 [kaizen]: https://github.com/thericecold/kaizen
 [spicetify-nix]: https://github.com/the-argus/spicetify-nix
+
+[ags]: https://github.com/aylur/ags
+[hyprlock]: https://github.com/hyprwm/hyprlock
+
 
 <!-- Nixos Shared -->
 [bash]: ../nixos/shared/programs/bash.nix
