@@ -31,6 +31,8 @@
 
 #### ▶️  Showcase (WIP)
 
+https://github.com/TheRiceCold/kaizen/assets/44263259/4c3e38e9-320c-4d7a-968a-509b556e1ac2
+
 <img src='https://github.com/thericecold/dots/blob/main/assets/screenshots/lockscreen.jpg' />
 <details>
   <summary> <b>View details</b></summary>
