@@ -15,8 +15,8 @@
     </a>
   </div>
 
-  **[<kbd> <br> Overview <br> </kbd>](#-Overview)** 
-  **[<kbd> <br> Installation <br> </kbd>](#-Installation)** 
+  **[<kbd> <br> Overview <br> </kbd>](#-overview)** 
+  **[<kbd> <br> Installation <br> </kbd>](#-how-to-cook-installation)** 
   **[<kbd> <br> Acknowledgements&nbsp; <br> </kbd>](#-Acknowledgements)**
 
 </h1>
@@ -37,7 +37,7 @@ https://github.com/TheRiceCold/kaizen/assets/44263259/4c3e38e9-320c-4d7a-968a-50
 <details>
   <summary> <b>View details</b></summary>
 
-- Window Manager: [Hyprland][hyprland-config]
+- Window Manager: [Hyprland]
 - Desktop Environment: [Kaizen]
 
 </details>
@@ -221,10 +221,6 @@ hm-switch kaizen # OR $ home-manager switch .
 [kaizen]: https://github.com/thericecold/kaizen
 [spicetify-nix]: https://github.com/the-argus/spicetify-nix
 
-[ags]: https://github.com/aylur/ags
-[hyprlock]: https://github.com/hyprwm/hyprlock
-
-
 <!-- Nixos Shared -->
 [bash]: ../nixos/shared/programs/bash.nix
 [host-shared]: ../nixos/shared/default.nix
@@ -240,6 +236,7 @@ hm-switch kaizen # OR $ home-manager switch .
 
 <!-- Home -->
 [home-shared]: ../home/shared/default.nix
+[home-minimo]: ../home/wolly/minimo/default.nix
 [home-kaizen]: ../home/wolly/kaizen/default.nix
 [home-kaizen-cli]: ../home/wolly/kaizen/cli/default.nix
 [home-kaizen-desktop]: ../home/wolly/kaizen/dekstop/default.nix
@@ -247,14 +244,11 @@ hm-switch kaizen # OR $ home-manager switch .
 [home-kaizen-apps]: ../home/wolly/kaizen/dekstop/apps/default.nix
 
 <!-- Hyprland Configurations -->
-[hyprland-config]: ../home/wolly/kaizen/desktop/hyprland
-[pypr-config]: ../home/wolly/kaizen/desktop/hyprland/pypr/default.nix
-[pypr-magnify]: https://github.com/hyprland-community/pyprland/wiki/magnify
-[pypr-scratch]: https://github.com/hyprland-community/pyprland/wiki/scratchpads
-[hypridle-config]: ../home/wolly/kaizen/desktop/hyprland/ecosystem/hypridle.nix
-[hyprshade-config]: ../home/wolly/kaizen/desktop/hyprland/ecosystem/hyprshade.nix
-[hyprlock-config]: ../home/wolly/kaizen/desktop/hyprland/ecosystem/hyprlock/default.nix
-
+[hyprland-config]: ../home/wolly/kaizen/desktop/wayland/hyprland
+[pypr-config]: ../home/wolly/kaizen/desktop/wayland/hyprland/pypr/default.nix
+[hypridle-config]: ../home/wolly/kaizen/desktop/wayland/hyprland/ecosystem/hypridle.nix
+[hyprshade-config]: ../home/wolly/kaizen/desktop/wayland/hyprland/ecosystem/hyprshade.nix
+[hyprlock-config]: ../home/wolly/kaizen/desktop/wayland/hyprland/ecosystem/hyprlock/default.nix
 
 <!-- Color Scripts -->
 [home-kaizen-colorscripts]: ../home/wolly/kaizen/scripts/colors/default.nix
@@ -269,11 +263,6 @@ hm-switch kaizen # OR $ home-manager switch .
 [gtk-catppuccin]: https://github.com/catppuccin/gtk
 
 
-<!-- Desktop Packages -->
-[pyprland]: ../home/wolly/kaizen/desktop/hyprland/pypr
-[home-minimo]: ../home/wolly/minimo/default.nix
-[kaizen-widgets]: https://github.com/TheRiceCode/kaizen-widgets
-
 <!-- Apps -->
 [helix]: ../home/shared/helix
 [firefox]: ../home/shared/firefox
@@ -281,61 +270,62 @@ hm-switch kaizen # OR $ home-manager switch .
 [foot]: ../home/wolly/kaizen/desktop/apps/foot.nix
 [sioyek]: ../home/wolly/kaizen/desktop/apps/sioyek.nix
 
+<!-- GitHub Links -->
+[ags]: https://github.com/aylur/ags
+[curlie]: https://github.com/rs/curlie
+[yazi]: https://github.com/sxyazi/yazi
+[toipe]: https://github.com/Samyak2/toipe
+[krabby]: https://github.com/yannjor/krabby
+[eza]: https://github.com/eza-community/eza
+[pipes-rs]: https://github.com/lhvy/pipes-rs
+[uchess]: https://github.com/tmountain/uchess
+[vesktop]: https://github.com/Vencord/Vesktop
+[slides]: https://github.com/maaslalani/slides
+[hyprlock]: https://github.com/hyprwm/hyprlock
+[inkscape]: https://github.com/inkscape/inkscape
+[nixvim]: https://github.com/nix-community/nixvim
+[vitetris]: https://github.com/vicgeralds/vitetris
+[spicetify]: https://github.com/spicetify/spicetify-cli
+[pyprland]: https://github.com/hyprland-community/pyprland
+[pypr-magnify]: https://github.com/hyprland-community/pyprland/wiki/magnify
+[pypr-scratch]: https://github.com/hyprland-community/pyprland/wiki/scratchpads
+
 <!-- Package Links -->
 [mpv]: https://mpv.io
-[ncmpcpp]: https://github.com/ncmpcpp/ncmpcpp
-[easyeffects]: https://github.com/wwmm/easyeffects
-[libresprite]: https://libresprite.github.io
+[neovim]: https://neovim.io
+[qemu]: https://www.qemu.org
+[waydroid]: https://waydro.id
+[flatpak]: https://flatpak.org
+[libvirt]: https://libvirt.org
 [neovide]: https://neovide.dev
 [dwm]: https://dwm.suckless.org
-[hyprland]: https://hyprland.org
 [opengl]: https://www.opengl.org
-[nixvim]: https://github.com/nix-community/nixvim
-[spicetify]: https://github.com/spicetify/spicetify-cli
-[vesktop]: https://github.com/Vencord/Vesktop
-[inkscape]: https://github.com/inkscape/inkscape
-[jetbrains-font]: https://www.jetbrains.com/lp/mono
-[neovim]: https://neovim.io
-[flatpak]: https://flatpak.org
-[virt-man]: https://virt-manager.org
+[hyprland]: https://hyprland.org
 [droidcam]: https://droidcam.app
+[virt-man]: https://virt-manager.org
+[libresprite]: https://libresprite.github.io
+[ncmpcpp]: https://github.com/ncmpcpp/ncmpcpp
 [OpenTabDriver]: https://opentabletdriver.net
-[libvirt]: https://libvirt.org
-[qemu]: https://www.qemu.org
-[waydroid]: https://waydro.id/
-
-<!-- Terminal Applications -->
-[neomutt]: https://neomutt.org
-[yazi]: https://github.com/sxyazi/yazi
-[eza]: https://github.com/eza-community/eza
-[zellij]: ../home/packages/cli/zellij
-[fastfetch]: ../home/packages/cli/sysfetch/fastfetch.nix
-[onefetch]: ../home/packages/cli/sysfetch/onefetch.nix
-[slides]: https://github.com/maaslalani/slides
-[curlie]: https://github.com/rs/curlie
-<!-- Games -->
-[toipe]: https://github.com/Samyak2/toipe
-[uchess]: https://github.com/tmountain/uchess
-[vitetris]: https://github.com/vicgeralds/vitetris
-<!-- Other -->
-[pipes-rs]: https://github.com/lhvy/pipes-rs
-[krabby]: https://github.com/yannjor/krabby
-
-[godot]: https://godotengine.org
+[easyeffects]: https://github.com/wwmm/easyeffects
+[jetbrains-font]: https://www.jetbrains.com/lp/mono
 [krita]: https://krita.org/en
+[godot]: https://godotengine.org
 [blender]: https://www.blender.org
 [aseprite]: https://www.aseprite.org
+[neomutt]: https://neomutt.org
+[nerdfonts]: https://www.nerdfonts.com
+[fontawesome]: https://fontawesome.com
+
+
+[zellij]: ../home/packages/cli/zellij
+[onefetch]: ../home/packages/cli/sysfetch/onefetch.nix
+[fastfetch]: ../home/packages/cli/sysfetch/fastfetch.nix
 
 <!-- Themes -->
 [Catppuccin]: https://github.com/catppuccin/catppuccin
 [Bibata-Cursor]: https://github.com/ful1e5/Bibata_Cursor
 [Papirus-icon-theme]: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 
-<!-- Fonts -->
-[nerdfonts]: https://www.nerdfonts.com/
-[fontawesome]: https://fontawesome.com/
-
 <!-- Acknowledgements -->
 [ruixi]: https://github.com/Ruixi-rebirth/flakes
 [misterio77]: https://github.com/Misterio77/nix-config
-[aylur]: https://github.com/aylur/dotfiles

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   mkBind = import ./mkBind.nix;
-  apps = import ../../apps.nix pkgs;
+  apps = import ../../../apps/get-apps.nix pkgs;
 
   arr = [1 2 3 4 5]; # Number of workspaces
   bind = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";

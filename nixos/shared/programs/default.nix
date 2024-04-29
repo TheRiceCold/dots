@@ -6,11 +6,11 @@
     wget
     clang
     gnumake
-    home-manager
 
     unzip
     p7zip
-    nix-prefetch-github
+
+    home-manager
 
     # Podman tools
     podman-tui

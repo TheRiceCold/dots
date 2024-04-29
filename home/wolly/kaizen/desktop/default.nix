@@ -4,7 +4,7 @@
     package = pkgs.matcha-gtk-theme;
   };
 in {
-  imports = [ ./hyprland ./apps ];
+  imports = [ ./wayland ./apps ];
 
   home = {
     sessionVariables = {
