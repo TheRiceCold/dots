@@ -9,6 +9,7 @@
     home-manager
 
     unzip
+    p7zip
     nix-prefetch-github
 
     # Podman tools

@@ -1,9 +1,6 @@
-###### *<div align=right><sub>Last nix update: april 27, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: april 29, 2024</sub></div>*
 
-<h1 align=center>
-  <img src='https://github.com/thericecold/dots/blob/main/assets/ibu-circle.png' width='150px'/>
-
-  Rice Flakes<br />
+<h1 align=center>Rice Flakes<br />
   <div align=center>
     <a href='https://nixos.org'>
       <img src='https://img.shields.io/badge/NixOS-unstable-blue.svg?style=for-the-badge&labelColor=1b1e28&logo=NixOS&logoColor=add7ff&color=add7ff'>
@@ -29,9 +26,17 @@
 
 ## ✈️  Overview
 
-#### ▶️  Showcase (WIP)
+#### ▶️  Showcase
 
 https://github.com/TheRiceCold/kaizen/assets/44263259/4c3e38e9-320c-4d7a-968a-509b556e1ac2
+
+<details>
+  <summary> <b>View details</b></summary>
+
+- Desktop Environment: [Kaizen]
+- Window Manager: [Hyprland][hyprland-config]
+
+</details>
 
 <img src='https://github.com/thericecold/dots/blob/main/assets/screenshots/lockscreen.jpg' />
 <details>
