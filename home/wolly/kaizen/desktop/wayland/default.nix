@@ -9,15 +9,13 @@
   home = {
     packages = with pkgs; [
       wtype             # Input simulator
-      # showmethekey
 
       wlr-randr
       wl-clipboard      # Clipboard Utility
 
       # For consideration
-      wluma
+      # wluma
       wl-mirror
-      wl-gammarelay-rs
     ];
 
     sessionVariables = {

@@ -23,12 +23,9 @@ in {
     };
   };
 
-  virtualisation = {
-    waydroid.enable = true;
-    libvirtd = {
-      enable = true;
-      qemu.package = pkgs.qemu;
-    };
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.package = pkgs.qemu;
   };
 
   xdg.portal = {
