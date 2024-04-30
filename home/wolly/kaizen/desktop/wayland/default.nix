@@ -2,6 +2,10 @@
 
   imports = [ ./hyprland ];
 
+  programs = {
+    imv.enable = true;
+  };
+
   home = {
     packages = with pkgs; [
       wtype             # Input simulator

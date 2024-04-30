@@ -6,15 +6,10 @@
     wget
     clang
     gnumake
-
-    unzip
-    p7zip
-
+    unzip p7zip
     home-manager
-
-    # Podman tools
-    podman-tui
-    podman-compose
+    nix-output-monitor
+    podman-tui podman-compose
   ];
 
   programs = {
@@ -23,13 +18,17 @@
     light.enable = true;
     dconf.enable = true;
     nano.enable = false;
+    less.enable = lib.mkDefault false; # I'd rather use bat
 
     direnv = {
       enable = true;
       nix-direnv.enable = true;
     };
 
-    less.enable = lib.mkDefault false; # I'd rather use bat
+    nh = {
+      enable = true;
+      flake = "/home/wolly/dots";
+    };
 
     bash = import ./bash.nix;
   };

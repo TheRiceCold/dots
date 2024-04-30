@@ -1,7 +1,7 @@
 pkgs:
 let
   addons = pkgs.nur.repos.rycee.firefox-addons;
-  homepage = "https://kaizen-dw.github.io/startpage/";
+  homepage = "https://thericecold.github.io/startpage/";
 in {
   bookmarks = { };
   extensions = with addons; [

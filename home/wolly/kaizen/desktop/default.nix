@@ -36,4 +36,6 @@ in {
     enable = true;
     platformTheme.name = "qtct";
   };
+
+  xdg.mimeApps.enable = true;
 }

@@ -3,6 +3,7 @@
 let
   inherit (inputs.nixpkgs.lib) nixosSystem;
   inherit (inputs.disko.nixosModules) disko;
+  inherit (inputs.sops-nix.nixosModules) sops;
 
   mkHost = {
     modules,
@@ -11,7 +12,7 @@ let
     disk ? ./disks/thinkpad.nix,
   }: nixosSystem {
     inherit system;
-    modules = [ disko ./shared ] ++ modules;
+    modules = [ sops disko ./shared ] ++ modules;
     specialArgs = { inherit inputs disk stateVersion; };
   };
 in {
