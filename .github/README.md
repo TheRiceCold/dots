@@ -26,7 +26,7 @@
 > This is my personal configuration for my setup.
 > If something doesn't work, feel free to open up an issue or message me,
 
-<center>
+<div align=center>
 <details>
   <summary><h3 style="display: inline;">Showcase</h3></summary>
 
@@ -67,7 +67,7 @@ https://github.com/TheRiceCold/kaizen/assets/44263259/4c3e38e9-320c-4d7a-968a-50
 
 <p align=right><a href="#top">back to top</a></p>
 </details>
-</center>
+</div>
 
 ## ✈️ Flake Overview
 
