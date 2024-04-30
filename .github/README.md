@@ -1,7 +1,7 @@
-###### *<div align=right><sub>Last nix update: april 29, 2024</sub></div>*
+###### *<div align=right><sub>Last nix update: april 30, 2024</sub></div>*
 
 <h1 align=center>
-  Flakes<br />
+  Riced Dots<br />
 
   <div align=center>
     <a href=https://nixos.org>
@@ -26,19 +26,21 @@
 > This is my personal configuration for my setup.
 > If something doesn't work, feel free to open up an issue or message me,
 
-## ✈️  Overview
+<center>
+<details>
+  <summary><h3 style="display: inline;">Showcase</h3></summary>
 
-#### ▶️  Showcase
+---
 
 <b>Desktop</b>
 
 https://github.com/TheRiceCold/kaizen/assets/44263259/4c3e38e9-320c-4d7a-968a-509b556e1ac2
 
 <details>
-  <summary> <b>View details</b></summary>
+<summary><b>View details</b></summary>
 
-- Window Manager: [Hyprland]
-- Desktop Environment: [Kaizen]
+  Window Manager: [Hyprland]<br/>
+  Desktop Environment: [Kaizen]
 
 </details>
 
@@ -47,28 +49,29 @@ https://github.com/TheRiceCold/kaizen/assets/44263259/4c3e38e9-320c-4d7a-968a-50
 
 <img src='https://github.com/thericecold/dots/blob/main/assets/screenshots/neovim.png' />
 <details>
-  <summary> <b>View details</b></summary>
+  <summary><b>View details</b></summary>
 
-- Text editor: [Kaivim]
-- Terminal Multiplexer: [Zellij]
-- Scratchpad: [Pyprland's scratchpad][pyprland]
+  Text editor: [Kaivim]<br/>
+  Terminal Multiplexer: [Zellij]<br/>
+  Scratchpad: [Pyprland's scratchpad][pyprland]
 
 </details>
 
 ---
 
-<details>
-  <summary> <b>Archived but still cool</b></summary>
+**Archived but still cool**
 
-  - **Lockscreen**: [Hyprlock][hyprlock-config]
+  [Hyprlock][hyprlock-config]
 
-    <img src='https://github.com/thericecold/dots/blob/main/assets/screenshots/lockscreen.jpg' />
-
-</details>
+  <img src='https://github.com/thericecold/dots/blob/main/assets/screenshots/lockscreen.jpg' />
 
 <p align=right><a href="#top">back to top</a></p>
+</details>
+</center>
 
-#### 📝 Inputs
+## ✈️ Flake Overview
+
+#### Inputs
 - [Nix Packages][nixpkgs]: Collection of Nix Packages.
 - [Home Manager][home-manager]: User environment management using Nix package manager.
 - [Disko][disko]: Declarative disk partitioning and formatting using Nix.
@@ -77,13 +80,11 @@ https://github.com/TheRiceCold/kaizen/assets/44263259/4c3e38e9-320c-4d7a-968a-50
 - [Nix Packages Wayland][nixpkgs-wayland]: Nix packages for Wayland.
 - [Kaizen][kaizen]: Desktop environment configured using [Ags].
 - [Kaivim][kaivim]: Personal [Neovim] configuration built with [Nixvim].
-- [Pyprland][pyprland]: Plugins for [Hyprland] designed to supercharge productivity.
 - [Spicetify Nix][spicetify-nix]: A nix flake for configuring [Spicetify].
 
-<p align=right><a href="#top">back to top</a></p>
-
+#### Outputs
 <details>
-  <summary> <b>💻 Nixos</b>: configuration for all hosts.</summary>
+  <summary><b>💻 Nixos</b>: configuration for all hosts.</summary>
   <br />
 
   > To switch host `cd` to `dots` directory and run `nix-switch <hostname>`.
@@ -114,8 +115,6 @@ https://github.com/TheRiceCold/kaizen/assets/44263259/4c3e38e9-320c-4d7a-968a-50
   <br />
   <p align=right><a href="#top">back to top</a></p>
 </details>
-<br />
-
 <details>
   <summary><b>🏠 Home</b>: Home configurations for users and hosts.</summary>
   <br />
@@ -164,9 +163,8 @@ https://github.com/TheRiceCold/kaizen/assets/44263259/4c3e38e9-320c-4d7a-968a-50
   ---
   - [**Minimo**][home-minimo]: (WIP)
 
-  <br /><p align=right><a href="#top">back to top</a></p>
 </details>
-<br />
+<p align=right><a href="#top">back to top</a></p>
 
 ## 🫕 How to cook (Installation)
 
@@ -298,24 +296,23 @@ hm-switch kaizen # OR $ home-manager switch .
 [flatpak]: https://flatpak.org
 [libvirt]: https://libvirt.org
 [neovide]: https://neovide.dev
+[krita]: https://krita.org/en
+[neomutt]: https://neomutt.org
 [dwm]: https://dwm.suckless.org
+[godot]: https://godotengine.org
 [opengl]: https://www.opengl.org
-[hyprland]: https://hyprland.org
 [droidcam]: https://droidcam.app
+[hyprland]: https://hyprland.org
+[blender]: https://www.blender.org
+[aseprite]: https://www.aseprite.org
 [virt-man]: https://virt-manager.org
+[nerdfonts]: https://www.nerdfonts.com
+[fontawesome]: https://fontawesome.com
 [libresprite]: https://libresprite.github.io
 [ncmpcpp]: https://github.com/ncmpcpp/ncmpcpp
 [OpenTabDriver]: https://opentabletdriver.net
 [easyeffects]: https://github.com/wwmm/easyeffects
 [jetbrains-font]: https://www.jetbrains.com/lp/mono
-[krita]: https://krita.org/en
-[godot]: https://godotengine.org
-[blender]: https://www.blender.org
-[aseprite]: https://www.aseprite.org
-[neomutt]: https://neomutt.org
-[nerdfonts]: https://www.nerdfonts.com
-[fontawesome]: https://fontawesome.com
-
 
 [zellij]: ../home/packages/cli/zellij
 [onefetch]: ../home/packages/cli/sysfetch/onefetch.nix
