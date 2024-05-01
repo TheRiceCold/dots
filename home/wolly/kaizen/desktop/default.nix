@@ -32,10 +32,8 @@ in {
     };
   };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "qtct";
-  };
+  qt.enable = true;
+  qt.platformTheme.name = "qtct";
 
   xdg.mimeApps.enable = true;
 }

@@ -8,7 +8,7 @@ in {
     foot = import ./foot pkgs;
     sioyek = import ./sioyek.nix;
     spicetify = import ./spicetify.nix pkgs spicetify-nix;
-    # ncmpcpp.enable = true; # I only listen to spotify or youtube
+    # ncmpcpp.enable = true; # I only listen on spotify or youtube
     mpv = {
       enable = true;
       config.gpu-context = "wayland";
@@ -38,7 +38,6 @@ in {
     pavucontrol     # Audio/Volume control
 
     # Development
-    # dotnet-sdk_8    # .NET SDK 8
     neovide         # Cool neovim GUI client
     godot_4         # Open source game engine
     # postman         # API Development Environment
