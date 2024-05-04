@@ -13,9 +13,9 @@ in {
       # Widgets prefix is SUPER
       (reset "r")
       (media "p")
-      (apis "Comma")
       (datemenu "d")
       (powermenu "F4")
+      (ai-tools "Comma")
       (launcher "Space")
       (shortcuts "Slash")
       (quicksettings "Period")

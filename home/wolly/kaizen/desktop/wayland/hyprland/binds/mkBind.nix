@@ -71,9 +71,9 @@
     shortcuts = toggle "shortcuts";
     powermenu = toggle "powermenu";
 
-    apis = show "apis";
     media = show "media";
     colors = show "colors";
+    ai-tools = show "ai-tools";
     datemenu = show "datemenu";
     keyboard = show "keyboard";
     quicksettings = show "quicksettings";

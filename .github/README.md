@@ -1,4 +1,4 @@
-###### _<div align=right><sub>Last nix update: april 30, 2024</sub></div>_
+###### _<div align=right><sub>Last nix update: may 4, 2024</sub></div>_
 
 <div align=center>
   <h1>Nix dots</h1>
@@ -132,21 +132,20 @@ Scratchpad: [Pyprland's scratchpad][pyprland]
 ---
 
 - [**Kaizen**][home-kaizen]: Fully riced configuration that I will continue to improve
-  - Desktop Environment: [Kaizen]
-  - Window Manager: [Hyprland][hyprland-config]
-    - [Pyprland][pypr-config] extensions added:
-      - [scratchpads][pypr-scratch]: Dropdown scratchpads
-      - [magnify][pypr-magnify]: Toggle magnification (zoom)
-    - [Hyprlock][hyprlock-config]: Lockscreen
-    - [Hypridle][hypridle-config]: Idle management
-    - [Hyprshade][hyprshade-config]: Shader configuration tool
+  - Desktop: [Kaizen]
+    - Cursor: [Bibata-Modern-Ice]
+    - GTK Theme: [Matcha-gtk-theme]
+    - Window Manager: [Hyprland][hyprland-config]
+      - [Pyprland][pypr-config]: Scratchpads and magnify.
+      - [Hypridle][hypridle-config]: Idle management
+      - [Hyprshade][hyprshade-config]: Shader configuration tool
   - [Terminal Applications][home-kaizen-cli]
-    - [Zellij][zellij]: Multiplexer
+    - [Zellij][zellij-config]: Multiplexer
     - [Yazi]: File Manager
     - [Curlie]: httpie-like curl
     - [Neomutt]: E-mail Reader
     - [Slides]: Presentation Tool
-    - Utilities: [eza], [fastfetch], [onefetch]
+    - Utilities: [eza], [fastfetch][fastfetch-config], [onefetch][onefetch-config]
     - Games: [tetris][vitetris], [uchess], [toipe]
     - Other: [pipes][pipes-rs], [krabby]
   - [Desktop Applications][home-kaizen-apps]
@@ -278,6 +277,7 @@ hm-switch kaizen # OR $ home-manager switch .
 [papirus-icon]: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 [bibata-modern-ice]: https://github.com/ful1e5/Bibata_Cursor
 [gtk-catppuccin]: https://github.com/catppuccin/gtk
+[matcha-gtk-theme]: https://github.com/vinceliuice/Matcha-gtk-theme
 
 <!-- Apps -->
 
@@ -334,15 +334,10 @@ hm-switch kaizen # OR $ home-manager switch .
 [OpenTabDriver]: https://opentabletdriver.net
 [easyeffects]: https://github.com/wwmm/easyeffects
 [jetbrains-font]: https://www.jetbrains.com/lp/mono
-[zellij]: ../home/packages/cli/zellij
-[onefetch]: ../home/packages/cli/sysfetch/onefetch.nix
-[fastfetch]: ../home/packages/cli/sysfetch/fastfetch.nix
 
-<!-- Themes -->
-
-[Catppuccin]: https://github.com/catppuccin/catppuccin
-[Bibata-Cursor]: https://github.com/ful1e5/Bibata_Cursor
-[Papirus-icon-theme]: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+[zellij-config]: ../home/wolly/kaizen/cli/zellij
+[onefetch-config]: ../home/wolly/kaizen/cli/sysfetch/onefetch.nix
+[fastfetch-config]: ../home/wolly/kaizen/cli/sysfetch/fastfetch.nix
 
 <!-- Acknowledgements -->
 
