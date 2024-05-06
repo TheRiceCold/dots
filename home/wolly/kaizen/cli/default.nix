@@ -1,27 +1,13 @@
 { pkgs, ... }: {
-  imports = [ ./zellij ./sysfetch ];
+  imports = [ ./sysfetch ];
 
-  programs = {
-    eza.enable = true;
-    neomutt = {
-      # TODO: Set this up
-      enable = true;
-      vimKeys = true;
-    };
-    yazi = {
-      # NOTE: I should probably configure this
-      enable = true;
-      enableBashIntegration = true;
-      keymap = { };
-      settings = { };
-      theme = { };
-    };
+  programs.neomutt = {
+    # TODO: Set this up
+    enable = true;
+    vimKeys = true;
   };
 
   home.packages = with pkgs; [
-    fd        # simple and fast alternative to find
-    curlie    # Frontend to curl that adds ease of use of httpie
-
     # Just fun stuff
     pipes-rs  # Animated pipes
     krabby    # Print pokemon sprites
