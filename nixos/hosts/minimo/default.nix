@@ -7,19 +7,9 @@
 
   services = {
     xserver = {
-      enable = true;
-      videoDrivers = [ "amdgpu" ];
       displayManager.startx.enable = true;
       windowManager.dwm = {
         enable = true;
-      };
-      libinput = {
-        enable = true;
-        touchpad = {
-          tapping = true;
-          middleEmulation = true;
-          naturalScrolling = true;
-        };
       };
     };
   };

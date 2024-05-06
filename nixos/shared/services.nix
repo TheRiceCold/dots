@@ -2,6 +2,18 @@
   services = {
     dbus.enable = true;
     openssh.enable = true;
+    libinput = {
+      enable = true;
+      touchpad = {
+        tapping = true;
+        middleEmulation = true;
+        naturalScrolling = true;
+      };
+    };
+    xserver = {
+      enable = true;
+      videoDrivers = [ "amdgpu" ];
+    };
 
     pipewire = {
       enable = true;
