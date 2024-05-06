@@ -61,7 +61,7 @@ Scratchpad: [Pyprland's scratchpad][pyprland]
 > This is my personal configuration for my setup.
 > If something doesn't work, feel free to open up an issue or message me
 
-## ✈️ Flake Overview
+## ❄️ Flake Overview
 
 #### Inputs
 
@@ -198,32 +198,8 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 
 <p align=right><a href='#top'>back to top</a></p>
 
-## 🧑‍💻 Commands you should know
-
-- Connect to internet (Change what's inside the brackets with your info).
-
-```
-iwctl --passphrase <passphrase> station <device> connect <SSID>
-```
-
-- Rebuild and switch to change the system configuration
-
-```
-nix-switch kaizen # OR $ doas nixos-rebuild switch --flake .#kaizen
-```
-
-- Switch home-manager
-
-```
-hm-switch kaizen # OR $ home-manager switch .
-```
-
-
-<details>
-  <summary><h4 style='display: inline;'>Custom Shell Commands</h4></summary>
-
---- 
-  **Aliases**
+## 🧑‍💻 Shell Commands
+  #### Aliases
   - `x`: exit
   - `v`: nvim
   - `f`: fuck
@@ -235,45 +211,44 @@ hm-switch kaizen # OR $ home-manager switch .
   - `nix-rollback`: doas nixos-rebuild switch --rollback
 ---
 
-**Functions**
+#### Functions
 
-- Update an input included in `flake.nix`
+- Update an input included in [flake.nix](./flake.nix) file.
 ```
-nix-update-input <input> # Example: nix-update-input kaizen
+nix-update-input <input> # Example: nix-update-input nixpkgs
 ```
-- Upgrade a nix profile
+- Upgrade a nix profile.
 > NOTE: run `nix profile list` to see the profile index
 ```
 nix-upgrade <index> # Example: nix-upgrade 3
 ```
-- Rebuild switch a NixOS host
+- Rebuild switch a NixOS host.
 > NOTE: There are only two host; `kaizen` and `minimo`
 ```
 nix-switch <hostname> # Example: nix-switch kaizen
 ```
-- Cleanup and rebuild switch a NixOS host
+- Cleanup and rebuild switch a NixOS host.
 ```
 nix-clean-switch <hostname> # Example: nix-clean-switch kaizen
 ```
-- Update flake inputs and rebuild switch a NixOS host
+- Update flake inputs and rebuild switch a NixOS host.
 ```
 nix-update-switch <hostname> # Example: nix-update-switch kaizen
 ```
-- Cleanup, update flake inputs and rebuild switch a NixOS host
+- Cleanup, update flake inputs and rebuild switch a NixOS host.
 ```
 nix-full-switch <hostname> # Example: nix-full-switch kaizen
 ```
-- Install a package/profile from nix packages
+- Install a package/profile from [Nix packages](https://search.nixos.org/packages).
 ```
 nixpkgs-add <package> # Example: nixpkgs-add firefox
 ```
-- Install a nix flake github repository
+- Install a nix flake github repository.
 ```
-nixgit-add <github-repository> # Example: nixgit-add thericecold/kaivim
+nixgit-add <username/repository> # Example: nixgit-add thericecold/kaivim
 ```
 
 <p align=right><a href='#top'>back to top</a></p>
-</details>
 
 ## 🙏 Acknowledgements
 
