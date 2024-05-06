@@ -1,5 +1,10 @@
 {
-  shellAliases = {
+  shellAliases = let
+    nix-clean = "nh clean all";
+    nix-update = "doas nix flake update";
+    nix-switch = "git add . ; nh os switch";
+    nix-rollback = "doas nixos-rebuild switch --rollback";
+  in {
     x = "exit";
     v = "nvim";
     f = "fuck";
@@ -10,37 +15,22 @@
     hm = "home-manager";
 
     docker-compose = "podman-compose";
-    nix-update = "doas nix flake update";
-    nix-rollback = "doas nixos-rebuild switch --rollback";
+
+    hm-switch = "git add . ; nh home switch";
+
+    inherit nix-clean nix-update nix-switch nix-rollback;
+    nix-clean-switch = "${nix-clean}; ${nix-switch}";
+    nix-update-switch = "${nix-update}; ${nix-switch}";
+    nix-full-switch = "${nix-clean}; ${nix-update}; ${nix-switch}";
   };
 
   interactiveShellInit = /* bash */ ''
-    hm-switch() {
-      git add . ; home-manager switch --flake .
-    }
-
-    nix-update() {
-      doas nix flake update
-    }
-
-    nix-clean() {
-      doas nix-collect-garbage -d
-    }
-
-    nix-switch() {
-      git add . ; doas nixos-rebuild switch --flake .#$1
-    }
-
-    nix-clean-switch() {
-      nix-clean; nix-switch $1
-    }
-
-    nix-update-switch() {
-      nix-update; nix-clean-switch $1
-    }
-
     nix-update-input() {
       nix flake lock --update-input $1
+    }
+
+    nix-upgrade() {
+      nix profile upgrade $1
     }
   '';
 }
