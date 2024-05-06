@@ -14,6 +14,7 @@
 
 **[<kbd> <br> Overview <br> </kbd>](#-overview)** 
 **[<kbd> <br> Installation <br> </kbd>](#-how-to-cook-installation)** 
+**[<kbd> <br> Commands&nbsp;<br> </kbd>](#-commands-you-should-know)** 
 **[<kbd> <br> Acknowledgements&nbsp; <br> </kbd>](#-Acknowledgements)**
 
 <details>
@@ -195,7 +196,9 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 
 - Install: `nixos-install --flake kaizen`
 
-#### Commands you should know
+<p align=right><a href='#top'>back to top</a></p>
+
+## 🧑‍💻 Commands you should know
 
 - Connect to internet (Change what's inside the brackets with your info).
 
@@ -215,7 +218,62 @@ nix-switch kaizen # OR $ doas nixos-rebuild switch --flake .#kaizen
 hm-switch kaizen # OR $ home-manager switch .
 ```
 
+
+<details>
+  <summary><h4 style='display: inline;'>Custom Shell Commands</h4></summary>
+
+--- 
+  **Aliases**
+  - `x`: exit
+  - `v`: nvim
+  - `f`: fuck
+  - `c`: clear
+  - `np`: nix profile
+  - `hm`: home-manager
+  - `nix-update`: doas nix flake update
+  - `hm-switch`: git add . ; nh home switch
+  - `nix-rollback`: doas nixos-rebuild switch --rollback
+---
+
+**Functions**
+
+- Update an input included in `flake.nix`
+```
+nix-update-input <input> # Example: nix-update-input kaizen
+```
+- Upgrade a nix profile
+> NOTE: run `nix profile list` to see the profile index
+```
+nix-upgrade <index> # Example: nix-upgrade 3
+```
+- Rebuild switch a NixOS host
+> NOTE: There are only two host; `kaizen` and `minimo`
+```
+nix-switch <hostname> # Example: nix-switch kaizen
+```
+- Cleanup and rebuild switch a NixOS host
+```
+nix-clean-switch <hostname> # Example: nix-clean-switch kaizen
+```
+- Update flake inputs and rebuild switch a NixOS host
+```
+nix-update-switch <hostname> # Example: nix-update-switch kaizen
+```
+- Cleanup, update flake inputs and rebuild switch a NixOS host
+```
+nix-full-switch <hostname> # Example: nix-full-switch kaizen
+```
+- Install a package/profile from nix packages
+```
+nixpkgs-add <package> # Example: nixpkgs-add firefox
+```
+- Install a nix flake github repository
+```
+nixgit-add <github-repository> # Example: nixgit-add thericecold/kaivim
+```
+
 <p align=right><a href='#top'>back to top</a></p>
+</details>
 
 ## 🙏 Acknowledgements
 
