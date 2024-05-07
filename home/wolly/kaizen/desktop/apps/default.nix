@@ -18,28 +18,36 @@ in {
 
   home.packages = with pkgs; with gnome; [
     # Gnome Apps
-    nautilus        # File Manager
+    nautilus            # File Manager
+    gnome-clocks
+    # gnome-weather
+    # gnome-calendar
+    gnome-calculator
 
     # Social
-    vesktop         # A custom Discord desktop app
+    vesktop             # A custom Discord desktop app
 
     # Graphic Editors
-    libresprite     # Pixel Art
-    blender         # 3d Graphics
-    inkscape        # Vector Graphics
-    krita           # Raster Graphics
+    libresprite         # Pixel Art
+    blender             # 3d Graphics
+    inkscape            # Vector Graphics
+    krita               # Raster Graphics
+
+    # Utilities
+    obs-studio
+    easyeffects         # Equalizer
+    pavucontrol         # Audio/Volume control
+    wpa_supplicant_gui
 
     # Windows Stuff
     wine-staging
     bottles-unwrapped
     # microsoft-edge-dev
 
-    easyeffects     # Equalizer
-    pavucontrol     # Audio/Volume control
-
     # Development
-    neovide         # Cool neovim GUI client
-    godot_4         # Open source game engine
-    # postman         # API Development Environment
+    neovide             # Cool neovim GUI client
+    godot_4             # Open source game engine
+    # postman             # API Development Environment
+    # distrobox           # podman or docker wrapper
    ];
 }

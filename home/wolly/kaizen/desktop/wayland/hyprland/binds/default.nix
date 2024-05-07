@@ -9,7 +9,11 @@ let
   mvtows =  bind "SUPER_SHIFT" "movetoworkspacesilent";
 in {
   wayland.windowManager.hyprland.settings = {
-    bind = with apps; with mkBind; with media; with widgets; with window; [
+    bind = with apps; 
+      with mkBind; 
+      with media; 
+      with window; 
+      with widgets; [
       # Widgets prefix is SUPER
       (reset "r")
       (media "p")

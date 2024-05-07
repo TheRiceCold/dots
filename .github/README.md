@@ -1,4 +1,4 @@
-###### _<div align=right><sub>Last nix update: may 4, 2024</sub></div>_
+###### _<div align=right><sub>Last nix update: may 7, 2024</sub></div>_
 
 <div align=center>
   <h1>Nix dots</h1>
@@ -14,7 +14,7 @@
 
 **[<kbd> <br> Overview <br> </kbd>](#-overview)** 
 **[<kbd> <br> Installation <br> </kbd>](#-how-to-cook-installation)** 
-**[<kbd> <br> Commands&nbsp;<br> </kbd>](#-commands-you-should-know)** 
+**[<kbd> <br> Commands&nbsp;<br> </kbd>](#-shell-commands)** 
 **[<kbd> <br> Acknowledgements&nbsp; <br> </kbd>](#-Acknowledgements)**
 
 <details>
@@ -54,8 +54,6 @@ Scratchpad: [Pyprland's scratchpad][pyprland]
 </details>
 
 </div>
-
----
 
 > [!NOTE] <br />
 > This is my personal configuration for my setup.
@@ -213,7 +211,7 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 
 #### Functions
 
-- Update an input included in [flake.nix](./flake.nix) file.
+- Update an input included in [flake.nix](../flake.nix) file.
 ```
 nix-update-input <input> # Example: nix-update-input nixpkgs
 ```
