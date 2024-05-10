@@ -24,9 +24,6 @@
     firewall.enable = false;
   };
 
-  programs.adb.enable = true;
-  services.udev.packages = [ pkgs.android-udev-rules ];
-
   fonts.packages = with pkgs; [
     jetbrains-mono
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

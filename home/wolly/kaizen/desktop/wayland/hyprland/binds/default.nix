@@ -18,6 +18,7 @@ in {
       (reset "r")
       (media "p")
       (datemenu "d")
+      (overview "Tab")
       (powermenu "F4")
       (ai-tools "Comma")
       (launcher "Space")

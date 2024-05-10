@@ -8,7 +8,7 @@
     font-awesome
     source-sans-pro
     (pkgs.nerdfonts.override {
-      fonts = [ "Ubuntu" "UbuntuMono" "CascadiaCode" "FiraCode" ];
+      fonts = [ "Ubuntu" "UbuntuMono" "CascadiaCode" ];
     })
   ];
 }

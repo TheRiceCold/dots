@@ -1,4 +1,4 @@
-###### _<div align=right><sub>Last nix update: may 7, 2024</sub></div>_
+###### _<div align=right><sub>Last nix update: may 10, 2024</sub></div>_
 
 <div align=center>
   <h1>Nix dots</h1>
@@ -69,7 +69,7 @@ Scratchpad: [Pyprland's scratchpad][pyprland]
 - [Sops Nix][sops-nix]: Atomic, declarative, and reproducible secret provisioning for NixOS based on sops.
 - [NUR][nur]: Nix User Repositories, user contributed packages.
 - [Nix Packages Wayland][nixpkgs-wayland]: Nix packages for Wayland.
-- [Kaizen][kaizen]: Desktop environment configured using [Ags].
+- [Kaizen][kaizen]: Desktop environment I configured using [Ags].
 - [Kaivim][kaivim]: Personal [Neovim] configuration built with [Nixvim].
 - [Spicetify Nix][spicetify-nix]: A nix flake for configuring [Spicetify].
 

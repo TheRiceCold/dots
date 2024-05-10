@@ -11,6 +11,7 @@ in {
         isNormalUser = true;
         initialPassword = "password"; # TODO: Encrypt password
         extraGroups = [ "wheel" "video" "audio" ] ++ ifExist [
+          "kvm"
           "docker"
           "podman"
           "adbusers"

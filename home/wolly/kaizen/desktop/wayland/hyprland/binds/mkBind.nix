@@ -66,7 +66,7 @@
   in {
     reset = bind "kaizen -q; kaizen";
 
-    # overview = toggle "overview";
+    overview = toggle "overview";
     launcher = toggle "launcher";
     shortcuts = toggle "shortcuts";
     powermenu = toggle "powermenu";
