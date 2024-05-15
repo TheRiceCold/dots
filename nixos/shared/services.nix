@@ -10,10 +10,6 @@
         naturalScrolling = true;
       };
     };
-    xserver = {
-      enable = true;
-      videoDrivers = [ "amdgpu" ];
-    };
 
     pipewire = {
       enable = true;
