@@ -1,6 +1,6 @@
 let
   nix-clean = "nh clean all";
-  nix-update = "doas nix flake update";
+  nix-up = "doas nix flake update";
   nix-rollback = "doas nixos-rebuild switch --rollback";
 in {
   shellAliases = {
@@ -15,18 +15,13 @@ in {
 
     docker-compose = "podman-compose";
     hm-switch = "git add . ; nh home switch";
-    inherit nix-clean nix-update nix-rollback;
+    inherit nix-clean nix-up nix-rollback;
   };
 
   interactiveShellInit = /* bash */ ''
-    # nix-update-input <input>
-    nix-update-input() {
+    # nix-up-input <input>
+    nix-up-input() {
       nix flake lock --update-input $1
-    }
-
-    # nix-upgrade <index>
-    nix-upgrade() {
-      nix profile upgrade $1
     }
 
     # nix-switch <hostname>
@@ -39,14 +34,14 @@ in {
       ${nix-clean}; nix-switch $1
     }
 
-    # nix-update-swtich <hostname>
-    nix-update-switch() {
-      ${nix-update}; nix-switch $1
+    # nix-up-switch <hostname>
+    nix-up-switch() {
+      ${nix-up}; nix-switch $1
     }
 
-    # nix-full-swtich <hostname>
+    # nix-full-switch <hostname>
     nix-full-switch() {
-      ${nix-clean}; ${nix-update}; nix-switch $1
+      ${nix-clean}; ${nix-up}; nix-switch $1
     }
 
     # nixpkgs-add <package>

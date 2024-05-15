@@ -16,7 +16,7 @@ in {
       with widgets; [
       # Widgets prefix is SUPER
       (reset "r")
-      (media "p")
+      (media "m")
       (datemenu "d")
       (overview "Tab")
       (powermenu "F4")

@@ -1,4 +1,4 @@
-###### _<div align=right><sub>Last nix update: may 10, 2024</sub></div>_
+###### _<div align=right><sub>Last nix update: may 16, 2024</sub></div>_
 
 <div align=center>
   <h1>Nix dots</h1>
@@ -204,7 +204,7 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
   - `c`: clear
   - `np`: nix profile
   - `hm`: home-manager
-  - `nix-update`: doas nix flake update
+  - `nix-up`: doas nix flake update
   - `hm-switch`: git add . ; nh home switch
   - `nix-rollback`: doas nixos-rebuild switch --rollback
 ---
@@ -213,7 +213,7 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
 
 - Update an input included in [flake.nix](../flake.nix) file.
 ```
-nix-update-input <input> # Example: nix-update-input nixpkgs
+nix-up-input <input> # Example: nix-update-input nixpkgs
 ```
 - Upgrade a nix profile.
 > NOTE: run `nix profile list` to see the profile index
@@ -231,7 +231,7 @@ nix-clean-switch <hostname> # Example: nix-clean-switch kaizen
 ```
 - Update flake inputs and rebuild switch a NixOS host.
 ```
-nix-update-switch <hostname> # Example: nix-update-switch kaizen
+nix-up-switch <hostname> # Example: nix-up-switch kaizen
 ```
 - Cleanup, update flake inputs and rebuild switch a NixOS host.
 ```
