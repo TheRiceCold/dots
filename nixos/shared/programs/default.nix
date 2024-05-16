@@ -1,14 +1,11 @@
 { lib, pkgs, ... }: {
 
   environment.systemPackages = with pkgs; [
-    lsof wget
-
-    gcc clang gnumake
+    lsof wget gnumake
+    go bun gcc clang
     unrar unzip p7zip
-
-    home-manager
-    nix-output-monitor
     podman-tui podman-compose
+    home-manager nix-output-monitor
   ];
 
   programs = {

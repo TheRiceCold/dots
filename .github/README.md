@@ -1,4 +1,4 @@
-###### _<div align=right><sub>Last nix update: may 16, 2024</sub></div>_
+###### _<div align=right><sub>Last nix update: may 17, 2024</sub></div>_
 
 <div align=center>
   <h1>Nix dots</h1>
@@ -55,7 +55,7 @@ Scratchpad: [Pyprland's scratchpad][pyprland]
 
 </div>
 
-> [!NOTE] <br />
+> [!NOTE]
 > This is my personal configuration for my setup.
 > If something doesn't work, feel free to open up an issue or message me
 

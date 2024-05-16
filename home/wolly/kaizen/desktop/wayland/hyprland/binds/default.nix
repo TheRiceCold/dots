@@ -16,7 +16,7 @@ in {
       with widgets; [
       # Widgets prefix is SUPER
       (reset "r")
-      (media "m")
+      (player "p")
       (datemenu "d")
       (overview "Tab")
       (powermenu "F4")
@@ -41,9 +41,9 @@ in {
       "SUPER_SHIFT, q, exit" # Exit Hyprland
 
       # Window
-      (pin "SUPER, p")
       (kill "SUPER, q")
       (float "SUPER, t")
+      (pin "SUPER_SHIFT, p")
       (maximized "SUPER, m")
       (fullscreen "SUPER, f")
       (center_layout "SUPER, c")

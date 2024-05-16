@@ -71,7 +71,7 @@
     shortcuts = toggle "shortcuts";
     powermenu = toggle "powermenu";
 
-    media = show "media";
+    player = show "player";
     colors = show "colors";
     ai-tools = show "ai-tools";
     datemenu = show "datemenu";
