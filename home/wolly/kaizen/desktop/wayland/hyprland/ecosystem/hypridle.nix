@@ -2,8 +2,8 @@
   home.packages = [ pkgs.hypridle ];
   xdg.configFile."hypr/hypridle.conf".text = ''
     general {
-      lock_cmd = pidof hyprlock || hyprlock       # avoid starting multiple hyprlock instances.
-      before_sleep_cmd = hyprlock                 # lock before suspend.
+      lock_cmd = pidof kaizen-lock || kaizen-lock # avoid starting multiple kaizen-lock instances.
+      before_sleep_cmd = kaizen-lock # lock before suspend.
       after_sleep_cmd = hyprctl dispatch dpms on  # to avoid having to press a key twice to turn on the display.
     }
 
@@ -22,7 +22,7 @@
 
     listener {
       timeout = 600                                 # 10min
-      on-timeout = hyprlock                         # lock screen when timeout has passed
+      on-timeout = kaizen-lock # lock screen when timeout has passed
     }
 
     listener {

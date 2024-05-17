@@ -57,7 +57,7 @@ Scratchpad: [Pyprland's scratchpad][pyprland]
 
 > [!NOTE]
 > This is my personal configuration for my setup.
-> If something doesn't work, feel free to open up an issue or message me
+> If something doesn't work, feel free to open up an issue or message me.
 
 ## ❄️ Flake Overview
 

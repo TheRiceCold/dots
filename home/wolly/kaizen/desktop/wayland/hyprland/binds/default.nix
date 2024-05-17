@@ -24,6 +24,7 @@ in {
       (launcher "Space")
       (shortcuts "Slash")
       (quicksettings "Period")
+      "SUPER_SHIFT, l, exec, kaizen-lock"
 
       # Pypr Scatchpads Toggle's prefix is SUPER_CTRL
       (toggle "t" "term")
@@ -50,11 +51,13 @@ in {
       (center_layout_up "CTRL, k")
       (center_layout_down "CTRL, j")
       (fakefullscreen "SUPER_SHIFT, f")
+
       # prefix is SUPER
       (focus "k" "u") 
       (focus "j" "d")
       (focus "l" "r")
       (focus "h" "l")
+
       # prefix is SUPER_SHIFT
       (swap "k" "u")
       (swap "j" "d")
