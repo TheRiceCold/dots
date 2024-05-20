@@ -4,8 +4,8 @@ let
   themes = pkgs.fetchFromGitHub {
     owner = "TheRiceCold";
     repo = "spicetify-themes";
-    rev = "0764939d69bc5fda361ed846dd15b8a638060daa";
-    hash = "sha256-WAycs47qKJeJkfclwV9IX7FwDGa9mYfvjlvVM/yPwu8=";
+    rev = "b4df0127d3be72634666824fa682feb49e2721e2";
+    hash = "sha256-ECN81f5kl/gXcyiL55Sqi5aAUaEPRHYlEIRUIA5u5/k=";
   };
 in {
   enable = true;

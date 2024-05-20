@@ -1,16 +1,19 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: let
+  # lockscreen = "hyprlock";
+  lockscreen = "kaizen-lock";
+in {
   home.packages = [ pkgs.hypridle ];
   xdg.configFile."hypr/hypridle.conf".text = ''
     general {
-      lock_cmd = pidof kaizen-lock || kaizen-lock # avoid starting multiple kaizen-lock instances.
-      before_sleep_cmd = kaizen-lock # lock before suspend.
-      after_sleep_cmd = hyprctl dispatch dpms on  # to avoid having to press a key twice to turn on the display.
+      lock_cmd = pidof ${lockscreen} || ${lockscreen}   # avoid starting multiple kaizen-lock instances.
+      before_sleep_cmd = ${lockscreen}                  # lock before suspend.
+      after_sleep_cmd = hyprctl dispatch dpms on        # to avoid having to press a key twice to turn on the display.
     }
 
     listener {
-      timeout = 300                                # 5min.
-      on-timeout = light -S 10                     # set monitor backlight to minimum, avoid 0 on OLED monitor.
-      on-resume = brightnessctl -r                 # monitor backlight restore.
+      timeout = 300                                     # 5min.
+      on-timeout = light -S 10                          # set monitor backlight to minimum, avoid 0 on OLED monitor.
+      on-resume = brightnessctl -r                      # monitor backlight restore.
     }
 
     # turn off keyboard backlight, uncomment this section if have keyboard backlight.
@@ -21,19 +24,19 @@
     }
 
     listener {
-      timeout = 600                                 # 10min
-      on-timeout = kaizen-lock # lock screen when timeout has passed
+      timeout = 600                                     # 10min
+      on-timeout = ${lockscreen}                        # lock screen when timeout has passed
     }
 
     listener {
-      timeout = 900                                 # 15min
-      on-timeout = hyprctl dispatch dpms off        # screen off when timeout has passed
-      on-resume = hyprctl dispatch dpms on          # screen on when activity is detected after timeout has fired.
+      timeout = 900                                     # 15min
+      on-timeout = hyprctl dispatch dpms off            # screen off when timeout has passed
+      on-resume = hyprctl dispatch dpms on              # screen on when activity is detected after timeout has fired.
     }
 
     listener {
-      timeout = 1800                                # 30min
-      on-timeout = systemctl suspend                # suspend pc
+      timeout = 1800                                    # 30min
+      on-timeout = systemctl suspend                    # suspend pc
     }
 '';
 }
