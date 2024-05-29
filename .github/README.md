@@ -1,4 +1,4 @@
-###### _<div align=right><sub>Last nix update: may 25, 2024</sub></div>_
+###### _<div align=right><sub>Last nix update: may 28, 2024</sub></div>_
 
 <div align=center>
   <h1>Nix dots</h1>
@@ -192,7 +192,8 @@ iwctl --passphrase <passphrase> station <device> connect <SSID>
   cp /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/nixos-config/hosts/<host>
 ```
 
-- Install: `nixos-install --flake kaizen`
+- Nixos Install: `nixos-install --flake kaizen`
+- Home Manager: `hm-switch`
 
 <p align=right><a href='#top'>back to top</a></p>
 
