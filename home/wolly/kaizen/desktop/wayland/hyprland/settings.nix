@@ -14,7 +14,6 @@ in {
 
   general = {
     layout = "dwindle";
-    no_cursor_warps = true;
     resize_on_border = true;
   };
 
