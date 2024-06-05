@@ -19,7 +19,7 @@ in {
   home.packages = with pkgs; with gnome; [
     # Gnome Apps
     nautilus            # File Manager
-    gnome-clocks
+    # gnome-clocks
     # gnome-weather
     # gnome-calendar
     gnome-calculator
@@ -32,6 +32,7 @@ in {
     blender             # 3d Graphics
     inkscape            # Vector Graphics
     krita               # Raster Graphics
+    gimp                # Image Maniputation
 
     # Utilities
     obs-studio
@@ -40,15 +41,15 @@ in {
     wpa_supplicant_gui
 
     # Windows Stuff
-    wine-staging
-    bottles-unwrapped
+    # wine-staging
+    # bottles-unwrapped
     # microsoft-edge-dev
 
     # Development
     # zed-editor        # Not yet stable
     neovide             # Cool neovim GUI client
     godot_4             # Open source game engine
-    # postman             # API Development Environment
+    postman             # API Development Environment
     # distrobox           # podman or docker wrapper
    ];
 }
