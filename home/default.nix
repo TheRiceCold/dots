@@ -6,7 +6,7 @@ let
   mkHome = {
     modules,
     user ? "wolly",
-    stateVersion ? "23.11",
+    stateVersion ? "24.05",
     system ? "x86_64-linux",
   }: home-manager.lib.homeManagerConfiguration {
     pkgs = import nixpkgs {
