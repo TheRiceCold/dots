@@ -3,6 +3,14 @@
   imports = [ ./bat.nix ./zellij ];
 
   programs = {
+    bash = {
+      enable = true;
+      shellAliases = {
+        zj = "zellij";
+        curl = "curlie";
+      };
+    };
+
     btop = {
       enable = true;
       settings = {
@@ -29,9 +37,7 @@
 
   home.packages = with pkgs; [
     fd        # simple and fast alternative to find
+    sc-im     # Ncurses spreadsheet program for terminal
     curlie    # Frontend to curl that adds ease of use of httpie
-
-    awscli2
-    kubectl kubernetes-helm 
   ];
 }

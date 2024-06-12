@@ -19,6 +19,8 @@ in {
   };
 
   interactiveShellInit = /* bash */ ''
+    export PATH=$PATH:~/.local/bin
+
     # nix-up-input <input>
     nix-up-input() {
       nix flake lock --update-input $1
