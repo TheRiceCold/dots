@@ -17,10 +17,10 @@ in {
       # Widgets prefix is SUPER
       (reset "r")
       (player "p")
+      (ai-tools "a")
       (datemenu "d")
       (overview "Tab")
       (powermenu "F4")
-      (ai-tools "Comma")
       (launcher "Space")
       (shortcuts "Slash")
       (quicksettings "Period")
