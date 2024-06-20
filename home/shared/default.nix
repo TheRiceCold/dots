@@ -2,7 +2,7 @@
 {
   imports = [
     ./cli
-    ./helix
+    ./dev
     ./firefox
     ./shell.nix
   ];
