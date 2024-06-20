@@ -49,7 +49,5 @@ in {
     # zed-editor        # Not yet stable
     neovide             # Cool neovim GUI client
     godot_4             # Open source game engine
-    postman             # API Development Environment
-    # distrobox           # podman or docker wrapper
    ];
 }

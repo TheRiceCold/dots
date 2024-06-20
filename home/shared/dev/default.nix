@@ -1,5 +1,8 @@
 { pkgs, ... }: {
-  imports = [ ./helix ];
+  imports = [
+    ./helix
+    ./flutter.nix
+  ];
 
   home.packages =
     with pkgs;
@@ -11,5 +14,10 @@
 
     # awscli2
     # kubectl kubernetes-helm
+
+    insomnia
+    distrobox
+    podman-tui 
+    podman-compose 
   ];
 }
