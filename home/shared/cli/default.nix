@@ -25,6 +25,16 @@
     k9s.enable = true;
     lazygit.enable = true;
 
+    gh = {
+      enable = true;
+      extensions = [pkgs.gh-markdown-preview];
+      settings = {
+        version = "1";
+        prompt = "enabled";
+        git_protocol = "ssh";
+      };
+    };
+
     yazi = {
       # NOTE: I should probably configure this
       enable = true;
