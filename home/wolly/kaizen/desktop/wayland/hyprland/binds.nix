@@ -3,7 +3,7 @@ let
   mkBind = import ../mkBind.nix;
   apps = import ../../apps/get-apps.nix pkgs;
 
-  arr = [1 2 3 4 5]; # Number of workspaces
+  arr = [1 2 3 4 5 6 7 8 9 0]; # Number of workspaces
   bind = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
   workspace = bind "SUPER" "workspace";
   mvtows =  bind "SUPER_SHIFT" "movetoworkspacesilent";
@@ -24,7 +24,6 @@ in {
       (launcher "Space")
       (shortcuts "Slash")
       (quicksettings "Period")
-      "SUPER_SHIFT, l, exec, kaizen-lock"
 
       # Pypr Scatchpads Toggle's prefix is SUPER_CTRL
       (toggle "t" "term")
