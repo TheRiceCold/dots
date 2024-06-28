@@ -15,20 +15,19 @@ in {
       with window; 
       with widgets; [
       # Widgets prefix is SUPER
-      (reset "r")
+      (reset "Escape")
+
+      (ask "a")
       (player "p")
-      (ai-tools "a")
-      (datemenu "d")
+
+      (run-app "r")
       (overview "Tab")
       (powermenu "F4")
-      (launcher "Space")
+      (dashboard "Space")
       (shortcuts "Slash")
-      (quicksettings "Period")
 
       # Pypr Scatchpads Toggle's prefix is SUPER_CTRL
       (toggle "t" "term")
-      (toggle "e" "explorer")
-      (toggle "Escape" "system")
 
       (exec "Return" "[tile] ${term}") # prefix is SUPER
 

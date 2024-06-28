@@ -66,14 +66,15 @@
   in {
     reset = bind "kaizen -q; kaizen";
 
+    run-app = toggle "run";
     overview = toggle "overview";
-    launcher = toggle "launcher";
+    dashboard = toggle "dashboard";
     shortcuts = toggle "shortcuts";
     powermenu = toggle "powermenu";
 
+    ask = show "ask";
     player = show "player";
     colors = show "colors";
-    ai-tools = show "ai-tools";
     datemenu = show "datemenu";
     keyboard = show "keyboard";
     quicksettings = show "quicksettings";
