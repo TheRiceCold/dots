@@ -21,7 +21,6 @@ in {
   dwindle.preserve_split = true;
 
   master = {
-    new_is_master = true;
     no_gaps_when_only = false;
     special_scale_factor = 0.8;
   };
