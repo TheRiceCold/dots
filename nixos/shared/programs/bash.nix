@@ -6,7 +6,6 @@ in {
   shellAliases = {
     x = "exit";
     v = "nvim";
-    f = "fuck";
     c = "clear";
     m = "mv -iv";
     cp = "cp -riv";

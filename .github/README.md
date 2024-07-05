@@ -1,4 +1,4 @@
-###### _<div align=right><sub>Last nix update: June 28, 2024</sub></div>_
+###### _<div align=right><sub>Last nix update: June 05, 2024</sub></div>_
 
 <div align=center>
   <h1>Nix dots</h1>
