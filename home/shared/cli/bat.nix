@@ -1,5 +1,5 @@
 {
-  programs.bat = {
+  bat = {
     enable = true;
     config = {
       pager = "less -FR";

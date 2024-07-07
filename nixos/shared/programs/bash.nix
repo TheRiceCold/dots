@@ -1,7 +1,9 @@
 let
-  nix-clean = "nh clean all";
-  nix-up = "doas nix flake update";
-  nix-rollback = "doas nixos-rebuild switch --rollback";
+  np = "nix profile";
+  clean = "nh clean all";
+  update = "doas nix flake update";
+  switch = "doas nixos-rebuild switch";
+  switch-flake = "git add . ; ${switch} --flake .#$1";
 in {
   shellAliases = {
     x = "exit";
@@ -9,50 +11,22 @@ in {
     c = "clear";
     m = "mv -iv";
     cp = "cp -riv";
-    np = "nix profile";
-    hm = "home-manager";
 
-    docker-compose = "podman-compose";
-    hm-switch = "git add . ; nh home switch";
-    inherit nix-clean nix-up nix-rollback;
+    hm = "home-manager";
+    home-switch = "git add . ; nh home switch";
+
+    # Package Install
+    git-add = "${np} install github:$1";
+    pkgs-add = "${np} install nixpkgs#$1";
+    update-input = "nix flake lock --update-input $1"; # nix-up-input <input>
+
+    rollback = "${switch} --rollback";
+    update-switch = "${update}; ${switch}"; # nix-up-switch <hostname>
+    clean-switch = "${clean}; ${switch-flake}"; # nix-clean-switch <hostname>
+    full-switch = "${clean}; ${update}; ${switch-flake}"; # nix-full-switch <hostname>
+
+    inherit np clean update switch-flake;
   };
 
-  interactiveShellInit = /* bash */ ''
-    export PATH=$PATH:~/.local/bin
-
-    # nix-up-input <input>
-    nix-up-input() {
-      nix flake lock --update-input $1
-    }
-
-    # nix-switch <hostname>
-    nix-switch() {
-      git add . ; doas nixos-rebuild switch --flake .#$1
-    }
-
-    # nix-clean-switch <hostname>
-    nix-clean-switch() {
-      ${nix-clean}; nix-switch $1
-    }
-
-    # nix-up-switch <hostname>
-    nix-up-switch() {
-      ${nix-up}; nix-switch $1
-    }
-
-    # nix-full-switch <hostname>
-    nix-full-switch() {
-      ${nix-clean}; ${nix-up}; nix-switch $1
-    }
-
-    # nixpkgs-add <package>
-    nixpkgs-add() {
-      nix profile install nixpkgs#$1
-    }
-
-    # nixgit-add <username/repository>
-    nixgit-add() {
-      nix profile install github:$1
-    }
-  '';
+  interactiveShellInit = /* bash */ "export PATH=$PATH:~/.local/bin";
 }

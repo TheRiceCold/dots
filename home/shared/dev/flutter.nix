@@ -20,8 +20,4 @@
     android-studio
     # androidComposition.androidsdk
   ];
-
-  programs.bash.initExtra = /* bash */ ''
-    export CHROME_EXECUTABLE=${pkgs.google-chrome}/bin/google-chrome-stable
-  '';
 }

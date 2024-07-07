@@ -1,9 +1,19 @@
+{ pkgs, ... }:
 {
   programs = {
-    zoxide = {
+    lazygit = {
       enable = true;
-      enableBashIntegration = true;
-      options = [ "--cmd cd" ];
+      settings = { };
+    };
+
+    gh = {
+      enable = true;
+      extensions = [pkgs.gh-markdown-preview];
+      settings = {
+        version = "1";
+        prompt = "enabled";
+        git_protocol = "ssh";
+      };
     };
 
     git = {

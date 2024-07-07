@@ -1,13 +1,13 @@
 { pkgs, ... }:
 {
-  imports = [ ./bat.nix ./zellij ];
+  imports = [ ./git.nix ./zellij ];
 
   programs = {
-    bash = {
+    bat = {
       enable = true;
-      shellAliases = {
-        zj = "zellij";
-        curl = "curlie";
+      config = {
+        pager = "less -FR";
+        # theme = "Catppuccin-mocha";
       };
     };
 
@@ -22,26 +22,22 @@
     };
 
     eza.enable = true;
-    k9s.enable = true;
-    lazygit.enable = true;
+    # k9s.enable = true;
 
-    gh = {
-      enable = true;
-      extensions = [pkgs.gh-markdown-preview];
-      settings = {
-        version = "1";
-        prompt = "enabled";
-        git_protocol = "ssh";
-      };
-    };
+    taskwarrior.enable = true;
 
     yazi = {
-      # NOTE: I should probably configure this
       enable = true;
       enableBashIntegration = true;
       keymap = { };
       settings = { };
       theme = { };
+    };
+
+    zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+      options = [ "--cmd cd" ];
     };
   };
 

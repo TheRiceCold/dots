@@ -1,5 +1,5 @@
 {
-  imports = [ ./pypr ./ecosystem ./binds.nix ];
+  imports = [./binds.nix ./pypr.nix ./ecosystem ];
 
   wayland.windowManager.hyprland = {
     enable = true;

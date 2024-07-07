@@ -1,10 +1,13 @@
 { lib, pkgs, ... }: {
 
-  environment.systemPackages = with pkgs; [
-    lsof wget gnumake
-    unrar unzip p7zip
-    home-manager nix-output-monitor
-  ];
+  environment = {
+    variables.EDITOR = "neovim";
+    systemPackages = with pkgs; [
+      lsof wget gnumake
+      unrar unzip p7zip
+      home-manager nix-output-monitor
+    ];
+  };
 
   programs = {
     adb.enable = true;

@@ -1,6 +1,5 @@
+{ pkgs, ... }:
 {
-  imports = [
-    ./onefetch.nix # Git summary tool
-    ./fastfetch.nix # Like neofetch, but much faster because written in C
-  ];
+  imports = [ ./fastfetch.nix ];
+  home.packages = [ pkgs.onefetch ];
 }
