@@ -2,7 +2,10 @@
 let
   inherit (inputs) spicetify-nix;
 in {
-  imports = [ spicetify-nix.homeManagerModule ];
+  imports = [
+    ./graphic-editors
+    spicetify-nix.homeManagerModule
+  ];
 
   programs = {
     foot = import ./foot pkgs;
@@ -16,7 +19,7 @@ in {
     };
   };
 
-  home.packages = with pkgs; with gnome; [
+  home.packages = with pkgs; [
     # Gnome Apps
     nautilus            # File Manager
     # gnome-clocks
@@ -27,27 +30,15 @@ in {
     # Social
     vesktop             # A custom Discord desktop app
 
-    # Graphic Editors
-    libresprite         # Pixel Art
-    blender             # 3d Graphics
-    inkscape            # Vector Graphics
-    krita               # Raster Graphics
-    gimp                # Image Maniputation
-
-    # Utilities
-    obs-studio
-    easyeffects         # Equalizer
-    pavucontrol         # Audio/Volume control
-    wpa_supplicant_gui
-
     # Windows Stuff
     # wine-staging
     # bottles-unwrapped
-    # microsoft-edge-dev
+    microsoft-edge-dev
 
-    # Development
-    # zed-editor        # Not yet stable
-    neovide             # Cool neovim GUI client
-    godot_4             # Open source game engine
+    # Utilities
+    obs-studio
+    # easyeffects         # Equalizer
+    pavucontrol         # Audio/Volume control
+    wpa_supplicant_gui
    ];
 }
