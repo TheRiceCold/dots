@@ -16,7 +16,7 @@
 
     kaizen.url = "github:thericecold/kaizen";
     kaivim.url = "github:thericecold/kaivim";
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
+    spicetify-nix.url = "github:gerg-l/spicetify-nix";
  };
 
   outputs = inputs @ { ... }: {

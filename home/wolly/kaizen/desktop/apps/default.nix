@@ -2,15 +2,11 @@
 let
   inherit (inputs) spicetify-nix;
 in {
-  imports = [
-    ./graphic-editors
-    spicetify-nix.homeManagerModule
-  ];
+  imports = [ ./spicetify.nix ./graphic-editors ];
 
   programs = {
     foot = import ./foot pkgs;
     sioyek = import ./sioyek.nix;
-    spicetify = import ./spicetify.nix pkgs spicetify-nix;
     # ncmpcpp.enable = true; # I only listen on spotify or youtube
     mpv = {
       enable = true;

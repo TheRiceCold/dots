@@ -1,31 +1,9 @@
-pkgs: spicetify-nix:
+{ inputs, pkgs, ... }:
 let
-  spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
-  themes = pkgs.fetchFromGitHub {
-    owner = "TheRiceCold";
-    repo = "spicetify-themes";
-    rev = "b4df0127d3be72634666824fa682feb49e2721e2";
-    hash = "sha256-ECN81f5kl/gXcyiL55Sqi5aAUaEPRHYlEIRUIA5u5/k=";
-  };
+  inherit (inputs) spicetify-nix;
 in {
-  enable = true;
-  theme = {
-    src = themes;
-    name = "Sleek";
-    injectCss = true;
-    replaceColors = true;
-    sidebarConfig = true;
-    overwriteAssets = true;
+  imports = [ spicetify-nix.homeManagerModules.default ];
+  programs.spicetify = {
+    enable = true;
   };
-  colorScheme = "poimandres";
-
-  enabledExtensions = with spicePkgs.extensions; [
-    trashbin
-    loopyLoop
-    popupLyrics
-    keyboardShortcut
-    # Community Extensions
-    adblock
-    powerBar
-  ];
 }
