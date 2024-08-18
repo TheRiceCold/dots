@@ -8,12 +8,15 @@ in {
     main = {
       term = "xterm-256color";
       font = "JetBrainsMonoNerdFont:size=12";
-      notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
     };
 
     cursor = {
       style = "beam";
       beam-thickness = 2;
+    };
+
+    desktop-notifications = {
+      command = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
     };
 
     bell = {

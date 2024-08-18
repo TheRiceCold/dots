@@ -36,8 +36,8 @@
       colorTheme = "Catppuccin Mocha";
       editor = {
         limit = {
-          enabled = true;
           value = 5;
+          enabled = true;
           perEditorGroup = true;
         };
         showTabs = "single";
