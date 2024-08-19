@@ -36,6 +36,11 @@ in {
     workspace_swipe_forever = true;
   };
 
+  cursor = {
+    no_warps = true;
+    # persistent_warps = true;
+  };
+
   layerrule = rules.layer;
   windowrule = rules.window;
   windowrulev2 = rules.window2;

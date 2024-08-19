@@ -3,14 +3,16 @@
 
   window = [
     "noblur, Gromit-mpx"
-    "fakefullscreen, firefox"
+    "fullscreenstate -1 2, firefox"
     "float, title:^(Firefox — Sharing Indicator)$"
+    # "pin"
   ];
 
   window2 = [
     "float, class:.*"
     "tile,class:^(firefox)$"
 
+    "maximize,class:^(krita)$"
     "maximize,class:^(blender)$"
     "maximize,class:^(vesktop)$"
     "maximize,class:^(Spotify)$"
@@ -24,6 +26,7 @@
     "workspace 5,class:^(Virt-manager)$"
 
     "opacity 0.9,class:^(firefox)$"
+    "opacity 0.9,class:^(zed)$"
     "opacity 0.85,class:^(Spotify)$"
     "opacity 0.85,class:^(pavucontrol)$"
   ];

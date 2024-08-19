@@ -18,4 +18,6 @@
   shadow_range = 8;
   shadow_render_power = 2;
   "col.shadow" = "rgba(00000044)";
+
+  # screen_shader = ./path;
 }

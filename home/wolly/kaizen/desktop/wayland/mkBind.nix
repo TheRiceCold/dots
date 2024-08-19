@@ -13,7 +13,7 @@
     float = bind-exec "togglefloating";
     maximized = bind-exec "fullscreen, 1";
     fullscreen = bind-exec "fullscreen, 0";
-    fakefullscreen =  bind-exec "fakefullscreen";
+    fakefullscreen =  bind-exec "fullscreenstate, -1 2";
 
     center_layout = bind-exec "exec, pypr layout_center toggle";
     center_layout_up = bind-exec "exec, pypr layout_center prev";
@@ -75,7 +75,7 @@
     ask = show "ask";
     player = show "player";
     colors = show "colors";
-    datemenu = show "datemenu";
+    calendar = show "calendar";
     keyboard = show "keyboard";
     quicksettings = show "quicksettings";
   };
