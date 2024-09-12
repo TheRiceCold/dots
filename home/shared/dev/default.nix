@@ -1,8 +1,13 @@
 { pkgs, ... }: {
   imports = [
-    ./helix
+    ./zed
+    # ./helix
     ./flutter.nix
   ];
+
+  programs = {
+    k9s.enable = true;
+  };
 
   home.packages =
     with pkgs;
@@ -15,9 +20,13 @@
     # awscli2
     # kubectl kubernetes-helm
 
-    insomnia
+    podman-tui
+
+    neovide
     distrobox
-    podman-tui 
-    podman-compose 
+    podman-compose
+
+    # Game Development
+    godot_4           # Open source game engine
   ];
 }

@@ -22,8 +22,6 @@
     };
 
     eza.enable = true;
-    # k9s.enable = true;
-
     taskwarrior.enable = true;
 
     yazi = {
