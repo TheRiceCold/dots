@@ -1,7 +1,5 @@
-{ inputs, pkgs, ... }:
-let
-  inherit (inputs) spicetify-nix;
-in {
+{ pkgs, ... }:
+{
   imports = [ ./spicetify.nix ./graphic-editors ];
 
   programs = {
@@ -16,11 +14,10 @@ in {
   };
 
   home.packages = with pkgs; [
+    neovide
+
     # Gnome Apps
     nautilus            # File Manager
-    # gnome-clocks
-    # gnome-weather
-    # gnome-calendar
     gnome-calculator
 
     # Social
@@ -29,12 +26,12 @@ in {
     # Windows Stuff
     # wine-staging
     # bottles-unwrapped
-    microsoft-edge-dev
+    # microsoft-edge-dev
 
     # Utilities
     obs-studio
     # easyeffects         # Equalizer
     pavucontrol         # Audio/Volume control
     wpa_supplicant_gui
-   ];
+  ];
 }

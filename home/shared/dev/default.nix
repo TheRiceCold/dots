@@ -1,9 +1,6 @@
-{ pkgs, ... }: {
-  imports = [
-    ./zed
-    # ./helix
-    ./flutter.nix
-  ];
+{ pkgs, ... }:
+{
+  imports = [ ./zed ./flutter.nix ];
 
   programs = {
     k9s.enable = true;
@@ -20,10 +17,8 @@
     # awscli2
     # kubectl kubernetes-helm
 
-    podman-tui
-
-    neovide
     distrobox
+    podman-tui
     podman-compose
 
     # Game Development

@@ -86,7 +86,6 @@
       bind "Alt 9" { GoToTab 9; }
 
       bind "Ctrl q" { Quit; }
-      bind "Ctrl d" { Detach; }
       bind "Ctrl n" { NewTab; }
       bind "Alt n" { NewPane; }
 

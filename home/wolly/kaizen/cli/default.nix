@@ -11,7 +11,8 @@
     # Just fun stuff
     pipes-rs  # Animated pipes
     krabby    # Print pokemon sprites
-    slides    # Terminal based presentation tool # TODO: Learn this
+    slides    # Presentation tool
+    glow      # Render markdown on the CLI
     lsix      # Shows thumbnails in terminal using sixel
 
     # Games

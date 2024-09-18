@@ -5,6 +5,8 @@ in {
   package = pkgs.foot;
   server.enable = true;
   settings = {
+    colors = colors.cyberdream;
+
     main = {
       term = "xterm-256color";
       font = "JetBrainsMonoNerdFont:size=12";
@@ -38,7 +40,5 @@ in {
     };
 
     # search-bindings = { };
-
-    colors = colors.poimandres;
   };
 }

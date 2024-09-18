@@ -1,14 +1,14 @@
-# DOCS: https://github.com/fastfetch-cli/fastfetch/wiki
+# See at https://github.com/fastfetch-cli/fastfetch/wiki
 { pkgs, ... }:
 let
-  module = type: key: color: ''{ "type": "${type}", "key": "${key}", "keyColor": "${color}" }'';
+  module = type: key: ''{ "type": "${type}", "key": "${key}", "keyColor": "blue" }'';
   config = /* jsonc */ '' {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 
     "logo": {
       // NOTE: idk why but it can't render png
       "type": "sixel",
-      "source": "${../../../../../assets/ibu.jpeg}",
+      "source": "${../../../../../assets/ibu-cyber.jpg}",
     },
 
     "display": { "separator": " " },
@@ -21,25 +21,25 @@ let
       },
 
       "break",
-      ${module "cpu"    "╭─" "green" },
-      ${module "disk"   "├─" "green" },
-      ${module "memory" "╰─󰑭" "green" },
+      ${module "cpu"    "╭─"},
+      ${module "disk"   "├─"},
+      ${module "memory" "╰─󰑭"},
       "break",
-      ${module "shell" "╭─" "green" },
-      ${module "wm"    "├─" "green" },
-      ${module "font"  "╰─" "green" },
+      ${module "shell" "╭─"},
+      ${module "wm"    "├─"},
+      ${module "font"  "╰─"},
       "break",
 
       {
         "type": "title",
         "key": "╭─",
         "format": "{1}@{2}",
-        "keyColor": "green"
+        "keyColor": "blue"
       },
 
-      ${module "os"       "├─" "green" },
-      ${module "packages" "├─" "green" },
-      ${module "uptime"   "╰─󱎫" "green" }
+      ${module "os"       "├─"},
+      ${module "packages" "├─"},
+      ${module "uptime"   "╰─󱎫"}
     ]
   } '';
 in {
