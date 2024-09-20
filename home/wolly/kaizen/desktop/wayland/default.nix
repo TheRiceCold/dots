@@ -2,16 +2,13 @@
 
   imports = [ ./hyprland ];
 
-  programs = {
-    imv.enable = true;
-  };
-
   home = {
     packages = with pkgs; [
-      wtype             # Input simulator
+      wtype         # Input simulator
 
+      swayimg
       wlr-randr
-      wl-clipboard      # Clipboard Utility
+      wl-clipboard  # Clipboard Utility
 
       # For consideration
       # wluma

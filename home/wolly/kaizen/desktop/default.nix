@@ -31,6 +31,4 @@ in {
 
   qt.enable = true;
   qt.platformTheme.name = "qtct";
-
-  xdg.mimeApps.enable = true;
 }
