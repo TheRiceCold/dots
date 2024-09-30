@@ -3,9 +3,10 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      zj = "zellij";
+      yz = "yazi";
+      nv = "neovide";
       curl = "curlie";
-      docker-compose="podman-compose";
+      tmux-source = "tmux source ~/.config/tmux/tmux.conf";
     };
 
     initExtra = /* bash */ ''
@@ -32,8 +33,6 @@
         builtin cd "$@"
         check_directory_for_new_repository
       }
-
-      eval "$(starship init bash)"
     '';
   };
 }

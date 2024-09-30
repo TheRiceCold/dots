@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }: {
 
-  imports = [ ./cli ./desktop ./scripts ./starship.nix ];
+  imports = [ ./cli ./desktop ./scripts ];
   nixpkgs.overlays = [ inputs.nixpkgs-wayland.overlay ];
 
   home.packages = with pkgs; [
