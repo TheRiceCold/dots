@@ -67,7 +67,7 @@
   };
 
   cyberdream = {
-    alpha = 0.85;
+    alpha = 0.8;
     background = "16181a";           #16181a
     foreground = "ffffff";           #ffffff
     regular0   = "16181a";           #16181a
