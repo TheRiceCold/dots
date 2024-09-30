@@ -26,15 +26,19 @@
       };
     };
 
-    # gh = {
-    #   enable = true;
-    #   extensions = [pkgs.gh-markdown-preview];
-    #   settings = {
-    #     version = "1";
-    #     prompt = "enabled";
-    #     git_protocol = "ssh";
-    #   };
-    # };
+    gh = {
+      enable = true;
+      extensions = with pkgs; [
+        gh-f
+        gh-eco
+        gh-dash
+        # gh-markdown-preview # slow AF
+      ];
+      settings = {
+        prompt = "enabled";
+        git_protocol = "ssh";
+      };
+    };
 
     lazygit = import ./lazygit.nix;
   };

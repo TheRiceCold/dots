@@ -7,7 +7,5 @@
     };
   };
 
-  xdg.configFile = {
-    "bat/themes/cyberdream.tmTheme".text = import ./cyberdream-theme.nix;
-  };
+  xdg.configFile."bat/themes/cyberdream.tmTheme" = import ./cyberdream-theme.nix;
 }

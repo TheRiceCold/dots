@@ -1,4 +1,4 @@
-/* xml */ ''
+{ text = /* xml */ ''
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -44,6 +44,7 @@
           <string>stippled_underline</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Comment</string>
@@ -57,6 +58,7 @@
           <string></string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>String</string>
@@ -68,6 +70,7 @@
           <string>#5eff6c</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Number</string>
@@ -79,6 +82,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Built-in constant</string>
@@ -90,6 +94,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>User-defined constant</string>
@@ -101,6 +106,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Variable</string>
@@ -112,6 +118,7 @@
           <string></string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Ruby's @variable</string>
@@ -125,6 +132,7 @@
           <string>#ffbd5e</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>String interpolation</string>
@@ -138,6 +146,7 @@
           <string>#ff5ef1</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Ruby Regexp</string>
@@ -151,6 +160,7 @@
           <string>#ff6e5e</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Keyword</string>
@@ -161,19 +171,21 @@
           <key>foreground</key>
           <string>#ffbd5e</string>
         </dict>
-        </dict>
-          <dict>
-            <key>name</key>
-            <string>Keyword Operator</string>
-            <key>scope</key>
-            <string>keyword.operator</string>
-            <key>settings</key>
-            <dict>
-              <key>foreground</key>
-              <string>#bd5eff</string>
-            </dict>
-          </dict>
+      </dict>
+
+      <dict>
+        <key>name</key>
+        <string>Keyword Operator</string>
+        <key>scope</key>
+        <string>keyword.operator</string>
+        <key>settings</key>
         <dict>
+          <key>foreground</key>
+          <string>#bd5eff</string>
+        </dict>
+      </dict>
+
+      <dict>
         <key>name</key>
         <string>Storage</string>
         <key>scope</key>
@@ -186,6 +198,7 @@
           <string>#ff5ea0</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Storage type</string>
@@ -199,6 +212,7 @@
           <string>#5ef1ff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Storage Type Namespace</string>
@@ -212,6 +226,7 @@
           <string>#bd5eff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Storage Type Class</string>
@@ -225,6 +240,7 @@
           <string>#bd5eff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Class name</string>
@@ -238,6 +254,7 @@
           <string>#bd5eff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Meta Path</string>
@@ -251,6 +268,7 @@
           <string>#5ef1ff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Inherited class</string>
@@ -264,6 +282,7 @@
           <string>#bd5eff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Function name</string>
@@ -277,6 +296,7 @@
           <string>#5ea1ff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Function argument</string>
@@ -290,6 +310,7 @@
           <string>#bd5eff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Tag name</string>
@@ -303,6 +324,7 @@
           <string>#5ef1ff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Tag attribute</string>
@@ -316,6 +338,7 @@
           <string>#5ef1ff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Library function</string>
@@ -329,6 +352,7 @@
           <string>#5ea1ff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Library constant</string>
@@ -342,6 +366,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Library class&#x2f;type</string>
@@ -355,6 +380,7 @@
           <string>#bd5eff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Library variable</string>
@@ -366,6 +392,7 @@
           <string></string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Support Other Namespace</string>
@@ -379,6 +406,7 @@
           <string>#bd5eff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Invalid</string>
@@ -394,6 +422,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Invalid deprecated</string>
@@ -407,6 +436,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>JSON String</string>
@@ -418,6 +448,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>diff.header</string>
@@ -429,6 +460,7 @@
           <string>#7b8496</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>diff.deleted</string>
@@ -440,6 +472,7 @@
           <string>#ff6e5e</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>diff.inserted</string>
@@ -451,6 +484,7 @@
           <string>#5eff6c</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>diff.changed</string>
@@ -462,6 +496,7 @@
           <string>#5ef1ff</string>
         </dict>
       </dict>
+
       <dict>
         <key>scope</key>
         <string>constant.numeric.line-number.find-in-files - match</string>
@@ -471,6 +506,7 @@
           <string>#ff5ef1</string>
         </dict>
       </dict>
+
       <dict>
         <key>scope</key>
         <string>entity.name.filename</string>
@@ -480,6 +516,7 @@
           <string>#5eff6c</string>
         </dict>
       </dict>
+
       <dict>
         <key>scope</key>
         <string>message.error</string>
@@ -489,6 +526,7 @@
           <string>#ff6e5e</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>JSON Punctuation</string>
@@ -500,6 +538,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>JSON Structure</string>
@@ -511,6 +550,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>JSON String</string>
@@ -522,6 +562,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>JSON: 6 deep</string>
@@ -533,6 +574,7 @@
           <string>#ff5ea0</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>JSON: 5 deep</string>
@@ -544,6 +586,7 @@
           <string>#ff5ef1</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>JSON: 4 deep</string>
@@ -555,6 +598,7 @@
           <string>#bd5eff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>JSON: 3 deep</string>
@@ -566,6 +610,7 @@
           <string>#5ea1ff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>JSON: 2 deep</string>
@@ -577,6 +622,7 @@
           <string>#5ef1ff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>JSON:  1 deep</string>
@@ -603,6 +649,7 @@
           <string>#ffbd5e</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markup: bold</string>
@@ -616,6 +663,7 @@
           <string>#ffbd5e</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markup: italic</string>
@@ -629,6 +677,7 @@
           <string>#ffbd5e</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markdown: heading</string>
@@ -640,6 +689,7 @@
           <string>#ffbd5e</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markdown: List Items Punctuation</string>
@@ -651,6 +701,7 @@
           <string>#ff5ea0</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markdown: Blockquote</string>
@@ -664,6 +715,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markdown: Blockquote Punctuation</string>
@@ -677,6 +729,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markdown: Separator</string>
@@ -688,6 +741,7 @@
           <string>#7b8496</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markup: raw inline</string>
@@ -699,6 +753,7 @@
           <string>#5eff6c</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markup: underline</string>
@@ -712,6 +767,7 @@
           <string>#bd5eff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markup: Raw block</string>
@@ -723,6 +779,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markdown: Raw Block fenced source</string>
@@ -734,6 +791,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markdown: Fenced Bode Block</string>
@@ -747,6 +805,7 @@
           <string>#7b8496</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Markdown: Fenced Language</string>
@@ -760,6 +819,7 @@
           <string>#7b8496</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Punctuation Accessor</string>
@@ -771,6 +831,7 @@
           <string>#ff5ea0</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Meta Function Return Type</string>
@@ -782,6 +843,7 @@
           <string>#bd5eff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Punctuation Section Block Begin</string>
@@ -793,6 +855,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Punctuation Section Block End</string>
@@ -804,6 +867,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Punctuation Section Embedded Begin</string>
@@ -815,6 +879,7 @@
           <string>#ff5ea0</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Punctuation Section Embedded End</string>
@@ -826,6 +891,7 @@
           <string>#ff5ea0</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Punctuation Separator Namespace</string>
@@ -837,6 +903,7 @@
           <string>#ff5ea0</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Variable Function</string>
@@ -848,6 +915,7 @@
           <string>#5ea1ff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Variable Other</string>
@@ -859,6 +927,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Variable Language</string>
@@ -870,6 +939,7 @@
           <string>#bd5eff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Entity Name Module Ruby</string>
@@ -881,6 +951,7 @@
           <string>#5ef1ff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Entity Name Constant Ruby</string>
@@ -892,6 +963,7 @@
           <string>#5ea1ff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Support Function Builtin Ruby</string>
@@ -903,6 +975,7 @@
           <string>#ffffff</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Storage Type Namespace CS</string>
@@ -914,6 +987,7 @@
           <string>#ff5ea0</string>
         </dict>
       </dict>
+
       <dict>
         <key>name</key>
         <string>Entity Name Namespace CS</string>
@@ -926,6 +1000,7 @@
         </dict>
       </dict>
     </array>
+
     <key>uuid</key>
     <string>68394a4e-1404-4971-bdfc-81dd7f9d29f6</string>
     <key>colorSpaceName</key>
@@ -936,4 +1011,4 @@
     <string>Scott McKendry</string>
   </dict>
 </plist>
-''
+''; }
