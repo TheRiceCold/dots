@@ -16,6 +16,8 @@
 
     kaizen.url = "github:thericecold/kaizen";
     kaivim.url = "github:thericecold/kaivim";
+    tmux-sessionx.url = "github:omerxx/tmux-sessionx";
+
     spicetify-nix.url = "github:gerg-l/spicetify-nix";
  };
 
