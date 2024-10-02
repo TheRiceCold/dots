@@ -15,7 +15,8 @@
   # };
 
   home.packages = with pkgs; [
-    jdk flutter 
+    jdk
+    flutter
     google-chrome
     android-studio
     # androidComposition.androidsdk

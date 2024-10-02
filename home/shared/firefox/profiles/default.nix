@@ -2,9 +2,11 @@ pkgs:
 let
   addons = pkgs.nur.repos.rycee.firefox-addons;
   homepage = "https://thericecold.github.io/startpage/";
-in {
+in
+{
   bookmarks = { };
   extensions = with addons; [
+    # firenvim
     vimium-c
 
     clearurls
@@ -23,8 +25,8 @@ in {
     "browser.startup.homepage" = homepage;
   };
 
-  userChrome = '' '';
-  userContent = '' '';
+  userChrome = '''';
+  userContent = '''';
 
   search = {
     force = true;
@@ -33,25 +35,39 @@ in {
       "Bing".metaData.hidden = true;
       "Google".metaData.alias = "@g";
       "Nix Packages" = {
-        definedAliases = ["@np"];
+        definedAliases = [ "@np" ];
         urls = [
           {
             template = "https://search.nixos.org/packages";
             params = [
-              { name = "channel"; value = "unstable"; }
-              { name = "type"; value = "packages"; }
-              { name = "query"; value = "{searchTerms}"; }
+              {
+                name = "channel";
+                value = "unstable";
+              }
+              {
+                name = "type";
+                value = "packages";
+              }
+              {
+                name = "query";
+                value = "{searchTerms}";
+              }
             ];
           }
         ];
       };
 
       "Youtube" = {
-        definedAliases = ["@yt"];
+        definedAliases = [ "@yt" ];
         urls = [
           {
             template = "https://youtube.com/results";
-            params = [ { name = "search_query"; value = "{searchTerms}"; } ];
+            params = [
+              {
+                name = "search_query";
+                value = "{searchTerms}";
+              }
+            ];
           }
         ];
       };

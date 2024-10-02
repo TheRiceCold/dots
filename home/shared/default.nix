@@ -1,10 +1,20 @@
-{ inputs, user, stateVersion, ... }:
 {
-  imports = [ ./cli ./dev ./firefox ./bash.nix ];
+  inputs,
+  user,
+  stateVersion,
+  ...
+}:
+{
+  imports = [
+    ./cli
+    ./dev
+    ./firefox
+    ./bash.nix
+  ];
 
   home = {
     username = user;
-    stateVersion = stateVersion;
+    inherit stateVersion;
     homeDirectory = "/home/${user}";
   };
 

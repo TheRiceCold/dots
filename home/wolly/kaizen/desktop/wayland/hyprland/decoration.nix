@@ -5,7 +5,7 @@
     size = 8;
     passes = 3;
     xray = true;
-    noise = 0.01;
+    noise = 1.0e-2;
     contrast = 0.9;
     brightness = 0.8;
     ignore_opacity = true;

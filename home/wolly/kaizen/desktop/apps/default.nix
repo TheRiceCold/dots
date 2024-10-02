@@ -24,8 +24,8 @@
     vesktop             # A custom Discord desktop app
 
     # Windows Stuff
-    # wine-staging
-    # bottles-unwrapped
+    bottles-unwrapped
+    wineWow64Packages.wayland
     # microsoft-edge-dev
 
     # Utilities

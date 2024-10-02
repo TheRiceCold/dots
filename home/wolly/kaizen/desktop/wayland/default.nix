@@ -1,18 +1,20 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   imports = [ ./hyprland ];
 
   home = {
     packages = with pkgs; [
-      wtype         # Input simulator
+      wtype # Input simulator
 
       swayimg
       wlr-randr
-      wl-clipboard  # Clipboard Utility
+      wl-clipboard # Clipboard Utility
 
       # For consideration
       # wluma
       wl-mirror
+      wf-recorder
     ];
 
     sessionVariables = {
@@ -31,7 +33,7 @@
 
       QT_SCALE_FACTOR = "1";
       QT_QPA_PLATFORM = "wayland";
-      QT_AUTO_SCREEN_SCALE_FACTOR  = "1";
+      QT_AUTO_SCREEN_SCALE_FACTOR = "1";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
 
       DISABLE_QT5_COMPAT = "0";

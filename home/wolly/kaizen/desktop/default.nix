@@ -1,10 +1,15 @@
-{ pkgs, ... }: let
+{ pkgs, ... }:
+let
   theme = {
     name = "Matcha-dark-sea";
     package = pkgs.matcha-gtk-theme;
   };
-in {
-  imports = [ ./wayland ./apps ];
+in
+{
+  imports = [
+    ./wayland
+    ./apps
+  ];
 
   home = {
     sessionVariables = {

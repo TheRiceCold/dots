@@ -1,9 +1,16 @@
 { config, ... }:
 let
   dockerEnabled = config.virtualisation.docker.enable;
-in {
+in
+{
   virtualisation = {
-    # docker.enabled = true;
+    docker = {
+      enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
     podman = {
       enable = true;
       dockerCompat = !dockerEnabled;

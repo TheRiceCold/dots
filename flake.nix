@@ -17,14 +17,15 @@
     kaizen.url = "github:thericecold/kaizen";
     kaivim.url = "github:thericecold/kaivim";
     tmux-sessionx.url = "github:omerxx/tmux-sessionx";
-
     spicetify-nix.url = "github:gerg-l/spicetify-nix";
- };
-
-  outputs = inputs @ { ... }: {
-    homeConfigurations = import ./home { inherit inputs; };
-    nixosConfigurations = import ./nixos { inherit inputs; };
   };
+
+  outputs =
+    inputs@{ ... }:
+    {
+      homeConfigurations = import ./home inputs;
+      nixosConfigurations = import ./nixos inputs;
+    };
 
   nixConfig = { };
 }

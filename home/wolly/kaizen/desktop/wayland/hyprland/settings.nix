@@ -1,8 +1,13 @@
 let
   rules = import ./rules.nix;
-in {
+in
+{
   monitor = [ ",preferred,auto,1" ];
-  exec = [ "pypr" "kaizen" "hypridle" ];
+  exec = [
+    "pypr"
+    "kaizen"
+    "hypridle"
+  ];
 
   input = {
     kb_layout = "us";

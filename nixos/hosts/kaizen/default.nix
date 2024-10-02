@@ -1,9 +1,10 @@
-{ config, disk, ... }: {
+{ config, ... }:
+{
 
-  imports = [ 
-    ./desktop.nix 
-    ./services.nix 
-    ./hardware-configuration.nix 
+  imports = [
+    ./desktop.nix
+    ./services.nix
+    ./hardware-configuration.nix
   ];
 
   # disko = import disk;

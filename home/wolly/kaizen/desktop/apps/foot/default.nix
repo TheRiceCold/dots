@@ -1,6 +1,8 @@
-pkgs: let
+pkgs:
+let
   colors = import ./colors.nix;
-in {
+in
+{
   enable = true;
   package = pkgs.foot;
   server.enable = true;

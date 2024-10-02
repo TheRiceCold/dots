@@ -1,6 +1,11 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
 
-  imports = [ ./cli ./desktop ./scripts ];
+  imports = [
+    ./cli
+    ./desktop
+    ./scripts
+  ];
   nixpkgs.overlays = [ inputs.nixpkgs-wayland.overlay ];
 
   home.packages = with pkgs; [
@@ -9,7 +14,9 @@
     source-sans-pro
     (pkgs.nerdfonts.override {
       fonts = [
-        "Ubuntu" "UbuntuMono" "UbuntuSans"
+        "Ubuntu"
+        "UbuntuMono"
+        "UbuntuSans"
         "RobotoMono"
       ];
     })

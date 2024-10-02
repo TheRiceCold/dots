@@ -1,15 +1,22 @@
-{ lib, pkgs, ... }: {
-
+{ lib, pkgs, ... }:
+{
   environment = {
-    variables.EDITOR = "neovim";
+    variables.EDITOR = "nvim";
     systemPackages = with pkgs; [
-      lsof wget gnumake
-      unrar unzip p7zip
-      home-manager nix-output-monitor
+      lsof
+      wget
+      gnumake
+      unrar
+      unzip
+      p7zip
+      home-manager
+      nix-output-monitor
     ];
   };
 
   programs = {
+    bash = import ./bash.nix;
+
     adb.enable = true;
     git.enable = true;
     light.enable = true;
@@ -26,7 +33,5 @@
       enable = true;
       flake = "/home/wolly/dots";
     };
-
-    bash = import ./bash.nix;
   };
 }

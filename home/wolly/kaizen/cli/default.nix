@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [ ./sysfetch ];
 
   programs.neomutt = {
@@ -9,11 +10,12 @@
 
   home.packages = with pkgs; [
     # Just fun stuff
-    pipes-rs  # Animated pipes
-    krabby    # Print pokemon sprites
-    slides    # Presentation tool
-    glow      # Render markdown on the CLI
-    lsix      # Shows thumbnails in terminal using sixel
+    pipes-rs # Animated pipes
+    krabby # Print pokemon sprites
+    slides # Presentation tool
+    glow # Render markdown on the CLI
+    lsix # Shows thumbnails in terminal using sixel
+    upiano # A piano in terminal
 
     # Games
     toipe # A truty typing tester

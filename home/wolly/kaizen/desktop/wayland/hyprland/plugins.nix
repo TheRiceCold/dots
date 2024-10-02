@@ -1,7 +1,8 @@
-{ inputs, pkgs, ... }: 
+{ inputs, pkgs, ... }:
 let
   plugins = inputs.hyprland-plugins.packages.${pkgs.system};
-in {
+in
+{
   wayland.windowManager.hyprland = {
     plugins = with plugins; [
       # hyprexpo # INFO: Wait until stable

@@ -1,8 +1,8 @@
 { config, ... }:
-
 let
   ifExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
-in {
+in
+{
   users = {
     groups = { };
 
@@ -10,14 +10,20 @@ in {
       wolly = {
         isNormalUser = true;
         initialPassword = "password"; # TODO: Encrypt password
-        extraGroups = [ "wheel" "video" "audio" ] ++ ifExist [
-          "kvm"
-          "docker"
-          "podman"
-          "adbusers"
-          "libvirtd"
-          "networkmanager"
-        ];
+        extraGroups =
+          [
+            "wheel"
+            "video"
+            "audio"
+          ]
+          ++ ifExist [
+            "kvm"
+            "docker"
+            "podman"
+            "adbusers"
+            "libvirtd"
+            "networkmanager"
+          ];
       };
     };
   };
