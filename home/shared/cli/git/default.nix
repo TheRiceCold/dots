@@ -1,7 +1,6 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   # syntax-highlighting pager for git, diff, grep and blame output
-  home.packages = [ pkgs.delta ];
+  home.packages = [pkgs.delta];
 
   programs = {
     git = {

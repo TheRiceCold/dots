@@ -1,8 +1,8 @@
 { pkgs, ... }:
 let
   theme = {
-    name = "Matcha-dark-sea";
-    package = pkgs.matcha-gtk-theme;
+    name = "WhiteSur-Dark";
+    package = pkgs.whitesur-gtk-theme;
   };
 in
 {

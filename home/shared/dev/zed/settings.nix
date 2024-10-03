@@ -1,4 +1,5 @@
-/* json */ ''
+/*json*/
+''
   {
     "vim_mode": true,
     "git_status": true,

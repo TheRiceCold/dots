@@ -1,4 +1,4 @@
-/* json */ ''
+/*json*/ ''
   [
     {
       "context": "Workspace",

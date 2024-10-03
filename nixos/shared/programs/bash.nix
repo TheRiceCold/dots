@@ -4,8 +4,7 @@ let
   update = "doas nix flake update";
   switch = "doas nixos-rebuild switch";
   switch-flake = "git add . ; ${switch} --flake .\#$1";
-in
-{
+in {
   shellAliases = {
     x = "exit";
     v = "nvim";
@@ -27,12 +26,7 @@ in
     clean-switch = "${clean}; ${switch-flake}"; # nix-clean-switch <hostname>
     full-switch = "${clean}; ${update}; ${switch-flake}"; # nix-full-switch <hostname>
 
-    inherit
-      np
-      clean
-      update
-      switch-flake
-      ;
+    inherit np clean update switch-flake;
   };
 
   interactiveShellInit = ''

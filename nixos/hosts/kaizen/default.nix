@@ -1,6 +1,4 @@
-{ config, ... }:
-{
-
+{ config, ... }: {
   imports = [
     ./desktop.nix
     ./services.nix
@@ -27,8 +25,8 @@
   };
 
   boot = {
-    blacklistedKernelModules = [ "k10temp" ];
-    extraModulePackages = [ config.boot.kernelPackages.zenpower ];
+    blacklistedKernelModules = ["k10temp"];
+    extraModulePackages = [config.boot.kernelPackages.zenpower];
   };
 
   # Allow systemd to handle coredumps.

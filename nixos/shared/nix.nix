@@ -1,12 +1,8 @@
-{ stateVersion, ... }:
-{
+{ stateVersion, ... }: {
   nix = {
     settings = {
       auto-optimise-store = true; # Optimize syslinks
-      trusted-users = [
-        "root"
-        "@wheel"
-      ];
+      trusted-users = [ "root" "@wheel" ];
       experimental-features = "nix-command flakes";
     };
     gc = {

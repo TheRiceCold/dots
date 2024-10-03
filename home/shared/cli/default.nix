@@ -1,11 +1,5 @@
-{ pkgs, ... }:
-{
-  imports = [
-    ./bat
-    ./btop
-    ./git
-    ./tmux
-  ];
+{ pkgs, ... }: {
+  imports = [ ./bat ./btop ./git ./tmux ];
 
   programs = {
     eza.enable = true;
@@ -16,8 +10,8 @@
     yazi = {
       enable = true;
       enableBashIntegration = true;
-      settings = { };
-      keymap = { };
+      settings = {};
+      keymap = {};
       theme = {
         border_style.fg = "#5ef1ff";
       };
@@ -25,7 +19,7 @@
     zoxide = {
       enable = true;
       enableBashIntegration = true;
-      options = [ "--cmd cd" ];
+      options = ["--cmd cd"];
     };
   };
 

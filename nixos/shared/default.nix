@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   imports = [
     ./nix.nix
     ./users.nix
@@ -26,7 +25,7 @@
 
   fonts.packages = with pkgs; [
     jetbrains-mono
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
   security = {

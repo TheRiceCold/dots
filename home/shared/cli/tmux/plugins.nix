@@ -1,5 +1,4 @@
 pkgs: {
-
   # link: https://github.com/olimorris/tmux-pomodoro-plus
   pomodoro = pkgs.tmuxPlugins.mkTmuxPlugin {
     version = "1.0.2";

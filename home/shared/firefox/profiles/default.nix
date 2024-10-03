@@ -1,10 +1,8 @@
-pkgs:
-let
+pkgs: let
   addons = pkgs.nur.repos.rycee.firefox-addons;
   homepage = "https://thericecold.github.io/startpage/";
-in
-{
-  bookmarks = { };
+in {
+  bookmarks = {};
   extensions = with addons; [
     # firenvim
     vimium-c
@@ -35,7 +33,7 @@ in
       "Bing".metaData.hidden = true;
       "Google".metaData.alias = "@g";
       "Nix Packages" = {
-        definedAliases = [ "@np" ];
+        definedAliases = ["@np"];
         urls = [
           {
             template = "https://search.nixos.org/packages";
@@ -58,7 +56,7 @@ in
       };
 
       "Youtube" = {
-        definedAliases = [ "@yt" ];
+        definedAliases = ["@yt"];
         urls = [
           {
             template = "https://youtube.com/results";

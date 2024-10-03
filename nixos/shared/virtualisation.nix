@@ -1,8 +1,6 @@
-{ config, ... }:
-let
+{ config, ... }: let
   dockerEnabled = config.virtualisation.docker.enable;
-in
-{
+in {
   virtualisation = {
     docker = {
       enable = true;

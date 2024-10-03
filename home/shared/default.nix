@@ -1,16 +1,5 @@
-{
-  inputs,
-  user,
-  stateVersion,
-  ...
-}:
-{
-  imports = [
-    ./cli
-    ./dev
-    ./firefox
-    ./bash.nix
-  ];
+{ inputs, user, stateVersion, ... }: {
+  imports = [ ./cli ./dev ./firefox ./bash.nix ];
 
   home = {
     username = user;
@@ -18,5 +7,5 @@
     homeDirectory = "/home/${user}";
   };
 
-  nixpkgs.overlays = with inputs; [ nur.overlay ];
+  nixpkgs.overlays = with inputs; [nur.overlay];
 }

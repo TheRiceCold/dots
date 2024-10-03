@@ -1,5 +1,4 @@
-{ lib, pkgs, ... }:
-{
+{ lib, pkgs, ... }: {
   environment = {
     variables.EDITOR = "nvim";
     systemPackages = with pkgs; [

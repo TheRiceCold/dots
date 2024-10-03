@@ -20,12 +20,10 @@
     spicetify-nix.url = "github:gerg-l/spicetify-nix";
   };
 
-  outputs =
-    inputs@{ ... }:
-    {
-      homeConfigurations = import ./home inputs;
-      nixosConfigurations = import ./nixos inputs;
-    };
+  outputs = inputs @ {...}: {
+    homeConfigurations = import ./home inputs;
+    nixosConfigurations = import ./nixos inputs;
+  };
 
-  nixConfig = { };
+  nixConfig = {};
 }
