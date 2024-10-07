@@ -8,22 +8,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix.url = "github:mic92/sops-nix"; # TODO: Implement this
+    sops-nix.url = "github:mic92/sops-nix";
     disko.url = "github:nix-community/disko";
 
+    # Overlays
     nur.url = "github:nix-community/NUR";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
 
+    # My own configurations
     kaizen.url = "github:thericecold/kaizen";
     kaivim.url = "github:thericecold/kaivim";
+
     tmux-sessionx.url = "github:omerxx/tmux-sessionx";
     spicetify-nix.url = "github:gerg-l/spicetify-nix";
   };
 
-  outputs = inputs @ {...}: {
+  outputs = inputs: {
     homeConfigurations = import ./home inputs;
     nixosConfigurations = import ./nixos inputs;
   };
-
-  nixConfig = {};
 }

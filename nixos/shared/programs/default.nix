@@ -8,6 +8,8 @@
       unrar
       unzip
       p7zip
+
+      nurl
       home-manager
       nix-output-monitor
     ];
@@ -18,10 +20,10 @@
 
     adb.enable = true;
     git.enable = true;
-    light.enable = true;
     dconf.enable = true;
+    light.enable = true;
     nano.enable = false;
-    less.enable = lib.mkDefault false; # I'd rather use bat
+    less.enable = lib.mkDefault false;
 
     direnv = {
       enable = true;
