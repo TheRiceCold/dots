@@ -1,8 +1,8 @@
-{
+{ inputs, pkgs, ... }: {
   imports = [
-    ./binds.nix
     ./pypr.nix
-    ./ecosystem
+    ./binds.nix
+    ./plugins.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -10,5 +10,8 @@
     systemd.enable = true;
     xwayland.enable = true;
     settings = import ./settings.nix;
+    package = inputs.hyprland.packages.${pkgs.system}.default;
   };
+
+  services.hypridle = import ./hypridle.nix;
 }

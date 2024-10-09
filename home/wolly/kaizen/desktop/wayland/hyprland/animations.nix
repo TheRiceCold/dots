@@ -1,5 +1,6 @@
 {
   enabled = true;
+  first_launch_animation = true;
 
   # HIGH
   bezier = [

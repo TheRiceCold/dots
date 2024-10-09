@@ -2,12 +2,12 @@ let
   rules = import ./rules.nix;
 in
 {
-  monitor = [ ",preferred,auto,1" ];
-  exec = [
-    "pypr"
-    "kaizen"
-    "hypridle"
+  env = [
+    "HYPRCURSOR_SIZE, 22"
+    "HYPRCURSOR_THEME, Bibata-Modern-Ice"
   ];
+  monitor = [ ",preferred,auto,1" ];
+  exec = [ "pypr" "kaizen" "hypridle" ];
 
   input = {
     kb_layout = "us";
@@ -26,13 +26,14 @@ in
   dwindle.preserve_split = true;
 
   master = {
-    no_gaps_when_only = false;
     special_scale_factor = 0.8;
   };
 
   misc = {
+    vfr = true;
     disable_hyprland_logo = true;
     animate_manual_resizes = true;
+    font_family = "Ubuntu Nerd Font";
     new_window_takes_over_fullscreen = 2;
   };
 
@@ -44,6 +45,7 @@ in
   cursor = {
     no_warps = true;
     # persistent_warps = true;
+    enable_hyprcursor = true;
   };
 
   layerrule = rules.layer;

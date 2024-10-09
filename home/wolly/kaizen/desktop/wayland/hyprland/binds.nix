@@ -1,70 +1,75 @@
-{ pkgs, ... }:
-let
+{ pkgs, ... }: let
   mkBind = import ../mkBind.nix;
   apps = import ../../apps/get-apps.nix pkgs;
 
   arr = [1 2 3 4 5 6 7 8 9 0]; # Number of workspaces
   bind = mod: cmd: key: arg: "${mod}, ${key}, ${cmd}, ${arg}";
   workspace = bind "SUPER" "workspace";
-  mvtows =  bind "SUPER_SHIFT" "movetoworkspacesilent";
+  mvtows = bind "SUPER_SHIFT" "movetoworkspacesilent";
 in {
   wayland.windowManager.hyprland.settings = {
-    bind = with apps; 
-      with mkBind; 
-      with media; 
-      with window; 
-      with widgets; [
-      # Widgets prefix is SUPER
-      (reset "Escape")
+    bind = with apps;
+    with mkBind;
+    with media;
+    with window;
+    with widgets;
+      [
+        # Widgets prefix is SUPER
+        (reset "Escape")
 
-      (ask "a")
-      (player "p")
+        (ask "a")
+        (player "p")
 
-      (run-app "r")
-      (overview "Tab")
-      (powermenu "F4")
-      (dashboard "Space")
-      (shortcuts "Slash")
+        (run-app "r")
+        # (overview "Tab")
+        (powermenu "F4")
+        (dashboard "Space")
+        (shortcuts "Slash")
 
-      # Pypr Scatchpads Toggle's prefix is SUPER_CTRL
-      (toggle "t" "term")
+        # Pypr Scatchpads Toggle's prefix is SUPER_CTRL
+        (toggle "t" "term")
 
-      (exec "Return" "[tile] ${term}") # prefix is SUPER
+        (exec "Return" "[tile] ${term}") # prefix is SUPER
 
-      # prefix is SUPER_CTRL
-      (run "v" audio-control)
-      (run "c" "${color-picker} -a")
-      (run "b" "[workspace 2] ${browser} --browser-window")
+        # prefix is SUPER_CTRL
+        (run "v" audio-control)
+        (run "c" "${color-picker} -a")
+        (run "b" "[workspace 2] ${browser} --browser-window")
 
-      mute play prev next # media binds
-      "SUPER_SHIFT, q, exit" # Exit Hyprland
+        mute
+        play
+        prev
+        next # media binds
+        "SUPER_SHIFT, q, exit" # Exit Hyprland
 
-      # Window
-      (kill "SUPER, q")
-      (float "SUPER, t")
-      (pin "SUPER_SHIFT, p")
-      (maximized "SUPER, m")
-      (fullscreen "SUPER, f")
-      (center_layout "SUPER, c")
-      (center_layout_up "CTRL, k")
-      (center_layout_down "CTRL, j")
-      (fakefullscreen "SUPER_SHIFT, f")
+        # Window
+        (kill "SUPER, q")
+        (float "SUPER, t")
+        (pin "SUPER_SHIFT, p")
+        (maximized "SUPER, m")
+        (fullscreen "SUPER, f")
+        # (center_layout "SUPER, c")
+        # (center_layout_up "CTRL, k")
+        # (center_layout_down "CTRL, j")
+        (fakefullscreen "SUPER_SHIFT, f")
 
-      # prefix is SUPER
-      (focus "k" "u") 
-      (focus "j" "d")
-      (focus "l" "r")
-      (focus "h" "l")
+        # prefix is SUPER
+        (focus "k" "u")
+        (focus "j" "d")
+        (focus "l" "r")
+        (focus "h" "l")
 
-      # prefix is SUPER_SHIFT
-      (swap "k" "u")
-      (swap "j" "d")
-      (swap "l" "r")
-      (swap "h" "l")
-    ] ++ (map (i: mvtows (toString i) (toString i)) arr)
-    ++ (map (i: workspace (toString i) (toString i)) arr);
+        # prefix is SUPER_SHIFT
+        (swap "k" "u")
+        (swap "j" "d")
+        (swap "l" "r")
+        (swap "h" "l")
+      ]
+      ++ (map (i: mvtows (toString i) (toString i)) arr)
+      ++ (map (i: workspace (toString i) (toString i)) arr);
 
-    binde = with mkBind; with window; [
+    binde = with mkBind;
+    with window; [
       (brightness.up-value "5")
       (brightness.down-value "5")
 
