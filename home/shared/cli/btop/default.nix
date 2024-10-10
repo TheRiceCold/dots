@@ -10,5 +10,5 @@
   };
 
   # Themes
-  xdg.configFile."btop/themes/cyberdream.theme" = import ./cyberdream-theme.nix;
+  xdg.configFile."btop/themes/cyberdream.theme".text = import ./cyberdream-theme.nix;
 }

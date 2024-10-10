@@ -5,7 +5,6 @@
       yz = "yazi";
       nv = "neovide";
       curl = "curlie";
-      tmux-source = "tmux source ~/.config/tmux/tmux.conf";
     };
 
     initExtra = /*sh*/ ''
