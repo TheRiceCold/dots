@@ -19,6 +19,11 @@
     kaizen.url = "github:thericecold/kaizen";
     kaivim.url = "github:thericecold/kaivim";
 
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
     tmux-sessionx.url = "github:omerxx/tmux-sessionx";
     spicetify-nix.url = "github:gerg-l/spicetify-nix";
   };

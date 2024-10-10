@@ -14,6 +14,8 @@ in {
     with window;
     with widgets;
       [
+        "SUPER, Tab, overview:toggle"
+
         # Widgets prefix is SUPER
         (reset "Escape")
 
