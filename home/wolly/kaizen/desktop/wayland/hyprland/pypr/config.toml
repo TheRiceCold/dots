@@ -1,0 +1,8 @@
+[pyprland]
+plugins = ["scratchpads", "magnify", "layout_center"]
+
+[scratchpads.term]
+lazy = false
+size = "38% 40%"         # width height
+command = "${term}"
+animation = "fromBottom"

@@ -5,12 +5,12 @@
     "noblur, Gromit-mpx"
     "fullscreenstate -1 2, firefox"
     "float, title:^(Firefox — Sharing Indicator)$"
-    # "pin"
   ];
 
   window2 = [
     "float, class:.*"
     "tile,class:^(firefox)$"
+    # "plugin:scroller:alignwindow center, class:(firefox)"
 
     "maximize,class:^(krita)$"
     "maximize,class:^(blender)$"

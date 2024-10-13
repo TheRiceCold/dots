@@ -1,14 +1,13 @@
 { inputs, pkgs, ... }: {
-  imports = [
-    ./pypr.nix
-    ./binds.nix
-    ./plugins.nix
-  ];
+  imports = [ ./binds ./pypr ./plugins.nix ];
 
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = true;
     xwayland.enable = true;
+    systemd = {
+      enable = true;
+      variables = ["--all"];
+    };
     settings = import ./settings.nix;
     package = inputs.hyprland.packages.${pkgs.system}.default;
   };

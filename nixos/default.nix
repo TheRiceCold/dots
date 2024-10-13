@@ -1,7 +1,5 @@
 inputs: let
   inherit (inputs.nixpkgs.lib) nixosSystem;
-  inherit (inputs.disko.nixosModules) disko;
-  inherit (inputs.sops-nix.nixosModules) sops;
 
   mkHost = {
     modules,
@@ -11,7 +9,7 @@ inputs: let
   }:
     nixosSystem {
       inherit system;
-      modules = [ sops disko ./shared ] ++ modules;
+      modules = [ ./shared ] ++ modules;
       specialArgs = {
         inherit inputs disk stateVersion;
       };

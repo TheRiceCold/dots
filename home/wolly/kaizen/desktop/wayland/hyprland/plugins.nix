@@ -1,10 +1,13 @@
 { inputs, pkgs, ... }: let
-  hyprspace = inputs.hyprspace.packages.${pkgs.system}.Hyprspace;
+  space = inputs.hyprspace.packages.${pkgs.system}.default;
+  scroller = inputs.hyprscroller.packages.${pkgs.system}.default;
+  # inherit (inputs.hyprland-plugins.packages.${pkgs.system}) hyprexpo;
 in {
   wayland.windowManager.hyprland = {
-    plugins = [hyprspace];
+    plugins = [ space scroller ];
     settings.plugin = {
       overview = {
+        gapsOut = 8;
         panelHeight = 150;
         exitOnClick = true;
         showNewWorkspace = false;
