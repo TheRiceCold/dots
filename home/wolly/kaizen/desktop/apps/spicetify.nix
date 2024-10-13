@@ -19,4 +19,6 @@ in {
       keyboardShortcut
     ];
   };
+
+  home.packages = [ pkgs.spicetify-cli ];
 }

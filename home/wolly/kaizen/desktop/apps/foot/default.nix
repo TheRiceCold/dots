@@ -1,8 +1,6 @@
-pkgs:
-let
+pkgs: let
   colors = import ./colors.nix;
-in
-{
+in {
   enable = true;
   package = pkgs.foot;
   server.enable = true;
@@ -11,7 +9,7 @@ in
 
     main = {
       term = "xterm-256color";
-      font = "JetBrainsMonoNerdFont:size=12";
+      font = "JetBrainsMonoNerdFont:size=11.5";
     };
 
     cursor = {
@@ -35,6 +33,7 @@ in
       scrollback-up-page = "Page_Up";
       scrollback-down-page = "Page_Down";
 
+      # WARN: Control+c is used for terminating shell actions
       # clipboard-copy = "Control+c";
       clipboard-paste = "Control+v";
 
