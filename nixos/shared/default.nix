@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   imports = [
     ./nix.nix
     ./users.nix
@@ -23,11 +23,6 @@
     firewall.enable = false;
   };
 
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
-  ];
-
   security = {
     polkit.enable = true;
     rtkit.enable = true; # Enable real-time kit
@@ -38,4 +33,6 @@
       extraConfig = " permit nopass :wheel ";
     };
   };
+
+  fonts.packages = [(pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})];
 }

@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   services = {
     blueman.enable = true;
     flatpak.enable = true;
@@ -11,5 +11,12 @@
         INTERNET_IFACE = "enp3s0f0";
       };
     };
+
+    mysql = {
+      enable = true;
+      package = pkgs.mariadb;
+    };
+
+    postgresql.enable = true;
   };
 }

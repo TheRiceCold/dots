@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   services = {
     dbus.enable = true;
     openssh.enable = true;
@@ -20,12 +20,5 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
-
-    mysql = {
-      enable = true;
-      package = pkgs.mariadb;
-    };
-
-    postgresql.enable = true;
   };
 }

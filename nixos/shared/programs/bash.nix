@@ -17,7 +17,7 @@ in {
 
     # Package Installations
     gh-add = "${np} install github:$1";
-    pkg-add = "${np} install nixpkgs\#$1";
+    nix-add = /*sh*/"${np} install nixpkgs\#$1";
     upgrade = "git add . ; ${np} upgrade $1";
 
     rollback = "${switch} --rollback";
@@ -25,6 +25,8 @@ in {
     update-switch = "${update}; ${switch}"; # nix-up-switch <hostname>
     clean-switch = "${clean}; ${switch-flake}"; # nix-clean-switch <hostname>
     full-switch = "${clean}; ${update}; ${switch-flake}"; # nix-full-switch <hostname>
+
+    nix-shell-cmd = "nix-shell -p $1 --command $2";
 
     inherit np clean update switch-flake;
   };
