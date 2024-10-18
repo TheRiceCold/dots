@@ -1,5 +1,5 @@
 { inputs, user, stateVersion, ... }: {
-  imports = [ ./cli ./dev ./firefox ./bash.nix ];
+  imports = [ ./cli ./firefox ./bash.nix ];
 
   home = {
     username = user;

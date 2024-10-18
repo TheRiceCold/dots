@@ -2,6 +2,7 @@
 {
   imports = [
     ./cli
+    ./dev
     ./desktop
     ./scripts
   ];

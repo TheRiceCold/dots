@@ -1,3 +1,0 @@
-{
-  imports = [ ./zed ./helix ];
-}
