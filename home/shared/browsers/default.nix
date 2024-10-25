@@ -1,0 +1,3 @@
+{
+  imports = [ ./firefox ./qutebrowser ];
+}
