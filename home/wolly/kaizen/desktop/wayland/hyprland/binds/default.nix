@@ -10,12 +10,13 @@
   apps = with import ../../../apps/get-apps.nix pkgs; [
     "SUPER, Return, exec, [tile] ${term}"
     "SUPER CTRL, t, exec, ${pypr} toggle term"
-    "SUPER, b, exec, [workspace 2] ${browser} --browser-window"
+    "SUPER, b, exec, [workspace 2] qutebrowser"
+    "SUPER SHIFT, b, exec, [workspace 2] qutebrowser --target private-window"
   ];
 in {
   wayland.windowManager.hyprland = {
-    # extraConfig = import ./basic-layout-binds.nix;
-    extraConfig = import ./scroll-layout-binds.nix;
+    extraConfig = import ./basic-layout-binds.nix;
+    # extraConfig = import ./scroll-layout-binds.nix;
     settings = {
       bind = let
         numbers = [1 2 3 4 5 6 7 8 9 0]; # Number of workspaces

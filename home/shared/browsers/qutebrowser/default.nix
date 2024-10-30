@@ -5,7 +5,7 @@
     # keyMappings = { };
     searchEngines = {
       DEFAULT = "https://google.com/search?q={}";
-			ytm = "https://www.music.youtube.com/search?q={}";
+			ytm = "https://music.youtube.com/search?q={}";
       yt = "https://www.youtube.com/results?search_query={}";
       repo = "https://www.github.com/search?g={}&type=repositories";
 			ig = "https://www.instagram.com/{}";

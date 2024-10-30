@@ -31,7 +31,6 @@ pkgs: {
     # Vim-like binds
     G = "goto_file_end";
     "~" = ["switch_case" "move_char_right"];
-    V = ["select_mode" "extend_to_line_bounds"];
     p = ["paste_clipboard_after" "collapse_selection"];
     P = ["paste_clipboard_before" "collapse_selection"];
     D = ["extend_to_line_end" "yank_main_selection_to_clipboard" "delete_selection"];
@@ -41,7 +40,6 @@ pkgs: {
     i = ["insert_mode" "collapse_selection"];
     a = ["append_mode" "collapse_selection"];
 
-    x = "delete_selection";
     B = ["move_prev_long_word_start" "collapse_selection"];
     W = ["move_next_long_word_start" "move_char_right" "collapse_selection"];
   };

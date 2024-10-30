@@ -1,5 +1,8 @@
 { pkgs, ... }: {
-  imports = [./spicetify.nix ./graphic-editors];
+  imports = [
+    ./graphic-editors
+    # ./spicetify.nix # I find myself using youtube music more with qutebrowser
+  ];
 
   programs = {
     foot = import ./foot pkgs;
