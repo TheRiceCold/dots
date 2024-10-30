@@ -1,4 +1,6 @@
 # https://github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs
+# https://github.com/helix-editor/helix/blob/master/helix-term/src/keymap/default.rs
+
 pkgs: {
   normal = let
     yazi = [":new" ":insert-output yazi" ":buffer-close!" ":redraw"];
@@ -9,7 +11,7 @@ pkgs: {
       q = ":q";
       y = yazi;
       g = lazygit;
-      c = ":buffer-close";
+      d = ":buffer-close";
       o = "file_picker_in_current_buffer_directory";
 
       # Copy full buffer
@@ -24,7 +26,8 @@ pkgs: {
     C-r = ":config-reload";
 
     # Move current line
-    A-l = ["goto_line_start" "insert_tab"];
+    A-l = "indent";
+    A-h = "unindent";
     A-j = ["extend_to_line_bounds" "delete_selection" "paste_after"];
     A-k = ["extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before"];
 

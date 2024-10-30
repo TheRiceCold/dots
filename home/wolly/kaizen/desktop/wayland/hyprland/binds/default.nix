@@ -42,6 +42,13 @@ in {
         ",XF86AudioRaiseVolume, exec, ${volume-cmd}+"
         ",XF86AudioLowerVolume, exec, ${volume-cmd}-"
       ];
+
+      bindl = [
+        ",XF86AudioPrev, exec, playerctl next"
+        ",XF86AudioPrev, exec, playerctl previous"
+        ",XF86AudioPrev, exec, playerctl play-pause"
+        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ];
     };
   };
 }

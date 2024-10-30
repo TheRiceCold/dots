@@ -17,4 +17,8 @@ pkgs: {
     command = "${pkgs.typescript-language-server}/bin/typescript-language-server";
     args = ["--stdio"];
   };
+  astro-ls = {
+    command = "${pkgs.astro-language-server}/bin/astro-ls";
+    args = ["--stdio"];
+  };
 }

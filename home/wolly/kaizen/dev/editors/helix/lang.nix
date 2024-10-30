@@ -53,4 +53,16 @@ in [
     formatter = prettier "css";
     language-servers = ["vscode-css-language-server" "emmet-ls"];
   }
+
+  {
+    name = "astro";
+    scope = "source.astro";
+    injection-regex = "astro";
+    file-types = ["astro"];
+    language-servers = ["astro-ls"];
+    formatter = {
+      command = "prettierd";
+      args = ["--plugin" "prettier-plugin-astro" "--parser" "astro"];
+    };
+  }
 ]
