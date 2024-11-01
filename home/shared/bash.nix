@@ -1,13 +1,15 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.bash = {
     enable = true;
     shellAliases = {
       yz = "yazi";
       nv = "neovide";
       curl = "curlie";
+      tmux-source = "tmux source ~/.config/tmux/tmux.conf";
     };
 
-    initExtra = /*sh*/ ''
+    initExtra = /* bash */ ''
       export CHROME_EXECUTABLE=${pkgs.google-chrome}/bin/google-chrome-stable
 
       # Runs only on first instance (scratchpad terminal)

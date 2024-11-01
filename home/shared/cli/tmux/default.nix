@@ -11,18 +11,13 @@
     keyMode = "vi";
     escapeTime = 0;
     terminal = "screen-256color";
-    plugins = let
-      plugins = import ./plugins.nix pkgs;
-      sessionx = inputs.tmux-sessionx.packages.${pkgs.system}.default;
-    in with pkgs.tmuxPlugins; [
-        yank
-        continuum
-        resurrect
-        vim-tmux-navigator
-
-        sessionx
-        plugins.floax
-      ];
+    plugins = with pkgs.tmuxPlugins; [
+      yank
+      continuum
+      resurrect
+      vim-tmux-navigator
+      inputs.tmux-sessionx.packages.${pkgs.system}.default
+    ];
 
     extraConfig = let
       blue = "#[fg=#5ea1ff]";
@@ -54,10 +49,6 @@
       set -g @continuum-restore 'on'
 
       set -g @sessionx-bind 'o'
-      set -g @floax-bind "-n C-\\"
-
-      set -g @floax-text-color '#ffffff'
-      set -g @floax-border-color '#5ea1ff'
     '';
   };
 }

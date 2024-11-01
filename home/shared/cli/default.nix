@@ -1,25 +1,23 @@
 { pkgs, ... }: {
-  imports = [ ./bat ./btop ./git ./tmux ];
+  imports = [
+    ./bat
+    ./btop
+    ./git
+    ./tmux
+    # ./zellij # Great but I still prefer tmux
+  ];
 
   programs = {
     eza.enable = true;
-    fzf.enable = true;
-    taskwarrior = {
-      enable = true;
-    };
+    taskwarrior = {enable = true;};
     yazi = {
       enable = true;
       enableBashIntegration = true;
-      settings = {};
       keymap = {};
+      settings = {};
       theme = {
         border_style.fg = "#5ef1ff";
       };
-    };
-    zoxide = {
-      enable = true;
-      enableBashIntegration = true;
-      options = ["--cmd cd"];
     };
   };
 
@@ -27,7 +25,5 @@
     fd # simple and fast alternative to find
     sc-im # Ncurses spreadsheet program for terminal
     curlie # frontend to curl that adds ease of use of httpie
-
-    taskwarrior-tui
   ];
 }

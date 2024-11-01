@@ -1,6 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # syntax-highlighting pager for git, diff, grep and blame output
-  home.packages = [pkgs.delta];
+  home.packages = [ pkgs.delta ];
 
   programs = {
     git = {
@@ -25,19 +26,15 @@
       };
     };
 
-    gh = {
-      enable = true;
-      extensions = with pkgs; [
-        gh-f
-        gh-eco
-        gh-dash
-        # gh-markdown-preview # slow AF
-      ];
-      settings = {
-        prompt = "enabled";
-        git_protocol = "ssh";
-      };
-    };
+    # gh = {
+    #   enable = true;
+    #   extensions = [pkgs.gh-markdown-preview];
+    #   settings = {
+    #     version = "1";
+    #     prompt = "enabled";
+    #     git_protocol = "ssh";
+    #   };
+    # };
 
     lazygit = import ./lazygit.nix;
   };

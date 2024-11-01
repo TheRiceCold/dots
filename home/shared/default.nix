@@ -1,5 +1,10 @@
 { inputs, user, stateVersion, ... }: {
-  imports = [ ./cli ./browsers ./bash.nix ];
+  imports = [
+    ./cli
+    ./bash.nix
+    ./firefox
+    ./qutebrowser
+  ];
 
   home = {
     username = user;
