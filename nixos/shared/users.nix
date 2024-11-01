@@ -1,23 +1,23 @@
-{ config, ... }: let
+{ config, pkgs, ... }:
+
+let
   ifExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in {
   users = {
-    groups = {};
+    groups = { };
 
     users = {
       wolly = {
         isNormalUser = true;
-        initialPassword = "password"; # TODO: Encrypt password
-        extraGroups =
-          [ "wheel" "video" "audio" ]
-          ++ ifExist [
-            "kvm"
-            "docker"
-            "podman"
-            "adbusers"
-            "libvirtd"
-            "networkmanager"
-          ];
+        shell = pkgs.nushell;
+        extraGroups = [ "wheel" "video" "audio" ] ++ ifExist [
+          "kvm"
+          "docker"
+          "podman"
+          "adbusers"
+          "libvirtd"
+          "networkmanager"
+        ];
       };
     };
   };

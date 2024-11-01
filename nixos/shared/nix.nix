@@ -1,4 +1,5 @@
 { stateVersion, ... }: {
+
   nix = {
     settings = {
       auto-optimise-store = true; # Optimize syslinks
@@ -7,7 +8,7 @@
     };
     gc = {
       automatic = true;
-      options = "--delete-older-than 3d";
+      options = "--delete-older-than 2d";
     };
     optimise.automatic = true;
   };

@@ -1,6 +1,4 @@
-{ config, ... }: let
-  dockerEnabled = config.virtualisation.docker.enable;
-in {
+{
   virtualisation = {
     docker = {
       enable = true;
@@ -9,11 +7,13 @@ in {
         setSocketVariable = true;
       };
     };
-    podman = {
-      enable = true;
-      dockerCompat = !dockerEnabled;
-      dockerSocket.enable = !dockerEnabled;
-      defaultNetwork.settings.dns_enable = true;
-    };
+    # podman = let
+    #   dockerEnabled = config.virtualisation.docker.enable;
+    # in {
+    #   enable = true;
+    #   dockerCompat = !dockerEnabled;
+    #   dockerSocket.enable = !dockerEnabled;
+    #   defaultNetwork.settings.dns_enable = true;
+    # };
   };
 }

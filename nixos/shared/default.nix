@@ -1,15 +1,13 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   imports = [
     ./nix.nix
     ./users.nix
+    ./programs.nix
     ./services.nix
     ./virtualisation.nix
-
-    ./programs
   ];
 
   boot.loader = {
-    timeout = 0;
     systemd-boot.enable = true; # Set to false if GRUB is enabled
     efi.canTouchEfiVariables = true;
   };
@@ -19,8 +17,8 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   networking = {
-    networkmanager.enable = true;
     firewall.enable = false;
+    networkmanager.enable = true;
   };
 
   security = {
@@ -34,5 +32,9 @@
     };
   };
 
-  fonts.packages = [(pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})];
+  fonts.packages = [
+    (pkgs.nerdfonts.override {
+      fonts = [ "JetBrainsMono" "Ubuntu" ];
+    })
+  ];
 }
