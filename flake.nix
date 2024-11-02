@@ -10,7 +10,7 @@
 
     # Overlays
     nur.url = "github:nix-community/NUR";
-    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    niri-flake.url = "github:sodiboo/niri-flake";
 
     # My own configurations
     kaizen.url = "github:thericecold/kaizen";
