@@ -1,5 +1,4 @@
-pkgs:
-let
+pkgs: let
   addons = pkgs.nur.repos.rycee.firefox-addons;
   # homepage = "https://thericecold.github.io/startpage/";
 in {

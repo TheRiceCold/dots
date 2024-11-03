@@ -8,7 +8,8 @@
   ];
 
   programs = {
-    eza.enable = true;
+    fd.enable = true;
+    # eza.enable = true; # Would be enabled if wasn't using nushell
     taskwarrior = {enable = true;};
     yazi = {
       enable = true;
@@ -22,7 +23,6 @@
   };
 
   home.packages = with pkgs; [
-    fd # simple and fast alternative to find
     sc-im # Ncurses spreadsheet program for terminal
     curlie # frontend to curl that adds ease of use of httpie
   ];

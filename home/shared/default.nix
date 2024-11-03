@@ -1,4 +1,4 @@
-{ inputs, user, stateVersion, ... }: {
+{  user, stateVersion, ... }: {
   imports = [
     ./cli
     ./bash.nix
@@ -11,6 +11,4 @@
     inherit stateVersion;
     homeDirectory = "/home/${user}";
   };
-
-  nixpkgs.overlays = with inputs; [nur.overlay];
 }
