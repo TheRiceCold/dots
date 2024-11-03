@@ -6,6 +6,7 @@ actions: with actions; {
 
   # Spawn Apps
   "Mod+Return".action = spawn "foot";
+  "Mod+N".action = spawn "neovide";
   "Mod+B".action = spawn "qutebrowser";
   "Mod+Shift+B".action = spawn ["qutebrowser" "--target" "private-window"];
 

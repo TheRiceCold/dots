@@ -10,4 +10,12 @@
       binds = import ./binds.nix config.lib.niri.actions;
     };
   };
+
+  home = {
+    packages = [pkgs.xwayland-run];
+    sessionVariables = {
+      XDG_SESSION_DESKTOP = "Hyprland";
+      XDG_CURRENT_DESKTOP = "Hyprland";
+    };
+  };
 }
