@@ -2,7 +2,6 @@
   layer = [ ];
 
   window = [
-    "noblur, Gromit-mpx"
     "fullscreenstate -1 2, firefox"
     "float, title:^(Firefox — Sharing Indicator)$"
   ];

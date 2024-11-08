@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    marksman
     prettierd
     vscode-langservers-extracted
   ];

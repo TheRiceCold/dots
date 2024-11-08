@@ -7,6 +7,7 @@
         c = "clear";
         yz = "yazi";
         curl = "curlie";
+        np = "nix profile";
         hm = "home-manager";
       };
       configFile.source = ./config.nu;
@@ -16,7 +17,7 @@
       enableNushellIntegration = true;
     };
     zoxide = {
-      enable = true;      
+      enable = true;
       enableNushellIntegration = true;
     };
     # starship = { };

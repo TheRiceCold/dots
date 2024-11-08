@@ -12,4 +12,7 @@ in {
 
   nixo = "https://search.nixos.org/options?channel=unstable&query={}";
   nixp = "https://search.nixos.org/packages?channel=unstable&query={}";
+
+  odysee = "https://odysee.com/$/search?q={}";
+  rumble = "https://rumble.com/search/all?q={}";
 }

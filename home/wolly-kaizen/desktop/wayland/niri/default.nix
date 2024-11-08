@@ -12,7 +12,7 @@
   };
 
   home = {
-    packages = [pkgs.xwayland-run];
+    packages = [ pkgs.xwayland-run ];
     sessionVariables = {
       XDG_SESSION_DESKTOP = "Hyprland";
       XDG_CURRENT_DESKTOP = "Hyprland";

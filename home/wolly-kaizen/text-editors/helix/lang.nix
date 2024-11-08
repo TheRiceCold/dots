@@ -71,4 +71,9 @@ in [
       args = ["--plugin" "prettier-plugin-astro" "--parser" "astro"];
     };
   }
+
+  {
+    name = "markdown";
+    language-servers = ["marksman"];
+  }
 ]
