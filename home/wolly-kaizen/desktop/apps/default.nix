@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./opentablet
     ./krita.nix
     ./inkscape.nix
     ./spicetify.nix
