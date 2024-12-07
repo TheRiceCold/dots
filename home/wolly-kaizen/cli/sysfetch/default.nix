@@ -1,5 +1,5 @@
 { pkgs, ... }:
 {
-  imports = [ ./fastfetch.nix ];
+  # imports = [ ./fastfetch.nix ];
   home.packages = [ pkgs.onefetch ];
 }

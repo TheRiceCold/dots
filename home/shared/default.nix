@@ -1,7 +1,6 @@
 {  user, stateVersion, ... }: {
   imports = [
     ./cli
-    ./bash.nix
     ./firefox
     ./qutebrowser
   ];

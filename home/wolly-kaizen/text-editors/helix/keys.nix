@@ -15,6 +15,7 @@ pkgs: {
     H = ":buffer-previous";
 
     C-r = ":config-reload";
+    C-c = ["toggle_comments" "move_visual_line_down"];
 
     A-l = "indent";
     A-h = "unindent";
@@ -24,11 +25,14 @@ pkgs: {
     "~" = ["switch_case" "move_char_right"];
     p = ["paste_clipboard_after" "collapse_selection"];
     P = ["paste_clipboard_before" "collapse_selection"];
+    d = ["yank_main_selection_to_clipboard" "delete_selection"];
     D = ["extend_to_line_end" "yank_main_selection_to_clipboard" "delete_selection"];
     C = ["extend_to_line_end" "yank_main_selection_to_clipboard" "delete_selection" "insert_mode"];
 
     i = ["insert_mode" "collapse_selection"];
     a = ["append_mode" "collapse_selection"];
+
+    X = "extend_line_above";
   };
 
   insert = { };

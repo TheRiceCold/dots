@@ -1,5 +1,8 @@
+{ pkgs, ... }:
 {
   programs = {
+    bash = import ./bash.nix pkgs;
+
     nushell = {
       enable = true;
       shellAliases = {
@@ -12,14 +15,13 @@
       };
       configFile.source = ./config.nu;
     };
+
     carapace = {
       enable = true;
+      enableBashIntegration = true;
       enableNushellIntegration = true;
     };
-    zoxide = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
+
     # starship = { };
   };
 }

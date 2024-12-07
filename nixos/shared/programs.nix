@@ -1,7 +1,11 @@
 { lib, pkgs, ... }: {
   environment = {
     variables.EDITOR = "nvim";
-    systemPackages = with pkgs; [nurl home-manager];
+    systemPackages = with pkgs; [
+      nurl
+      zoxide
+      home-manager
+    ];
   };
 
   programs = {
@@ -16,6 +20,7 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
+      enableBashIntegration = true;
     };
 
     nh = {
@@ -25,16 +30,22 @@
 
     bash = {
       shellAliases = {
+        cd = "z";
         x = "exit";
         v = "nvim";
         c = "clear";
         m = "mv -iv";
         cp = "cp -riv";
 
+        np = "nix profile";
         hm = "home-manager";
       };
 
-      interactiveShellInit = /*sh*/ "export PATH=$PATH:~/.local/bin";
+      interactiveShellInit = /*sh*/ ''
+        export PATH=$PATH:~/.local/bin
+
+        eval "$(zoxide init bash)"
+      '';
     };
   };
 }

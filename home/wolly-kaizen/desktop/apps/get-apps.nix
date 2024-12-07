@@ -1,7 +1,6 @@
 pkgs: {
   top = "${pkgs.btop}/bin/btop";
   term = "${pkgs.foot}/bin/foot";
-  pypr = "${pkgs.pyprland}/bin/pypr";
   text-editor = "${pkgs.foot}/bin/neovide";
   file-manager-cli = "${pkgs.yazi}/bin/yazi";
   browser = "${pkgs.firefox-wayland}/bin/firefox";

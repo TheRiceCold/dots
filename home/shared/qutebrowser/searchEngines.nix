@@ -1,7 +1,8 @@
 let
   gh = type: "https://www.github.com/search?g={}&type=${type}";
 in {
-  DEFAULT = "https://google.com/search?q={}";
+  DEFAULT = "https://duckduckgo.com/?q={}";
+  g = "https://google.com/search?q={}";
   r = "https://reddit.com/r/{}";
   ig = "https://instagram.com/{}";
 

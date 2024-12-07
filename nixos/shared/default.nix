@@ -32,9 +32,8 @@
     };
   };
 
-  fonts.packages = [
-    (pkgs.nerdfonts.override {
-      fonts = [ "JetBrainsMono" "Ubuntu" ];
-    })
+  fonts.packages = with pkgs.nerd-fonts; [
+    ubuntu
+    jetbrains-mono
   ];
 }

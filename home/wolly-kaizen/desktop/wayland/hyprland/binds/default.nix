@@ -1,7 +1,6 @@
 { pkgs, ... }: let
   apps = with import ../../../apps/get-apps.nix pkgs; [
     "SUPER, Return, exec, [tile] ${term}"
-    "SUPER CTRL, t, exec, ${pypr} toggle term"
     "SUPER, b, exec, [workspace 2] qutebrowser"
     "SUPER SHIFT, b, exec, [workspace 2] qutebrowser --target private-window"
   ];

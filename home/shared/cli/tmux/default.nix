@@ -27,8 +27,11 @@
     in /*tmux*/ ''
       set -g renumber-windows on
 
-      bind -n C-n next-window
-      bind -n C-p previous-window
+      unbind-key C-n
+      unbind-key C-p
+
+      bind -n C-Tab next-window
+      bind -n C-S-Tab previous-window
 
       # Split window on current dir
       bind '"' split-window -c "#{pane_current_path}"

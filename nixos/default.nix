@@ -3,7 +3,7 @@ inputs: let
 
   mkHost = {
     modules,
-    stateVersion ? "24.05",
+    stateVersion ? "25.05",
     system ? "x86_64-linux",
     disk ? ./disks/thinkpad.nix,
   }: nixosSystem {
